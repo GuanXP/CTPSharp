@@ -1,0 +1,36 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net7.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <RootNamespace>XP.CTPSharp</RootNamespace>
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+    <BaseOutputPath>bin</BaseOutputPath>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Include="..\CTPAPI6.6.9\generated\CThostFtdcTraderApi_gen.cs" Link="Generated\CThostFtdcTraderApi_gen.cs" />
+    <Compile Include="..\CTPAPI6.6.9\generated\CThostFtdcTraderSpi_gen.cs" Link="Generated\CThostFtdcTraderSpi_gen.cs" />
+    <Compile Include="..\CTPAPI6.6.9\generated\PInvokeCThostFtdcMdApi.cs" Link="Generated\PInvokeCThostFtdcMdApi.cs" />
+    <Compile Include="..\CTPAPI6.6.9\generated\PInvokeCThostFtdcMdSpi.cs" Link="Generated\PInvokeCThostFtdcMdSpi.cs" />
+    <Compile Include="..\CTPAPI6.6.9\generated\PInvokeCThostFtdcTraderApi.cs" Link="Generated\PInvokeCThostFtdcTraderApi.cs" />
+    <Compile Include="..\CTPAPI6.6.9\generated\PInvokeCThostFtdcTraderSpi.cs" Link="Generated\PInvokeCThostFtdcTraderSpi.cs" />
+    <Compile Include="..\CTPAPI6.6.9\generated\ThostFtdcUserApiDataType.cs" Link="Generated\ThostFtdcUserApiDataType.cs" />
+    <Compile Include="..\CTPAPI6.6.9\generated\ThostFtdcUserApiStruct.cs" Link="Generated\ThostFtdcUserApiStruct.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\CTPInvoke\CTPInvoke.vcxproj">
+      <Private>True</Private>
+      <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
+      <ReferenceOutputAssembly>True</ReferenceOutputAssembly>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </ProjectReference>
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
+  </ItemGroup>
+
+</Project>

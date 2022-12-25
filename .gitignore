@@ -1,0 +1,19 @@
+﻿################################################################################
+# 此 .gitignore 文件已由 Microsoft(R) Visual Studio 自动创建。
+################################################################################
+
+/.vs
+/CTPInvoke/x64
+/CTPSharp/bin
+/CTPSharp/obj
+*.filters
+*.user
+/x64
+/Generated
+/CTPSharp/.vs
+/Generator/bin
+/Generator/obj
+*.exp
+*.lib
+*.pdb
+/Generator/Properties/launchSettings.json
