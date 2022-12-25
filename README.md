@@ -6,6 +6,10 @@
 * 完全的原始SDK命名兼容
 * 增加了对原始callback形式的API的C#封装，可使用 Task和 event
 * 字符串使用GBK编码与SDK沟通，没有乱码
+* 最大限度避免了PInvoke调用过程中的内存问题
+
+# 特别声明
+此项目代码不得用于任何商业目的，若需要，请和我联系: 929968367@qq.com
 
 ## 项目结构：
 
@@ -18,11 +22,9 @@
 
 得益于CTP SDK头文件的良好格式化，此工具不做任何词法语法分析，仅做字符串解析。
 
-此工具是一个命令行工具，需要一个参数指明【CTPAPI6.6.9】目录的某个父目录路径。
-
 输出文件存放在 【CTPAPI6.6.9/generated】目录下
 
-后续CTP SDK 版本更新，可直接放在类似【CTPAPIX.X.X】的目录下，重新生成
+后续CTP SDK 版本更新，可直接放在【CTPAPIX.X.X】平行的目录下，重新生成
 
 ### CTPInvoke 目录
 此目录为 C# 代码需要调用的 PInvoke库， 其输出文件名需要是 CTPInvoke.dll(Linux下则需要命名为.so)
@@ -41,7 +43,7 @@
 
 ## Linux版本
 目前不支持，但实际操作是完全类似.
-1. 将生成的 generated 目录下的那个 .h 和 .cxx文件编译成 CTPInvoke.so
+1. 将生成的 generated 目录下的那几个 .h 和 .cpp 文件编译成 CTPInvoke.so
 2. CTPSharp.dll本身可以跨平台使用
 3. 原始 CTP API 动态库使用官方的 Linux 版本的 .so 文件
 
