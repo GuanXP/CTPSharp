@@ -39,10 +39,10 @@
 2. 客户.NET 项目添加对 CTPSharp.dll的引用
 3. 可完全参照原始 C++ API来使用CTPSharp.dll，所有类、方法的名称都和 C++ 版本保持一致
 4. 也可选择使用封装的两个类：XP.CTPSharp.TdAPI和XP.CTPSharp.MdAPI
-5. 注意使用 IDisposable 来管理对象声明周期
+5. 注意使用 IDisposable 来管理对象生命周期
 
 ## Linux版本
-目前不支持，但实际操作是完全类似.
+目前不支持，但实际操作是完全类似的.
 1. 将生成的 generated 目录下的那几个 .h 和 .cpp 文件编译成 CTPInvoke.so
 2. CTPSharp.dll本身可以跨平台使用
 3. 原始 CTP API 动态库使用官方的 Linux 版本的 .so 文件
