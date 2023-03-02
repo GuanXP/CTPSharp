@@ -7,15 +7,17 @@ using System.Threading.Tasks;
 
 namespace XP.CTPSharp;
 
-public sealed class CTPResponse<TResp> : Tuple<TResp?, CThostFtdcRspInfoField> where TResp : new()
+public sealed class CTPResponse<TResp> where TResp : new()
 {
-    public CTPResponse(TResp? item1, CThostFtdcRspInfoField item2) : base(item1, item2)
+    public CTPResponse(TResp? reponse, CThostFtdcRspInfoField info)
     {
+        Response= reponse;
+        InfoField= info;
     }
 
-    public TResp? Response => Item1;
-    public CThostFtdcRspInfoField InfoField=> Item2;
-    public bool NoError => Item2.NoError;
+    public TResp? Response { get; }
+    public CThostFtdcRspInfoField InfoField { get; }
+    public bool NoError => InfoField.NoError;
 }
 
 internal interface ICancelable
@@ -27,7 +29,7 @@ internal class PendingRequest<TResp>: ICancelable where TResp : new()
     public int RequestId { get; }
     internal TResp? Response { get; private set; }
 
-    private TaskCompletionSource<CTPResponse<TResp>> _taskCompletionSource = new();
+    private readonly TaskCompletionSource<CTPResponse<TResp>> _taskCompletionSource = new();
     public Task<CTPResponse<TResp>> Task => _taskCompletionSource.Task;
 
     public PendingRequest(int requestId)

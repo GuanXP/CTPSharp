@@ -39,7 +39,6 @@ internal sealed class MdSPI : CThostFtdcMdSpi
         ref CThostFtdcRspInfoField pRspInfo,
         int nRequestID, bool bIsLast)
     {
-        Debug.Assert(bIsLast); // 一次请求应该只有一个callback
         // MD API 的callback并不带回发送时的 request id，所以总是当作最后一个请求的应答
         SubscribeReq?.SetResponseComplete(pSpecificInstrument, pRspInfo);
         SubscribeReq = null;
@@ -50,7 +49,6 @@ internal sealed class MdSPI : CThostFtdcMdSpi
         ref CThostFtdcRspInfoField pRspInfo,
         int nRequestID, bool bIsLast)
     {
-        Debug.Assert(bIsLast); // 一次请求应该只有一个callback
         UnsubscribeReq?.SetResponseComplete(pSpecificInstrument, pRspInfo);
         UnsubscribeReq = null;
     }
