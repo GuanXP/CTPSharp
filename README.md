@@ -29,6 +29,16 @@
 ### CTPInvoke 目录
 此目录为 C# 代码需要调用的 PInvoke库， 其输出文件名需要是 CTPInvoke.dll(Linux下则需要命名为.so)
 此项目的源代码为 generated 目录下的生成的 .cpp文件. 链接库需要加入 CTPAPI6.6.9 中的两个 .lib。 
+#### Linux版本
+Linux 编译需要cmake、g++
+```
+cd CTPInvoke
+mkdir build
+cd build
+cmake ..
+make
+```
+至此在 CTPInvoke/build 目录下生成 libCTPInvoke.so 文件，对应于Windows平台的CTPInvoke.dll
 
 ### CTPSharp
 此目录为可被 .NET 程序引用的动态库项目。其源码是 generated 目录下的全部 .cs文件
@@ -36,16 +46,10 @@
 
 ## 客户.NET代码引用此绑定库的方法
 1. 拷贝CTPInvoke.dll、CTPSharp.dll和CTPAPI6.6.9 目录下的两个原始 _se.dll
-2. 客户.NET 项目添加对 CTPSharp.dll的引用
+2. 客户 .NET 项目添加对 CTPSharp.dll的引用
 3. 可完全参照原始 C++ API来使用CTPSharp.dll，所有类、方法的名称都和 C++ 版本保持一致
 4. 也可选择使用封装的两个类：XP.CTPSharp.TdAPI和XP.CTPSharp.MdAPI
 5. 注意使用 IDisposable 来管理对象生命周期
-
-## Linux版本
-目前不支持，但实际操作是完全类似的.
-1. 将生成的 generated 目录下的那几个 .h 和 .cpp 文件编译成 CTPInvoke.so
-2. CTPSharp.dll本身可以跨平台使用
-3. 原始 CTP API 动态库使用官方的 Linux 版本的 .so 文件
 
 ## 预制版本
 如果不想编译，可以直接使用publish目录下的预制版本.

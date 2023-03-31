@@ -6,6 +6,7 @@
 /CTPInvoke/x64
 /CTPSharp/bin
 /CTPSharp/obj
+/CTPInvoke/build/
 *.filters
 *.user
 /x64
