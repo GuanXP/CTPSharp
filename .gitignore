@@ -18,3 +18,5 @@
 *.lib
 *.pdb
 /Generator/Properties/launchSettings.json
+/Example/bin
+/Example/obj

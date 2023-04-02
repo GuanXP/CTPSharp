@@ -124,3 +124,4 @@ class Config
     public string ProductInfo { get; }
 }
 ```
+详细可参考Example项目代码
