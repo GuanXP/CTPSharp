@@ -172,6 +172,7 @@ class CThostFtdcTraderSpi_Ex: public CThostFtdcTraderSpi
     CTPSharp_CThostFtdcTraderSpi _callbacks;
 public:
     CThostFtdcTraderSpi_Ex(const CTPSharp_CThostFtdcTraderSpi* callbacks){ _callbacks = *callbacks; }
+    virtual ~CThostFtdcTraderSpi_Ex() {}
     virtual void OnFrontConnected()
     {
         _callbacks.OnFrontConnected();

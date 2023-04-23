@@ -47,6 +47,7 @@ class CThostFtdcMdSpi_Ex: public CThostFtdcMdSpi
     CTPSharp_CThostFtdcMdSpi _callbacks;
 public:
     CThostFtdcMdSpi_Ex(const CTPSharp_CThostFtdcMdSpi* callbacks){ _callbacks = *callbacks; }
+    virtual ~CThostFtdcMdSpi_Ex() {}
     virtual void OnFrontConnected()
     {
         _callbacks.OnFrontConnected();

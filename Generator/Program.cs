@@ -405,6 +405,7 @@ internal partial class Program
         writer.WriteLine($"    {structName} _callbacks;");
         writer.WriteLine("public:");
         writer.WriteLine($"    {extClass}(const {structName}* callbacks)" + "{ _callbacks = *callbacks; }");
+        writer.WriteLine($"    virtual ~{extClass}()" + " {}");
         foreach (var m in methods)
         {
             writer.WriteLine(FuncCallback(m));
