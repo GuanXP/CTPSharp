@@ -14,18 +14,32 @@ public sealed partial class TdAPI: IDisposable
     private readonly CThostFtdcTraderApi _api;
     private readonly TdSPI _spi = new();
     private readonly RequestId _requestId = new(101);
+    private readonly bool _holdApi;
+
+    public CThostFtdcTraderApi RawApi { get { return _api; } }
+
+    public TdAPI(CThostFtdcTraderApi rawApi, bool needDisposeRawApi)
+    {
+        _api = rawApi;
+        _holdApi = needDisposeRawApi;
+
+        SubscribeSPI();
+        _api.RegisterSpi(_spi.Handle);
+    }
 
     public TdAPI(string flowPath)
-    {
-        SubscribeSPI();
+    {        
         _api = new(flowPath);
+        _holdApi = true;
+
+        SubscribeSPI();
         _api.RegisterSpi(_spi.Handle);
     }
 
     public void Dispose()
     {
         _api.RegisterSpi(0); 
-        _api.Dispose();
+        if (_holdApi) _api.Dispose();
     }
 
     public void RegisterFront(string pszFrontAddress)

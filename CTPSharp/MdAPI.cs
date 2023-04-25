@@ -12,9 +12,11 @@ namespace XP.CTPSharp;
 public sealed class MdAPI: IDisposable
 {
     private readonly CThostFtdcMdApi _api;
-    private MdSPI _spi = new();
+    private readonly MdSPI _spi = new();
     private readonly RequestId _requestId = new(201);
+    private readonly bool _holdApi;
 
+    public CThostFtdcMdApi RawApi { get { return _api; } }
     public event Action? FrontConnected;
     public event Action<int>? FrontDisconnected;
 
@@ -25,18 +27,31 @@ public sealed class MdAPI: IDisposable
 
     public MdAPI(string flowPath)
     {
-        _spi.FrontConnected += () => FrontConnected?.Invoke();
-        _spi.FrontDisconnected += (e) => FrontDisconnected?.Invoke(e);
-        _spi.DepthMarketDataArrived += (e) => DepthMarketDataArrived?.Invoke(e);
-
         _api = new(flowPath);
+        _holdApi = true;
+        SubscribeSPI();
         _api.RegisterSpi(_spi.Handle);
     }
 
-    public void Dispose()
+    public MdAPI(CThostFtdcMdApi rawApi, bool needDisposeRawApi)
     {
+        _api = rawApi;
+        _holdApi = needDisposeRawApi;
+        SubscribeSPI();
+        _api.RegisterSpi(_spi.Handle);
+    }
+
+    private void SubscribeSPI()
+    {
+        _spi.FrontConnected += () => FrontConnected?.Invoke();
+        _spi.FrontDisconnected += (e) => FrontDisconnected?.Invoke(e);
+        _spi.DepthMarketDataArrived += (e) => DepthMarketDataArrived?.Invoke(e);
+    }
+
+    public void Dispose()
+    {        
         _api.RegisterSpi(0);
-        _api.Dispose();
+        if (_holdApi) _api.Dispose();
     }
 
     public string GetVersion() => _api.GetApiVersion();
