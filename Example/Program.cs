@@ -28,7 +28,7 @@
 
         private static void MdClientConnected(bool obj)
         {
-            throw new NotImplementedException();
+            Console.WriteLine("行情服务器连接成功");
         }
     }
 }

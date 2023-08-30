@@ -49,7 +49,8 @@ internal partial class Program
             Console.WriteLine("未能找到 ThostFtdcTraderApi.h");
             return;
         }
-        var outDir = Path.Combine(apiFolder, "generated");
+        var parentDir = Path.GetDirectoryName(apiFolder);
+        var outDir = Path.Combine(parentDir!, "generated");
         if(!Directory.Exists(outDir))
         { 
             Directory.CreateDirectory(outDir);

@@ -1,6 +1,6 @@
 # CTPSharp
 期货CTP接口API的C#绑定，基于代码生成的Window X64版本。
-当前CTP版本为6.6.9
+当前CTP版本为6.7.0
 
 相较于其他一些封装库，本项目有以下优势：
 * 完全的原始SDK命名兼容
@@ -13,32 +13,34 @@
 
 ## 项目结构：
 
-### CTPAPI6.6.9 目录
+### CTPAP 目录
 此目录为原始 X64 C++ API，含动态库 .dll 和 连接库 .lib
 
 
 ### Generator 目录
-此项目为代码生成工具，用于将【CTPAPI6.6.9】目录下的 .h文件分析后转换成CTPInvoke所需的CPP代码以及CTPSharp项目所需的C#代码。
+此项目为代码生成工具，用于将【CTPAPI】目录下的 .h文件分析后转换成CTPInvoke所需的CPP代码以及CTPSharp项目所需的C#代码。
 
 得益于CTP SDK头文件的良好格式化，此工具不做任何词法语法分析，仅做字符串解析。
 
-输出文件存放在 【CTPAPI6.6.9/generated】目录下
+输出文件存放在 【generated】目录下
 
-后续CTP SDK 版本更新，可直接放在【CTPAPIX.X.X】平行的目录下，重新生成
+后续CTP SDK 版本更新，可直接放在【CTPAPI】目录下，重新生成
 
 ### CTPInvoke 目录
 此目录为 C# 代码需要调用的 PInvoke库， 其输出文件名需要是 CTPInvoke.dll(Linux下则需要命名为.so)
-此项目的源代码为 generated 目录下的生成的 .cpp文件. 链接库需要加入 CTPAPI6.6.9 中的两个 .lib。 
+此项目的源代码为 generated 目录下的生成的 .cpp文件. 链接库需要加入 CTPAPI 中的两个 .lib。 
 #### Linux版本
 Linux 编译需要cmake、g++
 ```
 cd CTPInvoke
 mkdir build
 cd build
-cmake ..
+cmake .. -DCMAKE_BUILD_TYPE=RELEASE  # 构建 release 版本
+或者
+cmake .. -DCMAKE_BUILD_TYPE=DEBUG  # 构建 debug 版本
 make
 ```
-至此在 CTPInvoke/build 目录下生成 libCTPInvoke.so 文件，对应于Windows平台的CTPInvoke.dll
+至此在 Publish/Linux64.NET7/Debug 或 Publish/Linux64.NET7/Release 目录下生成 libCTPInvoke.so 文件，对应于Windows平台的CTPInvoke.dll
 
 ### CTPSharp
 此目录为可被 .NET 程序引用的动态库项目。其源码是 generated 目录下的全部 .cs文件

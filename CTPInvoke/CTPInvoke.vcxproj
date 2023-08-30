@@ -149,8 +149,8 @@
     <ClInclude Include="pch.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="..\CTPAPI6.6.9\generated\CTPMd.cpp" />
-    <ClCompile Include="..\CTPAPI6.6.9\generated\CTPTd.cpp" />
+    <ClCompile Include="..\generated\CTPMd.cpp" />
+    <ClCompile Include="..\generated\CTPTd.cpp" />
     <ClCompile Include="dllmain.cpp" />
     <ClCompile Include="pch.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -160,8 +160,8 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <Library Include="..\CTPAPI6.6.9\thostmduserapi_se.lib" />
-    <Library Include="..\CTPAPI6.6.9\thosttraderapi_se.lib" />
+    <Library Include="..\CTPAPI\thostmduserapi_se.lib" />
+    <Library Include="..\CTPAPI\thosttraderapi_se.lib" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
