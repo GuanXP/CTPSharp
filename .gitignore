@@ -10,7 +10,6 @@
 *.filters
 *.user
 /x64
-/Generated
 /CTPSharp/.vs
 /Generator/bin
 /Generator/obj
