@@ -47,7 +47,7 @@ make
 此项目为纯 .NET 项目，生成一个 CTPSharp.dll
 
 ## 客户.NET代码引用此绑定库的方法
-1. 拷贝CTPInvoke.dll、CTPSharp.dll和CTPAPI6.6.9 目录下的两个原始 _se.dll
+1. 拷贝CTPInvoke.dll、CTPSharp.dll和CTPAPI目录下的两个原始 _se.dll
 2. 客户 .NET 项目添加对 CTPSharp.dll的引用
 3. 可完全参照原始 C++ API来使用CTPSharp.dll，所有类、方法的名称都和 C++ 版本保持一致
 4. 也可选择使用封装的两个类：XP.CTPSharp.TdAPI和XP.CTPSharp.MdAPI
