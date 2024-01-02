@@ -1,4 +1,4 @@
-<?xml version="1.0" encoding="gb2312"?>
+<?xml version="1.0" encoding="utf8"?>
 <!-- edited with XMLSPY v2004 rel. 4 U (http://www.xmlspy.com) by wangzhaodong (ORiON) -->
 <!DOCTYPE errors SYSTEM "error.dtd">
 <errors>
@@ -102,6 +102,9 @@
    	<error id="SPBMFUTPARAM_NOT_FOUND" value="96" prompt="CTP:找不到SPBM期货合约参数"/>
    	<error id="SPBMOPTPARAM_NOT_FOUND" value="97" prompt="CTP:找不到SPBM期权合约参数"/>
    	<error id="SPBMINTRAPARAM_NOT_FOUND" value="98" prompt="CTP:找不到SPBM品种内对锁仓折扣参数"/>
+	<!--RULE-->
+	<error id="RULEINSTRPARAM_NOT_FOUND" value="99" prompt="CTP:找不到RULE合约参数"/>
+	<error id="RULEINTRAPARAM_NOT_FOUND" value="100" prompt="CTP:找不到RULE品种内对锁仓折扣参数"/>
 	<!--灾备系统错误代码 -->		
 	<error id="NO_TRADING_RIGHT_IN_SEPC_DR" value="101" prompt="CTP:用户在本系统没有报单权限"/>
 	<error id="NO_DR_NO" value="102" prompt="CTP:系统缺少灾备标示号"/>
@@ -130,6 +133,10 @@
 	<error id="CFMMC_NO_CONNECTION" value="155" prompt="CTP:未连接监控中心"/>
 	<error id="CLOSE_OPTION_NO_MONEY" value="156" prompt="CTP:平期权多头后资金为负（收益小于平仓手续费），只可由风控人员强平"/>
 	<error id="CANCEL_UNKNOWN_ORDER_UNSUPPORTED" value="157" prompt="CTP:该交易所不支持撤销未知单"/>
+	<error id="OVER_INFO_CNT_LIMIT" value="158" prompt="CTP:超过信息量限制"/>
+	<error id="OVER_INVST_PARKED_ORDER_LIMIT" value="159" prompt="CTP:超过个人预埋单最大量限制"/>
+	<error id="OVER_BROKER_PARKED_ORDER_LIMIT" value="160" prompt="CTP:超过经纪公司预埋单最大量限制"/>
+	<error id="PARKED_ORDER_WRONG_TYPE" value="161" prompt="CTP:预埋单:不支持的触发类型"/>
 	<!--转帐系统错误代码 -->
 	<error id="SEND_INSTITUTION_CODE_ERROR" value="1000" prompt="CTP:银期转账：发送机构代码错误"/>
 	<error id="NO_GET_PLATFORM_SN" value="1001" prompt="CTP:银期转账：取平台流水号错误"/>
@@ -259,13 +266,18 @@
   <error id="AUTHUSER_CHECK_ERR" value="4043" prompt="CTP:用户与客户端授权验证失败"/>
   <error id="QUOTE_WRONG_REPALACE_SYSID" value="4050" prompt="CTP:报价指定的顶单编号不合法（中金所）"/>
   <error id="AUTH_IP_FORBIDDEN" value="4060" prompt="CTP:您认证失败次数过多，IP进入认证禁止列表"/>
-  <error id="MORGAGE_NOT_BALANCE" value="4061" prompt="CTP:未满足质押配比要求"/>
+  <error id="MORTGAGE_NOT_BALANCE" value="4061" prompt="CTP:未满足质押配比要求"/>
 
    <error id="SCAPI_SSL_CONNECT_ERR" value="4100" prompt="CTP:SSL Connect Error."/>
    <error id="SCAPI_WRONG_USERIDORNAME" value="4101" prompt="CTP:Wrong User ID or Name."/>
    <error id="SCAPI_CERT_VERIFY_FAILED" value="4102" prompt="CTP:Cert Verify Failed."/>
    <error id="SCAPI_CERT_PROCESS_TIMEOUT" value="4103" prompt="CTP:Cert Process Timeout."/>
    <error id="SCAPI_LOGIN_ERROR" value="4104" prompt="CTP:Login Error."/>
+   
+   <error id="RCAMS_COMBPRODUCTINFO_NOT_FOUND" value="5000" prompt="CTP:找不到RCAMS产品组合信息"/>
+   <error id="RCAMS_SHORTOPTADJUSTPARAM_NOT_FOUND" value="5001" prompt="CTP:找不到RCAMS空头期权风险调整参数"/>
+   
+   
    
 
 

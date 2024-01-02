@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net7.0</TargetFramework>
+    <TargetFramework>net8.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>XP.CTPSharp</RootNamespace>
@@ -23,7 +23,8 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)Publish\Win64.NET7\$(ConfigurationName)\&quot;" />
+    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)Publish\Win64.NET8\$(ConfigurationName)\&quot;" />
+	<Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)Publish\Linux64.NET8\$(ConfigurationName)\&quot;" />
   </Target>
 
 </Project>

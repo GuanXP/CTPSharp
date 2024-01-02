@@ -595,4 +595,68 @@ internal partial class TdSPI
     {
         CompleteListPending(pInvestorProdSPBMDetail,pRspInfo,nRequestID,bIsLast);
     }
+    public sealed override void OnRspQryInvestorCommoditySPMMMargin(ref CThostFtdcInvestorCommoditySPMMMarginField pInvestorCommoditySPMMMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pInvestorCommoditySPMMMargin,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryInvestorCommodityGroupSPMMMargin(ref CThostFtdcInvestorCommodityGroupSPMMMarginField pInvestorCommodityGroupSPMMMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pInvestorCommodityGroupSPMMMargin,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQrySPMMInstParam(ref CThostFtdcSPMMInstParamField pSPMMInstParam,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pSPMMInstParam,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQrySPMMProductParam(ref CThostFtdcSPMMProductParamField pSPMMProductParam,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pSPMMProductParam,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQrySPBMAddOnInterParameter(ref CThostFtdcSPBMAddOnInterParameterField pSPBMAddOnInterParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pSPBMAddOnInterParameter,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryRCAMSCombProductInfo(ref CThostFtdcRCAMSCombProductInfoField pRCAMSCombProductInfo,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pRCAMSCombProductInfo,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryRCAMSInstrParameter(ref CThostFtdcRCAMSInstrParameterField pRCAMSInstrParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pRCAMSInstrParameter,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryRCAMSIntraParameter(ref CThostFtdcRCAMSIntraParameterField pRCAMSIntraParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pRCAMSIntraParameter,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryRCAMSInterParameter(ref CThostFtdcRCAMSInterParameterField pRCAMSInterParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pRCAMSInterParameter,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryRCAMSShortOptAdjustParam(ref CThostFtdcRCAMSShortOptAdjustParamField pRCAMSShortOptAdjustParam,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pRCAMSShortOptAdjustParam,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryRCAMSInvestorCombPosition(ref CThostFtdcRCAMSInvestorCombPositionField pRCAMSInvestorCombPosition,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pRCAMSInvestorCombPosition,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryInvestorProdRCAMSMargin(ref CThostFtdcInvestorProdRCAMSMarginField pInvestorProdRCAMSMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pInvestorProdRCAMSMargin,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryRULEInstrParameter(ref CThostFtdcRULEInstrParameterField pRULEInstrParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pRULEInstrParameter,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryRULEIntraParameter(ref CThostFtdcRULEIntraParameterField pRULEIntraParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pRULEIntraParameter,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryRULEInterParameter(ref CThostFtdcRULEInterParameterField pRULEInterParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pRULEInterParameter,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryInvestorProdRULEMargin(ref CThostFtdcInvestorProdRULEMarginField pInvestorProdRULEMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pInvestorProdRULEMargin,pRspInfo,nRequestID,bIsLast);
+    }
 }

@@ -556,6 +556,70 @@ internal struct CTPSharp_CThostFtdcTraderSpi
     internal delegate void DelOnRspQryInvestorProdSPBMDetail(ref CThostFtdcInvestorProdSPBMDetailField pInvestorProdSPBMDetail,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
     internal DelOnRspQryInvestorProdSPBMDetail OnRspQryInvestorProdSPBMDetail;
 
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryInvestorCommoditySPMMMargin(ref CThostFtdcInvestorCommoditySPMMMarginField pInvestorCommoditySPMMMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryInvestorCommoditySPMMMargin OnRspQryInvestorCommoditySPMMMargin;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryInvestorCommodityGroupSPMMMargin(ref CThostFtdcInvestorCommodityGroupSPMMMarginField pInvestorCommodityGroupSPMMMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryInvestorCommodityGroupSPMMMargin OnRspQryInvestorCommodityGroupSPMMMargin;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQrySPMMInstParam(ref CThostFtdcSPMMInstParamField pSPMMInstParam,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQrySPMMInstParam OnRspQrySPMMInstParam;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQrySPMMProductParam(ref CThostFtdcSPMMProductParamField pSPMMProductParam,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQrySPMMProductParam OnRspQrySPMMProductParam;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQrySPBMAddOnInterParameter(ref CThostFtdcSPBMAddOnInterParameterField pSPBMAddOnInterParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQrySPBMAddOnInterParameter OnRspQrySPBMAddOnInterParameter;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryRCAMSCombProductInfo(ref CThostFtdcRCAMSCombProductInfoField pRCAMSCombProductInfo,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryRCAMSCombProductInfo OnRspQryRCAMSCombProductInfo;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryRCAMSInstrParameter(ref CThostFtdcRCAMSInstrParameterField pRCAMSInstrParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryRCAMSInstrParameter OnRspQryRCAMSInstrParameter;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryRCAMSIntraParameter(ref CThostFtdcRCAMSIntraParameterField pRCAMSIntraParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryRCAMSIntraParameter OnRspQryRCAMSIntraParameter;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryRCAMSInterParameter(ref CThostFtdcRCAMSInterParameterField pRCAMSInterParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryRCAMSInterParameter OnRspQryRCAMSInterParameter;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryRCAMSShortOptAdjustParam(ref CThostFtdcRCAMSShortOptAdjustParamField pRCAMSShortOptAdjustParam,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryRCAMSShortOptAdjustParam OnRspQryRCAMSShortOptAdjustParam;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryRCAMSInvestorCombPosition(ref CThostFtdcRCAMSInvestorCombPositionField pRCAMSInvestorCombPosition,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryRCAMSInvestorCombPosition OnRspQryRCAMSInvestorCombPosition;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryInvestorProdRCAMSMargin(ref CThostFtdcInvestorProdRCAMSMarginField pInvestorProdRCAMSMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryInvestorProdRCAMSMargin OnRspQryInvestorProdRCAMSMargin;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryRULEInstrParameter(ref CThostFtdcRULEInstrParameterField pRULEInstrParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryRULEInstrParameter OnRspQryRULEInstrParameter;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryRULEIntraParameter(ref CThostFtdcRULEIntraParameterField pRULEIntraParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryRULEIntraParameter OnRspQryRULEIntraParameter;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryRULEInterParameter(ref CThostFtdcRULEInterParameterField pRULEInterParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryRULEInterParameter OnRspQryRULEInterParameter;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryInvestorProdRULEMargin(ref CThostFtdcInvestorProdRULEMarginField pInvestorProdRULEMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryInvestorProdRULEMargin OnRspQryInvestorProdRULEMargin;
+
 }
 internal partial class CTPSharpPInvoke
 {
@@ -710,6 +774,22 @@ public class CThostFtdcTraderSpi: IDisposable
         _spi.OnRspQrySPBMInvestorPortfDef = this.OnRspQrySPBMInvestorPortfDef;
         _spi.OnRspQryInvestorPortfMarginRatio = this.OnRspQryInvestorPortfMarginRatio;
         _spi.OnRspQryInvestorProdSPBMDetail = this.OnRspQryInvestorProdSPBMDetail;
+        _spi.OnRspQryInvestorCommoditySPMMMargin = this.OnRspQryInvestorCommoditySPMMMargin;
+        _spi.OnRspQryInvestorCommodityGroupSPMMMargin = this.OnRspQryInvestorCommodityGroupSPMMMargin;
+        _spi.OnRspQrySPMMInstParam = this.OnRspQrySPMMInstParam;
+        _spi.OnRspQrySPMMProductParam = this.OnRspQrySPMMProductParam;
+        _spi.OnRspQrySPBMAddOnInterParameter = this.OnRspQrySPBMAddOnInterParameter;
+        _spi.OnRspQryRCAMSCombProductInfo = this.OnRspQryRCAMSCombProductInfo;
+        _spi.OnRspQryRCAMSInstrParameter = this.OnRspQryRCAMSInstrParameter;
+        _spi.OnRspQryRCAMSIntraParameter = this.OnRspQryRCAMSIntraParameter;
+        _spi.OnRspQryRCAMSInterParameter = this.OnRspQryRCAMSInterParameter;
+        _spi.OnRspQryRCAMSShortOptAdjustParam = this.OnRspQryRCAMSShortOptAdjustParam;
+        _spi.OnRspQryRCAMSInvestorCombPosition = this.OnRspQryRCAMSInvestorCombPosition;
+        _spi.OnRspQryInvestorProdRCAMSMargin = this.OnRspQryInvestorProdRCAMSMargin;
+        _spi.OnRspQryRULEInstrParameter = this.OnRspQryRULEInstrParameter;
+        _spi.OnRspQryRULEIntraParameter = this.OnRspQryRULEIntraParameter;
+        _spi.OnRspQryRULEInterParameter = this.OnRspQryRULEInterParameter;
+        _spi.OnRspQryInvestorProdRULEMargin = this.OnRspQryInvestorProdRULEMargin;
         _handle = CTPSharpPInvoke.CThostFtdcTraderSpi_New(ref _spi);
     }
     /// <summary>
@@ -1403,6 +1483,86 @@ public class CThostFtdcTraderSpi: IDisposable
     /// 投资者产品SPBM明细查询响应
     /// </summary>
     public virtual void OnRspQryInvestorProdSPBMDetail(ref CThostFtdcInvestorProdSPBMDetailField pInvestorProdSPBMDetail,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 投资者商品组SPMM记录查询响应
+    /// </summary>
+    public virtual void OnRspQryInvestorCommoditySPMMMargin(ref CThostFtdcInvestorCommoditySPMMMarginField pInvestorCommoditySPMMMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 投资者商品群SPMM记录查询响应
+    /// </summary>
+    public virtual void OnRspQryInvestorCommodityGroupSPMMMargin(ref CThostFtdcInvestorCommodityGroupSPMMMarginField pInvestorCommodityGroupSPMMMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// SPMM合约参数查询响应
+    /// </summary>
+    public virtual void OnRspQrySPMMInstParam(ref CThostFtdcSPMMInstParamField pSPMMInstParam,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// SPMM产品参数查询响应
+    /// </summary>
+    public virtual void OnRspQrySPMMProductParam(ref CThostFtdcSPMMProductParamField pSPMMProductParam,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// SPBM附加跨品种抵扣参数查询响应
+    /// </summary>
+    public virtual void OnRspQrySPBMAddOnInterParameter(ref CThostFtdcSPBMAddOnInterParameterField pSPBMAddOnInterParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// RCAMS产品组合信息查询响应
+    /// </summary>
+    public virtual void OnRspQryRCAMSCombProductInfo(ref CThostFtdcRCAMSCombProductInfoField pRCAMSCombProductInfo,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// RCAMS同合约风险对冲参数查询响应
+    /// </summary>
+    public virtual void OnRspQryRCAMSInstrParameter(ref CThostFtdcRCAMSInstrParameterField pRCAMSInstrParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// RCAMS品种内风险对冲参数查询响应
+    /// </summary>
+    public virtual void OnRspQryRCAMSIntraParameter(ref CThostFtdcRCAMSIntraParameterField pRCAMSIntraParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// RCAMS跨品种风险折抵参数查询响应
+    /// </summary>
+    public virtual void OnRspQryRCAMSInterParameter(ref CThostFtdcRCAMSInterParameterField pRCAMSInterParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// RCAMS空头期权风险调整参数查询响应
+    /// </summary>
+    public virtual void OnRspQryRCAMSShortOptAdjustParam(ref CThostFtdcRCAMSShortOptAdjustParamField pRCAMSShortOptAdjustParam,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// RCAMS策略组合持仓查询响应
+    /// </summary>
+    public virtual void OnRspQryRCAMSInvestorCombPosition(ref CThostFtdcRCAMSInvestorCombPositionField pRCAMSInvestorCombPosition,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 投资者品种RCAMS保证金查询响应
+    /// </summary>
+    public virtual void OnRspQryInvestorProdRCAMSMargin(ref CThostFtdcInvestorProdRCAMSMarginField pInvestorProdRCAMSMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// RULE合约保证金参数查询响应
+    /// </summary>
+    public virtual void OnRspQryRULEInstrParameter(ref CThostFtdcRULEInstrParameterField pRULEInstrParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// RULE品种内对锁仓折扣参数查询响应
+    /// </summary>
+    public virtual void OnRspQryRULEIntraParameter(ref CThostFtdcRULEIntraParameterField pRULEIntraParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// RULE跨品种抵扣参数查询响应
+    /// </summary>
+    public virtual void OnRspQryRULEInterParameter(ref CThostFtdcRULEInterParameterField pRULEInterParameter,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 投资者产品RULE保证金查询响应
+    /// </summary>
+    public virtual void OnRspQryInvestorProdRULEMargin(ref CThostFtdcInvestorProdRULEMarginField pInvestorProdRULEMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
 
     private void Close()
     {

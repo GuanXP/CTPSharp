@@ -4,7 +4,7 @@ project ("CTPInvoke.Linux")
 
 set(CMAKE_CXX_STANDARD 17)
 
-get_filename_component(PUBLISH_DIR "../Publish/Linux64.NET7/" ABSOLUTE)
+get_filename_component(PUBLISH_DIR "../Publish/Linux64.NET8/" ABSOLUTE)
 if (CMAKE_BUILD_TYPE STREQUAL DEBUG)
   message("build for debug")
   set(CMAKE_CXX_FLAGS "-DDEBUG -m64 -Wall -g -Wno-deprecated-declarations -Wno-parentheses")

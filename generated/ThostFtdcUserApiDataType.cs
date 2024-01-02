@@ -6934,6 +6934,18 @@ public enum TThostFtdcPortfolioType: byte
     /// SPBM算法
     /// </summary>
     THOST_FTDC_EPF_SPBM = (byte)'1',
+    /// <summary>
+    /// RULE算法
+    /// </summary>
+    THOST_FTDC_EPF_RULE = (byte)'2',
+    /// <summary>
+    /// SPMM算法
+    /// </summary>
+    THOST_FTDC_EPF_SPMM = (byte)'3',
+    /// <summary>
+    /// RCAMS算法
+    /// </summary>
+    THOST_FTDC_EPF_RCAMS = (byte)'4',
 }
 /// <summary>
 /// 可提参数代码类型
@@ -6958,4 +6970,98 @@ public enum TThostFtdcInvstTradingRightType: byte
     /// 不能交易
     /// </summary>
     THOST_FTDC_ITR_Forbidden = (byte)'2',
+}
+/// <summary>
+/// SPMM合约保证金算法类型
+/// </summary>
+public enum TThostFtdcInstMarginCalIDType: byte
+{
+    /// <summary>
+    /// 标准算法收取双边
+    /// </summary>
+    THOST_FTDC_IMID_BothSide = (byte)'1',
+    /// <summary>
+    /// 单向大边
+    /// </summary>
+    THOST_FTDC_IMID_MMSA = (byte)'2',
+    /// <summary>
+    /// 新组保SPMM
+    /// </summary>
+    THOST_FTDC_IMID_SPMM = (byte)'3',
+}
+/// <summary>
+/// RCAMS组合类型类型
+/// </summary>
+public enum TThostFtdcRCAMSCombinationTypeType: byte
+{
+    /// <summary>
+    /// 牛市看涨价差组合
+    /// </summary>
+    THOST_FTDC_ERComb_BUC = (byte)'0',
+    /// <summary>
+    /// 熊市看涨价差组合
+    /// </summary>
+    THOST_FTDC_ERComb_BEC = (byte)'1',
+    /// <summary>
+    /// 熊市看跌价差组合
+    /// </summary>
+    THOST_FTDC_ERComb_BEP = (byte)'2',
+    /// <summary>
+    /// 牛市看跌价差组合
+    /// </summary>
+    THOST_FTDC_ERComb_BUP = (byte)'3',
+    /// <summary>
+    /// 日历价差组合
+    /// </summary>
+    THOST_FTDC_ERComb_CAS = (byte)'4',
+}
+/// <summary>
+/// 新组保算法启用类型类型
+/// </summary>
+public enum TThostFtdcPortfTypeType: byte
+{
+    /// <summary>
+    /// 使用初版交易所算法
+    /// </summary>
+    THOST_FTDC_EET_None = (byte)'0',
+    /// <summary>
+    /// SPBM算法V1.1.0_附加保证金调整
+    /// </summary>
+    THOST_FTDC_EET_SPBM_AddOnHedge = (byte)'1',
+}
+/// <summary>
+/// 合约类型类型
+/// </summary>
+public enum TThostFtdcInstrumentClassType: byte
+{
+    /// <summary>
+    /// 一般月份合约
+    /// </summary>
+    THOST_FTDC_EIC_Usual = (byte)'1',
+    /// <summary>
+    /// 临近交割合约
+    /// </summary>
+    THOST_FTDC_EIC_Delivery = (byte)'2',
+    /// <summary>
+    /// 非组合合约
+    /// </summary>
+    THOST_FTDC_EIC_NonComb = (byte)'3',
+}
+/// <summary>
+/// 品种记录改变状态类型
+/// </summary>
+public enum TThostFtdcProdChangeFlagType: byte
+{
+    /// <summary>
+    /// 持仓量和冻结量均无变化
+    /// </summary>
+    THOST_FTDC_PCF_None = (byte)'0',
+    /// <summary>
+    /// 持仓量无变化，冻结量有变化
+    /// </summary>
+    THOST_FTDC_PCF_OnlyFrozen = (byte)'1',
+    /// <summary>
+    /// 持仓量有变化
+    /// </summary>
+    THOST_FTDC_PCF_PositionChange = (byte)'2',
 }

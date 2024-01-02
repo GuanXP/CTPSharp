@@ -59,10 +59,8 @@ internal partial class Program
         foreach(var f in Directory.EnumerateFiles(apiFolder, "*.h"))
         {
             var fileName = Path.Combine(outDir, Path.GetFileName(f));
-            if (!File.Exists(fileName))
-            {
-                File.Copy(f, fileName);
-            }
+            if (File.Exists(fileName)) File.Delete(fileName);
+            File.Copy(f, fileName);
         }
         
         GenerateDataType(input: dataTypeFile, outDir: outDir);

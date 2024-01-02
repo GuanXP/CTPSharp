@@ -1373,4 +1373,196 @@ public partial class TdAPI
         while (_api.ReqQryInvestorProdSPBMDetail(ref pQryInvestorProdSPBMDetail, pending.RequestId) != 0) await Task.Delay(1000);
         return await pending.Task.ConfigureAwait(false);
     }
+
+    /// <summary>
+    /// 投资者商品组SPMM记录查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcInvestorCommoditySPMMMarginField>>>
+    ReqQryInvestorCommoditySPMMMarginAsync(CThostFtdcQryInvestorCommoditySPMMMarginField pQryInvestorCommoditySPMMMargin)
+    {
+        var pending = new PendingRequest<List<CThostFtdcInvestorCommoditySPMMMarginField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryInvestorCommoditySPMMMargin(ref pQryInvestorCommoditySPMMMargin, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// 投资者商品群SPMM记录查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcInvestorCommodityGroupSPMMMarginField>>>
+    ReqQryInvestorCommodityGroupSPMMMarginAsync(CThostFtdcQryInvestorCommodityGroupSPMMMarginField pQryInvestorCommodityGroupSPMMMargin)
+    {
+        var pending = new PendingRequest<List<CThostFtdcInvestorCommodityGroupSPMMMarginField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryInvestorCommodityGroupSPMMMargin(ref pQryInvestorCommodityGroupSPMMMargin, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// SPMM合约参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcSPMMInstParamField>>>
+    ReqQrySPMMInstParamAsync(CThostFtdcQrySPMMInstParamField pQrySPMMInstParam)
+    {
+        var pending = new PendingRequest<List<CThostFtdcSPMMInstParamField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQrySPMMInstParam(ref pQrySPMMInstParam, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// SPMM产品参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcSPMMProductParamField>>>
+    ReqQrySPMMProductParamAsync(CThostFtdcQrySPMMProductParamField pQrySPMMProductParam)
+    {
+        var pending = new PendingRequest<List<CThostFtdcSPMMProductParamField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQrySPMMProductParam(ref pQrySPMMProductParam, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// SPBM附加跨品种抵扣参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcSPBMAddOnInterParameterField>>>
+    ReqQrySPBMAddOnInterParameterAsync(CThostFtdcQrySPBMAddOnInterParameterField pQrySPBMAddOnInterParameter)
+    {
+        var pending = new PendingRequest<List<CThostFtdcSPBMAddOnInterParameterField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQrySPBMAddOnInterParameter(ref pQrySPBMAddOnInterParameter, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// RCAMS产品组合信息查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcRCAMSCombProductInfoField>>>
+    ReqQryRCAMSCombProductInfoAsync(CThostFtdcQryRCAMSCombProductInfoField pQryRCAMSCombProductInfo)
+    {
+        var pending = new PendingRequest<List<CThostFtdcRCAMSCombProductInfoField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryRCAMSCombProductInfo(ref pQryRCAMSCombProductInfo, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// RCAMS同合约风险对冲参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcRCAMSInstrParameterField>>>
+    ReqQryRCAMSInstrParameterAsync(CThostFtdcQryRCAMSInstrParameterField pQryRCAMSInstrParameter)
+    {
+        var pending = new PendingRequest<List<CThostFtdcRCAMSInstrParameterField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryRCAMSInstrParameter(ref pQryRCAMSInstrParameter, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// RCAMS品种内风险对冲参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcRCAMSIntraParameterField>>>
+    ReqQryRCAMSIntraParameterAsync(CThostFtdcQryRCAMSIntraParameterField pQryRCAMSIntraParameter)
+    {
+        var pending = new PendingRequest<List<CThostFtdcRCAMSIntraParameterField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryRCAMSIntraParameter(ref pQryRCAMSIntraParameter, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// RCAMS跨品种风险折抵参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcRCAMSInterParameterField>>>
+    ReqQryRCAMSInterParameterAsync(CThostFtdcQryRCAMSInterParameterField pQryRCAMSInterParameter)
+    {
+        var pending = new PendingRequest<List<CThostFtdcRCAMSInterParameterField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryRCAMSInterParameter(ref pQryRCAMSInterParameter, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// RCAMS空头期权风险调整参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcRCAMSShortOptAdjustParamField>>>
+    ReqQryRCAMSShortOptAdjustParamAsync(CThostFtdcQryRCAMSShortOptAdjustParamField pQryRCAMSShortOptAdjustParam)
+    {
+        var pending = new PendingRequest<List<CThostFtdcRCAMSShortOptAdjustParamField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryRCAMSShortOptAdjustParam(ref pQryRCAMSShortOptAdjustParam, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// RCAMS策略组合持仓查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcRCAMSInvestorCombPositionField>>>
+    ReqQryRCAMSInvestorCombPositionAsync(CThostFtdcQryRCAMSInvestorCombPositionField pQryRCAMSInvestorCombPosition)
+    {
+        var pending = new PendingRequest<List<CThostFtdcRCAMSInvestorCombPositionField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryRCAMSInvestorCombPosition(ref pQryRCAMSInvestorCombPosition, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// 投资者品种RCAMS保证金查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcInvestorProdRCAMSMarginField>>>
+    ReqQryInvestorProdRCAMSMarginAsync(CThostFtdcQryInvestorProdRCAMSMarginField pQryInvestorProdRCAMSMargin)
+    {
+        var pending = new PendingRequest<List<CThostFtdcInvestorProdRCAMSMarginField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryInvestorProdRCAMSMargin(ref pQryInvestorProdRCAMSMargin, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// RULE合约保证金参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcRULEInstrParameterField>>>
+    ReqQryRULEInstrParameterAsync(CThostFtdcQryRULEInstrParameterField pQryRULEInstrParameter)
+    {
+        var pending = new PendingRequest<List<CThostFtdcRULEInstrParameterField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryRULEInstrParameter(ref pQryRULEInstrParameter, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// RULE品种内对锁仓折扣参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcRULEIntraParameterField>>>
+    ReqQryRULEIntraParameterAsync(CThostFtdcQryRULEIntraParameterField pQryRULEIntraParameter)
+    {
+        var pending = new PendingRequest<List<CThostFtdcRULEIntraParameterField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryRULEIntraParameter(ref pQryRULEIntraParameter, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// RULE跨品种抵扣参数查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcRULEInterParameterField>>>
+    ReqQryRULEInterParameterAsync(CThostFtdcQryRULEInterParameterField pQryRULEInterParameter)
+    {
+        var pending = new PendingRequest<List<CThostFtdcRULEInterParameterField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryRULEInterParameter(ref pQryRULEInterParameter, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// 投资者产品RULE保证金查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcInvestorProdRULEMarginField>>>
+    ReqQryInvestorProdRULEMarginAsync(CThostFtdcQryInvestorProdRULEMarginField pQryInvestorProdRULEMargin)
+    {
+        var pending = new PendingRequest<List<CThostFtdcInvestorProdRULEMarginField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryInvestorProdRULEMargin(ref pQryInvestorProdRULEMargin, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
 }

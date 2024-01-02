@@ -330,6 +330,54 @@ internal partial class CTPSharpPInvoke
     [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail", CharSet=CharSet.Ansi)]
    public extern static int CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail(IntPtr handle, ref CThostFtdcQryInvestorProdSPBMDetailField pQryInvestorProdSPBMDetail,int nRequestID);
 
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin(IntPtr handle, ref CThostFtdcQryInvestorCommoditySPMMMarginField pQryInvestorCommoditySPMMMargin,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin(IntPtr handle, ref CThostFtdcQryInvestorCommodityGroupSPMMMarginField pQryInvestorCommodityGroupSPMMMargin,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQrySPMMInstParam", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQrySPMMInstParam(IntPtr handle, ref CThostFtdcQrySPMMInstParamField pQrySPMMInstParam,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQrySPMMProductParam", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQrySPMMProductParam(IntPtr handle, ref CThostFtdcQrySPMMProductParamField pQrySPMMProductParam,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter(IntPtr handle, ref CThostFtdcQrySPBMAddOnInterParameterField pQrySPBMAddOnInterParameter,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo(IntPtr handle, ref CThostFtdcQryRCAMSCombProductInfoField pQryRCAMSCombProductInfo,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryRCAMSInstrParameter", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryRCAMSInstrParameter(IntPtr handle, ref CThostFtdcQryRCAMSInstrParameterField pQryRCAMSInstrParameter,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryRCAMSIntraParameter", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryRCAMSIntraParameter(IntPtr handle, ref CThostFtdcQryRCAMSIntraParameterField pQryRCAMSIntraParameter,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryRCAMSInterParameter", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryRCAMSInterParameter(IntPtr handle, ref CThostFtdcQryRCAMSInterParameterField pQryRCAMSInterParameter,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam(IntPtr handle, ref CThostFtdcQryRCAMSShortOptAdjustParamField pQryRCAMSShortOptAdjustParam,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition(IntPtr handle, ref CThostFtdcQryRCAMSInvestorCombPositionField pQryRCAMSInvestorCombPosition,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin(IntPtr handle, ref CThostFtdcQryInvestorProdRCAMSMarginField pQryInvestorProdRCAMSMargin,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryRULEInstrParameter", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryRULEInstrParameter(IntPtr handle, ref CThostFtdcQryRULEInstrParameterField pQryRULEInstrParameter,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryRULEIntraParameter", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryRULEIntraParameter(IntPtr handle, ref CThostFtdcQryRULEIntraParameterField pQryRULEIntraParameter,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryRULEInterParameter", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryRULEInterParameter(IntPtr handle, ref CThostFtdcQryRULEInterParameterField pQryRULEInterParameter,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(IntPtr handle, ref CThostFtdcQryInvestorProdRULEMarginField pQryInvestorProdRULEMargin,int nRequestID);
+
 }
 public sealed class CThostFtdcTraderApi
 {
@@ -1207,6 +1255,134 @@ public sealed class CThostFtdcTraderApi
     public int ReqQryInvestorProdSPBMDetail(ref CThostFtdcQryInvestorProdSPBMDetailField pQryInvestorProdSPBMDetail,int nRequestID)
     {
         return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail(_handle, ref pQryInvestorProdSPBMDetail,nRequestID);
+    }
+
+    /// <summary>
+    /// 投资者商品组SPMM记录查询
+    /// </summary>
+    public int ReqQryInvestorCommoditySPMMMargin(ref CThostFtdcQryInvestorCommoditySPMMMarginField pQryInvestorCommoditySPMMMargin,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin(_handle, ref pQryInvestorCommoditySPMMMargin,nRequestID);
+    }
+
+    /// <summary>
+    /// 投资者商品群SPMM记录查询
+    /// </summary>
+    public int ReqQryInvestorCommodityGroupSPMMMargin(ref CThostFtdcQryInvestorCommodityGroupSPMMMarginField pQryInvestorCommodityGroupSPMMMargin,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin(_handle, ref pQryInvestorCommodityGroupSPMMMargin,nRequestID);
+    }
+
+    /// <summary>
+    /// SPMM合约参数查询
+    /// </summary>
+    public int ReqQrySPMMInstParam(ref CThostFtdcQrySPMMInstParamField pQrySPMMInstParam,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQrySPMMInstParam(_handle, ref pQrySPMMInstParam,nRequestID);
+    }
+
+    /// <summary>
+    /// SPMM产品参数查询
+    /// </summary>
+    public int ReqQrySPMMProductParam(ref CThostFtdcQrySPMMProductParamField pQrySPMMProductParam,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQrySPMMProductParam(_handle, ref pQrySPMMProductParam,nRequestID);
+    }
+
+    /// <summary>
+    /// SPBM附加跨品种抵扣参数查询
+    /// </summary>
+    public int ReqQrySPBMAddOnInterParameter(ref CThostFtdcQrySPBMAddOnInterParameterField pQrySPBMAddOnInterParameter,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter(_handle, ref pQrySPBMAddOnInterParameter,nRequestID);
+    }
+
+    /// <summary>
+    /// RCAMS产品组合信息查询
+    /// </summary>
+    public int ReqQryRCAMSCombProductInfo(ref CThostFtdcQryRCAMSCombProductInfoField pQryRCAMSCombProductInfo,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo(_handle, ref pQryRCAMSCombProductInfo,nRequestID);
+    }
+
+    /// <summary>
+    /// RCAMS同合约风险对冲参数查询
+    /// </summary>
+    public int ReqQryRCAMSInstrParameter(ref CThostFtdcQryRCAMSInstrParameterField pQryRCAMSInstrParameter,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryRCAMSInstrParameter(_handle, ref pQryRCAMSInstrParameter,nRequestID);
+    }
+
+    /// <summary>
+    /// RCAMS品种内风险对冲参数查询
+    /// </summary>
+    public int ReqQryRCAMSIntraParameter(ref CThostFtdcQryRCAMSIntraParameterField pQryRCAMSIntraParameter,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryRCAMSIntraParameter(_handle, ref pQryRCAMSIntraParameter,nRequestID);
+    }
+
+    /// <summary>
+    /// RCAMS跨品种风险折抵参数查询
+    /// </summary>
+    public int ReqQryRCAMSInterParameter(ref CThostFtdcQryRCAMSInterParameterField pQryRCAMSInterParameter,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryRCAMSInterParameter(_handle, ref pQryRCAMSInterParameter,nRequestID);
+    }
+
+    /// <summary>
+    /// RCAMS空头期权风险调整参数查询
+    /// </summary>
+    public int ReqQryRCAMSShortOptAdjustParam(ref CThostFtdcQryRCAMSShortOptAdjustParamField pQryRCAMSShortOptAdjustParam,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam(_handle, ref pQryRCAMSShortOptAdjustParam,nRequestID);
+    }
+
+    /// <summary>
+    /// RCAMS策略组合持仓查询
+    /// </summary>
+    public int ReqQryRCAMSInvestorCombPosition(ref CThostFtdcQryRCAMSInvestorCombPositionField pQryRCAMSInvestorCombPosition,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition(_handle, ref pQryRCAMSInvestorCombPosition,nRequestID);
+    }
+
+    /// <summary>
+    /// 投资者品种RCAMS保证金查询
+    /// </summary>
+    public int ReqQryInvestorProdRCAMSMargin(ref CThostFtdcQryInvestorProdRCAMSMarginField pQryInvestorProdRCAMSMargin,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin(_handle, ref pQryInvestorProdRCAMSMargin,nRequestID);
+    }
+
+    /// <summary>
+    /// RULE合约保证金参数查询
+    /// </summary>
+    public int ReqQryRULEInstrParameter(ref CThostFtdcQryRULEInstrParameterField pQryRULEInstrParameter,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryRULEInstrParameter(_handle, ref pQryRULEInstrParameter,nRequestID);
+    }
+
+    /// <summary>
+    /// RULE品种内对锁仓折扣参数查询
+    /// </summary>
+    public int ReqQryRULEIntraParameter(ref CThostFtdcQryRULEIntraParameterField pQryRULEIntraParameter,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryRULEIntraParameter(_handle, ref pQryRULEIntraParameter,nRequestID);
+    }
+
+    /// <summary>
+    /// RULE跨品种抵扣参数查询
+    /// </summary>
+    public int ReqQryRULEInterParameter(ref CThostFtdcQryRULEInterParameterField pQryRULEInterParameter,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryRULEInterParameter(_handle, ref pQryRULEInterParameter,nRequestID);
+    }
+
+    /// <summary>
+    /// 投资者产品RULE保证金查询
+    /// </summary>
+    public int ReqQryInvestorProdRULEMargin(ref CThostFtdcQryInvestorProdRULEMarginField pQryInvestorProdRULEMargin,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(_handle, ref pQryInvestorProdRULEMargin,nRequestID);
     }
 
     public void Dispose()

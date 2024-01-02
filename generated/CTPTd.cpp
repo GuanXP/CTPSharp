@@ -166,6 +166,22 @@ struct CTPSharp_CThostFtdcTraderSpi
     void (CTPSHARP_STDCALL *OnRspQrySPBMInvestorPortfDef)(CThostFtdcSPBMInvestorPortfDefField* pSPBMInvestorPortfDef,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
     void (CTPSHARP_STDCALL *OnRspQryInvestorPortfMarginRatio)(CThostFtdcInvestorPortfMarginRatioField* pInvestorPortfMarginRatio,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
     void (CTPSHARP_STDCALL *OnRspQryInvestorProdSPBMDetail)(CThostFtdcInvestorProdSPBMDetailField* pInvestorProdSPBMDetail,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorCommoditySPMMMargin)(CThostFtdcInvestorCommoditySPMMMarginField* pInvestorCommoditySPMMMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorCommodityGroupSPMMMargin)(CThostFtdcInvestorCommodityGroupSPMMMarginField* pInvestorCommodityGroupSPMMMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPMMInstParam)(CThostFtdcSPMMInstParamField* pSPMMInstParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPMMProductParam)(CThostFtdcSPMMProductParamField* pSPMMProductParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPBMAddOnInterParameter)(CThostFtdcSPBMAddOnInterParameterField* pSPBMAddOnInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSCombProductInfo)(CThostFtdcRCAMSCombProductInfoField* pRCAMSCombProductInfo,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSInstrParameter)(CThostFtdcRCAMSInstrParameterField* pRCAMSInstrParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSIntraParameter)(CThostFtdcRCAMSIntraParameterField* pRCAMSIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSInterParameter)(CThostFtdcRCAMSInterParameterField* pRCAMSInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSShortOptAdjustParam)(CThostFtdcRCAMSShortOptAdjustParamField* pRCAMSShortOptAdjustParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSInvestorCombPosition)(CThostFtdcRCAMSInvestorCombPositionField* pRCAMSInvestorCombPosition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorProdRCAMSMargin)(CThostFtdcInvestorProdRCAMSMarginField* pInvestorProdRCAMSMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRULEInstrParameter)(CThostFtdcRULEInstrParameterField* pRULEInstrParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRULEIntraParameter)(CThostFtdcRULEIntraParameterField* pRULEIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRULEInterParameter)(CThostFtdcRULEInterParameterField* pRULEInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorProdRULEMargin)(CThostFtdcInvestorProdRULEMarginField* pInvestorProdRULEMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
 };
 class CThostFtdcTraderSpi_Ex: public CThostFtdcTraderSpi
 {
@@ -1592,6 +1608,182 @@ public:
         _callbacks.OnRspQryInvestorProdSPBMDetail(pInvestorProdSPBMDetail,pRspInfo,nRequestID,bIsLast);
     }
 
+    virtual void OnRspQryInvestorCommoditySPMMMargin(CThostFtdcInvestorCommoditySPMMMarginField* pInvestorCommoditySPMMMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pInvestorCommoditySPMMMargin 回调 C# 参数 不能为 NULL
+        CThostFtdcInvestorCommoditySPMMMarginField zero0 = {0};
+        if (!pInvestorCommoditySPMMMargin) pInvestorCommoditySPMMMargin = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryInvestorCommoditySPMMMargin(pInvestorCommoditySPMMMargin,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryInvestorCommodityGroupSPMMMargin(CThostFtdcInvestorCommodityGroupSPMMMarginField* pInvestorCommodityGroupSPMMMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pInvestorCommodityGroupSPMMMargin 回调 C# 参数 不能为 NULL
+        CThostFtdcInvestorCommodityGroupSPMMMarginField zero0 = {0};
+        if (!pInvestorCommodityGroupSPMMMargin) pInvestorCommodityGroupSPMMMargin = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryInvestorCommodityGroupSPMMMargin(pInvestorCommodityGroupSPMMMargin,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQrySPMMInstParam(CThostFtdcSPMMInstParamField* pSPMMInstParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pSPMMInstParam 回调 C# 参数 不能为 NULL
+        CThostFtdcSPMMInstParamField zero0 = {0};
+        if (!pSPMMInstParam) pSPMMInstParam = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQrySPMMInstParam(pSPMMInstParam,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQrySPMMProductParam(CThostFtdcSPMMProductParamField* pSPMMProductParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pSPMMProductParam 回调 C# 参数 不能为 NULL
+        CThostFtdcSPMMProductParamField zero0 = {0};
+        if (!pSPMMProductParam) pSPMMProductParam = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQrySPMMProductParam(pSPMMProductParam,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQrySPBMAddOnInterParameter(CThostFtdcSPBMAddOnInterParameterField* pSPBMAddOnInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pSPBMAddOnInterParameter 回调 C# 参数 不能为 NULL
+        CThostFtdcSPBMAddOnInterParameterField zero0 = {0};
+        if (!pSPBMAddOnInterParameter) pSPBMAddOnInterParameter = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQrySPBMAddOnInterParameter(pSPBMAddOnInterParameter,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryRCAMSCombProductInfo(CThostFtdcRCAMSCombProductInfoField* pRCAMSCombProductInfo,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pRCAMSCombProductInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRCAMSCombProductInfoField zero0 = {0};
+        if (!pRCAMSCombProductInfo) pRCAMSCombProductInfo = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryRCAMSCombProductInfo(pRCAMSCombProductInfo,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryRCAMSInstrParameter(CThostFtdcRCAMSInstrParameterField* pRCAMSInstrParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pRCAMSInstrParameter 回调 C# 参数 不能为 NULL
+        CThostFtdcRCAMSInstrParameterField zero0 = {0};
+        if (!pRCAMSInstrParameter) pRCAMSInstrParameter = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryRCAMSInstrParameter(pRCAMSInstrParameter,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryRCAMSIntraParameter(CThostFtdcRCAMSIntraParameterField* pRCAMSIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pRCAMSIntraParameter 回调 C# 参数 不能为 NULL
+        CThostFtdcRCAMSIntraParameterField zero0 = {0};
+        if (!pRCAMSIntraParameter) pRCAMSIntraParameter = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryRCAMSIntraParameter(pRCAMSIntraParameter,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryRCAMSInterParameter(CThostFtdcRCAMSInterParameterField* pRCAMSInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pRCAMSInterParameter 回调 C# 参数 不能为 NULL
+        CThostFtdcRCAMSInterParameterField zero0 = {0};
+        if (!pRCAMSInterParameter) pRCAMSInterParameter = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryRCAMSInterParameter(pRCAMSInterParameter,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryRCAMSShortOptAdjustParam(CThostFtdcRCAMSShortOptAdjustParamField* pRCAMSShortOptAdjustParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pRCAMSShortOptAdjustParam 回调 C# 参数 不能为 NULL
+        CThostFtdcRCAMSShortOptAdjustParamField zero0 = {0};
+        if (!pRCAMSShortOptAdjustParam) pRCAMSShortOptAdjustParam = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryRCAMSShortOptAdjustParam(pRCAMSShortOptAdjustParam,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryRCAMSInvestorCombPosition(CThostFtdcRCAMSInvestorCombPositionField* pRCAMSInvestorCombPosition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pRCAMSInvestorCombPosition 回调 C# 参数 不能为 NULL
+        CThostFtdcRCAMSInvestorCombPositionField zero0 = {0};
+        if (!pRCAMSInvestorCombPosition) pRCAMSInvestorCombPosition = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryRCAMSInvestorCombPosition(pRCAMSInvestorCombPosition,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryInvestorProdRCAMSMargin(CThostFtdcInvestorProdRCAMSMarginField* pInvestorProdRCAMSMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pInvestorProdRCAMSMargin 回调 C# 参数 不能为 NULL
+        CThostFtdcInvestorProdRCAMSMarginField zero0 = {0};
+        if (!pInvestorProdRCAMSMargin) pInvestorProdRCAMSMargin = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryInvestorProdRCAMSMargin(pInvestorProdRCAMSMargin,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryRULEInstrParameter(CThostFtdcRULEInstrParameterField* pRULEInstrParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pRULEInstrParameter 回调 C# 参数 不能为 NULL
+        CThostFtdcRULEInstrParameterField zero0 = {0};
+        if (!pRULEInstrParameter) pRULEInstrParameter = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryRULEInstrParameter(pRULEInstrParameter,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryRULEIntraParameter(CThostFtdcRULEIntraParameterField* pRULEIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pRULEIntraParameter 回调 C# 参数 不能为 NULL
+        CThostFtdcRULEIntraParameterField zero0 = {0};
+        if (!pRULEIntraParameter) pRULEIntraParameter = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryRULEIntraParameter(pRULEIntraParameter,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryRULEInterParameter(CThostFtdcRULEInterParameterField* pRULEInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pRULEInterParameter 回调 C# 参数 不能为 NULL
+        CThostFtdcRULEInterParameterField zero0 = {0};
+        if (!pRULEInterParameter) pRULEInterParameter = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryRULEInterParameter(pRULEInterParameter,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryInvestorProdRULEMargin(CThostFtdcInvestorProdRULEMarginField* pInvestorProdRULEMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pInvestorProdRULEMargin 回调 C# 参数 不能为 NULL
+        CThostFtdcInvestorProdRULEMarginField zero0 = {0};
+        if (!pInvestorProdRULEMargin) pInvestorProdRULEMargin = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryInvestorProdRULEMargin(pInvestorProdRULEMargin,pRspInfo,nRequestID,bIsLast);
+    }
+
 };
 extern "C"
 CTPSHARP_EXPORT void* CTPSHARP_STDCALL CThostFtdcTraderSpi_New(const CTPSharp_CThostFtdcTraderSpi* callbacks)
@@ -2147,5 +2339,85 @@ extern "C"
 CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail(CThostFtdcTraderApi * api,CThostFtdcQryInvestorProdSPBMDetailField* pQryInvestorProdSPBMDetail,int nRequestID)
 {
     return api->ReqQryInvestorProdSPBMDetail(pQryInvestorProdSPBMDetail,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin(CThostFtdcTraderApi * api,CThostFtdcQryInvestorCommoditySPMMMarginField* pQryInvestorCommoditySPMMMargin,int nRequestID)
+{
+    return api->ReqQryInvestorCommoditySPMMMargin(pQryInvestorCommoditySPMMMargin,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin(CThostFtdcTraderApi * api,CThostFtdcQryInvestorCommodityGroupSPMMMarginField* pQryInvestorCommodityGroupSPMMMargin,int nRequestID)
+{
+    return api->ReqQryInvestorCommodityGroupSPMMMargin(pQryInvestorCommodityGroupSPMMMargin,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPMMInstParam(CThostFtdcTraderApi * api,CThostFtdcQrySPMMInstParamField* pQrySPMMInstParam,int nRequestID)
+{
+    return api->ReqQrySPMMInstParam(pQrySPMMInstParam,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPMMProductParam(CThostFtdcTraderApi * api,CThostFtdcQrySPMMProductParamField* pQrySPMMProductParam,int nRequestID)
+{
+    return api->ReqQrySPMMProductParam(pQrySPMMProductParam,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter(CThostFtdcTraderApi * api,CThostFtdcQrySPBMAddOnInterParameterField* pQrySPBMAddOnInterParameter,int nRequestID)
+{
+    return api->ReqQrySPBMAddOnInterParameter(pQrySPBMAddOnInterParameter,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSCombProductInfoField* pQryRCAMSCombProductInfo,int nRequestID)
+{
+    return api->ReqQryRCAMSCombProductInfo(pQryRCAMSCombProductInfo,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSInstrParameter(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSInstrParameterField* pQryRCAMSInstrParameter,int nRequestID)
+{
+    return api->ReqQryRCAMSInstrParameter(pQryRCAMSInstrParameter,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSIntraParameter(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSIntraParameterField* pQryRCAMSIntraParameter,int nRequestID)
+{
+    return api->ReqQryRCAMSIntraParameter(pQryRCAMSIntraParameter,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSInterParameter(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSInterParameterField* pQryRCAMSInterParameter,int nRequestID)
+{
+    return api->ReqQryRCAMSInterParameter(pQryRCAMSInterParameter,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSShortOptAdjustParamField* pQryRCAMSShortOptAdjustParam,int nRequestID)
+{
+    return api->ReqQryRCAMSShortOptAdjustParam(pQryRCAMSShortOptAdjustParam,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSInvestorCombPositionField* pQryRCAMSInvestorCombPosition,int nRequestID)
+{
+    return api->ReqQryRCAMSInvestorCombPosition(pQryRCAMSInvestorCombPosition,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin(CThostFtdcTraderApi * api,CThostFtdcQryInvestorProdRCAMSMarginField* pQryInvestorProdRCAMSMargin,int nRequestID)
+{
+    return api->ReqQryInvestorProdRCAMSMargin(pQryInvestorProdRCAMSMargin,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRULEInstrParameter(CThostFtdcTraderApi * api,CThostFtdcQryRULEInstrParameterField* pQryRULEInstrParameter,int nRequestID)
+{
+    return api->ReqQryRULEInstrParameter(pQryRULEInstrParameter,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRULEIntraParameter(CThostFtdcTraderApi * api,CThostFtdcQryRULEIntraParameterField* pQryRULEIntraParameter,int nRequestID)
+{
+    return api->ReqQryRULEIntraParameter(pQryRULEIntraParameter,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRULEInterParameter(CThostFtdcTraderApi * api,CThostFtdcQryRULEInterParameterField* pQryRULEInterParameter,int nRequestID)
+{
+    return api->ReqQryRULEInterParameter(pQryRULEInterParameter,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(CThostFtdcTraderApi * api,CThostFtdcQryInvestorProdRULEMarginField* pQryInvestorProdRULEMargin,int nRequestID)
+{
+    return api->ReqQryInvestorProdRULEMargin(pQryInvestorProdRULEMargin,nRequestID);
 }
 
