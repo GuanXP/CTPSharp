@@ -1,6 +1,6 @@
 # CTPSharp
-期货CTP接口API的C#绑定，基于代码生成的Window X64版本。
-当前CTP版本为6.7.0
+期货CTP接口API的C#绑定，基于代码生成的Window/Linux X64版本。
+当前CTP版本为6.7.2
 
 相较于其他一些封装库，本项目有以下优势：
 * 完全的原始SDK命名兼容
@@ -13,7 +13,7 @@
 
 ## 项目结构：
 
-### CTPAP 目录
+### CTPAPI 目录
 此目录为原始 X64 C++ API，含动态库 .dll 和 连接库 .lib
 
 
@@ -40,14 +40,14 @@ cmake .. -DCMAKE_BUILD_TYPE=RELEASE  # 构建 release 版本
 cmake .. -DCMAKE_BUILD_TYPE=DEBUG  # 构建 debug 版本
 make
 ```
-至此在 Publish/Linux64.NET7/Debug 或 Publish/Linux64.NET7/Release 目录下生成 libCTPInvoke.so 文件，对应于Windows平台的CTPInvoke.dll
+至此在 Publish/Linux64.NET8/Debug 或 Publish/Linux64.NET8/Release 目录下生成 libCTPInvoke.so 文件，对应于Windows平台的CTPInvoke.dll
 
 ### CTPSharp
 此目录为可被 .NET 程序引用的动态库项目。其源码是 generated 目录下的全部 .cs文件
 此项目为纯 .NET 项目，生成一个 CTPSharp.dll
 
 ## 客户.NET代码引用此绑定库的方法
-1. 拷贝CTPInvoke.dll、CTPSharp.dll和CTPAPI目录下的两个原始 _se.dll
+1. 拷贝CTPInvoke.dll、CTPSharp.dll和CTPAPI目录下的两个原始 _se.dll(Linux平台则是.so)
 2. 客户 .NET 项目添加对 CTPSharp.dll的引用
 3. 可完全参照原始 C++ API来使用CTPSharp.dll，所有类、方法的名称都和 C++ 版本保持一致
 4. 也可选择使用封装的两个类：XP.CTPSharp.TdAPI和XP.CTPSharp.MdAPI
@@ -55,7 +55,7 @@ make
 
 ## 预制版本
 如果不想编译，可以直接使用publish目录下的预制版本.
-当前CTPInvoke及两个原生dll为 X64架构，CTPSharp.dll目标平台为 .NET 7
+当前CTPInvoke及两个原生dll为 X64架构，CTPSharp.dll目标平台为 .NET 8
 
 ## 使用代码样例
 ```
