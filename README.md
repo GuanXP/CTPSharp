@@ -28,9 +28,9 @@
 
 ### CTPInvoke 目录
 此目录为 C# 代码需要调用的 PInvoke库， 其输出文件名需要是 CTPInvoke.dll(Linux下则需要命名为.so)
-此项目的源代码为 generated 目录下的生成的 .cpp文件. 链接库需要加入 CTPAPI 中的两个 .lib。 
+此项目的源代码为【generated】目录下的生成的 .cpp文件. 链接库需要加入 CTPAPI 中的两个 .lib。 
 #### Linux版本
-Linux 编译需要cmake、g++
+Linux 编译需要cmake、g++。注意原始的so文件名需要保持lib前缀形势否则链接不过。
 ```
 cd CTPInvoke
 mkdir build
@@ -41,6 +41,8 @@ cmake .. -DCMAKE_BUILD_TYPE=DEBUG  # 构建 debug 版本
 make
 ```
 至此在 Publish/Linux64.NET8/Debug 或 Publish/Linux64.NET8/Release 目录下生成 libCTPInvoke.so 文件，对应于Windows平台的CTPInvoke.dll
+
+CTPInvoke这个C库的作用是将C++接口转换成纯粹C形式的接口，因此它也可以直接被C#之外的其他语言调用。【generated】目录下有一个python脚本文件rust_bind.py，可用来将CTPInvoke这个C库转换成rust绑定文件 CTP.rs。该脚本依赖rust生态中的bindgen工具，运行时需要先安装它。
 
 ### CTPSharp
 此目录为可被 .NET 程序引用的动态库项目。其源码是 generated 目录下的全部 .cs文件

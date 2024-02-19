@@ -4,6 +4,8 @@ using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Reflection;
+using System.Runtime.CompilerServices;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Text.RegularExpressions;
 using System.Xml.Linq;
@@ -254,6 +256,9 @@ internal partial class Program
             }
             writer.WriteLine("}");
             writer.WriteLine();
+
+            var enumName = block[0].Split(' ', StringSplitOptions.RemoveEmptyEntries)[1];
+            Enums.Add(enumName);
         }
         else if (block.Find(x => x.StartsWith("#define")) != null)
         {
@@ -413,14 +418,14 @@ internal partial class Program
 
         // 创建 C 形式构建和删除函数
         writer.WriteLine("extern \"C\"");
-        writer.WriteLine($"CTPSHARP_EXPORT void* CTPSHARP_STDCALL {className}_New(const {structName}* callbacks)");
+        writer.WriteLine($"CTPSHARP_EXPORT void* CTPSHARP_STDCALL {className}_New(const struct {structName}* callbacks)");
         writer.WriteLine("{");
         writer.WriteLine($"    return new {extClass}(callbacks);");
         writer.WriteLine("}");
         writer.WriteLine("extern \"C\"");
         writer.WriteLine($"CTPSHARP_EXPORT void CTPSHARP_STDCALL {className}_Delete(void* spi)");
         writer.WriteLine("{");
-        writer.WriteLine($"    delete ({extClass}*)spi;");
+        writer.WriteLine($"    delete static_cast<{extClass}*>(spi);");
         writer.WriteLine("}");
 
         GenerateManagedSpi(outDir, className, methods, structName);
@@ -644,7 +649,7 @@ internal partial class Program
     {
         Debug.Assert(m.IsVirtual);
         var builder = new StringBuilder();
-        builder.AppendLine($"    virtual {m.Return.CDeclare} {m.Name}({ParamDeclare(m)})");
+        builder.AppendLine($"    virtual {m.Return.CDeclare} {m.Name}({ParamCDeclare(m)})");
         builder.AppendLine( "    {");
         var pRspInfo = m.Params.Find(x => x.CType.Name == "CThostFtdcRspInfoField");
 
@@ -668,7 +673,7 @@ internal partial class Program
 
     private static string FuncPtrDeclare(MethodInfo m)
     {
-        string parm = ParamDeclare(m);
+        string parm = ParamCDeclare(m);
         return $"{m.Return.CDeclare} (CTPSHARP_STDCALL *{m.Name})({parm});";
     }
 
@@ -694,7 +699,7 @@ internal partial class Program
         return parm;
     }
 
-    private static string ParamDeclare(MethodInfo m)
+    private static string ParamCDeclare(MethodInfo m)
     {
         var builder = new StringBuilder();
         foreach (var p in m.Params)
@@ -703,6 +708,16 @@ internal partial class Program
         }
         var parm = builder.ToString().Trim(',');
         return parm;
+    }
+
+    private static CType.Extension CTypeExtensionByName(string name)
+    {
+        var ext = CType.Extension.OTHER;
+        if (Structs.Contains(name))
+            ext = CType.Extension.STRUCT;
+        else if (Enums.Contains(name))
+            ext = CType.Extension.ENUM;
+        return ext;
     }
 
     private static List<MethodInfo> ParseMethods(List<string> block)
@@ -726,7 +741,11 @@ internal partial class Program
                 var name = match.Groups[3].Value;
                 var pars = line.Substring(a + 1, b - a - 1);
 
-                var cType = new CType { IsConst=isConst, Name=ret, Pointer = retStar };
+                var cType = new CType { IsConst=isConst, 
+                    Name=ret, 
+                    Pointer = retStar, 
+                    Ext = CTypeExtensionByName(ret)
+                };
                 var method = new MethodInfo(name, new ReturnInfo { CType = cType })
                 {
                     IsVirtual = line.Contains("virtual"),
@@ -802,11 +821,13 @@ internal partial class Program
             if (isConst) v = v.Replace("const", "");
             var match = ParamDefRegex().Match(v);
             Debug.Assert(match.Success);
+            var name = match.Groups[1].Value;
             var cType = new CType
             {
                 IsConst = isConst,
-                Name = match.Groups[1].Value,
+                Name = name,
                 Pointer= match.Groups[2].Value,
+                Ext = CTypeExtensionByName(name)
             };
             Debug.Assert(match.Groups.Count == 5);
             if (match.Groups[4].Value == "[]")
@@ -1065,14 +1086,16 @@ internal partial class Program
         foreach (var m in methods)
         {
             var exportFuncName = $"{className}_{m.Name}";
-            if (m.Name.StartsWith("Create") && m.Name.EndsWith("Api"))
+            var isFactoryFunc = m.Name.StartsWith("Create") && m.Name.EndsWith("Api");
+            if (isFactoryFunc)
             {
                 exportFuncName = $"{className}_Create";
             }
             if (m.IsStatic)
             {
+                var returnTypeName = isFactoryFunc ? "void*" : m.Return.CDeclare;
                 writer.WriteLine("extern \"C\"");
-                writer.WriteLine($"CTPSHARP_EXPORT {m.Return.CDeclare} CTPSHARP_STDCALL {exportFuncName}({ParamDeclare(m)})");
+                writer.WriteLine($"CTPSHARP_EXPORT {returnTypeName} CTPSHARP_STDCALL {exportFuncName}({ParamCDeclare(m)})");
                 writer.WriteLine("{");
                 if (m.Return.IsVoid)
                 {
@@ -1089,21 +1112,39 @@ internal partial class Program
                 if (m.Params.Count == 0)
                 {
                     writer.WriteLine("extern \"C\"");
-                    writer.WriteLine($"CTPSHARP_EXPORT {m.Return.CDeclare} CTPSHARP_STDCALL {exportFuncName}({className}* api)");
+                    writer.WriteLine($"CTPSHARP_EXPORT {m.Return.CDeclare} CTPSHARP_STDCALL {exportFuncName}(void* api)");
                 }
                 else
                 {
                     writer.WriteLine("extern \"C\"");
-                    writer.WriteLine($"CTPSHARP_EXPORT {m.Return.CDeclare} CTPSHARP_STDCALL {exportFuncName}({className} * api,{ParamDeclare(m)})");
+                    if (m.Name.Contains("RegisterSpi"))
+                    {
+                        var param = m.Params[0];
+                        writer.WriteLine($"CTPSHARP_EXPORT {m.Return.CDeclare} CTPSHARP_STDCALL {exportFuncName}(void* api, void* {param.Name})");
+                    }
+                    else
+                    {
+                        writer.WriteLine($"CTPSHARP_EXPORT {m.Return.CDeclare} CTPSHARP_STDCALL {exportFuncName}(void* api, {ParamCDeclare(m)})");
+                    }
                 }
                 writer.WriteLine("{");
                 if (m.Return.IsVoid)
                 {
-                    writer.WriteLine($"    api->{m.Name}({ParamCall(m)});");
+                    if (m.Name.Contains("RegisterSpi"))
+                    {
+                        var param = m.Params[0];
+                        var castType = param.CType.CDeclare;
+                        var paramCall = $"static_cast<{castType}>({param.Name})";
+                        writer.WriteLine($"    static_cast<{className}*>(api)->{m.Name}({paramCall});");
+                    }
+                    else
+                    {
+                        writer.WriteLine($"    static_cast<{className}*>(api)->{m.Name}({ParamCall(m)});");
+                    }
                 }
                 else
                 {
-                    writer.WriteLine($"    return api->{m.Name}({ParamCall(m)});");
+                    writer.WriteLine($"    return static_cast<{className}*>(api)->{m.Name}({ParamCall(m)});");
                 }
                 writer.WriteLine("}");
             }
@@ -1277,9 +1318,16 @@ class ParamInfo
 
 struct CType
 {
+    public enum Extension
+    {
+        STRUCT,
+        ENUM,
+        OTHER,
+    }
     public bool IsConst;
     public string Name;
     public string Pointer;
+    public Extension Ext;
 
     public bool IsVoid => Name == "void";
 
@@ -1287,9 +1335,16 @@ struct CType
     {
         get
         {
-            var ss = IsConst ? "const " : "";
+            var builder = new StringBuilder();
+            if (IsConst) builder.Append("const ");
+            if (Ext == Extension.STRUCT)
+                builder.Append("struct ");
+            else if (Ext == Extension.ENUM)
+                builder.Append("enum ");
 
-            return $"{ss}{Name}{Pointer}";
+            builder.Append(Name);
+            builder.Append(Pointer);
+            return builder.ToString();
         }
     }
 

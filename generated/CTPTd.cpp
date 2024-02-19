@@ -31,157 +31,157 @@ struct CTPSharp_CThostFtdcTraderSpi
     void (CTPSHARP_STDCALL *OnFrontConnected)();
     void (CTPSHARP_STDCALL *OnFrontDisconnected)(int nReason);
     void (CTPSHARP_STDCALL *OnHeartBeatWarning)(int nTimeLapse);
-    void (CTPSHARP_STDCALL *OnRspAuthenticate)(CThostFtdcRspAuthenticateField* pRspAuthenticateField,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspUserLogin)(CThostFtdcRspUserLoginField* pRspUserLogin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspUserLogout)(CThostFtdcUserLogoutField* pUserLogout,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspUserPasswordUpdate)(CThostFtdcUserPasswordUpdateField* pUserPasswordUpdate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspTradingAccountPasswordUpdate)(CThostFtdcTradingAccountPasswordUpdateField* pTradingAccountPasswordUpdate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspUserAuthMethod)(CThostFtdcRspUserAuthMethodField* pRspUserAuthMethod,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspGenUserCaptcha)(CThostFtdcRspGenUserCaptchaField* pRspGenUserCaptcha,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspGenUserText)(CThostFtdcRspGenUserTextField* pRspGenUserText,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspOrderInsert)(CThostFtdcInputOrderField* pInputOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspParkedOrderInsert)(CThostFtdcParkedOrderField* pParkedOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspParkedOrderAction)(CThostFtdcParkedOrderActionField* pParkedOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspOrderAction)(CThostFtdcInputOrderActionField* pInputOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryMaxOrderVolume)(CThostFtdcQryMaxOrderVolumeField* pQryMaxOrderVolume,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspSettlementInfoConfirm)(CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspRemoveParkedOrder)(CThostFtdcRemoveParkedOrderField* pRemoveParkedOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspRemoveParkedOrderAction)(CThostFtdcRemoveParkedOrderActionField* pRemoveParkedOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspExecOrderInsert)(CThostFtdcInputExecOrderField* pInputExecOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspExecOrderAction)(CThostFtdcInputExecOrderActionField* pInputExecOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspForQuoteInsert)(CThostFtdcInputForQuoteField* pInputForQuote,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQuoteInsert)(CThostFtdcInputQuoteField* pInputQuote,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQuoteAction)(CThostFtdcInputQuoteActionField* pInputQuoteAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspBatchOrderAction)(CThostFtdcInputBatchOrderActionField* pInputBatchOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspOptionSelfCloseInsert)(CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspOptionSelfCloseAction)(CThostFtdcInputOptionSelfCloseActionField* pInputOptionSelfCloseAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspCombActionInsert)(CThostFtdcInputCombActionField* pInputCombAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryOrder)(CThostFtdcOrderField* pOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryTrade)(CThostFtdcTradeField* pTrade,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorPosition)(CThostFtdcInvestorPositionField* pInvestorPosition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryTradingAccount)(CThostFtdcTradingAccountField* pTradingAccount,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestor)(CThostFtdcInvestorField* pInvestor,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryTradingCode)(CThostFtdcTradingCodeField* pTradingCode,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInstrumentMarginRate)(CThostFtdcInstrumentMarginRateField* pInstrumentMarginRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInstrumentCommissionRate)(CThostFtdcInstrumentCommissionRateField* pInstrumentCommissionRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryExchange)(CThostFtdcExchangeField* pExchange,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryProduct)(CThostFtdcProductField* pProduct,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInstrument)(CThostFtdcInstrumentField* pInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryDepthMarketData)(CThostFtdcDepthMarketDataField* pDepthMarketData,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryTraderOffer)(CThostFtdcTraderOfferField* pTraderOffer,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySettlementInfo)(CThostFtdcSettlementInfoField* pSettlementInfo,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryTransferBank)(CThostFtdcTransferBankField* pTransferBank,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorPositionDetail)(CThostFtdcInvestorPositionDetailField* pInvestorPositionDetail,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryNotice)(CThostFtdcNoticeField* pNotice,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySettlementInfoConfirm)(CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorPositionCombineDetail)(CThostFtdcInvestorPositionCombineDetailField* pInvestorPositionCombineDetail,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryCFMMCTradingAccountKey)(CThostFtdcCFMMCTradingAccountKeyField* pCFMMCTradingAccountKey,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryEWarrantOffset)(CThostFtdcEWarrantOffsetField* pEWarrantOffset,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorProductGroupMargin)(CThostFtdcInvestorProductGroupMarginField* pInvestorProductGroupMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryExchangeMarginRate)(CThostFtdcExchangeMarginRateField* pExchangeMarginRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryExchangeMarginRateAdjust)(CThostFtdcExchangeMarginRateAdjustField* pExchangeMarginRateAdjust,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryExchangeRate)(CThostFtdcExchangeRateField* pExchangeRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySecAgentACIDMap)(CThostFtdcSecAgentACIDMapField* pSecAgentACIDMap,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryProductExchRate)(CThostFtdcProductExchRateField* pProductExchRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryProductGroup)(CThostFtdcProductGroupField* pProductGroup,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryMMInstrumentCommissionRate)(CThostFtdcMMInstrumentCommissionRateField* pMMInstrumentCommissionRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryMMOptionInstrCommRate)(CThostFtdcMMOptionInstrCommRateField* pMMOptionInstrCommRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInstrumentOrderCommRate)(CThostFtdcInstrumentOrderCommRateField* pInstrumentOrderCommRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySecAgentTradingAccount)(CThostFtdcTradingAccountField* pTradingAccount,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySecAgentCheckMode)(CThostFtdcSecAgentCheckModeField* pSecAgentCheckMode,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySecAgentTradeInfo)(CThostFtdcSecAgentTradeInfoField* pSecAgentTradeInfo,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryOptionInstrTradeCost)(CThostFtdcOptionInstrTradeCostField* pOptionInstrTradeCost,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryOptionInstrCommRate)(CThostFtdcOptionInstrCommRateField* pOptionInstrCommRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryExecOrder)(CThostFtdcExecOrderField* pExecOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryForQuote)(CThostFtdcForQuoteField* pForQuote,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryQuote)(CThostFtdcQuoteField* pQuote,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryOptionSelfClose)(CThostFtdcOptionSelfCloseField* pOptionSelfClose,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestUnit)(CThostFtdcInvestUnitField* pInvestUnit,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryCombInstrumentGuard)(CThostFtdcCombInstrumentGuardField* pCombInstrumentGuard,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryCombAction)(CThostFtdcCombActionField* pCombAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryTransferSerial)(CThostFtdcTransferSerialField* pTransferSerial,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryAccountregister)(CThostFtdcAccountregisterField* pAccountregister,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspError)(CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRtnOrder)(CThostFtdcOrderField* pOrder);
-    void (CTPSHARP_STDCALL *OnRtnTrade)(CThostFtdcTradeField* pTrade);
-    void (CTPSHARP_STDCALL *OnErrRtnOrderInsert)(CThostFtdcInputOrderField* pInputOrder,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnErrRtnOrderAction)(CThostFtdcOrderActionField* pOrderAction,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnRtnInstrumentStatus)(CThostFtdcInstrumentStatusField* pInstrumentStatus);
-    void (CTPSHARP_STDCALL *OnRtnBulletin)(CThostFtdcBulletinField* pBulletin);
-    void (CTPSHARP_STDCALL *OnRtnTradingNotice)(CThostFtdcTradingNoticeInfoField* pTradingNoticeInfo);
-    void (CTPSHARP_STDCALL *OnRtnErrorConditionalOrder)(CThostFtdcErrorConditionalOrderField* pErrorConditionalOrder);
-    void (CTPSHARP_STDCALL *OnRtnExecOrder)(CThostFtdcExecOrderField* pExecOrder);
-    void (CTPSHARP_STDCALL *OnErrRtnExecOrderInsert)(CThostFtdcInputExecOrderField* pInputExecOrder,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnErrRtnExecOrderAction)(CThostFtdcExecOrderActionField* pExecOrderAction,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnErrRtnForQuoteInsert)(CThostFtdcInputForQuoteField* pInputForQuote,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnRtnQuote)(CThostFtdcQuoteField* pQuote);
-    void (CTPSHARP_STDCALL *OnErrRtnQuoteInsert)(CThostFtdcInputQuoteField* pInputQuote,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnErrRtnQuoteAction)(CThostFtdcQuoteActionField* pQuoteAction,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnRtnForQuoteRsp)(CThostFtdcForQuoteRspField* pForQuoteRsp);
-    void (CTPSHARP_STDCALL *OnRtnCFMMCTradingAccountToken)(CThostFtdcCFMMCTradingAccountTokenField* pCFMMCTradingAccountToken);
-    void (CTPSHARP_STDCALL *OnErrRtnBatchOrderAction)(CThostFtdcBatchOrderActionField* pBatchOrderAction,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnRtnOptionSelfClose)(CThostFtdcOptionSelfCloseField* pOptionSelfClose);
-    void (CTPSHARP_STDCALL *OnErrRtnOptionSelfCloseInsert)(CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnErrRtnOptionSelfCloseAction)(CThostFtdcOptionSelfCloseActionField* pOptionSelfCloseAction,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnRtnCombAction)(CThostFtdcCombActionField* pCombAction);
-    void (CTPSHARP_STDCALL *OnErrRtnCombActionInsert)(CThostFtdcInputCombActionField* pInputCombAction,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnRspQryContractBank)(CThostFtdcContractBankField* pContractBank,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryParkedOrder)(CThostFtdcParkedOrderField* pParkedOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryParkedOrderAction)(CThostFtdcParkedOrderActionField* pParkedOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryTradingNotice)(CThostFtdcTradingNoticeField* pTradingNotice,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryBrokerTradingParams)(CThostFtdcBrokerTradingParamsField* pBrokerTradingParams,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryBrokerTradingAlgos)(CThostFtdcBrokerTradingAlgosField* pBrokerTradingAlgos,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQueryCFMMCTradingAccountToken)(CThostFtdcQueryCFMMCTradingAccountTokenField* pQueryCFMMCTradingAccountToken,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRtnFromBankToFutureByBank)(CThostFtdcRspTransferField* pRspTransfer);
-    void (CTPSHARP_STDCALL *OnRtnFromFutureToBankByBank)(CThostFtdcRspTransferField* pRspTransfer);
-    void (CTPSHARP_STDCALL *OnRtnRepealFromBankToFutureByBank)(CThostFtdcRspRepealField* pRspRepeal);
-    void (CTPSHARP_STDCALL *OnRtnRepealFromFutureToBankByBank)(CThostFtdcRspRepealField* pRspRepeal);
-    void (CTPSHARP_STDCALL *OnRtnFromBankToFutureByFuture)(CThostFtdcRspTransferField* pRspTransfer);
-    void (CTPSHARP_STDCALL *OnRtnFromFutureToBankByFuture)(CThostFtdcRspTransferField* pRspTransfer);
-    void (CTPSHARP_STDCALL *OnRtnRepealFromBankToFutureByFutureManual)(CThostFtdcRspRepealField* pRspRepeal);
-    void (CTPSHARP_STDCALL *OnRtnRepealFromFutureToBankByFutureManual)(CThostFtdcRspRepealField* pRspRepeal);
-    void (CTPSHARP_STDCALL *OnRtnQueryBankBalanceByFuture)(CThostFtdcNotifyQueryAccountField* pNotifyQueryAccount);
-    void (CTPSHARP_STDCALL *OnErrRtnBankToFutureByFuture)(CThostFtdcReqTransferField* pReqTransfer,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnErrRtnFutureToBankByFuture)(CThostFtdcReqTransferField* pReqTransfer,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnErrRtnRepealBankToFutureByFutureManual)(CThostFtdcReqRepealField* pReqRepeal,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnErrRtnRepealFutureToBankByFutureManual)(CThostFtdcReqRepealField* pReqRepeal,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnErrRtnQueryBankBalanceByFuture)(CThostFtdcReqQueryAccountField* pReqQueryAccount,CThostFtdcRspInfoField* pRspInfo);
-    void (CTPSHARP_STDCALL *OnRtnRepealFromBankToFutureByFuture)(CThostFtdcRspRepealField* pRspRepeal);
-    void (CTPSHARP_STDCALL *OnRtnRepealFromFutureToBankByFuture)(CThostFtdcRspRepealField* pRspRepeal);
-    void (CTPSHARP_STDCALL *OnRspFromBankToFutureByFuture)(CThostFtdcReqTransferField* pReqTransfer,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspFromFutureToBankByFuture)(CThostFtdcReqTransferField* pReqTransfer,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQueryBankAccountMoneyByFuture)(CThostFtdcReqQueryAccountField* pReqQueryAccount,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRtnOpenAccountByBank)(CThostFtdcOpenAccountField* pOpenAccount);
-    void (CTPSHARP_STDCALL *OnRtnCancelAccountByBank)(CThostFtdcCancelAccountField* pCancelAccount);
-    void (CTPSHARP_STDCALL *OnRtnChangeAccountByBank)(CThostFtdcChangeAccountField* pChangeAccount);
-    void (CTPSHARP_STDCALL *OnRspQryClassifiedInstrument)(CThostFtdcInstrumentField* pInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryCombPromotionParam)(CThostFtdcCombPromotionParamField* pCombPromotionParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRiskSettleInvstPosition)(CThostFtdcRiskSettleInvstPositionField* pRiskSettleInvstPosition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRiskSettleProductStatus)(CThostFtdcRiskSettleProductStatusField* pRiskSettleProductStatus,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySPBMFutureParameter)(CThostFtdcSPBMFutureParameterField* pSPBMFutureParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySPBMOptionParameter)(CThostFtdcSPBMOptionParameterField* pSPBMOptionParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySPBMIntraParameter)(CThostFtdcSPBMIntraParameterField* pSPBMIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySPBMInterParameter)(CThostFtdcSPBMInterParameterField* pSPBMInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySPBMPortfDefinition)(CThostFtdcSPBMPortfDefinitionField* pSPBMPortfDefinition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySPBMInvestorPortfDef)(CThostFtdcSPBMInvestorPortfDefField* pSPBMInvestorPortfDef,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorPortfMarginRatio)(CThostFtdcInvestorPortfMarginRatioField* pInvestorPortfMarginRatio,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorProdSPBMDetail)(CThostFtdcInvestorProdSPBMDetailField* pInvestorProdSPBMDetail,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorCommoditySPMMMargin)(CThostFtdcInvestorCommoditySPMMMarginField* pInvestorCommoditySPMMMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorCommodityGroupSPMMMargin)(CThostFtdcInvestorCommodityGroupSPMMMarginField* pInvestorCommodityGroupSPMMMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySPMMInstParam)(CThostFtdcSPMMInstParamField* pSPMMInstParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySPMMProductParam)(CThostFtdcSPMMProductParamField* pSPMMProductParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQrySPBMAddOnInterParameter)(CThostFtdcSPBMAddOnInterParameterField* pSPBMAddOnInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRCAMSCombProductInfo)(CThostFtdcRCAMSCombProductInfoField* pRCAMSCombProductInfo,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRCAMSInstrParameter)(CThostFtdcRCAMSInstrParameterField* pRCAMSInstrParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRCAMSIntraParameter)(CThostFtdcRCAMSIntraParameterField* pRCAMSIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRCAMSInterParameter)(CThostFtdcRCAMSInterParameterField* pRCAMSInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRCAMSShortOptAdjustParam)(CThostFtdcRCAMSShortOptAdjustParamField* pRCAMSShortOptAdjustParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRCAMSInvestorCombPosition)(CThostFtdcRCAMSInvestorCombPositionField* pRCAMSInvestorCombPosition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorProdRCAMSMargin)(CThostFtdcInvestorProdRCAMSMarginField* pInvestorProdRCAMSMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRULEInstrParameter)(CThostFtdcRULEInstrParameterField* pRULEInstrParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRULEIntraParameter)(CThostFtdcRULEIntraParameterField* pRULEIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryRULEInterParameter)(CThostFtdcRULEInterParameterField* pRULEInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryInvestorProdRULEMargin)(CThostFtdcInvestorProdRULEMarginField* pInvestorProdRULEMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspAuthenticate)(struct CThostFtdcRspAuthenticateField* pRspAuthenticateField,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspUserLogin)(struct CThostFtdcRspUserLoginField* pRspUserLogin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspUserLogout)(struct CThostFtdcUserLogoutField* pUserLogout,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspUserPasswordUpdate)(struct CThostFtdcUserPasswordUpdateField* pUserPasswordUpdate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspTradingAccountPasswordUpdate)(struct CThostFtdcTradingAccountPasswordUpdateField* pTradingAccountPasswordUpdate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspUserAuthMethod)(struct CThostFtdcRspUserAuthMethodField* pRspUserAuthMethod,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspGenUserCaptcha)(struct CThostFtdcRspGenUserCaptchaField* pRspGenUserCaptcha,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspGenUserText)(struct CThostFtdcRspGenUserTextField* pRspGenUserText,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspOrderInsert)(struct CThostFtdcInputOrderField* pInputOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspParkedOrderInsert)(struct CThostFtdcParkedOrderField* pParkedOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspParkedOrderAction)(struct CThostFtdcParkedOrderActionField* pParkedOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspOrderAction)(struct CThostFtdcInputOrderActionField* pInputOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryMaxOrderVolume)(struct CThostFtdcQryMaxOrderVolumeField* pQryMaxOrderVolume,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspSettlementInfoConfirm)(struct CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspRemoveParkedOrder)(struct CThostFtdcRemoveParkedOrderField* pRemoveParkedOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspRemoveParkedOrderAction)(struct CThostFtdcRemoveParkedOrderActionField* pRemoveParkedOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspExecOrderInsert)(struct CThostFtdcInputExecOrderField* pInputExecOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspExecOrderAction)(struct CThostFtdcInputExecOrderActionField* pInputExecOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspForQuoteInsert)(struct CThostFtdcInputForQuoteField* pInputForQuote,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQuoteInsert)(struct CThostFtdcInputQuoteField* pInputQuote,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQuoteAction)(struct CThostFtdcInputQuoteActionField* pInputQuoteAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspBatchOrderAction)(struct CThostFtdcInputBatchOrderActionField* pInputBatchOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspOptionSelfCloseInsert)(struct CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspOptionSelfCloseAction)(struct CThostFtdcInputOptionSelfCloseActionField* pInputOptionSelfCloseAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspCombActionInsert)(struct CThostFtdcInputCombActionField* pInputCombAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryOrder)(struct CThostFtdcOrderField* pOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryTrade)(struct CThostFtdcTradeField* pTrade,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorPosition)(struct CThostFtdcInvestorPositionField* pInvestorPosition,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryTradingAccount)(struct CThostFtdcTradingAccountField* pTradingAccount,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestor)(struct CThostFtdcInvestorField* pInvestor,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryTradingCode)(struct CThostFtdcTradingCodeField* pTradingCode,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInstrumentMarginRate)(struct CThostFtdcInstrumentMarginRateField* pInstrumentMarginRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInstrumentCommissionRate)(struct CThostFtdcInstrumentCommissionRateField* pInstrumentCommissionRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryExchange)(struct CThostFtdcExchangeField* pExchange,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryProduct)(struct CThostFtdcProductField* pProduct,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInstrument)(struct CThostFtdcInstrumentField* pInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryDepthMarketData)(struct CThostFtdcDepthMarketDataField* pDepthMarketData,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryTraderOffer)(struct CThostFtdcTraderOfferField* pTraderOffer,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySettlementInfo)(struct CThostFtdcSettlementInfoField* pSettlementInfo,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryTransferBank)(struct CThostFtdcTransferBankField* pTransferBank,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorPositionDetail)(struct CThostFtdcInvestorPositionDetailField* pInvestorPositionDetail,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryNotice)(struct CThostFtdcNoticeField* pNotice,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySettlementInfoConfirm)(struct CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorPositionCombineDetail)(struct CThostFtdcInvestorPositionCombineDetailField* pInvestorPositionCombineDetail,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryCFMMCTradingAccountKey)(struct CThostFtdcCFMMCTradingAccountKeyField* pCFMMCTradingAccountKey,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryEWarrantOffset)(struct CThostFtdcEWarrantOffsetField* pEWarrantOffset,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorProductGroupMargin)(struct CThostFtdcInvestorProductGroupMarginField* pInvestorProductGroupMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryExchangeMarginRate)(struct CThostFtdcExchangeMarginRateField* pExchangeMarginRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryExchangeMarginRateAdjust)(struct CThostFtdcExchangeMarginRateAdjustField* pExchangeMarginRateAdjust,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryExchangeRate)(struct CThostFtdcExchangeRateField* pExchangeRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySecAgentACIDMap)(struct CThostFtdcSecAgentACIDMapField* pSecAgentACIDMap,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryProductExchRate)(struct CThostFtdcProductExchRateField* pProductExchRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryProductGroup)(struct CThostFtdcProductGroupField* pProductGroup,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryMMInstrumentCommissionRate)(struct CThostFtdcMMInstrumentCommissionRateField* pMMInstrumentCommissionRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryMMOptionInstrCommRate)(struct CThostFtdcMMOptionInstrCommRateField* pMMOptionInstrCommRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInstrumentOrderCommRate)(struct CThostFtdcInstrumentOrderCommRateField* pInstrumentOrderCommRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySecAgentTradingAccount)(struct CThostFtdcTradingAccountField* pTradingAccount,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySecAgentCheckMode)(struct CThostFtdcSecAgentCheckModeField* pSecAgentCheckMode,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySecAgentTradeInfo)(struct CThostFtdcSecAgentTradeInfoField* pSecAgentTradeInfo,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryOptionInstrTradeCost)(struct CThostFtdcOptionInstrTradeCostField* pOptionInstrTradeCost,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryOptionInstrCommRate)(struct CThostFtdcOptionInstrCommRateField* pOptionInstrCommRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryExecOrder)(struct CThostFtdcExecOrderField* pExecOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryForQuote)(struct CThostFtdcForQuoteField* pForQuote,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryQuote)(struct CThostFtdcQuoteField* pQuote,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryOptionSelfClose)(struct CThostFtdcOptionSelfCloseField* pOptionSelfClose,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestUnit)(struct CThostFtdcInvestUnitField* pInvestUnit,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryCombInstrumentGuard)(struct CThostFtdcCombInstrumentGuardField* pCombInstrumentGuard,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryCombAction)(struct CThostFtdcCombActionField* pCombAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryTransferSerial)(struct CThostFtdcTransferSerialField* pTransferSerial,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryAccountregister)(struct CThostFtdcAccountregisterField* pAccountregister,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspError)(struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRtnOrder)(struct CThostFtdcOrderField* pOrder);
+    void (CTPSHARP_STDCALL *OnRtnTrade)(struct CThostFtdcTradeField* pTrade);
+    void (CTPSHARP_STDCALL *OnErrRtnOrderInsert)(struct CThostFtdcInputOrderField* pInputOrder,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnOrderAction)(struct CThostFtdcOrderActionField* pOrderAction,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnRtnInstrumentStatus)(struct CThostFtdcInstrumentStatusField* pInstrumentStatus);
+    void (CTPSHARP_STDCALL *OnRtnBulletin)(struct CThostFtdcBulletinField* pBulletin);
+    void (CTPSHARP_STDCALL *OnRtnTradingNotice)(struct CThostFtdcTradingNoticeInfoField* pTradingNoticeInfo);
+    void (CTPSHARP_STDCALL *OnRtnErrorConditionalOrder)(struct CThostFtdcErrorConditionalOrderField* pErrorConditionalOrder);
+    void (CTPSHARP_STDCALL *OnRtnExecOrder)(struct CThostFtdcExecOrderField* pExecOrder);
+    void (CTPSHARP_STDCALL *OnErrRtnExecOrderInsert)(struct CThostFtdcInputExecOrderField* pInputExecOrder,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnExecOrderAction)(struct CThostFtdcExecOrderActionField* pExecOrderAction,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnForQuoteInsert)(struct CThostFtdcInputForQuoteField* pInputForQuote,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnRtnQuote)(struct CThostFtdcQuoteField* pQuote);
+    void (CTPSHARP_STDCALL *OnErrRtnQuoteInsert)(struct CThostFtdcInputQuoteField* pInputQuote,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnQuoteAction)(struct CThostFtdcQuoteActionField* pQuoteAction,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnRtnForQuoteRsp)(struct CThostFtdcForQuoteRspField* pForQuoteRsp);
+    void (CTPSHARP_STDCALL *OnRtnCFMMCTradingAccountToken)(struct CThostFtdcCFMMCTradingAccountTokenField* pCFMMCTradingAccountToken);
+    void (CTPSHARP_STDCALL *OnErrRtnBatchOrderAction)(struct CThostFtdcBatchOrderActionField* pBatchOrderAction,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnRtnOptionSelfClose)(struct CThostFtdcOptionSelfCloseField* pOptionSelfClose);
+    void (CTPSHARP_STDCALL *OnErrRtnOptionSelfCloseInsert)(struct CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnOptionSelfCloseAction)(struct CThostFtdcOptionSelfCloseActionField* pOptionSelfCloseAction,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnRtnCombAction)(struct CThostFtdcCombActionField* pCombAction);
+    void (CTPSHARP_STDCALL *OnErrRtnCombActionInsert)(struct CThostFtdcInputCombActionField* pInputCombAction,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnRspQryContractBank)(struct CThostFtdcContractBankField* pContractBank,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryParkedOrder)(struct CThostFtdcParkedOrderField* pParkedOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryParkedOrderAction)(struct CThostFtdcParkedOrderActionField* pParkedOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryTradingNotice)(struct CThostFtdcTradingNoticeField* pTradingNotice,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryBrokerTradingParams)(struct CThostFtdcBrokerTradingParamsField* pBrokerTradingParams,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryBrokerTradingAlgos)(struct CThostFtdcBrokerTradingAlgosField* pBrokerTradingAlgos,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQueryCFMMCTradingAccountToken)(struct CThostFtdcQueryCFMMCTradingAccountTokenField* pQueryCFMMCTradingAccountToken,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRtnFromBankToFutureByBank)(struct CThostFtdcRspTransferField* pRspTransfer);
+    void (CTPSHARP_STDCALL *OnRtnFromFutureToBankByBank)(struct CThostFtdcRspTransferField* pRspTransfer);
+    void (CTPSHARP_STDCALL *OnRtnRepealFromBankToFutureByBank)(struct CThostFtdcRspRepealField* pRspRepeal);
+    void (CTPSHARP_STDCALL *OnRtnRepealFromFutureToBankByBank)(struct CThostFtdcRspRepealField* pRspRepeal);
+    void (CTPSHARP_STDCALL *OnRtnFromBankToFutureByFuture)(struct CThostFtdcRspTransferField* pRspTransfer);
+    void (CTPSHARP_STDCALL *OnRtnFromFutureToBankByFuture)(struct CThostFtdcRspTransferField* pRspTransfer);
+    void (CTPSHARP_STDCALL *OnRtnRepealFromBankToFutureByFutureManual)(struct CThostFtdcRspRepealField* pRspRepeal);
+    void (CTPSHARP_STDCALL *OnRtnRepealFromFutureToBankByFutureManual)(struct CThostFtdcRspRepealField* pRspRepeal);
+    void (CTPSHARP_STDCALL *OnRtnQueryBankBalanceByFuture)(struct CThostFtdcNotifyQueryAccountField* pNotifyQueryAccount);
+    void (CTPSHARP_STDCALL *OnErrRtnBankToFutureByFuture)(struct CThostFtdcReqTransferField* pReqTransfer,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnFutureToBankByFuture)(struct CThostFtdcReqTransferField* pReqTransfer,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnRepealBankToFutureByFutureManual)(struct CThostFtdcReqRepealField* pReqRepeal,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnRepealFutureToBankByFutureManual)(struct CThostFtdcReqRepealField* pReqRepeal,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnQueryBankBalanceByFuture)(struct CThostFtdcReqQueryAccountField* pReqQueryAccount,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnRtnRepealFromBankToFutureByFuture)(struct CThostFtdcRspRepealField* pRspRepeal);
+    void (CTPSHARP_STDCALL *OnRtnRepealFromFutureToBankByFuture)(struct CThostFtdcRspRepealField* pRspRepeal);
+    void (CTPSHARP_STDCALL *OnRspFromBankToFutureByFuture)(struct CThostFtdcReqTransferField* pReqTransfer,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspFromFutureToBankByFuture)(struct CThostFtdcReqTransferField* pReqTransfer,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQueryBankAccountMoneyByFuture)(struct CThostFtdcReqQueryAccountField* pReqQueryAccount,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRtnOpenAccountByBank)(struct CThostFtdcOpenAccountField* pOpenAccount);
+    void (CTPSHARP_STDCALL *OnRtnCancelAccountByBank)(struct CThostFtdcCancelAccountField* pCancelAccount);
+    void (CTPSHARP_STDCALL *OnRtnChangeAccountByBank)(struct CThostFtdcChangeAccountField* pChangeAccount);
+    void (CTPSHARP_STDCALL *OnRspQryClassifiedInstrument)(struct CThostFtdcInstrumentField* pInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryCombPromotionParam)(struct CThostFtdcCombPromotionParamField* pCombPromotionParam,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRiskSettleInvstPosition)(struct CThostFtdcRiskSettleInvstPositionField* pRiskSettleInvstPosition,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRiskSettleProductStatus)(struct CThostFtdcRiskSettleProductStatusField* pRiskSettleProductStatus,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPBMFutureParameter)(struct CThostFtdcSPBMFutureParameterField* pSPBMFutureParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPBMOptionParameter)(struct CThostFtdcSPBMOptionParameterField* pSPBMOptionParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPBMIntraParameter)(struct CThostFtdcSPBMIntraParameterField* pSPBMIntraParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPBMInterParameter)(struct CThostFtdcSPBMInterParameterField* pSPBMInterParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPBMPortfDefinition)(struct CThostFtdcSPBMPortfDefinitionField* pSPBMPortfDefinition,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPBMInvestorPortfDef)(struct CThostFtdcSPBMInvestorPortfDefField* pSPBMInvestorPortfDef,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorPortfMarginRatio)(struct CThostFtdcInvestorPortfMarginRatioField* pInvestorPortfMarginRatio,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorProdSPBMDetail)(struct CThostFtdcInvestorProdSPBMDetailField* pInvestorProdSPBMDetail,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorCommoditySPMMMargin)(struct CThostFtdcInvestorCommoditySPMMMarginField* pInvestorCommoditySPMMMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorCommodityGroupSPMMMargin)(struct CThostFtdcInvestorCommodityGroupSPMMMarginField* pInvestorCommodityGroupSPMMMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPMMInstParam)(struct CThostFtdcSPMMInstParamField* pSPMMInstParam,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPMMProductParam)(struct CThostFtdcSPMMProductParamField* pSPMMProductParam,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQrySPBMAddOnInterParameter)(struct CThostFtdcSPBMAddOnInterParameterField* pSPBMAddOnInterParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSCombProductInfo)(struct CThostFtdcRCAMSCombProductInfoField* pRCAMSCombProductInfo,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSInstrParameter)(struct CThostFtdcRCAMSInstrParameterField* pRCAMSInstrParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSIntraParameter)(struct CThostFtdcRCAMSIntraParameterField* pRCAMSIntraParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSInterParameter)(struct CThostFtdcRCAMSInterParameterField* pRCAMSInterParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSShortOptAdjustParam)(struct CThostFtdcRCAMSShortOptAdjustParamField* pRCAMSShortOptAdjustParam,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRCAMSInvestorCombPosition)(struct CThostFtdcRCAMSInvestorCombPositionField* pRCAMSInvestorCombPosition,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorProdRCAMSMargin)(struct CThostFtdcInvestorProdRCAMSMarginField* pInvestorProdRCAMSMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRULEInstrParameter)(struct CThostFtdcRULEInstrParameterField* pRULEInstrParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRULEIntraParameter)(struct CThostFtdcRULEIntraParameterField* pRULEIntraParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryRULEInterParameter)(struct CThostFtdcRULEInterParameterField* pRULEInterParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorProdRULEMargin)(struct CThostFtdcInvestorProdRULEMarginField* pInvestorProdRULEMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
 };
 class CThostFtdcTraderSpi_Ex: public CThostFtdcTraderSpi
 {
@@ -204,7 +204,7 @@ public:
         _callbacks.OnHeartBeatWarning(nTimeLapse);
     }
 
-    virtual void OnRspAuthenticate(CThostFtdcRspAuthenticateField* pRspAuthenticateField,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspAuthenticate(struct CThostFtdcRspAuthenticateField* pRspAuthenticateField,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRspAuthenticateField 回调 C# 参数 不能为 NULL
         CThostFtdcRspAuthenticateField zero0 = {0};
@@ -215,7 +215,7 @@ public:
         _callbacks.OnRspAuthenticate(pRspAuthenticateField,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspUserLogin(CThostFtdcRspUserLoginField* pRspUserLogin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspUserLogin(struct CThostFtdcRspUserLoginField* pRspUserLogin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRspUserLogin 回调 C# 参数 不能为 NULL
         CThostFtdcRspUserLoginField zero0 = {0};
@@ -226,7 +226,7 @@ public:
         _callbacks.OnRspUserLogin(pRspUserLogin,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspUserLogout(CThostFtdcUserLogoutField* pUserLogout,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspUserLogout(struct CThostFtdcUserLogoutField* pUserLogout,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pUserLogout 回调 C# 参数 不能为 NULL
         CThostFtdcUserLogoutField zero0 = {0};
@@ -237,7 +237,7 @@ public:
         _callbacks.OnRspUserLogout(pUserLogout,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspUserPasswordUpdate(CThostFtdcUserPasswordUpdateField* pUserPasswordUpdate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspUserPasswordUpdate(struct CThostFtdcUserPasswordUpdateField* pUserPasswordUpdate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pUserPasswordUpdate 回调 C# 参数 不能为 NULL
         CThostFtdcUserPasswordUpdateField zero0 = {0};
@@ -248,7 +248,7 @@ public:
         _callbacks.OnRspUserPasswordUpdate(pUserPasswordUpdate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspTradingAccountPasswordUpdate(CThostFtdcTradingAccountPasswordUpdateField* pTradingAccountPasswordUpdate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspTradingAccountPasswordUpdate(struct CThostFtdcTradingAccountPasswordUpdateField* pTradingAccountPasswordUpdate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pTradingAccountPasswordUpdate 回调 C# 参数 不能为 NULL
         CThostFtdcTradingAccountPasswordUpdateField zero0 = {0};
@@ -259,7 +259,7 @@ public:
         _callbacks.OnRspTradingAccountPasswordUpdate(pTradingAccountPasswordUpdate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspUserAuthMethod(CThostFtdcRspUserAuthMethodField* pRspUserAuthMethod,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspUserAuthMethod(struct CThostFtdcRspUserAuthMethodField* pRspUserAuthMethod,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRspUserAuthMethod 回调 C# 参数 不能为 NULL
         CThostFtdcRspUserAuthMethodField zero0 = {0};
@@ -270,7 +270,7 @@ public:
         _callbacks.OnRspUserAuthMethod(pRspUserAuthMethod,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspGenUserCaptcha(CThostFtdcRspGenUserCaptchaField* pRspGenUserCaptcha,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspGenUserCaptcha(struct CThostFtdcRspGenUserCaptchaField* pRspGenUserCaptcha,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRspGenUserCaptcha 回调 C# 参数 不能为 NULL
         CThostFtdcRspGenUserCaptchaField zero0 = {0};
@@ -281,7 +281,7 @@ public:
         _callbacks.OnRspGenUserCaptcha(pRspGenUserCaptcha,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspGenUserText(CThostFtdcRspGenUserTextField* pRspGenUserText,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspGenUserText(struct CThostFtdcRspGenUserTextField* pRspGenUserText,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRspGenUserText 回调 C# 参数 不能为 NULL
         CThostFtdcRspGenUserTextField zero0 = {0};
@@ -292,7 +292,7 @@ public:
         _callbacks.OnRspGenUserText(pRspGenUserText,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspOrderInsert(CThostFtdcInputOrderField* pInputOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspOrderInsert(struct CThostFtdcInputOrderField* pInputOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputOrder 回调 C# 参数 不能为 NULL
         CThostFtdcInputOrderField zero0 = {0};
@@ -303,7 +303,7 @@ public:
         _callbacks.OnRspOrderInsert(pInputOrder,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspParkedOrderInsert(CThostFtdcParkedOrderField* pParkedOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspParkedOrderInsert(struct CThostFtdcParkedOrderField* pParkedOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pParkedOrder 回调 C# 参数 不能为 NULL
         CThostFtdcParkedOrderField zero0 = {0};
@@ -314,7 +314,7 @@ public:
         _callbacks.OnRspParkedOrderInsert(pParkedOrder,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspParkedOrderAction(CThostFtdcParkedOrderActionField* pParkedOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspParkedOrderAction(struct CThostFtdcParkedOrderActionField* pParkedOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pParkedOrderAction 回调 C# 参数 不能为 NULL
         CThostFtdcParkedOrderActionField zero0 = {0};
@@ -325,7 +325,7 @@ public:
         _callbacks.OnRspParkedOrderAction(pParkedOrderAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspOrderAction(CThostFtdcInputOrderActionField* pInputOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspOrderAction(struct CThostFtdcInputOrderActionField* pInputOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputOrderAction 回调 C# 参数 不能为 NULL
         CThostFtdcInputOrderActionField zero0 = {0};
@@ -336,7 +336,7 @@ public:
         _callbacks.OnRspOrderAction(pInputOrderAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryMaxOrderVolume(CThostFtdcQryMaxOrderVolumeField* pQryMaxOrderVolume,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryMaxOrderVolume(struct CThostFtdcQryMaxOrderVolumeField* pQryMaxOrderVolume,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pQryMaxOrderVolume 回调 C# 参数 不能为 NULL
         CThostFtdcQryMaxOrderVolumeField zero0 = {0};
@@ -347,7 +347,7 @@ public:
         _callbacks.OnRspQryMaxOrderVolume(pQryMaxOrderVolume,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspSettlementInfoConfirm(CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspSettlementInfoConfirm(struct CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSettlementInfoConfirm 回调 C# 参数 不能为 NULL
         CThostFtdcSettlementInfoConfirmField zero0 = {0};
@@ -358,7 +358,7 @@ public:
         _callbacks.OnRspSettlementInfoConfirm(pSettlementInfoConfirm,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspRemoveParkedOrder(CThostFtdcRemoveParkedOrderField* pRemoveParkedOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspRemoveParkedOrder(struct CThostFtdcRemoveParkedOrderField* pRemoveParkedOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRemoveParkedOrder 回调 C# 参数 不能为 NULL
         CThostFtdcRemoveParkedOrderField zero0 = {0};
@@ -369,7 +369,7 @@ public:
         _callbacks.OnRspRemoveParkedOrder(pRemoveParkedOrder,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspRemoveParkedOrderAction(CThostFtdcRemoveParkedOrderActionField* pRemoveParkedOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspRemoveParkedOrderAction(struct CThostFtdcRemoveParkedOrderActionField* pRemoveParkedOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRemoveParkedOrderAction 回调 C# 参数 不能为 NULL
         CThostFtdcRemoveParkedOrderActionField zero0 = {0};
@@ -380,7 +380,7 @@ public:
         _callbacks.OnRspRemoveParkedOrderAction(pRemoveParkedOrderAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspExecOrderInsert(CThostFtdcInputExecOrderField* pInputExecOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspExecOrderInsert(struct CThostFtdcInputExecOrderField* pInputExecOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputExecOrder 回调 C# 参数 不能为 NULL
         CThostFtdcInputExecOrderField zero0 = {0};
@@ -391,7 +391,7 @@ public:
         _callbacks.OnRspExecOrderInsert(pInputExecOrder,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspExecOrderAction(CThostFtdcInputExecOrderActionField* pInputExecOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspExecOrderAction(struct CThostFtdcInputExecOrderActionField* pInputExecOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputExecOrderAction 回调 C# 参数 不能为 NULL
         CThostFtdcInputExecOrderActionField zero0 = {0};
@@ -402,7 +402,7 @@ public:
         _callbacks.OnRspExecOrderAction(pInputExecOrderAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspForQuoteInsert(CThostFtdcInputForQuoteField* pInputForQuote,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspForQuoteInsert(struct CThostFtdcInputForQuoteField* pInputForQuote,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputForQuote 回调 C# 参数 不能为 NULL
         CThostFtdcInputForQuoteField zero0 = {0};
@@ -413,7 +413,7 @@ public:
         _callbacks.OnRspForQuoteInsert(pInputForQuote,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQuoteInsert(CThostFtdcInputQuoteField* pInputQuote,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQuoteInsert(struct CThostFtdcInputQuoteField* pInputQuote,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputQuote 回调 C# 参数 不能为 NULL
         CThostFtdcInputQuoteField zero0 = {0};
@@ -424,7 +424,7 @@ public:
         _callbacks.OnRspQuoteInsert(pInputQuote,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQuoteAction(CThostFtdcInputQuoteActionField* pInputQuoteAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQuoteAction(struct CThostFtdcInputQuoteActionField* pInputQuoteAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputQuoteAction 回调 C# 参数 不能为 NULL
         CThostFtdcInputQuoteActionField zero0 = {0};
@@ -435,7 +435,7 @@ public:
         _callbacks.OnRspQuoteAction(pInputQuoteAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspBatchOrderAction(CThostFtdcInputBatchOrderActionField* pInputBatchOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspBatchOrderAction(struct CThostFtdcInputBatchOrderActionField* pInputBatchOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputBatchOrderAction 回调 C# 参数 不能为 NULL
         CThostFtdcInputBatchOrderActionField zero0 = {0};
@@ -446,7 +446,7 @@ public:
         _callbacks.OnRspBatchOrderAction(pInputBatchOrderAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspOptionSelfCloseInsert(CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspOptionSelfCloseInsert(struct CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputOptionSelfClose 回调 C# 参数 不能为 NULL
         CThostFtdcInputOptionSelfCloseField zero0 = {0};
@@ -457,7 +457,7 @@ public:
         _callbacks.OnRspOptionSelfCloseInsert(pInputOptionSelfClose,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspOptionSelfCloseAction(CThostFtdcInputOptionSelfCloseActionField* pInputOptionSelfCloseAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspOptionSelfCloseAction(struct CThostFtdcInputOptionSelfCloseActionField* pInputOptionSelfCloseAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputOptionSelfCloseAction 回调 C# 参数 不能为 NULL
         CThostFtdcInputOptionSelfCloseActionField zero0 = {0};
@@ -468,7 +468,7 @@ public:
         _callbacks.OnRspOptionSelfCloseAction(pInputOptionSelfCloseAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspCombActionInsert(CThostFtdcInputCombActionField* pInputCombAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspCombActionInsert(struct CThostFtdcInputCombActionField* pInputCombAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInputCombAction 回调 C# 参数 不能为 NULL
         CThostFtdcInputCombActionField zero0 = {0};
@@ -479,7 +479,7 @@ public:
         _callbacks.OnRspCombActionInsert(pInputCombAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryOrder(CThostFtdcOrderField* pOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryOrder(struct CThostFtdcOrderField* pOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pOrder 回调 C# 参数 不能为 NULL
         CThostFtdcOrderField zero0 = {0};
@@ -490,7 +490,7 @@ public:
         _callbacks.OnRspQryOrder(pOrder,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryTrade(CThostFtdcTradeField* pTrade,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryTrade(struct CThostFtdcTradeField* pTrade,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pTrade 回调 C# 参数 不能为 NULL
         CThostFtdcTradeField zero0 = {0};
@@ -501,7 +501,7 @@ public:
         _callbacks.OnRspQryTrade(pTrade,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorPosition(CThostFtdcInvestorPositionField* pInvestorPosition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorPosition(struct CThostFtdcInvestorPositionField* pInvestorPosition,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorPosition 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorPositionField zero0 = {0};
@@ -512,7 +512,7 @@ public:
         _callbacks.OnRspQryInvestorPosition(pInvestorPosition,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryTradingAccount(CThostFtdcTradingAccountField* pTradingAccount,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryTradingAccount(struct CThostFtdcTradingAccountField* pTradingAccount,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pTradingAccount 回调 C# 参数 不能为 NULL
         CThostFtdcTradingAccountField zero0 = {0};
@@ -523,7 +523,7 @@ public:
         _callbacks.OnRspQryTradingAccount(pTradingAccount,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestor(CThostFtdcInvestorField* pInvestor,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestor(struct CThostFtdcInvestorField* pInvestor,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestor 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorField zero0 = {0};
@@ -534,7 +534,7 @@ public:
         _callbacks.OnRspQryInvestor(pInvestor,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryTradingCode(CThostFtdcTradingCodeField* pTradingCode,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryTradingCode(struct CThostFtdcTradingCodeField* pTradingCode,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pTradingCode 回调 C# 参数 不能为 NULL
         CThostFtdcTradingCodeField zero0 = {0};
@@ -545,7 +545,7 @@ public:
         _callbacks.OnRspQryTradingCode(pTradingCode,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInstrumentMarginRate(CThostFtdcInstrumentMarginRateField* pInstrumentMarginRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInstrumentMarginRate(struct CThostFtdcInstrumentMarginRateField* pInstrumentMarginRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInstrumentMarginRate 回调 C# 参数 不能为 NULL
         CThostFtdcInstrumentMarginRateField zero0 = {0};
@@ -556,7 +556,7 @@ public:
         _callbacks.OnRspQryInstrumentMarginRate(pInstrumentMarginRate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInstrumentCommissionRate(CThostFtdcInstrumentCommissionRateField* pInstrumentCommissionRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInstrumentCommissionRate(struct CThostFtdcInstrumentCommissionRateField* pInstrumentCommissionRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInstrumentCommissionRate 回调 C# 参数 不能为 NULL
         CThostFtdcInstrumentCommissionRateField zero0 = {0};
@@ -567,7 +567,7 @@ public:
         _callbacks.OnRspQryInstrumentCommissionRate(pInstrumentCommissionRate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryExchange(CThostFtdcExchangeField* pExchange,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryExchange(struct CThostFtdcExchangeField* pExchange,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pExchange 回调 C# 参数 不能为 NULL
         CThostFtdcExchangeField zero0 = {0};
@@ -578,7 +578,7 @@ public:
         _callbacks.OnRspQryExchange(pExchange,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryProduct(CThostFtdcProductField* pProduct,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryProduct(struct CThostFtdcProductField* pProduct,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pProduct 回调 C# 参数 不能为 NULL
         CThostFtdcProductField zero0 = {0};
@@ -589,7 +589,7 @@ public:
         _callbacks.OnRspQryProduct(pProduct,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInstrument(CThostFtdcInstrumentField* pInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInstrument(struct CThostFtdcInstrumentField* pInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInstrument 回调 C# 参数 不能为 NULL
         CThostFtdcInstrumentField zero0 = {0};
@@ -600,7 +600,7 @@ public:
         _callbacks.OnRspQryInstrument(pInstrument,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryDepthMarketData(CThostFtdcDepthMarketDataField* pDepthMarketData,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryDepthMarketData(struct CThostFtdcDepthMarketDataField* pDepthMarketData,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pDepthMarketData 回调 C# 参数 不能为 NULL
         CThostFtdcDepthMarketDataField zero0 = {0};
@@ -611,7 +611,7 @@ public:
         _callbacks.OnRspQryDepthMarketData(pDepthMarketData,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryTraderOffer(CThostFtdcTraderOfferField* pTraderOffer,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryTraderOffer(struct CThostFtdcTraderOfferField* pTraderOffer,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pTraderOffer 回调 C# 参数 不能为 NULL
         CThostFtdcTraderOfferField zero0 = {0};
@@ -622,7 +622,7 @@ public:
         _callbacks.OnRspQryTraderOffer(pTraderOffer,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySettlementInfo(CThostFtdcSettlementInfoField* pSettlementInfo,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySettlementInfo(struct CThostFtdcSettlementInfoField* pSettlementInfo,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSettlementInfo 回调 C# 参数 不能为 NULL
         CThostFtdcSettlementInfoField zero0 = {0};
@@ -633,7 +633,7 @@ public:
         _callbacks.OnRspQrySettlementInfo(pSettlementInfo,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryTransferBank(CThostFtdcTransferBankField* pTransferBank,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryTransferBank(struct CThostFtdcTransferBankField* pTransferBank,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pTransferBank 回调 C# 参数 不能为 NULL
         CThostFtdcTransferBankField zero0 = {0};
@@ -644,7 +644,7 @@ public:
         _callbacks.OnRspQryTransferBank(pTransferBank,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorPositionDetail(CThostFtdcInvestorPositionDetailField* pInvestorPositionDetail,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorPositionDetail(struct CThostFtdcInvestorPositionDetailField* pInvestorPositionDetail,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorPositionDetail 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorPositionDetailField zero0 = {0};
@@ -655,7 +655,7 @@ public:
         _callbacks.OnRspQryInvestorPositionDetail(pInvestorPositionDetail,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryNotice(CThostFtdcNoticeField* pNotice,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryNotice(struct CThostFtdcNoticeField* pNotice,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pNotice 回调 C# 参数 不能为 NULL
         CThostFtdcNoticeField zero0 = {0};
@@ -666,7 +666,7 @@ public:
         _callbacks.OnRspQryNotice(pNotice,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySettlementInfoConfirm(CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySettlementInfoConfirm(struct CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSettlementInfoConfirm 回调 C# 参数 不能为 NULL
         CThostFtdcSettlementInfoConfirmField zero0 = {0};
@@ -677,7 +677,7 @@ public:
         _callbacks.OnRspQrySettlementInfoConfirm(pSettlementInfoConfirm,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorPositionCombineDetail(CThostFtdcInvestorPositionCombineDetailField* pInvestorPositionCombineDetail,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorPositionCombineDetail(struct CThostFtdcInvestorPositionCombineDetailField* pInvestorPositionCombineDetail,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorPositionCombineDetail 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorPositionCombineDetailField zero0 = {0};
@@ -688,7 +688,7 @@ public:
         _callbacks.OnRspQryInvestorPositionCombineDetail(pInvestorPositionCombineDetail,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryCFMMCTradingAccountKey(CThostFtdcCFMMCTradingAccountKeyField* pCFMMCTradingAccountKey,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryCFMMCTradingAccountKey(struct CThostFtdcCFMMCTradingAccountKeyField* pCFMMCTradingAccountKey,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pCFMMCTradingAccountKey 回调 C# 参数 不能为 NULL
         CThostFtdcCFMMCTradingAccountKeyField zero0 = {0};
@@ -699,7 +699,7 @@ public:
         _callbacks.OnRspQryCFMMCTradingAccountKey(pCFMMCTradingAccountKey,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryEWarrantOffset(CThostFtdcEWarrantOffsetField* pEWarrantOffset,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryEWarrantOffset(struct CThostFtdcEWarrantOffsetField* pEWarrantOffset,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pEWarrantOffset 回调 C# 参数 不能为 NULL
         CThostFtdcEWarrantOffsetField zero0 = {0};
@@ -710,7 +710,7 @@ public:
         _callbacks.OnRspQryEWarrantOffset(pEWarrantOffset,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorProductGroupMargin(CThostFtdcInvestorProductGroupMarginField* pInvestorProductGroupMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorProductGroupMargin(struct CThostFtdcInvestorProductGroupMarginField* pInvestorProductGroupMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorProductGroupMargin 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorProductGroupMarginField zero0 = {0};
@@ -721,7 +721,7 @@ public:
         _callbacks.OnRspQryInvestorProductGroupMargin(pInvestorProductGroupMargin,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryExchangeMarginRate(CThostFtdcExchangeMarginRateField* pExchangeMarginRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryExchangeMarginRate(struct CThostFtdcExchangeMarginRateField* pExchangeMarginRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pExchangeMarginRate 回调 C# 参数 不能为 NULL
         CThostFtdcExchangeMarginRateField zero0 = {0};
@@ -732,7 +732,7 @@ public:
         _callbacks.OnRspQryExchangeMarginRate(pExchangeMarginRate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryExchangeMarginRateAdjust(CThostFtdcExchangeMarginRateAdjustField* pExchangeMarginRateAdjust,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryExchangeMarginRateAdjust(struct CThostFtdcExchangeMarginRateAdjustField* pExchangeMarginRateAdjust,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pExchangeMarginRateAdjust 回调 C# 参数 不能为 NULL
         CThostFtdcExchangeMarginRateAdjustField zero0 = {0};
@@ -743,7 +743,7 @@ public:
         _callbacks.OnRspQryExchangeMarginRateAdjust(pExchangeMarginRateAdjust,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryExchangeRate(CThostFtdcExchangeRateField* pExchangeRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryExchangeRate(struct CThostFtdcExchangeRateField* pExchangeRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pExchangeRate 回调 C# 参数 不能为 NULL
         CThostFtdcExchangeRateField zero0 = {0};
@@ -754,7 +754,7 @@ public:
         _callbacks.OnRspQryExchangeRate(pExchangeRate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySecAgentACIDMap(CThostFtdcSecAgentACIDMapField* pSecAgentACIDMap,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySecAgentACIDMap(struct CThostFtdcSecAgentACIDMapField* pSecAgentACIDMap,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSecAgentACIDMap 回调 C# 参数 不能为 NULL
         CThostFtdcSecAgentACIDMapField zero0 = {0};
@@ -765,7 +765,7 @@ public:
         _callbacks.OnRspQrySecAgentACIDMap(pSecAgentACIDMap,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryProductExchRate(CThostFtdcProductExchRateField* pProductExchRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryProductExchRate(struct CThostFtdcProductExchRateField* pProductExchRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pProductExchRate 回调 C# 参数 不能为 NULL
         CThostFtdcProductExchRateField zero0 = {0};
@@ -776,7 +776,7 @@ public:
         _callbacks.OnRspQryProductExchRate(pProductExchRate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryProductGroup(CThostFtdcProductGroupField* pProductGroup,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryProductGroup(struct CThostFtdcProductGroupField* pProductGroup,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pProductGroup 回调 C# 参数 不能为 NULL
         CThostFtdcProductGroupField zero0 = {0};
@@ -787,7 +787,7 @@ public:
         _callbacks.OnRspQryProductGroup(pProductGroup,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryMMInstrumentCommissionRate(CThostFtdcMMInstrumentCommissionRateField* pMMInstrumentCommissionRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryMMInstrumentCommissionRate(struct CThostFtdcMMInstrumentCommissionRateField* pMMInstrumentCommissionRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pMMInstrumentCommissionRate 回调 C# 参数 不能为 NULL
         CThostFtdcMMInstrumentCommissionRateField zero0 = {0};
@@ -798,7 +798,7 @@ public:
         _callbacks.OnRspQryMMInstrumentCommissionRate(pMMInstrumentCommissionRate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryMMOptionInstrCommRate(CThostFtdcMMOptionInstrCommRateField* pMMOptionInstrCommRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryMMOptionInstrCommRate(struct CThostFtdcMMOptionInstrCommRateField* pMMOptionInstrCommRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pMMOptionInstrCommRate 回调 C# 参数 不能为 NULL
         CThostFtdcMMOptionInstrCommRateField zero0 = {0};
@@ -809,7 +809,7 @@ public:
         _callbacks.OnRspQryMMOptionInstrCommRate(pMMOptionInstrCommRate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInstrumentOrderCommRate(CThostFtdcInstrumentOrderCommRateField* pInstrumentOrderCommRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInstrumentOrderCommRate(struct CThostFtdcInstrumentOrderCommRateField* pInstrumentOrderCommRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInstrumentOrderCommRate 回调 C# 参数 不能为 NULL
         CThostFtdcInstrumentOrderCommRateField zero0 = {0};
@@ -820,7 +820,7 @@ public:
         _callbacks.OnRspQryInstrumentOrderCommRate(pInstrumentOrderCommRate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySecAgentTradingAccount(CThostFtdcTradingAccountField* pTradingAccount,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySecAgentTradingAccount(struct CThostFtdcTradingAccountField* pTradingAccount,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pTradingAccount 回调 C# 参数 不能为 NULL
         CThostFtdcTradingAccountField zero0 = {0};
@@ -831,7 +831,7 @@ public:
         _callbacks.OnRspQrySecAgentTradingAccount(pTradingAccount,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySecAgentCheckMode(CThostFtdcSecAgentCheckModeField* pSecAgentCheckMode,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySecAgentCheckMode(struct CThostFtdcSecAgentCheckModeField* pSecAgentCheckMode,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSecAgentCheckMode 回调 C# 参数 不能为 NULL
         CThostFtdcSecAgentCheckModeField zero0 = {0};
@@ -842,7 +842,7 @@ public:
         _callbacks.OnRspQrySecAgentCheckMode(pSecAgentCheckMode,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySecAgentTradeInfo(CThostFtdcSecAgentTradeInfoField* pSecAgentTradeInfo,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySecAgentTradeInfo(struct CThostFtdcSecAgentTradeInfoField* pSecAgentTradeInfo,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSecAgentTradeInfo 回调 C# 参数 不能为 NULL
         CThostFtdcSecAgentTradeInfoField zero0 = {0};
@@ -853,7 +853,7 @@ public:
         _callbacks.OnRspQrySecAgentTradeInfo(pSecAgentTradeInfo,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryOptionInstrTradeCost(CThostFtdcOptionInstrTradeCostField* pOptionInstrTradeCost,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryOptionInstrTradeCost(struct CThostFtdcOptionInstrTradeCostField* pOptionInstrTradeCost,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pOptionInstrTradeCost 回调 C# 参数 不能为 NULL
         CThostFtdcOptionInstrTradeCostField zero0 = {0};
@@ -864,7 +864,7 @@ public:
         _callbacks.OnRspQryOptionInstrTradeCost(pOptionInstrTradeCost,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryOptionInstrCommRate(CThostFtdcOptionInstrCommRateField* pOptionInstrCommRate,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryOptionInstrCommRate(struct CThostFtdcOptionInstrCommRateField* pOptionInstrCommRate,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pOptionInstrCommRate 回调 C# 参数 不能为 NULL
         CThostFtdcOptionInstrCommRateField zero0 = {0};
@@ -875,7 +875,7 @@ public:
         _callbacks.OnRspQryOptionInstrCommRate(pOptionInstrCommRate,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryExecOrder(CThostFtdcExecOrderField* pExecOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryExecOrder(struct CThostFtdcExecOrderField* pExecOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pExecOrder 回调 C# 参数 不能为 NULL
         CThostFtdcExecOrderField zero0 = {0};
@@ -886,7 +886,7 @@ public:
         _callbacks.OnRspQryExecOrder(pExecOrder,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryForQuote(CThostFtdcForQuoteField* pForQuote,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryForQuote(struct CThostFtdcForQuoteField* pForQuote,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pForQuote 回调 C# 参数 不能为 NULL
         CThostFtdcForQuoteField zero0 = {0};
@@ -897,7 +897,7 @@ public:
         _callbacks.OnRspQryForQuote(pForQuote,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryQuote(CThostFtdcQuoteField* pQuote,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryQuote(struct CThostFtdcQuoteField* pQuote,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pQuote 回调 C# 参数 不能为 NULL
         CThostFtdcQuoteField zero0 = {0};
@@ -908,7 +908,7 @@ public:
         _callbacks.OnRspQryQuote(pQuote,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryOptionSelfClose(CThostFtdcOptionSelfCloseField* pOptionSelfClose,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryOptionSelfClose(struct CThostFtdcOptionSelfCloseField* pOptionSelfClose,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pOptionSelfClose 回调 C# 参数 不能为 NULL
         CThostFtdcOptionSelfCloseField zero0 = {0};
@@ -919,7 +919,7 @@ public:
         _callbacks.OnRspQryOptionSelfClose(pOptionSelfClose,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestUnit(CThostFtdcInvestUnitField* pInvestUnit,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestUnit(struct CThostFtdcInvestUnitField* pInvestUnit,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestUnit 回调 C# 参数 不能为 NULL
         CThostFtdcInvestUnitField zero0 = {0};
@@ -930,7 +930,7 @@ public:
         _callbacks.OnRspQryInvestUnit(pInvestUnit,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryCombInstrumentGuard(CThostFtdcCombInstrumentGuardField* pCombInstrumentGuard,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryCombInstrumentGuard(struct CThostFtdcCombInstrumentGuardField* pCombInstrumentGuard,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pCombInstrumentGuard 回调 C# 参数 不能为 NULL
         CThostFtdcCombInstrumentGuardField zero0 = {0};
@@ -941,7 +941,7 @@ public:
         _callbacks.OnRspQryCombInstrumentGuard(pCombInstrumentGuard,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryCombAction(CThostFtdcCombActionField* pCombAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryCombAction(struct CThostFtdcCombActionField* pCombAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pCombAction 回调 C# 参数 不能为 NULL
         CThostFtdcCombActionField zero0 = {0};
@@ -952,7 +952,7 @@ public:
         _callbacks.OnRspQryCombAction(pCombAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryTransferSerial(CThostFtdcTransferSerialField* pTransferSerial,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryTransferSerial(struct CThostFtdcTransferSerialField* pTransferSerial,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pTransferSerial 回调 C# 参数 不能为 NULL
         CThostFtdcTransferSerialField zero0 = {0};
@@ -963,7 +963,7 @@ public:
         _callbacks.OnRspQryTransferSerial(pTransferSerial,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryAccountregister(CThostFtdcAccountregisterField* pAccountregister,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryAccountregister(struct CThostFtdcAccountregisterField* pAccountregister,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pAccountregister 回调 C# 参数 不能为 NULL
         CThostFtdcAccountregisterField zero0 = {0};
@@ -974,7 +974,7 @@ public:
         _callbacks.OnRspQryAccountregister(pAccountregister,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspError(CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspError(struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRspInfo 回调 C# 参数 不能为 NULL
         CThostFtdcRspInfoField zero0 = {0};
@@ -982,7 +982,7 @@ public:
         _callbacks.OnRspError(pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRtnOrder(CThostFtdcOrderField* pOrder)
+    virtual void OnRtnOrder(struct CThostFtdcOrderField* pOrder)
     {
         //pOrder 回调 C# 参数 不能为 NULL
         CThostFtdcOrderField zero0 = {0};
@@ -990,7 +990,7 @@ public:
         _callbacks.OnRtnOrder(pOrder);
     }
 
-    virtual void OnRtnTrade(CThostFtdcTradeField* pTrade)
+    virtual void OnRtnTrade(struct CThostFtdcTradeField* pTrade)
     {
         //pTrade 回调 C# 参数 不能为 NULL
         CThostFtdcTradeField zero0 = {0};
@@ -998,7 +998,7 @@ public:
         _callbacks.OnRtnTrade(pTrade);
     }
 
-    virtual void OnErrRtnOrderInsert(CThostFtdcInputOrderField* pInputOrder,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnOrderInsert(struct CThostFtdcInputOrderField* pInputOrder,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pInputOrder 回调 C# 参数 不能为 NULL
         CThostFtdcInputOrderField zero0 = {0};
@@ -1009,7 +1009,7 @@ public:
         _callbacks.OnErrRtnOrderInsert(pInputOrder,pRspInfo);
     }
 
-    virtual void OnErrRtnOrderAction(CThostFtdcOrderActionField* pOrderAction,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnOrderAction(struct CThostFtdcOrderActionField* pOrderAction,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pOrderAction 回调 C# 参数 不能为 NULL
         CThostFtdcOrderActionField zero0 = {0};
@@ -1020,7 +1020,7 @@ public:
         _callbacks.OnErrRtnOrderAction(pOrderAction,pRspInfo);
     }
 
-    virtual void OnRtnInstrumentStatus(CThostFtdcInstrumentStatusField* pInstrumentStatus)
+    virtual void OnRtnInstrumentStatus(struct CThostFtdcInstrumentStatusField* pInstrumentStatus)
     {
         //pInstrumentStatus 回调 C# 参数 不能为 NULL
         CThostFtdcInstrumentStatusField zero0 = {0};
@@ -1028,7 +1028,7 @@ public:
         _callbacks.OnRtnInstrumentStatus(pInstrumentStatus);
     }
 
-    virtual void OnRtnBulletin(CThostFtdcBulletinField* pBulletin)
+    virtual void OnRtnBulletin(struct CThostFtdcBulletinField* pBulletin)
     {
         //pBulletin 回调 C# 参数 不能为 NULL
         CThostFtdcBulletinField zero0 = {0};
@@ -1036,7 +1036,7 @@ public:
         _callbacks.OnRtnBulletin(pBulletin);
     }
 
-    virtual void OnRtnTradingNotice(CThostFtdcTradingNoticeInfoField* pTradingNoticeInfo)
+    virtual void OnRtnTradingNotice(struct CThostFtdcTradingNoticeInfoField* pTradingNoticeInfo)
     {
         //pTradingNoticeInfo 回调 C# 参数 不能为 NULL
         CThostFtdcTradingNoticeInfoField zero0 = {0};
@@ -1044,7 +1044,7 @@ public:
         _callbacks.OnRtnTradingNotice(pTradingNoticeInfo);
     }
 
-    virtual void OnRtnErrorConditionalOrder(CThostFtdcErrorConditionalOrderField* pErrorConditionalOrder)
+    virtual void OnRtnErrorConditionalOrder(struct CThostFtdcErrorConditionalOrderField* pErrorConditionalOrder)
     {
         //pErrorConditionalOrder 回调 C# 参数 不能为 NULL
         CThostFtdcErrorConditionalOrderField zero0 = {0};
@@ -1052,7 +1052,7 @@ public:
         _callbacks.OnRtnErrorConditionalOrder(pErrorConditionalOrder);
     }
 
-    virtual void OnRtnExecOrder(CThostFtdcExecOrderField* pExecOrder)
+    virtual void OnRtnExecOrder(struct CThostFtdcExecOrderField* pExecOrder)
     {
         //pExecOrder 回调 C# 参数 不能为 NULL
         CThostFtdcExecOrderField zero0 = {0};
@@ -1060,7 +1060,7 @@ public:
         _callbacks.OnRtnExecOrder(pExecOrder);
     }
 
-    virtual void OnErrRtnExecOrderInsert(CThostFtdcInputExecOrderField* pInputExecOrder,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnExecOrderInsert(struct CThostFtdcInputExecOrderField* pInputExecOrder,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pInputExecOrder 回调 C# 参数 不能为 NULL
         CThostFtdcInputExecOrderField zero0 = {0};
@@ -1071,7 +1071,7 @@ public:
         _callbacks.OnErrRtnExecOrderInsert(pInputExecOrder,pRspInfo);
     }
 
-    virtual void OnErrRtnExecOrderAction(CThostFtdcExecOrderActionField* pExecOrderAction,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnExecOrderAction(struct CThostFtdcExecOrderActionField* pExecOrderAction,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pExecOrderAction 回调 C# 参数 不能为 NULL
         CThostFtdcExecOrderActionField zero0 = {0};
@@ -1082,7 +1082,7 @@ public:
         _callbacks.OnErrRtnExecOrderAction(pExecOrderAction,pRspInfo);
     }
 
-    virtual void OnErrRtnForQuoteInsert(CThostFtdcInputForQuoteField* pInputForQuote,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnForQuoteInsert(struct CThostFtdcInputForQuoteField* pInputForQuote,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pInputForQuote 回调 C# 参数 不能为 NULL
         CThostFtdcInputForQuoteField zero0 = {0};
@@ -1093,7 +1093,7 @@ public:
         _callbacks.OnErrRtnForQuoteInsert(pInputForQuote,pRspInfo);
     }
 
-    virtual void OnRtnQuote(CThostFtdcQuoteField* pQuote)
+    virtual void OnRtnQuote(struct CThostFtdcQuoteField* pQuote)
     {
         //pQuote 回调 C# 参数 不能为 NULL
         CThostFtdcQuoteField zero0 = {0};
@@ -1101,7 +1101,7 @@ public:
         _callbacks.OnRtnQuote(pQuote);
     }
 
-    virtual void OnErrRtnQuoteInsert(CThostFtdcInputQuoteField* pInputQuote,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnQuoteInsert(struct CThostFtdcInputQuoteField* pInputQuote,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pInputQuote 回调 C# 参数 不能为 NULL
         CThostFtdcInputQuoteField zero0 = {0};
@@ -1112,7 +1112,7 @@ public:
         _callbacks.OnErrRtnQuoteInsert(pInputQuote,pRspInfo);
     }
 
-    virtual void OnErrRtnQuoteAction(CThostFtdcQuoteActionField* pQuoteAction,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnQuoteAction(struct CThostFtdcQuoteActionField* pQuoteAction,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pQuoteAction 回调 C# 参数 不能为 NULL
         CThostFtdcQuoteActionField zero0 = {0};
@@ -1123,7 +1123,7 @@ public:
         _callbacks.OnErrRtnQuoteAction(pQuoteAction,pRspInfo);
     }
 
-    virtual void OnRtnForQuoteRsp(CThostFtdcForQuoteRspField* pForQuoteRsp)
+    virtual void OnRtnForQuoteRsp(struct CThostFtdcForQuoteRspField* pForQuoteRsp)
     {
         //pForQuoteRsp 回调 C# 参数 不能为 NULL
         CThostFtdcForQuoteRspField zero0 = {0};
@@ -1131,7 +1131,7 @@ public:
         _callbacks.OnRtnForQuoteRsp(pForQuoteRsp);
     }
 
-    virtual void OnRtnCFMMCTradingAccountToken(CThostFtdcCFMMCTradingAccountTokenField* pCFMMCTradingAccountToken)
+    virtual void OnRtnCFMMCTradingAccountToken(struct CThostFtdcCFMMCTradingAccountTokenField* pCFMMCTradingAccountToken)
     {
         //pCFMMCTradingAccountToken 回调 C# 参数 不能为 NULL
         CThostFtdcCFMMCTradingAccountTokenField zero0 = {0};
@@ -1139,7 +1139,7 @@ public:
         _callbacks.OnRtnCFMMCTradingAccountToken(pCFMMCTradingAccountToken);
     }
 
-    virtual void OnErrRtnBatchOrderAction(CThostFtdcBatchOrderActionField* pBatchOrderAction,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnBatchOrderAction(struct CThostFtdcBatchOrderActionField* pBatchOrderAction,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pBatchOrderAction 回调 C# 参数 不能为 NULL
         CThostFtdcBatchOrderActionField zero0 = {0};
@@ -1150,7 +1150,7 @@ public:
         _callbacks.OnErrRtnBatchOrderAction(pBatchOrderAction,pRspInfo);
     }
 
-    virtual void OnRtnOptionSelfClose(CThostFtdcOptionSelfCloseField* pOptionSelfClose)
+    virtual void OnRtnOptionSelfClose(struct CThostFtdcOptionSelfCloseField* pOptionSelfClose)
     {
         //pOptionSelfClose 回调 C# 参数 不能为 NULL
         CThostFtdcOptionSelfCloseField zero0 = {0};
@@ -1158,7 +1158,7 @@ public:
         _callbacks.OnRtnOptionSelfClose(pOptionSelfClose);
     }
 
-    virtual void OnErrRtnOptionSelfCloseInsert(CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnOptionSelfCloseInsert(struct CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pInputOptionSelfClose 回调 C# 参数 不能为 NULL
         CThostFtdcInputOptionSelfCloseField zero0 = {0};
@@ -1169,7 +1169,7 @@ public:
         _callbacks.OnErrRtnOptionSelfCloseInsert(pInputOptionSelfClose,pRspInfo);
     }
 
-    virtual void OnErrRtnOptionSelfCloseAction(CThostFtdcOptionSelfCloseActionField* pOptionSelfCloseAction,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnOptionSelfCloseAction(struct CThostFtdcOptionSelfCloseActionField* pOptionSelfCloseAction,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pOptionSelfCloseAction 回调 C# 参数 不能为 NULL
         CThostFtdcOptionSelfCloseActionField zero0 = {0};
@@ -1180,7 +1180,7 @@ public:
         _callbacks.OnErrRtnOptionSelfCloseAction(pOptionSelfCloseAction,pRspInfo);
     }
 
-    virtual void OnRtnCombAction(CThostFtdcCombActionField* pCombAction)
+    virtual void OnRtnCombAction(struct CThostFtdcCombActionField* pCombAction)
     {
         //pCombAction 回调 C# 参数 不能为 NULL
         CThostFtdcCombActionField zero0 = {0};
@@ -1188,7 +1188,7 @@ public:
         _callbacks.OnRtnCombAction(pCombAction);
     }
 
-    virtual void OnErrRtnCombActionInsert(CThostFtdcInputCombActionField* pInputCombAction,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnCombActionInsert(struct CThostFtdcInputCombActionField* pInputCombAction,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pInputCombAction 回调 C# 参数 不能为 NULL
         CThostFtdcInputCombActionField zero0 = {0};
@@ -1199,7 +1199,7 @@ public:
         _callbacks.OnErrRtnCombActionInsert(pInputCombAction,pRspInfo);
     }
 
-    virtual void OnRspQryContractBank(CThostFtdcContractBankField* pContractBank,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryContractBank(struct CThostFtdcContractBankField* pContractBank,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pContractBank 回调 C# 参数 不能为 NULL
         CThostFtdcContractBankField zero0 = {0};
@@ -1210,7 +1210,7 @@ public:
         _callbacks.OnRspQryContractBank(pContractBank,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryParkedOrder(CThostFtdcParkedOrderField* pParkedOrder,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryParkedOrder(struct CThostFtdcParkedOrderField* pParkedOrder,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pParkedOrder 回调 C# 参数 不能为 NULL
         CThostFtdcParkedOrderField zero0 = {0};
@@ -1221,7 +1221,7 @@ public:
         _callbacks.OnRspQryParkedOrder(pParkedOrder,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryParkedOrderAction(CThostFtdcParkedOrderActionField* pParkedOrderAction,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryParkedOrderAction(struct CThostFtdcParkedOrderActionField* pParkedOrderAction,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pParkedOrderAction 回调 C# 参数 不能为 NULL
         CThostFtdcParkedOrderActionField zero0 = {0};
@@ -1232,7 +1232,7 @@ public:
         _callbacks.OnRspQryParkedOrderAction(pParkedOrderAction,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryTradingNotice(CThostFtdcTradingNoticeField* pTradingNotice,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryTradingNotice(struct CThostFtdcTradingNoticeField* pTradingNotice,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pTradingNotice 回调 C# 参数 不能为 NULL
         CThostFtdcTradingNoticeField zero0 = {0};
@@ -1243,7 +1243,7 @@ public:
         _callbacks.OnRspQryTradingNotice(pTradingNotice,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryBrokerTradingParams(CThostFtdcBrokerTradingParamsField* pBrokerTradingParams,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryBrokerTradingParams(struct CThostFtdcBrokerTradingParamsField* pBrokerTradingParams,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pBrokerTradingParams 回调 C# 参数 不能为 NULL
         CThostFtdcBrokerTradingParamsField zero0 = {0};
@@ -1254,7 +1254,7 @@ public:
         _callbacks.OnRspQryBrokerTradingParams(pBrokerTradingParams,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryBrokerTradingAlgos(CThostFtdcBrokerTradingAlgosField* pBrokerTradingAlgos,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryBrokerTradingAlgos(struct CThostFtdcBrokerTradingAlgosField* pBrokerTradingAlgos,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pBrokerTradingAlgos 回调 C# 参数 不能为 NULL
         CThostFtdcBrokerTradingAlgosField zero0 = {0};
@@ -1265,7 +1265,7 @@ public:
         _callbacks.OnRspQryBrokerTradingAlgos(pBrokerTradingAlgos,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQueryCFMMCTradingAccountToken(CThostFtdcQueryCFMMCTradingAccountTokenField* pQueryCFMMCTradingAccountToken,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQueryCFMMCTradingAccountToken(struct CThostFtdcQueryCFMMCTradingAccountTokenField* pQueryCFMMCTradingAccountToken,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pQueryCFMMCTradingAccountToken 回调 C# 参数 不能为 NULL
         CThostFtdcQueryCFMMCTradingAccountTokenField zero0 = {0};
@@ -1276,7 +1276,7 @@ public:
         _callbacks.OnRspQueryCFMMCTradingAccountToken(pQueryCFMMCTradingAccountToken,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRtnFromBankToFutureByBank(CThostFtdcRspTransferField* pRspTransfer)
+    virtual void OnRtnFromBankToFutureByBank(struct CThostFtdcRspTransferField* pRspTransfer)
     {
         //pRspTransfer 回调 C# 参数 不能为 NULL
         CThostFtdcRspTransferField zero0 = {0};
@@ -1284,7 +1284,7 @@ public:
         _callbacks.OnRtnFromBankToFutureByBank(pRspTransfer);
     }
 
-    virtual void OnRtnFromFutureToBankByBank(CThostFtdcRspTransferField* pRspTransfer)
+    virtual void OnRtnFromFutureToBankByBank(struct CThostFtdcRspTransferField* pRspTransfer)
     {
         //pRspTransfer 回调 C# 参数 不能为 NULL
         CThostFtdcRspTransferField zero0 = {0};
@@ -1292,7 +1292,7 @@ public:
         _callbacks.OnRtnFromFutureToBankByBank(pRspTransfer);
     }
 
-    virtual void OnRtnRepealFromBankToFutureByBank(CThostFtdcRspRepealField* pRspRepeal)
+    virtual void OnRtnRepealFromBankToFutureByBank(struct CThostFtdcRspRepealField* pRspRepeal)
     {
         //pRspRepeal 回调 C# 参数 不能为 NULL
         CThostFtdcRspRepealField zero0 = {0};
@@ -1300,7 +1300,7 @@ public:
         _callbacks.OnRtnRepealFromBankToFutureByBank(pRspRepeal);
     }
 
-    virtual void OnRtnRepealFromFutureToBankByBank(CThostFtdcRspRepealField* pRspRepeal)
+    virtual void OnRtnRepealFromFutureToBankByBank(struct CThostFtdcRspRepealField* pRspRepeal)
     {
         //pRspRepeal 回调 C# 参数 不能为 NULL
         CThostFtdcRspRepealField zero0 = {0};
@@ -1308,7 +1308,7 @@ public:
         _callbacks.OnRtnRepealFromFutureToBankByBank(pRspRepeal);
     }
 
-    virtual void OnRtnFromBankToFutureByFuture(CThostFtdcRspTransferField* pRspTransfer)
+    virtual void OnRtnFromBankToFutureByFuture(struct CThostFtdcRspTransferField* pRspTransfer)
     {
         //pRspTransfer 回调 C# 参数 不能为 NULL
         CThostFtdcRspTransferField zero0 = {0};
@@ -1316,7 +1316,7 @@ public:
         _callbacks.OnRtnFromBankToFutureByFuture(pRspTransfer);
     }
 
-    virtual void OnRtnFromFutureToBankByFuture(CThostFtdcRspTransferField* pRspTransfer)
+    virtual void OnRtnFromFutureToBankByFuture(struct CThostFtdcRspTransferField* pRspTransfer)
     {
         //pRspTransfer 回调 C# 参数 不能为 NULL
         CThostFtdcRspTransferField zero0 = {0};
@@ -1324,7 +1324,7 @@ public:
         _callbacks.OnRtnFromFutureToBankByFuture(pRspTransfer);
     }
 
-    virtual void OnRtnRepealFromBankToFutureByFutureManual(CThostFtdcRspRepealField* pRspRepeal)
+    virtual void OnRtnRepealFromBankToFutureByFutureManual(struct CThostFtdcRspRepealField* pRspRepeal)
     {
         //pRspRepeal 回调 C# 参数 不能为 NULL
         CThostFtdcRspRepealField zero0 = {0};
@@ -1332,7 +1332,7 @@ public:
         _callbacks.OnRtnRepealFromBankToFutureByFutureManual(pRspRepeal);
     }
 
-    virtual void OnRtnRepealFromFutureToBankByFutureManual(CThostFtdcRspRepealField* pRspRepeal)
+    virtual void OnRtnRepealFromFutureToBankByFutureManual(struct CThostFtdcRspRepealField* pRspRepeal)
     {
         //pRspRepeal 回调 C# 参数 不能为 NULL
         CThostFtdcRspRepealField zero0 = {0};
@@ -1340,7 +1340,7 @@ public:
         _callbacks.OnRtnRepealFromFutureToBankByFutureManual(pRspRepeal);
     }
 
-    virtual void OnRtnQueryBankBalanceByFuture(CThostFtdcNotifyQueryAccountField* pNotifyQueryAccount)
+    virtual void OnRtnQueryBankBalanceByFuture(struct CThostFtdcNotifyQueryAccountField* pNotifyQueryAccount)
     {
         //pNotifyQueryAccount 回调 C# 参数 不能为 NULL
         CThostFtdcNotifyQueryAccountField zero0 = {0};
@@ -1348,7 +1348,7 @@ public:
         _callbacks.OnRtnQueryBankBalanceByFuture(pNotifyQueryAccount);
     }
 
-    virtual void OnErrRtnBankToFutureByFuture(CThostFtdcReqTransferField* pReqTransfer,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnBankToFutureByFuture(struct CThostFtdcReqTransferField* pReqTransfer,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pReqTransfer 回调 C# 参数 不能为 NULL
         CThostFtdcReqTransferField zero0 = {0};
@@ -1359,7 +1359,7 @@ public:
         _callbacks.OnErrRtnBankToFutureByFuture(pReqTransfer,pRspInfo);
     }
 
-    virtual void OnErrRtnFutureToBankByFuture(CThostFtdcReqTransferField* pReqTransfer,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnFutureToBankByFuture(struct CThostFtdcReqTransferField* pReqTransfer,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pReqTransfer 回调 C# 参数 不能为 NULL
         CThostFtdcReqTransferField zero0 = {0};
@@ -1370,7 +1370,7 @@ public:
         _callbacks.OnErrRtnFutureToBankByFuture(pReqTransfer,pRspInfo);
     }
 
-    virtual void OnErrRtnRepealBankToFutureByFutureManual(CThostFtdcReqRepealField* pReqRepeal,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnRepealBankToFutureByFutureManual(struct CThostFtdcReqRepealField* pReqRepeal,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pReqRepeal 回调 C# 参数 不能为 NULL
         CThostFtdcReqRepealField zero0 = {0};
@@ -1381,7 +1381,7 @@ public:
         _callbacks.OnErrRtnRepealBankToFutureByFutureManual(pReqRepeal,pRspInfo);
     }
 
-    virtual void OnErrRtnRepealFutureToBankByFutureManual(CThostFtdcReqRepealField* pReqRepeal,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnRepealFutureToBankByFutureManual(struct CThostFtdcReqRepealField* pReqRepeal,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pReqRepeal 回调 C# 参数 不能为 NULL
         CThostFtdcReqRepealField zero0 = {0};
@@ -1392,7 +1392,7 @@ public:
         _callbacks.OnErrRtnRepealFutureToBankByFutureManual(pReqRepeal,pRspInfo);
     }
 
-    virtual void OnErrRtnQueryBankBalanceByFuture(CThostFtdcReqQueryAccountField* pReqQueryAccount,CThostFtdcRspInfoField* pRspInfo)
+    virtual void OnErrRtnQueryBankBalanceByFuture(struct CThostFtdcReqQueryAccountField* pReqQueryAccount,struct CThostFtdcRspInfoField* pRspInfo)
     {
         //pReqQueryAccount 回调 C# 参数 不能为 NULL
         CThostFtdcReqQueryAccountField zero0 = {0};
@@ -1403,7 +1403,7 @@ public:
         _callbacks.OnErrRtnQueryBankBalanceByFuture(pReqQueryAccount,pRspInfo);
     }
 
-    virtual void OnRtnRepealFromBankToFutureByFuture(CThostFtdcRspRepealField* pRspRepeal)
+    virtual void OnRtnRepealFromBankToFutureByFuture(struct CThostFtdcRspRepealField* pRspRepeal)
     {
         //pRspRepeal 回调 C# 参数 不能为 NULL
         CThostFtdcRspRepealField zero0 = {0};
@@ -1411,7 +1411,7 @@ public:
         _callbacks.OnRtnRepealFromBankToFutureByFuture(pRspRepeal);
     }
 
-    virtual void OnRtnRepealFromFutureToBankByFuture(CThostFtdcRspRepealField* pRspRepeal)
+    virtual void OnRtnRepealFromFutureToBankByFuture(struct CThostFtdcRspRepealField* pRspRepeal)
     {
         //pRspRepeal 回调 C# 参数 不能为 NULL
         CThostFtdcRspRepealField zero0 = {0};
@@ -1419,7 +1419,7 @@ public:
         _callbacks.OnRtnRepealFromFutureToBankByFuture(pRspRepeal);
     }
 
-    virtual void OnRspFromBankToFutureByFuture(CThostFtdcReqTransferField* pReqTransfer,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspFromBankToFutureByFuture(struct CThostFtdcReqTransferField* pReqTransfer,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pReqTransfer 回调 C# 参数 不能为 NULL
         CThostFtdcReqTransferField zero0 = {0};
@@ -1430,7 +1430,7 @@ public:
         _callbacks.OnRspFromBankToFutureByFuture(pReqTransfer,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspFromFutureToBankByFuture(CThostFtdcReqTransferField* pReqTransfer,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspFromFutureToBankByFuture(struct CThostFtdcReqTransferField* pReqTransfer,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pReqTransfer 回调 C# 参数 不能为 NULL
         CThostFtdcReqTransferField zero0 = {0};
@@ -1441,7 +1441,7 @@ public:
         _callbacks.OnRspFromFutureToBankByFuture(pReqTransfer,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQueryBankAccountMoneyByFuture(CThostFtdcReqQueryAccountField* pReqQueryAccount,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQueryBankAccountMoneyByFuture(struct CThostFtdcReqQueryAccountField* pReqQueryAccount,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pReqQueryAccount 回调 C# 参数 不能为 NULL
         CThostFtdcReqQueryAccountField zero0 = {0};
@@ -1452,7 +1452,7 @@ public:
         _callbacks.OnRspQueryBankAccountMoneyByFuture(pReqQueryAccount,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRtnOpenAccountByBank(CThostFtdcOpenAccountField* pOpenAccount)
+    virtual void OnRtnOpenAccountByBank(struct CThostFtdcOpenAccountField* pOpenAccount)
     {
         //pOpenAccount 回调 C# 参数 不能为 NULL
         CThostFtdcOpenAccountField zero0 = {0};
@@ -1460,7 +1460,7 @@ public:
         _callbacks.OnRtnOpenAccountByBank(pOpenAccount);
     }
 
-    virtual void OnRtnCancelAccountByBank(CThostFtdcCancelAccountField* pCancelAccount)
+    virtual void OnRtnCancelAccountByBank(struct CThostFtdcCancelAccountField* pCancelAccount)
     {
         //pCancelAccount 回调 C# 参数 不能为 NULL
         CThostFtdcCancelAccountField zero0 = {0};
@@ -1468,7 +1468,7 @@ public:
         _callbacks.OnRtnCancelAccountByBank(pCancelAccount);
     }
 
-    virtual void OnRtnChangeAccountByBank(CThostFtdcChangeAccountField* pChangeAccount)
+    virtual void OnRtnChangeAccountByBank(struct CThostFtdcChangeAccountField* pChangeAccount)
     {
         //pChangeAccount 回调 C# 参数 不能为 NULL
         CThostFtdcChangeAccountField zero0 = {0};
@@ -1476,7 +1476,7 @@ public:
         _callbacks.OnRtnChangeAccountByBank(pChangeAccount);
     }
 
-    virtual void OnRspQryClassifiedInstrument(CThostFtdcInstrumentField* pInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryClassifiedInstrument(struct CThostFtdcInstrumentField* pInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInstrument 回调 C# 参数 不能为 NULL
         CThostFtdcInstrumentField zero0 = {0};
@@ -1487,7 +1487,7 @@ public:
         _callbacks.OnRspQryClassifiedInstrument(pInstrument,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryCombPromotionParam(CThostFtdcCombPromotionParamField* pCombPromotionParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryCombPromotionParam(struct CThostFtdcCombPromotionParamField* pCombPromotionParam,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pCombPromotionParam 回调 C# 参数 不能为 NULL
         CThostFtdcCombPromotionParamField zero0 = {0};
@@ -1498,7 +1498,7 @@ public:
         _callbacks.OnRspQryCombPromotionParam(pCombPromotionParam,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRiskSettleInvstPosition(CThostFtdcRiskSettleInvstPositionField* pRiskSettleInvstPosition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRiskSettleInvstPosition(struct CThostFtdcRiskSettleInvstPositionField* pRiskSettleInvstPosition,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRiskSettleInvstPosition 回调 C# 参数 不能为 NULL
         CThostFtdcRiskSettleInvstPositionField zero0 = {0};
@@ -1509,7 +1509,7 @@ public:
         _callbacks.OnRspQryRiskSettleInvstPosition(pRiskSettleInvstPosition,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRiskSettleProductStatus(CThostFtdcRiskSettleProductStatusField* pRiskSettleProductStatus,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRiskSettleProductStatus(struct CThostFtdcRiskSettleProductStatusField* pRiskSettleProductStatus,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRiskSettleProductStatus 回调 C# 参数 不能为 NULL
         CThostFtdcRiskSettleProductStatusField zero0 = {0};
@@ -1520,7 +1520,7 @@ public:
         _callbacks.OnRspQryRiskSettleProductStatus(pRiskSettleProductStatus,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySPBMFutureParameter(CThostFtdcSPBMFutureParameterField* pSPBMFutureParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySPBMFutureParameter(struct CThostFtdcSPBMFutureParameterField* pSPBMFutureParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSPBMFutureParameter 回调 C# 参数 不能为 NULL
         CThostFtdcSPBMFutureParameterField zero0 = {0};
@@ -1531,7 +1531,7 @@ public:
         _callbacks.OnRspQrySPBMFutureParameter(pSPBMFutureParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySPBMOptionParameter(CThostFtdcSPBMOptionParameterField* pSPBMOptionParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySPBMOptionParameter(struct CThostFtdcSPBMOptionParameterField* pSPBMOptionParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSPBMOptionParameter 回调 C# 参数 不能为 NULL
         CThostFtdcSPBMOptionParameterField zero0 = {0};
@@ -1542,7 +1542,7 @@ public:
         _callbacks.OnRspQrySPBMOptionParameter(pSPBMOptionParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySPBMIntraParameter(CThostFtdcSPBMIntraParameterField* pSPBMIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySPBMIntraParameter(struct CThostFtdcSPBMIntraParameterField* pSPBMIntraParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSPBMIntraParameter 回调 C# 参数 不能为 NULL
         CThostFtdcSPBMIntraParameterField zero0 = {0};
@@ -1553,7 +1553,7 @@ public:
         _callbacks.OnRspQrySPBMIntraParameter(pSPBMIntraParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySPBMInterParameter(CThostFtdcSPBMInterParameterField* pSPBMInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySPBMInterParameter(struct CThostFtdcSPBMInterParameterField* pSPBMInterParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSPBMInterParameter 回调 C# 参数 不能为 NULL
         CThostFtdcSPBMInterParameterField zero0 = {0};
@@ -1564,7 +1564,7 @@ public:
         _callbacks.OnRspQrySPBMInterParameter(pSPBMInterParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySPBMPortfDefinition(CThostFtdcSPBMPortfDefinitionField* pSPBMPortfDefinition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySPBMPortfDefinition(struct CThostFtdcSPBMPortfDefinitionField* pSPBMPortfDefinition,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSPBMPortfDefinition 回调 C# 参数 不能为 NULL
         CThostFtdcSPBMPortfDefinitionField zero0 = {0};
@@ -1575,7 +1575,7 @@ public:
         _callbacks.OnRspQrySPBMPortfDefinition(pSPBMPortfDefinition,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySPBMInvestorPortfDef(CThostFtdcSPBMInvestorPortfDefField* pSPBMInvestorPortfDef,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySPBMInvestorPortfDef(struct CThostFtdcSPBMInvestorPortfDefField* pSPBMInvestorPortfDef,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSPBMInvestorPortfDef 回调 C# 参数 不能为 NULL
         CThostFtdcSPBMInvestorPortfDefField zero0 = {0};
@@ -1586,7 +1586,7 @@ public:
         _callbacks.OnRspQrySPBMInvestorPortfDef(pSPBMInvestorPortfDef,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorPortfMarginRatio(CThostFtdcInvestorPortfMarginRatioField* pInvestorPortfMarginRatio,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorPortfMarginRatio(struct CThostFtdcInvestorPortfMarginRatioField* pInvestorPortfMarginRatio,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorPortfMarginRatio 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorPortfMarginRatioField zero0 = {0};
@@ -1597,7 +1597,7 @@ public:
         _callbacks.OnRspQryInvestorPortfMarginRatio(pInvestorPortfMarginRatio,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorProdSPBMDetail(CThostFtdcInvestorProdSPBMDetailField* pInvestorProdSPBMDetail,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorProdSPBMDetail(struct CThostFtdcInvestorProdSPBMDetailField* pInvestorProdSPBMDetail,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorProdSPBMDetail 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorProdSPBMDetailField zero0 = {0};
@@ -1608,7 +1608,7 @@ public:
         _callbacks.OnRspQryInvestorProdSPBMDetail(pInvestorProdSPBMDetail,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorCommoditySPMMMargin(CThostFtdcInvestorCommoditySPMMMarginField* pInvestorCommoditySPMMMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorCommoditySPMMMargin(struct CThostFtdcInvestorCommoditySPMMMarginField* pInvestorCommoditySPMMMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorCommoditySPMMMargin 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorCommoditySPMMMarginField zero0 = {0};
@@ -1619,7 +1619,7 @@ public:
         _callbacks.OnRspQryInvestorCommoditySPMMMargin(pInvestorCommoditySPMMMargin,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorCommodityGroupSPMMMargin(CThostFtdcInvestorCommodityGroupSPMMMarginField* pInvestorCommodityGroupSPMMMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorCommodityGroupSPMMMargin(struct CThostFtdcInvestorCommodityGroupSPMMMarginField* pInvestorCommodityGroupSPMMMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorCommodityGroupSPMMMargin 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorCommodityGroupSPMMMarginField zero0 = {0};
@@ -1630,7 +1630,7 @@ public:
         _callbacks.OnRspQryInvestorCommodityGroupSPMMMargin(pInvestorCommodityGroupSPMMMargin,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySPMMInstParam(CThostFtdcSPMMInstParamField* pSPMMInstParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySPMMInstParam(struct CThostFtdcSPMMInstParamField* pSPMMInstParam,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSPMMInstParam 回调 C# 参数 不能为 NULL
         CThostFtdcSPMMInstParamField zero0 = {0};
@@ -1641,7 +1641,7 @@ public:
         _callbacks.OnRspQrySPMMInstParam(pSPMMInstParam,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySPMMProductParam(CThostFtdcSPMMProductParamField* pSPMMProductParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySPMMProductParam(struct CThostFtdcSPMMProductParamField* pSPMMProductParam,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSPMMProductParam 回调 C# 参数 不能为 NULL
         CThostFtdcSPMMProductParamField zero0 = {0};
@@ -1652,7 +1652,7 @@ public:
         _callbacks.OnRspQrySPMMProductParam(pSPMMProductParam,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQrySPBMAddOnInterParameter(CThostFtdcSPBMAddOnInterParameterField* pSPBMAddOnInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQrySPBMAddOnInterParameter(struct CThostFtdcSPBMAddOnInterParameterField* pSPBMAddOnInterParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSPBMAddOnInterParameter 回调 C# 参数 不能为 NULL
         CThostFtdcSPBMAddOnInterParameterField zero0 = {0};
@@ -1663,7 +1663,7 @@ public:
         _callbacks.OnRspQrySPBMAddOnInterParameter(pSPBMAddOnInterParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRCAMSCombProductInfo(CThostFtdcRCAMSCombProductInfoField* pRCAMSCombProductInfo,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRCAMSCombProductInfo(struct CThostFtdcRCAMSCombProductInfoField* pRCAMSCombProductInfo,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRCAMSCombProductInfo 回调 C# 参数 不能为 NULL
         CThostFtdcRCAMSCombProductInfoField zero0 = {0};
@@ -1674,7 +1674,7 @@ public:
         _callbacks.OnRspQryRCAMSCombProductInfo(pRCAMSCombProductInfo,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRCAMSInstrParameter(CThostFtdcRCAMSInstrParameterField* pRCAMSInstrParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRCAMSInstrParameter(struct CThostFtdcRCAMSInstrParameterField* pRCAMSInstrParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRCAMSInstrParameter 回调 C# 参数 不能为 NULL
         CThostFtdcRCAMSInstrParameterField zero0 = {0};
@@ -1685,7 +1685,7 @@ public:
         _callbacks.OnRspQryRCAMSInstrParameter(pRCAMSInstrParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRCAMSIntraParameter(CThostFtdcRCAMSIntraParameterField* pRCAMSIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRCAMSIntraParameter(struct CThostFtdcRCAMSIntraParameterField* pRCAMSIntraParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRCAMSIntraParameter 回调 C# 参数 不能为 NULL
         CThostFtdcRCAMSIntraParameterField zero0 = {0};
@@ -1696,7 +1696,7 @@ public:
         _callbacks.OnRspQryRCAMSIntraParameter(pRCAMSIntraParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRCAMSInterParameter(CThostFtdcRCAMSInterParameterField* pRCAMSInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRCAMSInterParameter(struct CThostFtdcRCAMSInterParameterField* pRCAMSInterParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRCAMSInterParameter 回调 C# 参数 不能为 NULL
         CThostFtdcRCAMSInterParameterField zero0 = {0};
@@ -1707,7 +1707,7 @@ public:
         _callbacks.OnRspQryRCAMSInterParameter(pRCAMSInterParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRCAMSShortOptAdjustParam(CThostFtdcRCAMSShortOptAdjustParamField* pRCAMSShortOptAdjustParam,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRCAMSShortOptAdjustParam(struct CThostFtdcRCAMSShortOptAdjustParamField* pRCAMSShortOptAdjustParam,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRCAMSShortOptAdjustParam 回调 C# 参数 不能为 NULL
         CThostFtdcRCAMSShortOptAdjustParamField zero0 = {0};
@@ -1718,7 +1718,7 @@ public:
         _callbacks.OnRspQryRCAMSShortOptAdjustParam(pRCAMSShortOptAdjustParam,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRCAMSInvestorCombPosition(CThostFtdcRCAMSInvestorCombPositionField* pRCAMSInvestorCombPosition,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRCAMSInvestorCombPosition(struct CThostFtdcRCAMSInvestorCombPositionField* pRCAMSInvestorCombPosition,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRCAMSInvestorCombPosition 回调 C# 参数 不能为 NULL
         CThostFtdcRCAMSInvestorCombPositionField zero0 = {0};
@@ -1729,7 +1729,7 @@ public:
         _callbacks.OnRspQryRCAMSInvestorCombPosition(pRCAMSInvestorCombPosition,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorProdRCAMSMargin(CThostFtdcInvestorProdRCAMSMarginField* pInvestorProdRCAMSMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorProdRCAMSMargin(struct CThostFtdcInvestorProdRCAMSMarginField* pInvestorProdRCAMSMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorProdRCAMSMargin 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorProdRCAMSMarginField zero0 = {0};
@@ -1740,7 +1740,7 @@ public:
         _callbacks.OnRspQryInvestorProdRCAMSMargin(pInvestorProdRCAMSMargin,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRULEInstrParameter(CThostFtdcRULEInstrParameterField* pRULEInstrParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRULEInstrParameter(struct CThostFtdcRULEInstrParameterField* pRULEInstrParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRULEInstrParameter 回调 C# 参数 不能为 NULL
         CThostFtdcRULEInstrParameterField zero0 = {0};
@@ -1751,7 +1751,7 @@ public:
         _callbacks.OnRspQryRULEInstrParameter(pRULEInstrParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRULEIntraParameter(CThostFtdcRULEIntraParameterField* pRULEIntraParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRULEIntraParameter(struct CThostFtdcRULEIntraParameterField* pRULEIntraParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRULEIntraParameter 回调 C# 参数 不能为 NULL
         CThostFtdcRULEIntraParameterField zero0 = {0};
@@ -1762,7 +1762,7 @@ public:
         _callbacks.OnRspQryRULEIntraParameter(pRULEIntraParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryRULEInterParameter(CThostFtdcRULEInterParameterField* pRULEInterParameter,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryRULEInterParameter(struct CThostFtdcRULEInterParameterField* pRULEInterParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRULEInterParameter 回调 C# 参数 不能为 NULL
         CThostFtdcRULEInterParameterField zero0 = {0};
@@ -1773,7 +1773,7 @@ public:
         _callbacks.OnRspQryRULEInterParameter(pRULEInterParameter,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryInvestorProdRULEMargin(CThostFtdcInvestorProdRULEMarginField* pInvestorProdRULEMargin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryInvestorProdRULEMargin(struct CThostFtdcInvestorProdRULEMarginField* pInvestorProdRULEMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pInvestorProdRULEMargin 回调 C# 参数 不能为 NULL
         CThostFtdcInvestorProdRULEMarginField zero0 = {0};
@@ -1786,17 +1786,17 @@ public:
 
 };
 extern "C"
-CTPSHARP_EXPORT void* CTPSHARP_STDCALL CThostFtdcTraderSpi_New(const CTPSharp_CThostFtdcTraderSpi* callbacks)
+CTPSHARP_EXPORT void* CTPSHARP_STDCALL CThostFtdcTraderSpi_New(const struct CTPSharp_CThostFtdcTraderSpi* callbacks)
 {
     return new CThostFtdcTraderSpi_Ex(callbacks);
 }
 extern "C"
 CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderSpi_Delete(void* spi)
 {
-    delete (CThostFtdcTraderSpi_Ex*)spi;
+    delete static_cast<CThostFtdcTraderSpi_Ex*>(spi);
 }
 extern "C"
-CTPSHARP_EXPORT CThostFtdcTraderApi* CTPSHARP_STDCALL CThostFtdcTraderApi_Create(const char* pszFlowPath)
+CTPSHARP_EXPORT void* CTPSHARP_STDCALL CThostFtdcTraderApi_Create(const char* pszFlowPath)
 {
     return CThostFtdcTraderApi::CreateFtdcTraderApi(pszFlowPath);
 }
@@ -1806,618 +1806,618 @@ CTPSHARP_EXPORT const char* CTPSHARP_STDCALL CThostFtdcTraderApi_GetApiVersion()
     return CThostFtdcTraderApi::GetApiVersion();
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_Release(CThostFtdcTraderApi* api)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_Release(void* api)
 {
-    api->Release();
+    static_cast<CThostFtdcTraderApi*>(api)->Release();
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_Init(CThostFtdcTraderApi* api)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_Init(void* api)
 {
-    api->Init();
+    static_cast<CThostFtdcTraderApi*>(api)->Init();
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_Join(CThostFtdcTraderApi* api)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_Join(void* api)
 {
-    return api->Join();
+    return static_cast<CThostFtdcTraderApi*>(api)->Join();
 }
 extern "C"
-CTPSHARP_EXPORT const char* CTPSHARP_STDCALL CThostFtdcTraderApi_GetTradingDay(CThostFtdcTraderApi* api)
+CTPSHARP_EXPORT const char* CTPSHARP_STDCALL CThostFtdcTraderApi_GetTradingDay(void* api)
 {
-    return api->GetTradingDay();
+    return static_cast<CThostFtdcTraderApi*>(api)->GetTradingDay();
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterFront(CThostFtdcTraderApi * api,char* pszFrontAddress)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterFront(void* api, char* pszFrontAddress)
 {
-    api->RegisterFront(pszFrontAddress);
+    static_cast<CThostFtdcTraderApi*>(api)->RegisterFront(pszFrontAddress);
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterNameServer(CThostFtdcTraderApi * api,char* pszNsAddress)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterNameServer(void* api, char* pszNsAddress)
 {
-    api->RegisterNameServer(pszNsAddress);
+    static_cast<CThostFtdcTraderApi*>(api)->RegisterNameServer(pszNsAddress);
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterFensUserInfo(CThostFtdcTraderApi * api,CThostFtdcFensUserInfoField* pFensUserInfo)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterFensUserInfo(void* api, struct CThostFtdcFensUserInfoField* pFensUserInfo)
 {
-    api->RegisterFensUserInfo(pFensUserInfo);
+    static_cast<CThostFtdcTraderApi*>(api)->RegisterFensUserInfo(pFensUserInfo);
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterSpi(CThostFtdcTraderApi * api,CThostFtdcTraderSpi* pSpi)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterSpi(void* api, void* pSpi)
 {
-    api->RegisterSpi(pSpi);
+    static_cast<CThostFtdcTraderApi*>(api)->RegisterSpi(static_cast<CThostFtdcTraderSpi*>(pSpi));
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_SubscribePrivateTopic(CThostFtdcTraderApi * api,THOST_TE_RESUME_TYPE nResumeType)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_SubscribePrivateTopic(void* api, enum THOST_TE_RESUME_TYPE nResumeType)
 {
-    api->SubscribePrivateTopic(nResumeType);
+    static_cast<CThostFtdcTraderApi*>(api)->SubscribePrivateTopic(nResumeType);
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_SubscribePublicTopic(CThostFtdcTraderApi * api,THOST_TE_RESUME_TYPE nResumeType)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_SubscribePublicTopic(void* api, enum THOST_TE_RESUME_TYPE nResumeType)
 {
-    api->SubscribePublicTopic(nResumeType);
+    static_cast<CThostFtdcTraderApi*>(api)->SubscribePublicTopic(nResumeType);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqAuthenticate(CThostFtdcTraderApi * api,CThostFtdcReqAuthenticateField* pReqAuthenticateField,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqAuthenticate(void* api, struct CThostFtdcReqAuthenticateField* pReqAuthenticateField,int nRequestID)
 {
-    return api->ReqAuthenticate(pReqAuthenticateField,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqAuthenticate(pReqAuthenticateField,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterUserSystemInfo(CThostFtdcTraderApi * api,CThostFtdcUserSystemInfoField* pUserSystemInfo)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterUserSystemInfo(void* api, struct CThostFtdcUserSystemInfoField* pUserSystemInfo)
 {
-    return api->RegisterUserSystemInfo(pUserSystemInfo);
+    return static_cast<CThostFtdcTraderApi*>(api)->RegisterUserSystemInfo(pUserSystemInfo);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_SubmitUserSystemInfo(CThostFtdcTraderApi * api,CThostFtdcUserSystemInfoField* pUserSystemInfo)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_SubmitUserSystemInfo(void* api, struct CThostFtdcUserSystemInfoField* pUserSystemInfo)
 {
-    return api->SubmitUserSystemInfo(pUserSystemInfo);
+    return static_cast<CThostFtdcTraderApi*>(api)->SubmitUserSystemInfo(pUserSystemInfo);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLogin(CThostFtdcTraderApi * api,CThostFtdcReqUserLoginField* pReqUserLoginField,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLogin(void* api, struct CThostFtdcReqUserLoginField* pReqUserLoginField,int nRequestID)
 {
-    return api->ReqUserLogin(pReqUserLoginField,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqUserLogin(pReqUserLoginField,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLogout(CThostFtdcTraderApi * api,CThostFtdcUserLogoutField* pUserLogout,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLogout(void* api, struct CThostFtdcUserLogoutField* pUserLogout,int nRequestID)
 {
-    return api->ReqUserLogout(pUserLogout,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqUserLogout(pUserLogout,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserPasswordUpdate(CThostFtdcTraderApi * api,CThostFtdcUserPasswordUpdateField* pUserPasswordUpdate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserPasswordUpdate(void* api, struct CThostFtdcUserPasswordUpdateField* pUserPasswordUpdate,int nRequestID)
 {
-    return api->ReqUserPasswordUpdate(pUserPasswordUpdate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqUserPasswordUpdate(pUserPasswordUpdate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate(CThostFtdcTraderApi * api,CThostFtdcTradingAccountPasswordUpdateField* pTradingAccountPasswordUpdate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate(void* api, struct CThostFtdcTradingAccountPasswordUpdateField* pTradingAccountPasswordUpdate,int nRequestID)
 {
-    return api->ReqTradingAccountPasswordUpdate(pTradingAccountPasswordUpdate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqTradingAccountPasswordUpdate(pTradingAccountPasswordUpdate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserAuthMethod(CThostFtdcTraderApi * api,CThostFtdcReqUserAuthMethodField* pReqUserAuthMethod,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserAuthMethod(void* api, struct CThostFtdcReqUserAuthMethodField* pReqUserAuthMethod,int nRequestID)
 {
-    return api->ReqUserAuthMethod(pReqUserAuthMethod,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqUserAuthMethod(pReqUserAuthMethod,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqGenUserCaptcha(CThostFtdcTraderApi * api,CThostFtdcReqGenUserCaptchaField* pReqGenUserCaptcha,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqGenUserCaptcha(void* api, struct CThostFtdcReqGenUserCaptchaField* pReqGenUserCaptcha,int nRequestID)
 {
-    return api->ReqGenUserCaptcha(pReqGenUserCaptcha,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqGenUserCaptcha(pReqGenUserCaptcha,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqGenUserText(CThostFtdcTraderApi * api,CThostFtdcReqGenUserTextField* pReqGenUserText,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqGenUserText(void* api, struct CThostFtdcReqGenUserTextField* pReqGenUserText,int nRequestID)
 {
-    return api->ReqGenUserText(pReqGenUserText,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqGenUserText(pReqGenUserText,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLoginWithCaptcha(CThostFtdcTraderApi * api,CThostFtdcReqUserLoginWithCaptchaField* pReqUserLoginWithCaptcha,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLoginWithCaptcha(void* api, struct CThostFtdcReqUserLoginWithCaptchaField* pReqUserLoginWithCaptcha,int nRequestID)
 {
-    return api->ReqUserLoginWithCaptcha(pReqUserLoginWithCaptcha,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqUserLoginWithCaptcha(pReqUserLoginWithCaptcha,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLoginWithText(CThostFtdcTraderApi * api,CThostFtdcReqUserLoginWithTextField* pReqUserLoginWithText,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLoginWithText(void* api, struct CThostFtdcReqUserLoginWithTextField* pReqUserLoginWithText,int nRequestID)
 {
-    return api->ReqUserLoginWithText(pReqUserLoginWithText,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqUserLoginWithText(pReqUserLoginWithText,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLoginWithOTP(CThostFtdcTraderApi * api,CThostFtdcReqUserLoginWithOTPField* pReqUserLoginWithOTP,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLoginWithOTP(void* api, struct CThostFtdcReqUserLoginWithOTPField* pReqUserLoginWithOTP,int nRequestID)
 {
-    return api->ReqUserLoginWithOTP(pReqUserLoginWithOTP,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqUserLoginWithOTP(pReqUserLoginWithOTP,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqOrderInsert(CThostFtdcTraderApi * api,CThostFtdcInputOrderField* pInputOrder,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqOrderInsert(void* api, struct CThostFtdcInputOrderField* pInputOrder,int nRequestID)
 {
-    return api->ReqOrderInsert(pInputOrder,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqOrderInsert(pInputOrder,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqParkedOrderInsert(CThostFtdcTraderApi * api,CThostFtdcParkedOrderField* pParkedOrder,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqParkedOrderInsert(void* api, struct CThostFtdcParkedOrderField* pParkedOrder,int nRequestID)
 {
-    return api->ReqParkedOrderInsert(pParkedOrder,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqParkedOrderInsert(pParkedOrder,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqParkedOrderAction(CThostFtdcTraderApi * api,CThostFtdcParkedOrderActionField* pParkedOrderAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqParkedOrderAction(void* api, struct CThostFtdcParkedOrderActionField* pParkedOrderAction,int nRequestID)
 {
-    return api->ReqParkedOrderAction(pParkedOrderAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqParkedOrderAction(pParkedOrderAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqOrderAction(CThostFtdcTraderApi * api,CThostFtdcInputOrderActionField* pInputOrderAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqOrderAction(void* api, struct CThostFtdcInputOrderActionField* pInputOrderAction,int nRequestID)
 {
-    return api->ReqOrderAction(pInputOrderAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqOrderAction(pInputOrderAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryMaxOrderVolume(CThostFtdcTraderApi * api,CThostFtdcQryMaxOrderVolumeField* pQryMaxOrderVolume,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryMaxOrderVolume(void* api, struct CThostFtdcQryMaxOrderVolumeField* pQryMaxOrderVolume,int nRequestID)
 {
-    return api->ReqQryMaxOrderVolume(pQryMaxOrderVolume,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryMaxOrderVolume(pQryMaxOrderVolume,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqSettlementInfoConfirm(CThostFtdcTraderApi * api,CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqSettlementInfoConfirm(void* api, struct CThostFtdcSettlementInfoConfirmField* pSettlementInfoConfirm,int nRequestID)
 {
-    return api->ReqSettlementInfoConfirm(pSettlementInfoConfirm,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqSettlementInfoConfirm(pSettlementInfoConfirm,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqRemoveParkedOrder(CThostFtdcTraderApi * api,CThostFtdcRemoveParkedOrderField* pRemoveParkedOrder,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqRemoveParkedOrder(void* api, struct CThostFtdcRemoveParkedOrderField* pRemoveParkedOrder,int nRequestID)
 {
-    return api->ReqRemoveParkedOrder(pRemoveParkedOrder,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqRemoveParkedOrder(pRemoveParkedOrder,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqRemoveParkedOrderAction(CThostFtdcTraderApi * api,CThostFtdcRemoveParkedOrderActionField* pRemoveParkedOrderAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqRemoveParkedOrderAction(void* api, struct CThostFtdcRemoveParkedOrderActionField* pRemoveParkedOrderAction,int nRequestID)
 {
-    return api->ReqRemoveParkedOrderAction(pRemoveParkedOrderAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqRemoveParkedOrderAction(pRemoveParkedOrderAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqExecOrderInsert(CThostFtdcTraderApi * api,CThostFtdcInputExecOrderField* pInputExecOrder,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqExecOrderInsert(void* api, struct CThostFtdcInputExecOrderField* pInputExecOrder,int nRequestID)
 {
-    return api->ReqExecOrderInsert(pInputExecOrder,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqExecOrderInsert(pInputExecOrder,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqExecOrderAction(CThostFtdcTraderApi * api,CThostFtdcInputExecOrderActionField* pInputExecOrderAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqExecOrderAction(void* api, struct CThostFtdcInputExecOrderActionField* pInputExecOrderAction,int nRequestID)
 {
-    return api->ReqExecOrderAction(pInputExecOrderAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqExecOrderAction(pInputExecOrderAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqForQuoteInsert(CThostFtdcTraderApi * api,CThostFtdcInputForQuoteField* pInputForQuote,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqForQuoteInsert(void* api, struct CThostFtdcInputForQuoteField* pInputForQuote,int nRequestID)
 {
-    return api->ReqForQuoteInsert(pInputForQuote,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqForQuoteInsert(pInputForQuote,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQuoteInsert(CThostFtdcTraderApi * api,CThostFtdcInputQuoteField* pInputQuote,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQuoteInsert(void* api, struct CThostFtdcInputQuoteField* pInputQuote,int nRequestID)
 {
-    return api->ReqQuoteInsert(pInputQuote,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQuoteInsert(pInputQuote,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQuoteAction(CThostFtdcTraderApi * api,CThostFtdcInputQuoteActionField* pInputQuoteAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQuoteAction(void* api, struct CThostFtdcInputQuoteActionField* pInputQuoteAction,int nRequestID)
 {
-    return api->ReqQuoteAction(pInputQuoteAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQuoteAction(pInputQuoteAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqBatchOrderAction(CThostFtdcTraderApi * api,CThostFtdcInputBatchOrderActionField* pInputBatchOrderAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqBatchOrderAction(void* api, struct CThostFtdcInputBatchOrderActionField* pInputBatchOrderAction,int nRequestID)
 {
-    return api->ReqBatchOrderAction(pInputBatchOrderAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqBatchOrderAction(pInputBatchOrderAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqOptionSelfCloseInsert(CThostFtdcTraderApi * api,CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqOptionSelfCloseInsert(void* api, struct CThostFtdcInputOptionSelfCloseField* pInputOptionSelfClose,int nRequestID)
 {
-    return api->ReqOptionSelfCloseInsert(pInputOptionSelfClose,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqOptionSelfCloseInsert(pInputOptionSelfClose,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqOptionSelfCloseAction(CThostFtdcTraderApi * api,CThostFtdcInputOptionSelfCloseActionField* pInputOptionSelfCloseAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqOptionSelfCloseAction(void* api, struct CThostFtdcInputOptionSelfCloseActionField* pInputOptionSelfCloseAction,int nRequestID)
 {
-    return api->ReqOptionSelfCloseAction(pInputOptionSelfCloseAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqOptionSelfCloseAction(pInputOptionSelfCloseAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqCombActionInsert(CThostFtdcTraderApi * api,CThostFtdcInputCombActionField* pInputCombAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqCombActionInsert(void* api, struct CThostFtdcInputCombActionField* pInputCombAction,int nRequestID)
 {
-    return api->ReqCombActionInsert(pInputCombAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqCombActionInsert(pInputCombAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryOrder(CThostFtdcTraderApi * api,CThostFtdcQryOrderField* pQryOrder,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryOrder(void* api, struct CThostFtdcQryOrderField* pQryOrder,int nRequestID)
 {
-    return api->ReqQryOrder(pQryOrder,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryOrder(pQryOrder,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTrade(CThostFtdcTraderApi * api,CThostFtdcQryTradeField* pQryTrade,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTrade(void* api, struct CThostFtdcQryTradeField* pQryTrade,int nRequestID)
 {
-    return api->ReqQryTrade(pQryTrade,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryTrade(pQryTrade,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorPosition(CThostFtdcTraderApi * api,CThostFtdcQryInvestorPositionField* pQryInvestorPosition,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorPosition(void* api, struct CThostFtdcQryInvestorPositionField* pQryInvestorPosition,int nRequestID)
 {
-    return api->ReqQryInvestorPosition(pQryInvestorPosition,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorPosition(pQryInvestorPosition,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTradingAccount(CThostFtdcTraderApi * api,CThostFtdcQryTradingAccountField* pQryTradingAccount,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTradingAccount(void* api, struct CThostFtdcQryTradingAccountField* pQryTradingAccount,int nRequestID)
 {
-    return api->ReqQryTradingAccount(pQryTradingAccount,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryTradingAccount(pQryTradingAccount,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestor(CThostFtdcTraderApi * api,CThostFtdcQryInvestorField* pQryInvestor,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestor(void* api, struct CThostFtdcQryInvestorField* pQryInvestor,int nRequestID)
 {
-    return api->ReqQryInvestor(pQryInvestor,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestor(pQryInvestor,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTradingCode(CThostFtdcTraderApi * api,CThostFtdcQryTradingCodeField* pQryTradingCode,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTradingCode(void* api, struct CThostFtdcQryTradingCodeField* pQryTradingCode,int nRequestID)
 {
-    return api->ReqQryTradingCode(pQryTradingCode,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryTradingCode(pQryTradingCode,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInstrumentMarginRate(CThostFtdcTraderApi * api,CThostFtdcQryInstrumentMarginRateField* pQryInstrumentMarginRate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInstrumentMarginRate(void* api, struct CThostFtdcQryInstrumentMarginRateField* pQryInstrumentMarginRate,int nRequestID)
 {
-    return api->ReqQryInstrumentMarginRate(pQryInstrumentMarginRate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInstrumentMarginRate(pQryInstrumentMarginRate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInstrumentCommissionRate(CThostFtdcTraderApi * api,CThostFtdcQryInstrumentCommissionRateField* pQryInstrumentCommissionRate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInstrumentCommissionRate(void* api, struct CThostFtdcQryInstrumentCommissionRateField* pQryInstrumentCommissionRate,int nRequestID)
 {
-    return api->ReqQryInstrumentCommissionRate(pQryInstrumentCommissionRate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInstrumentCommissionRate(pQryInstrumentCommissionRate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExchange(CThostFtdcTraderApi * api,CThostFtdcQryExchangeField* pQryExchange,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExchange(void* api, struct CThostFtdcQryExchangeField* pQryExchange,int nRequestID)
 {
-    return api->ReqQryExchange(pQryExchange,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryExchange(pQryExchange,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryProduct(CThostFtdcTraderApi * api,CThostFtdcQryProductField* pQryProduct,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryProduct(void* api, struct CThostFtdcQryProductField* pQryProduct,int nRequestID)
 {
-    return api->ReqQryProduct(pQryProduct,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryProduct(pQryProduct,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInstrument(CThostFtdcTraderApi * api,CThostFtdcQryInstrumentField* pQryInstrument,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInstrument(void* api, struct CThostFtdcQryInstrumentField* pQryInstrument,int nRequestID)
 {
-    return api->ReqQryInstrument(pQryInstrument,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInstrument(pQryInstrument,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryDepthMarketData(CThostFtdcTraderApi * api,CThostFtdcQryDepthMarketDataField* pQryDepthMarketData,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryDepthMarketData(void* api, struct CThostFtdcQryDepthMarketDataField* pQryDepthMarketData,int nRequestID)
 {
-    return api->ReqQryDepthMarketData(pQryDepthMarketData,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryDepthMarketData(pQryDepthMarketData,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTraderOffer(CThostFtdcTraderApi * api,CThostFtdcQryTraderOfferField* pQryTraderOffer,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTraderOffer(void* api, struct CThostFtdcQryTraderOfferField* pQryTraderOffer,int nRequestID)
 {
-    return api->ReqQryTraderOffer(pQryTraderOffer,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryTraderOffer(pQryTraderOffer,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySettlementInfo(CThostFtdcTraderApi * api,CThostFtdcQrySettlementInfoField* pQrySettlementInfo,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySettlementInfo(void* api, struct CThostFtdcQrySettlementInfoField* pQrySettlementInfo,int nRequestID)
 {
-    return api->ReqQrySettlementInfo(pQrySettlementInfo,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySettlementInfo(pQrySettlementInfo,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTransferBank(CThostFtdcTraderApi * api,CThostFtdcQryTransferBankField* pQryTransferBank,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTransferBank(void* api, struct CThostFtdcQryTransferBankField* pQryTransferBank,int nRequestID)
 {
-    return api->ReqQryTransferBank(pQryTransferBank,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryTransferBank(pQryTransferBank,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorPositionDetail(CThostFtdcTraderApi * api,CThostFtdcQryInvestorPositionDetailField* pQryInvestorPositionDetail,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorPositionDetail(void* api, struct CThostFtdcQryInvestorPositionDetailField* pQryInvestorPositionDetail,int nRequestID)
 {
-    return api->ReqQryInvestorPositionDetail(pQryInvestorPositionDetail,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorPositionDetail(pQryInvestorPositionDetail,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryNotice(CThostFtdcTraderApi * api,CThostFtdcQryNoticeField* pQryNotice,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryNotice(void* api, struct CThostFtdcQryNoticeField* pQryNotice,int nRequestID)
 {
-    return api->ReqQryNotice(pQryNotice,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryNotice(pQryNotice,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySettlementInfoConfirm(CThostFtdcTraderApi * api,CThostFtdcQrySettlementInfoConfirmField* pQrySettlementInfoConfirm,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySettlementInfoConfirm(void* api, struct CThostFtdcQrySettlementInfoConfirmField* pQrySettlementInfoConfirm,int nRequestID)
 {
-    return api->ReqQrySettlementInfoConfirm(pQrySettlementInfoConfirm,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySettlementInfoConfirm(pQrySettlementInfoConfirm,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail(CThostFtdcTraderApi * api,CThostFtdcQryInvestorPositionCombineDetailField* pQryInvestorPositionCombineDetail,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail(void* api, struct CThostFtdcQryInvestorPositionCombineDetailField* pQryInvestorPositionCombineDetail,int nRequestID)
 {
-    return api->ReqQryInvestorPositionCombineDetail(pQryInvestorPositionCombineDetail,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorPositionCombineDetail(pQryInvestorPositionCombineDetail,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey(CThostFtdcTraderApi * api,CThostFtdcQryCFMMCTradingAccountKeyField* pQryCFMMCTradingAccountKey,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey(void* api, struct CThostFtdcQryCFMMCTradingAccountKeyField* pQryCFMMCTradingAccountKey,int nRequestID)
 {
-    return api->ReqQryCFMMCTradingAccountKey(pQryCFMMCTradingAccountKey,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryCFMMCTradingAccountKey(pQryCFMMCTradingAccountKey,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryEWarrantOffset(CThostFtdcTraderApi * api,CThostFtdcQryEWarrantOffsetField* pQryEWarrantOffset,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryEWarrantOffset(void* api, struct CThostFtdcQryEWarrantOffsetField* pQryEWarrantOffset,int nRequestID)
 {
-    return api->ReqQryEWarrantOffset(pQryEWarrantOffset,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryEWarrantOffset(pQryEWarrantOffset,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin(CThostFtdcTraderApi * api,CThostFtdcQryInvestorProductGroupMarginField* pQryInvestorProductGroupMargin,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin(void* api, struct CThostFtdcQryInvestorProductGroupMarginField* pQryInvestorProductGroupMargin,int nRequestID)
 {
-    return api->ReqQryInvestorProductGroupMargin(pQryInvestorProductGroupMargin,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorProductGroupMargin(pQryInvestorProductGroupMargin,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExchangeMarginRate(CThostFtdcTraderApi * api,CThostFtdcQryExchangeMarginRateField* pQryExchangeMarginRate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExchangeMarginRate(void* api, struct CThostFtdcQryExchangeMarginRateField* pQryExchangeMarginRate,int nRequestID)
 {
-    return api->ReqQryExchangeMarginRate(pQryExchangeMarginRate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryExchangeMarginRate(pQryExchangeMarginRate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust(CThostFtdcTraderApi * api,CThostFtdcQryExchangeMarginRateAdjustField* pQryExchangeMarginRateAdjust,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust(void* api, struct CThostFtdcQryExchangeMarginRateAdjustField* pQryExchangeMarginRateAdjust,int nRequestID)
 {
-    return api->ReqQryExchangeMarginRateAdjust(pQryExchangeMarginRateAdjust,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryExchangeMarginRateAdjust(pQryExchangeMarginRateAdjust,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExchangeRate(CThostFtdcTraderApi * api,CThostFtdcQryExchangeRateField* pQryExchangeRate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExchangeRate(void* api, struct CThostFtdcQryExchangeRateField* pQryExchangeRate,int nRequestID)
 {
-    return api->ReqQryExchangeRate(pQryExchangeRate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryExchangeRate(pQryExchangeRate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySecAgentACIDMap(CThostFtdcTraderApi * api,CThostFtdcQrySecAgentACIDMapField* pQrySecAgentACIDMap,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySecAgentACIDMap(void* api, struct CThostFtdcQrySecAgentACIDMapField* pQrySecAgentACIDMap,int nRequestID)
 {
-    return api->ReqQrySecAgentACIDMap(pQrySecAgentACIDMap,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySecAgentACIDMap(pQrySecAgentACIDMap,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryProductExchRate(CThostFtdcTraderApi * api,CThostFtdcQryProductExchRateField* pQryProductExchRate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryProductExchRate(void* api, struct CThostFtdcQryProductExchRateField* pQryProductExchRate,int nRequestID)
 {
-    return api->ReqQryProductExchRate(pQryProductExchRate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryProductExchRate(pQryProductExchRate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryProductGroup(CThostFtdcTraderApi * api,CThostFtdcQryProductGroupField* pQryProductGroup,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryProductGroup(void* api, struct CThostFtdcQryProductGroupField* pQryProductGroup,int nRequestID)
 {
-    return api->ReqQryProductGroup(pQryProductGroup,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryProductGroup(pQryProductGroup,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate(CThostFtdcTraderApi * api,CThostFtdcQryMMInstrumentCommissionRateField* pQryMMInstrumentCommissionRate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate(void* api, struct CThostFtdcQryMMInstrumentCommissionRateField* pQryMMInstrumentCommissionRate,int nRequestID)
 {
-    return api->ReqQryMMInstrumentCommissionRate(pQryMMInstrumentCommissionRate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryMMInstrumentCommissionRate(pQryMMInstrumentCommissionRate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate(CThostFtdcTraderApi * api,CThostFtdcQryMMOptionInstrCommRateField* pQryMMOptionInstrCommRate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate(void* api, struct CThostFtdcQryMMOptionInstrCommRateField* pQryMMOptionInstrCommRate,int nRequestID)
 {
-    return api->ReqQryMMOptionInstrCommRate(pQryMMOptionInstrCommRate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryMMOptionInstrCommRate(pQryMMOptionInstrCommRate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate(CThostFtdcTraderApi * api,CThostFtdcQryInstrumentOrderCommRateField* pQryInstrumentOrderCommRate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate(void* api, struct CThostFtdcQryInstrumentOrderCommRateField* pQryInstrumentOrderCommRate,int nRequestID)
 {
-    return api->ReqQryInstrumentOrderCommRate(pQryInstrumentOrderCommRate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInstrumentOrderCommRate(pQryInstrumentOrderCommRate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySecAgentTradingAccount(CThostFtdcTraderApi * api,CThostFtdcQryTradingAccountField* pQryTradingAccount,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySecAgentTradingAccount(void* api, struct CThostFtdcQryTradingAccountField* pQryTradingAccount,int nRequestID)
 {
-    return api->ReqQrySecAgentTradingAccount(pQryTradingAccount,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySecAgentTradingAccount(pQryTradingAccount,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySecAgentCheckMode(CThostFtdcTraderApi * api,CThostFtdcQrySecAgentCheckModeField* pQrySecAgentCheckMode,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySecAgentCheckMode(void* api, struct CThostFtdcQrySecAgentCheckModeField* pQrySecAgentCheckMode,int nRequestID)
 {
-    return api->ReqQrySecAgentCheckMode(pQrySecAgentCheckMode,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySecAgentCheckMode(pQrySecAgentCheckMode,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySecAgentTradeInfo(CThostFtdcTraderApi * api,CThostFtdcQrySecAgentTradeInfoField* pQrySecAgentTradeInfo,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySecAgentTradeInfo(void* api, struct CThostFtdcQrySecAgentTradeInfoField* pQrySecAgentTradeInfo,int nRequestID)
 {
-    return api->ReqQrySecAgentTradeInfo(pQrySecAgentTradeInfo,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySecAgentTradeInfo(pQrySecAgentTradeInfo,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryOptionInstrTradeCost(CThostFtdcTraderApi * api,CThostFtdcQryOptionInstrTradeCostField* pQryOptionInstrTradeCost,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryOptionInstrTradeCost(void* api, struct CThostFtdcQryOptionInstrTradeCostField* pQryOptionInstrTradeCost,int nRequestID)
 {
-    return api->ReqQryOptionInstrTradeCost(pQryOptionInstrTradeCost,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryOptionInstrTradeCost(pQryOptionInstrTradeCost,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryOptionInstrCommRate(CThostFtdcTraderApi * api,CThostFtdcQryOptionInstrCommRateField* pQryOptionInstrCommRate,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryOptionInstrCommRate(void* api, struct CThostFtdcQryOptionInstrCommRateField* pQryOptionInstrCommRate,int nRequestID)
 {
-    return api->ReqQryOptionInstrCommRate(pQryOptionInstrCommRate,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryOptionInstrCommRate(pQryOptionInstrCommRate,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExecOrder(CThostFtdcTraderApi * api,CThostFtdcQryExecOrderField* pQryExecOrder,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryExecOrder(void* api, struct CThostFtdcQryExecOrderField* pQryExecOrder,int nRequestID)
 {
-    return api->ReqQryExecOrder(pQryExecOrder,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryExecOrder(pQryExecOrder,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryForQuote(CThostFtdcTraderApi * api,CThostFtdcQryForQuoteField* pQryForQuote,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryForQuote(void* api, struct CThostFtdcQryForQuoteField* pQryForQuote,int nRequestID)
 {
-    return api->ReqQryForQuote(pQryForQuote,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryForQuote(pQryForQuote,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryQuote(CThostFtdcTraderApi * api,CThostFtdcQryQuoteField* pQryQuote,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryQuote(void* api, struct CThostFtdcQryQuoteField* pQryQuote,int nRequestID)
 {
-    return api->ReqQryQuote(pQryQuote,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryQuote(pQryQuote,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryOptionSelfClose(CThostFtdcTraderApi * api,CThostFtdcQryOptionSelfCloseField* pQryOptionSelfClose,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryOptionSelfClose(void* api, struct CThostFtdcQryOptionSelfCloseField* pQryOptionSelfClose,int nRequestID)
 {
-    return api->ReqQryOptionSelfClose(pQryOptionSelfClose,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryOptionSelfClose(pQryOptionSelfClose,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestUnit(CThostFtdcTraderApi * api,CThostFtdcQryInvestUnitField* pQryInvestUnit,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestUnit(void* api, struct CThostFtdcQryInvestUnitField* pQryInvestUnit,int nRequestID)
 {
-    return api->ReqQryInvestUnit(pQryInvestUnit,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestUnit(pQryInvestUnit,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryCombInstrumentGuard(CThostFtdcTraderApi * api,CThostFtdcQryCombInstrumentGuardField* pQryCombInstrumentGuard,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryCombInstrumentGuard(void* api, struct CThostFtdcQryCombInstrumentGuardField* pQryCombInstrumentGuard,int nRequestID)
 {
-    return api->ReqQryCombInstrumentGuard(pQryCombInstrumentGuard,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryCombInstrumentGuard(pQryCombInstrumentGuard,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryCombAction(CThostFtdcTraderApi * api,CThostFtdcQryCombActionField* pQryCombAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryCombAction(void* api, struct CThostFtdcQryCombActionField* pQryCombAction,int nRequestID)
 {
-    return api->ReqQryCombAction(pQryCombAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryCombAction(pQryCombAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTransferSerial(CThostFtdcTraderApi * api,CThostFtdcQryTransferSerialField* pQryTransferSerial,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTransferSerial(void* api, struct CThostFtdcQryTransferSerialField* pQryTransferSerial,int nRequestID)
 {
-    return api->ReqQryTransferSerial(pQryTransferSerial,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryTransferSerial(pQryTransferSerial,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryAccountregister(CThostFtdcTraderApi * api,CThostFtdcQryAccountregisterField* pQryAccountregister,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryAccountregister(void* api, struct CThostFtdcQryAccountregisterField* pQryAccountregister,int nRequestID)
 {
-    return api->ReqQryAccountregister(pQryAccountregister,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryAccountregister(pQryAccountregister,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryContractBank(CThostFtdcTraderApi * api,CThostFtdcQryContractBankField* pQryContractBank,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryContractBank(void* api, struct CThostFtdcQryContractBankField* pQryContractBank,int nRequestID)
 {
-    return api->ReqQryContractBank(pQryContractBank,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryContractBank(pQryContractBank,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryParkedOrder(CThostFtdcTraderApi * api,CThostFtdcQryParkedOrderField* pQryParkedOrder,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryParkedOrder(void* api, struct CThostFtdcQryParkedOrderField* pQryParkedOrder,int nRequestID)
 {
-    return api->ReqQryParkedOrder(pQryParkedOrder,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryParkedOrder(pQryParkedOrder,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryParkedOrderAction(CThostFtdcTraderApi * api,CThostFtdcQryParkedOrderActionField* pQryParkedOrderAction,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryParkedOrderAction(void* api, struct CThostFtdcQryParkedOrderActionField* pQryParkedOrderAction,int nRequestID)
 {
-    return api->ReqQryParkedOrderAction(pQryParkedOrderAction,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryParkedOrderAction(pQryParkedOrderAction,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTradingNotice(CThostFtdcTraderApi * api,CThostFtdcQryTradingNoticeField* pQryTradingNotice,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryTradingNotice(void* api, struct CThostFtdcQryTradingNoticeField* pQryTradingNotice,int nRequestID)
 {
-    return api->ReqQryTradingNotice(pQryTradingNotice,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryTradingNotice(pQryTradingNotice,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryBrokerTradingParams(CThostFtdcTraderApi * api,CThostFtdcQryBrokerTradingParamsField* pQryBrokerTradingParams,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryBrokerTradingParams(void* api, struct CThostFtdcQryBrokerTradingParamsField* pQryBrokerTradingParams,int nRequestID)
 {
-    return api->ReqQryBrokerTradingParams(pQryBrokerTradingParams,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryBrokerTradingParams(pQryBrokerTradingParams,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryBrokerTradingAlgos(CThostFtdcTraderApi * api,CThostFtdcQryBrokerTradingAlgosField* pQryBrokerTradingAlgos,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryBrokerTradingAlgos(void* api, struct CThostFtdcQryBrokerTradingAlgosField* pQryBrokerTradingAlgos,int nRequestID)
 {
-    return api->ReqQryBrokerTradingAlgos(pQryBrokerTradingAlgos,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryBrokerTradingAlgos(pQryBrokerTradingAlgos,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken(CThostFtdcTraderApi * api,CThostFtdcQueryCFMMCTradingAccountTokenField* pQueryCFMMCTradingAccountToken,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken(void* api, struct CThostFtdcQueryCFMMCTradingAccountTokenField* pQueryCFMMCTradingAccountToken,int nRequestID)
 {
-    return api->ReqQueryCFMMCTradingAccountToken(pQueryCFMMCTradingAccountToken,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQueryCFMMCTradingAccountToken(pQueryCFMMCTradingAccountToken,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqFromBankToFutureByFuture(CThostFtdcTraderApi * api,CThostFtdcReqTransferField* pReqTransfer,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqFromBankToFutureByFuture(void* api, struct CThostFtdcReqTransferField* pReqTransfer,int nRequestID)
 {
-    return api->ReqFromBankToFutureByFuture(pReqTransfer,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqFromBankToFutureByFuture(pReqTransfer,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqFromFutureToBankByFuture(CThostFtdcTraderApi * api,CThostFtdcReqTransferField* pReqTransfer,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqFromFutureToBankByFuture(void* api, struct CThostFtdcReqTransferField* pReqTransfer,int nRequestID)
 {
-    return api->ReqFromFutureToBankByFuture(pReqTransfer,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqFromFutureToBankByFuture(pReqTransfer,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture(CThostFtdcTraderApi * api,CThostFtdcReqQueryAccountField* pReqQueryAccount,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture(void* api, struct CThostFtdcReqQueryAccountField* pReqQueryAccount,int nRequestID)
 {
-    return api->ReqQueryBankAccountMoneyByFuture(pReqQueryAccount,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQueryBankAccountMoneyByFuture(pReqQueryAccount,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryClassifiedInstrument(CThostFtdcTraderApi * api,CThostFtdcQryClassifiedInstrumentField* pQryClassifiedInstrument,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryClassifiedInstrument(void* api, struct CThostFtdcQryClassifiedInstrumentField* pQryClassifiedInstrument,int nRequestID)
 {
-    return api->ReqQryClassifiedInstrument(pQryClassifiedInstrument,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryClassifiedInstrument(pQryClassifiedInstrument,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryCombPromotionParam(CThostFtdcTraderApi * api,CThostFtdcQryCombPromotionParamField* pQryCombPromotionParam,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryCombPromotionParam(void* api, struct CThostFtdcQryCombPromotionParamField* pQryCombPromotionParam,int nRequestID)
 {
-    return api->ReqQryCombPromotionParam(pQryCombPromotionParam,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryCombPromotionParam(pQryCombPromotionParam,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition(CThostFtdcTraderApi * api,CThostFtdcQryRiskSettleInvstPositionField* pQryRiskSettleInvstPosition,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition(void* api, struct CThostFtdcQryRiskSettleInvstPositionField* pQryRiskSettleInvstPosition,int nRequestID)
 {
-    return api->ReqQryRiskSettleInvstPosition(pQryRiskSettleInvstPosition,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRiskSettleInvstPosition(pQryRiskSettleInvstPosition,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRiskSettleProductStatus(CThostFtdcTraderApi * api,CThostFtdcQryRiskSettleProductStatusField* pQryRiskSettleProductStatus,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRiskSettleProductStatus(void* api, struct CThostFtdcQryRiskSettleProductStatusField* pQryRiskSettleProductStatus,int nRequestID)
 {
-    return api->ReqQryRiskSettleProductStatus(pQryRiskSettleProductStatus,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRiskSettleProductStatus(pQryRiskSettleProductStatus,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMFutureParameter(CThostFtdcTraderApi * api,CThostFtdcQrySPBMFutureParameterField* pQrySPBMFutureParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMFutureParameter(void* api, struct CThostFtdcQrySPBMFutureParameterField* pQrySPBMFutureParameter,int nRequestID)
 {
-    return api->ReqQrySPBMFutureParameter(pQrySPBMFutureParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySPBMFutureParameter(pQrySPBMFutureParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMOptionParameter(CThostFtdcTraderApi * api,CThostFtdcQrySPBMOptionParameterField* pQrySPBMOptionParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMOptionParameter(void* api, struct CThostFtdcQrySPBMOptionParameterField* pQrySPBMOptionParameter,int nRequestID)
 {
-    return api->ReqQrySPBMOptionParameter(pQrySPBMOptionParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySPBMOptionParameter(pQrySPBMOptionParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMIntraParameter(CThostFtdcTraderApi * api,CThostFtdcQrySPBMIntraParameterField* pQrySPBMIntraParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMIntraParameter(void* api, struct CThostFtdcQrySPBMIntraParameterField* pQrySPBMIntraParameter,int nRequestID)
 {
-    return api->ReqQrySPBMIntraParameter(pQrySPBMIntraParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySPBMIntraParameter(pQrySPBMIntraParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMInterParameter(CThostFtdcTraderApi * api,CThostFtdcQrySPBMInterParameterField* pQrySPBMInterParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMInterParameter(void* api, struct CThostFtdcQrySPBMInterParameterField* pQrySPBMInterParameter,int nRequestID)
 {
-    return api->ReqQrySPBMInterParameter(pQrySPBMInterParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySPBMInterParameter(pQrySPBMInterParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMPortfDefinition(CThostFtdcTraderApi * api,CThostFtdcQrySPBMPortfDefinitionField* pQrySPBMPortfDefinition,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMPortfDefinition(void* api, struct CThostFtdcQrySPBMPortfDefinitionField* pQrySPBMPortfDefinition,int nRequestID)
 {
-    return api->ReqQrySPBMPortfDefinition(pQrySPBMPortfDefinition,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySPBMPortfDefinition(pQrySPBMPortfDefinition,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef(CThostFtdcTraderApi * api,CThostFtdcQrySPBMInvestorPortfDefField* pQrySPBMInvestorPortfDef,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef(void* api, struct CThostFtdcQrySPBMInvestorPortfDefField* pQrySPBMInvestorPortfDef,int nRequestID)
 {
-    return api->ReqQrySPBMInvestorPortfDef(pQrySPBMInvestorPortfDef,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySPBMInvestorPortfDef(pQrySPBMInvestorPortfDef,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio(CThostFtdcTraderApi * api,CThostFtdcQryInvestorPortfMarginRatioField* pQryInvestorPortfMarginRatio,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio(void* api, struct CThostFtdcQryInvestorPortfMarginRatioField* pQryInvestorPortfMarginRatio,int nRequestID)
 {
-    return api->ReqQryInvestorPortfMarginRatio(pQryInvestorPortfMarginRatio,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorPortfMarginRatio(pQryInvestorPortfMarginRatio,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail(CThostFtdcTraderApi * api,CThostFtdcQryInvestorProdSPBMDetailField* pQryInvestorProdSPBMDetail,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail(void* api, struct CThostFtdcQryInvestorProdSPBMDetailField* pQryInvestorProdSPBMDetail,int nRequestID)
 {
-    return api->ReqQryInvestorProdSPBMDetail(pQryInvestorProdSPBMDetail,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorProdSPBMDetail(pQryInvestorProdSPBMDetail,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin(CThostFtdcTraderApi * api,CThostFtdcQryInvestorCommoditySPMMMarginField* pQryInvestorCommoditySPMMMargin,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin(void* api, struct CThostFtdcQryInvestorCommoditySPMMMarginField* pQryInvestorCommoditySPMMMargin,int nRequestID)
 {
-    return api->ReqQryInvestorCommoditySPMMMargin(pQryInvestorCommoditySPMMMargin,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorCommoditySPMMMargin(pQryInvestorCommoditySPMMMargin,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin(CThostFtdcTraderApi * api,CThostFtdcQryInvestorCommodityGroupSPMMMarginField* pQryInvestorCommodityGroupSPMMMargin,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin(void* api, struct CThostFtdcQryInvestorCommodityGroupSPMMMarginField* pQryInvestorCommodityGroupSPMMMargin,int nRequestID)
 {
-    return api->ReqQryInvestorCommodityGroupSPMMMargin(pQryInvestorCommodityGroupSPMMMargin,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorCommodityGroupSPMMMargin(pQryInvestorCommodityGroupSPMMMargin,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPMMInstParam(CThostFtdcTraderApi * api,CThostFtdcQrySPMMInstParamField* pQrySPMMInstParam,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPMMInstParam(void* api, struct CThostFtdcQrySPMMInstParamField* pQrySPMMInstParam,int nRequestID)
 {
-    return api->ReqQrySPMMInstParam(pQrySPMMInstParam,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySPMMInstParam(pQrySPMMInstParam,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPMMProductParam(CThostFtdcTraderApi * api,CThostFtdcQrySPMMProductParamField* pQrySPMMProductParam,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPMMProductParam(void* api, struct CThostFtdcQrySPMMProductParamField* pQrySPMMProductParam,int nRequestID)
 {
-    return api->ReqQrySPMMProductParam(pQrySPMMProductParam,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySPMMProductParam(pQrySPMMProductParam,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter(CThostFtdcTraderApi * api,CThostFtdcQrySPBMAddOnInterParameterField* pQrySPBMAddOnInterParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter(void* api, struct CThostFtdcQrySPBMAddOnInterParameterField* pQrySPBMAddOnInterParameter,int nRequestID)
 {
-    return api->ReqQrySPBMAddOnInterParameter(pQrySPBMAddOnInterParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQrySPBMAddOnInterParameter(pQrySPBMAddOnInterParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSCombProductInfoField* pQryRCAMSCombProductInfo,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo(void* api, struct CThostFtdcQryRCAMSCombProductInfoField* pQryRCAMSCombProductInfo,int nRequestID)
 {
-    return api->ReqQryRCAMSCombProductInfo(pQryRCAMSCombProductInfo,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRCAMSCombProductInfo(pQryRCAMSCombProductInfo,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSInstrParameter(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSInstrParameterField* pQryRCAMSInstrParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSInstrParameter(void* api, struct CThostFtdcQryRCAMSInstrParameterField* pQryRCAMSInstrParameter,int nRequestID)
 {
-    return api->ReqQryRCAMSInstrParameter(pQryRCAMSInstrParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRCAMSInstrParameter(pQryRCAMSInstrParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSIntraParameter(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSIntraParameterField* pQryRCAMSIntraParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSIntraParameter(void* api, struct CThostFtdcQryRCAMSIntraParameterField* pQryRCAMSIntraParameter,int nRequestID)
 {
-    return api->ReqQryRCAMSIntraParameter(pQryRCAMSIntraParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRCAMSIntraParameter(pQryRCAMSIntraParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSInterParameter(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSInterParameterField* pQryRCAMSInterParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSInterParameter(void* api, struct CThostFtdcQryRCAMSInterParameterField* pQryRCAMSInterParameter,int nRequestID)
 {
-    return api->ReqQryRCAMSInterParameter(pQryRCAMSInterParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRCAMSInterParameter(pQryRCAMSInterParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSShortOptAdjustParamField* pQryRCAMSShortOptAdjustParam,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam(void* api, struct CThostFtdcQryRCAMSShortOptAdjustParamField* pQryRCAMSShortOptAdjustParam,int nRequestID)
 {
-    return api->ReqQryRCAMSShortOptAdjustParam(pQryRCAMSShortOptAdjustParam,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRCAMSShortOptAdjustParam(pQryRCAMSShortOptAdjustParam,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition(CThostFtdcTraderApi * api,CThostFtdcQryRCAMSInvestorCombPositionField* pQryRCAMSInvestorCombPosition,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition(void* api, struct CThostFtdcQryRCAMSInvestorCombPositionField* pQryRCAMSInvestorCombPosition,int nRequestID)
 {
-    return api->ReqQryRCAMSInvestorCombPosition(pQryRCAMSInvestorCombPosition,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRCAMSInvestorCombPosition(pQryRCAMSInvestorCombPosition,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin(CThostFtdcTraderApi * api,CThostFtdcQryInvestorProdRCAMSMarginField* pQryInvestorProdRCAMSMargin,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin(void* api, struct CThostFtdcQryInvestorProdRCAMSMarginField* pQryInvestorProdRCAMSMargin,int nRequestID)
 {
-    return api->ReqQryInvestorProdRCAMSMargin(pQryInvestorProdRCAMSMargin,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorProdRCAMSMargin(pQryInvestorProdRCAMSMargin,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRULEInstrParameter(CThostFtdcTraderApi * api,CThostFtdcQryRULEInstrParameterField* pQryRULEInstrParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRULEInstrParameter(void* api, struct CThostFtdcQryRULEInstrParameterField* pQryRULEInstrParameter,int nRequestID)
 {
-    return api->ReqQryRULEInstrParameter(pQryRULEInstrParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRULEInstrParameter(pQryRULEInstrParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRULEIntraParameter(CThostFtdcTraderApi * api,CThostFtdcQryRULEIntraParameterField* pQryRULEIntraParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRULEIntraParameter(void* api, struct CThostFtdcQryRULEIntraParameterField* pQryRULEIntraParameter,int nRequestID)
 {
-    return api->ReqQryRULEIntraParameter(pQryRULEIntraParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRULEIntraParameter(pQryRULEIntraParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRULEInterParameter(CThostFtdcTraderApi * api,CThostFtdcQryRULEInterParameterField* pQryRULEInterParameter,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryRULEInterParameter(void* api, struct CThostFtdcQryRULEInterParameterField* pQryRULEInterParameter,int nRequestID)
 {
-    return api->ReqQryRULEInterParameter(pQryRULEInterParameter,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryRULEInterParameter(pQryRULEInterParameter,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(CThostFtdcTraderApi * api,CThostFtdcQryInvestorProdRULEMarginField* pQryInvestorProdRULEMargin,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(void* api, struct CThostFtdcQryInvestorProdRULEMarginField* pQryInvestorProdRULEMargin,int nRequestID)
 {
-    return api->ReqQryInvestorProdRULEMargin(pQryInvestorProdRULEMargin,nRequestID);
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorProdRULEMargin(pQryInvestorProdRULEMargin,nRequestID);
 }
 

@@ -23,7 +23,8 @@ add_library(CTPInvoke SHARED
   ${GEN_CODE_DIR}/CTPTd.cpp
 )
 message(STATUS ${td_so})
+target_link_directories(CTPInvoke PUBLIC ${CTP_API_DIR})
 target_link_libraries(CTPInvoke 
-    ${CTP_API_DIR}/libthosttraderapi_se.so
-    ${CTP_API_DIR}/libthostmduserapi_se.so
+    libthosttraderapi_se.so
+    libthostmduserapi_se.so
 )

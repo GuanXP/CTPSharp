@@ -31,16 +31,16 @@ struct CTPSharp_CThostFtdcMdSpi
     void (CTPSHARP_STDCALL *OnFrontConnected)();
     void (CTPSHARP_STDCALL *OnFrontDisconnected)(int nReason);
     void (CTPSHARP_STDCALL *OnHeartBeatWarning)(int nTimeLapse);
-    void (CTPSHARP_STDCALL *OnRspUserLogin)(CThostFtdcRspUserLoginField* pRspUserLogin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspUserLogout)(CThostFtdcUserLogoutField* pUserLogout,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspQryMulticastInstrument)(CThostFtdcMulticastInstrumentField* pMulticastInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspError)(CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspSubMarketData)(CThostFtdcSpecificInstrumentField* pSpecificInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspUnSubMarketData)(CThostFtdcSpecificInstrumentField* pSpecificInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspSubForQuoteRsp)(CThostFtdcSpecificInstrumentField* pSpecificInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRspUnSubForQuoteRsp)(CThostFtdcSpecificInstrumentField* pSpecificInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
-    void (CTPSHARP_STDCALL *OnRtnDepthMarketData)(CThostFtdcDepthMarketDataField* pDepthMarketData);
-    void (CTPSHARP_STDCALL *OnRtnForQuoteRsp)(CThostFtdcForQuoteRspField* pForQuoteRsp);
+    void (CTPSHARP_STDCALL *OnRspUserLogin)(struct CThostFtdcRspUserLoginField* pRspUserLogin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspUserLogout)(struct CThostFtdcUserLogoutField* pUserLogout,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryMulticastInstrument)(struct CThostFtdcMulticastInstrumentField* pMulticastInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspError)(struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspSubMarketData)(struct CThostFtdcSpecificInstrumentField* pSpecificInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspUnSubMarketData)(struct CThostFtdcSpecificInstrumentField* pSpecificInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspSubForQuoteRsp)(struct CThostFtdcSpecificInstrumentField* pSpecificInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspUnSubForQuoteRsp)(struct CThostFtdcSpecificInstrumentField* pSpecificInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRtnDepthMarketData)(struct CThostFtdcDepthMarketDataField* pDepthMarketData);
+    void (CTPSHARP_STDCALL *OnRtnForQuoteRsp)(struct CThostFtdcForQuoteRspField* pForQuoteRsp);
 };
 class CThostFtdcMdSpi_Ex: public CThostFtdcMdSpi
 {
@@ -63,7 +63,7 @@ public:
         _callbacks.OnHeartBeatWarning(nTimeLapse);
     }
 
-    virtual void OnRspUserLogin(CThostFtdcRspUserLoginField* pRspUserLogin,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspUserLogin(struct CThostFtdcRspUserLoginField* pRspUserLogin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRspUserLogin 回调 C# 参数 不能为 NULL
         CThostFtdcRspUserLoginField zero0 = {0};
@@ -74,7 +74,7 @@ public:
         _callbacks.OnRspUserLogin(pRspUserLogin,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspUserLogout(CThostFtdcUserLogoutField* pUserLogout,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspUserLogout(struct CThostFtdcUserLogoutField* pUserLogout,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pUserLogout 回调 C# 参数 不能为 NULL
         CThostFtdcUserLogoutField zero0 = {0};
@@ -85,7 +85,7 @@ public:
         _callbacks.OnRspUserLogout(pUserLogout,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspQryMulticastInstrument(CThostFtdcMulticastInstrumentField* pMulticastInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspQryMulticastInstrument(struct CThostFtdcMulticastInstrumentField* pMulticastInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pMulticastInstrument 回调 C# 参数 不能为 NULL
         CThostFtdcMulticastInstrumentField zero0 = {0};
@@ -96,7 +96,7 @@ public:
         _callbacks.OnRspQryMulticastInstrument(pMulticastInstrument,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspError(CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspError(struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pRspInfo 回调 C# 参数 不能为 NULL
         CThostFtdcRspInfoField zero0 = {0};
@@ -104,7 +104,7 @@ public:
         _callbacks.OnRspError(pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspSubMarketData(CThostFtdcSpecificInstrumentField* pSpecificInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspSubMarketData(struct CThostFtdcSpecificInstrumentField* pSpecificInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSpecificInstrument 回调 C# 参数 不能为 NULL
         CThostFtdcSpecificInstrumentField zero0 = {0};
@@ -115,7 +115,7 @@ public:
         _callbacks.OnRspSubMarketData(pSpecificInstrument,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspUnSubMarketData(CThostFtdcSpecificInstrumentField* pSpecificInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspUnSubMarketData(struct CThostFtdcSpecificInstrumentField* pSpecificInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSpecificInstrument 回调 C# 参数 不能为 NULL
         CThostFtdcSpecificInstrumentField zero0 = {0};
@@ -126,7 +126,7 @@ public:
         _callbacks.OnRspUnSubMarketData(pSpecificInstrument,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspSubForQuoteRsp(CThostFtdcSpecificInstrumentField* pSpecificInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspSubForQuoteRsp(struct CThostFtdcSpecificInstrumentField* pSpecificInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSpecificInstrument 回调 C# 参数 不能为 NULL
         CThostFtdcSpecificInstrumentField zero0 = {0};
@@ -137,7 +137,7 @@ public:
         _callbacks.OnRspSubForQuoteRsp(pSpecificInstrument,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRspUnSubForQuoteRsp(CThostFtdcSpecificInstrumentField* pSpecificInstrument,CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    virtual void OnRspUnSubForQuoteRsp(struct CThostFtdcSpecificInstrumentField* pSpecificInstrument,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
     {
         //pSpecificInstrument 回调 C# 参数 不能为 NULL
         CThostFtdcSpecificInstrumentField zero0 = {0};
@@ -148,7 +148,7 @@ public:
         _callbacks.OnRspUnSubForQuoteRsp(pSpecificInstrument,pRspInfo,nRequestID,bIsLast);
     }
 
-    virtual void OnRtnDepthMarketData(CThostFtdcDepthMarketDataField* pDepthMarketData)
+    virtual void OnRtnDepthMarketData(struct CThostFtdcDepthMarketDataField* pDepthMarketData)
     {
         //pDepthMarketData 回调 C# 参数 不能为 NULL
         CThostFtdcDepthMarketDataField zero0 = {0};
@@ -156,7 +156,7 @@ public:
         _callbacks.OnRtnDepthMarketData(pDepthMarketData);
     }
 
-    virtual void OnRtnForQuoteRsp(CThostFtdcForQuoteRspField* pForQuoteRsp)
+    virtual void OnRtnForQuoteRsp(struct CThostFtdcForQuoteRspField* pForQuoteRsp)
     {
         //pForQuoteRsp 回调 C# 参数 不能为 NULL
         CThostFtdcForQuoteRspField zero0 = {0};
@@ -166,17 +166,17 @@ public:
 
 };
 extern "C"
-CTPSHARP_EXPORT void* CTPSHARP_STDCALL CThostFtdcMdSpi_New(const CTPSharp_CThostFtdcMdSpi* callbacks)
+CTPSHARP_EXPORT void* CTPSHARP_STDCALL CThostFtdcMdSpi_New(const struct CTPSharp_CThostFtdcMdSpi* callbacks)
 {
     return new CThostFtdcMdSpi_Ex(callbacks);
 }
 extern "C"
 CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdSpi_Delete(void* spi)
 {
-    delete (CThostFtdcMdSpi_Ex*)spi;
+    delete static_cast<CThostFtdcMdSpi_Ex*>(spi);
 }
 extern "C"
-CTPSHARP_EXPORT CThostFtdcMdApi* CTPSHARP_STDCALL CThostFtdcMdApi_Create(const char* pszFlowPath,const bool bIsUsingUdp,const bool bIsMulticast)
+CTPSHARP_EXPORT void* CTPSHARP_STDCALL CThostFtdcMdApi_Create(const char* pszFlowPath,const bool bIsUsingUdp,const bool bIsMulticast)
 {
     return CThostFtdcMdApi::CreateFtdcMdApi(pszFlowPath,bIsUsingUdp,bIsMulticast);
 }
@@ -186,78 +186,78 @@ CTPSHARP_EXPORT const char* CTPSHARP_STDCALL CThostFtdcMdApi_GetApiVersion()
     return CThostFtdcMdApi::GetApiVersion();
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_Release(CThostFtdcMdApi* api)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_Release(void* api)
 {
-    api->Release();
+    static_cast<CThostFtdcMdApi*>(api)->Release();
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_Init(CThostFtdcMdApi* api)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_Init(void* api)
 {
-    api->Init();
+    static_cast<CThostFtdcMdApi*>(api)->Init();
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_Join(CThostFtdcMdApi* api)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_Join(void* api)
 {
-    return api->Join();
+    return static_cast<CThostFtdcMdApi*>(api)->Join();
 }
 extern "C"
-CTPSHARP_EXPORT const char* CTPSHARP_STDCALL CThostFtdcMdApi_GetTradingDay(CThostFtdcMdApi* api)
+CTPSHARP_EXPORT const char* CTPSHARP_STDCALL CThostFtdcMdApi_GetTradingDay(void* api)
 {
-    return api->GetTradingDay();
+    return static_cast<CThostFtdcMdApi*>(api)->GetTradingDay();
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_RegisterFront(CThostFtdcMdApi * api,char* pszFrontAddress)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_RegisterFront(void* api, char* pszFrontAddress)
 {
-    api->RegisterFront(pszFrontAddress);
+    static_cast<CThostFtdcMdApi*>(api)->RegisterFront(pszFrontAddress);
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_RegisterNameServer(CThostFtdcMdApi * api,char* pszNsAddress)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_RegisterNameServer(void* api, char* pszNsAddress)
 {
-    api->RegisterNameServer(pszNsAddress);
+    static_cast<CThostFtdcMdApi*>(api)->RegisterNameServer(pszNsAddress);
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_RegisterFensUserInfo(CThostFtdcMdApi * api,CThostFtdcFensUserInfoField* pFensUserInfo)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_RegisterFensUserInfo(void* api, struct CThostFtdcFensUserInfoField* pFensUserInfo)
 {
-    api->RegisterFensUserInfo(pFensUserInfo);
+    static_cast<CThostFtdcMdApi*>(api)->RegisterFensUserInfo(pFensUserInfo);
 }
 extern "C"
-CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_RegisterSpi(CThostFtdcMdApi * api,CThostFtdcMdSpi* pSpi)
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcMdApi_RegisterSpi(void* api, void* pSpi)
 {
-    api->RegisterSpi(pSpi);
+    static_cast<CThostFtdcMdApi*>(api)->RegisterSpi(static_cast<CThostFtdcMdSpi*>(pSpi));
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_SubscribeMarketData(CThostFtdcMdApi * api,char** ppInstrumentID,int nCount)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_SubscribeMarketData(void* api, char** ppInstrumentID,int nCount)
 {
-    return api->SubscribeMarketData(ppInstrumentID,nCount);
+    return static_cast<CThostFtdcMdApi*>(api)->SubscribeMarketData(ppInstrumentID,nCount);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_UnSubscribeMarketData(CThostFtdcMdApi * api,char** ppInstrumentID,int nCount)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_UnSubscribeMarketData(void* api, char** ppInstrumentID,int nCount)
 {
-    return api->UnSubscribeMarketData(ppInstrumentID,nCount);
+    return static_cast<CThostFtdcMdApi*>(api)->UnSubscribeMarketData(ppInstrumentID,nCount);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_SubscribeForQuoteRsp(CThostFtdcMdApi * api,char** ppInstrumentID,int nCount)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_SubscribeForQuoteRsp(void* api, char** ppInstrumentID,int nCount)
 {
-    return api->SubscribeForQuoteRsp(ppInstrumentID,nCount);
+    return static_cast<CThostFtdcMdApi*>(api)->SubscribeForQuoteRsp(ppInstrumentID,nCount);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_UnSubscribeForQuoteRsp(CThostFtdcMdApi * api,char** ppInstrumentID,int nCount)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_UnSubscribeForQuoteRsp(void* api, char** ppInstrumentID,int nCount)
 {
-    return api->UnSubscribeForQuoteRsp(ppInstrumentID,nCount);
+    return static_cast<CThostFtdcMdApi*>(api)->UnSubscribeForQuoteRsp(ppInstrumentID,nCount);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_ReqUserLogin(CThostFtdcMdApi * api,CThostFtdcReqUserLoginField* pReqUserLoginField,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_ReqUserLogin(void* api, struct CThostFtdcReqUserLoginField* pReqUserLoginField,int nRequestID)
 {
-    return api->ReqUserLogin(pReqUserLoginField,nRequestID);
+    return static_cast<CThostFtdcMdApi*>(api)->ReqUserLogin(pReqUserLoginField,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_ReqUserLogout(CThostFtdcMdApi * api,CThostFtdcUserLogoutField* pUserLogout,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_ReqUserLogout(void* api, struct CThostFtdcUserLogoutField* pUserLogout,int nRequestID)
 {
-    return api->ReqUserLogout(pUserLogout,nRequestID);
+    return static_cast<CThostFtdcMdApi*>(api)->ReqUserLogout(pUserLogout,nRequestID);
 }
 extern "C"
-CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_ReqQryMulticastInstrument(CThostFtdcMdApi * api,CThostFtdcQryMulticastInstrumentField* pQryMulticastInstrument,int nRequestID)
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcMdApi_ReqQryMulticastInstrument(void* api, struct CThostFtdcQryMulticastInstrumentField* pQryMulticastInstrument,int nRequestID)
 {
-    return api->ReqQryMulticastInstrument(pQryMulticastInstrument,nRequestID);
+    return static_cast<CThostFtdcMdApi*>(api)->ReqQryMulticastInstrument(pQryMulticastInstrument,nRequestID);
 }
 
