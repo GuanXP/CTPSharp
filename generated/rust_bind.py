@@ -61,7 +61,12 @@ def generate_header():
     file_out.close()
 
 def generate_rust():
-    result = subprocess.run(["bindgen", f"{header_file}", "-o",  f"{rust_file}"])
+    result = subprocess.run(["bindgen", 
+                             "--no-layout-tests",
+                             "--dynamic-loading", "CTPInvoke",
+                             f"{header_file}", 
+                             "-o", f"{rust_file}"]                             
+                             )
     if result.returncode == 0:
         print("rust绑定文件生成成功")
     else:

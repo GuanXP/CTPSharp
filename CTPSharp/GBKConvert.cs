@@ -13,12 +13,13 @@ internal class GBKConvert
 
     public string GetString(byte[] bytes)
     {
+        if (bytes == null || bytes[0] == 0) return string.Empty;
         return _GBKEncoding.GetString(bytes).Trim('\0');
     }
 
     public unsafe string GetString(IntPtr ptr)
     {
-        if (ptr == IntPtr.Zero) return "";
+        if (ptr == IntPtr.Zero) return string.Empty;
         int nbBytes = 0;
         for (byte* p = (byte*)ptr; *p != 0; p += 1, nbBytes += 1) ;
         return _GBKEncoding.GetString((byte*)ptr, nbBytes);
