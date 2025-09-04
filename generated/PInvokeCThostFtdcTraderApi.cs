@@ -21,6 +21,9 @@ internal partial class CTPSharpPInvoke
     [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_GetTradingDay", CharSet=CharSet.Ansi)]
    public extern static IntPtr CThostFtdcTraderApi_GetTradingDay(IntPtr handle);
 
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_GetFrontInfo", CharSet=CharSet.Ansi)]
+   public extern static void CThostFtdcTraderApi_GetFrontInfo(IntPtr handle, ref CThostFtdcFrontInfoField pFrontInfo);
+
     [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_RegisterFront", CharSet=CharSet.Ansi)]
    public extern static void CThostFtdcTraderApi_RegisterFront(IntPtr handle, [MarshalAs(UnmanagedType.LPStr)] string pszFrontAddress);
 
@@ -47,6 +50,12 @@ internal partial class CTPSharpPInvoke
 
     [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_SubmitUserSystemInfo", CharSet=CharSet.Ansi)]
    public extern static int CThostFtdcTraderApi_SubmitUserSystemInfo(IntPtr handle, ref CThostFtdcUserSystemInfoField pUserSystemInfo);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_RegisterWechatUserSystemInfo", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_RegisterWechatUserSystemInfo(IntPtr handle, ref CThostFtdcWechatUserSystemInfoField pUserSystemInfo);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_SubmitWechatUserSystemInfo", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_SubmitWechatUserSystemInfo(IntPtr handle, ref CThostFtdcWechatUserSystemInfoField pUserSystemInfo);
 
     [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqUserLogin", CharSet=CharSet.Ansi)]
    public extern static int CThostFtdcTraderApi_ReqUserLogin(IntPtr handle, ref CThostFtdcReqUserLoginField pReqUserLoginField,int nRequestID);
@@ -378,6 +387,24 @@ internal partial class CTPSharpPInvoke
     [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin", CharSet=CharSet.Ansi)]
    public extern static int CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(IntPtr handle, ref CThostFtdcQryInvestorProdRULEMarginField pQryInvestorProdRULEMargin,int nRequestID);
 
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryInvestorPortfSetting", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryInvestorPortfSetting(IntPtr handle, ref CThostFtdcQryInvestorPortfSettingField pQryInvestorPortfSetting,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryInvestorInfoCommRec", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryInvestorInfoCommRec(IntPtr handle, ref CThostFtdcQryInvestorInfoCommRecField pQryInvestorInfoCommRec,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryCombLeg", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryCombLeg(IntPtr handle, ref CThostFtdcQryCombLegField pQryCombLeg,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqOffsetSetting", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqOffsetSetting(IntPtr handle, ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqCancelOffsetSetting", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqCancelOffsetSetting(IntPtr handle, ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,int nRequestID);
+
+    [DllImport("CTPInvoke", EntryPoint="CThostFtdcTraderApi_ReqQryOffsetSetting", CharSet=CharSet.Ansi)]
+   public extern static int CThostFtdcTraderApi_ReqQryOffsetSetting(IntPtr handle, ref CThostFtdcQryOffsetSettingField pQryOffsetSetting,int nRequestID);
+
 }
 public sealed class CThostFtdcTraderApi
 {
@@ -425,6 +452,14 @@ public sealed class CThostFtdcTraderApi
     public string GetTradingDay()
     {
         return GBKConvert.Instance.GetString(CTPSharpPInvoke.CThostFtdcTraderApi_GetTradingDay(_handle));
+    }
+
+    /// <summary>
+    /// 获取已连接的前置的信息
+    /// </summary>
+    public void GetFrontInfo(ref CThostFtdcFrontInfoField pFrontInfo)
+    {
+        CTPSharpPInvoke.CThostFtdcTraderApi_GetFrontInfo(_handle, ref pFrontInfo);
     }
 
     /// <summary>
@@ -503,6 +538,22 @@ public sealed class CThostFtdcTraderApi
     public int SubmitUserSystemInfo(ref CThostFtdcUserSystemInfoField pUserSystemInfo)
     {
         return CTPSharpPInvoke.CThostFtdcTraderApi_SubmitUserSystemInfo(_handle, ref pUserSystemInfo);
+    }
+
+    /// <summary>
+    /// 注册用户终端信息，用于中继服务器多连接模式.用于微信小程序等应用上报信息.
+    /// </summary>
+    public int RegisterWechatUserSystemInfo(ref CThostFtdcWechatUserSystemInfoField pUserSystemInfo)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_RegisterWechatUserSystemInfo(_handle, ref pUserSystemInfo);
+    }
+
+    /// <summary>
+    /// 上报用户终端信息，用于中继服务器操作员登录模式.用于微信小程序等应用上报信息.
+    /// </summary>
+    public int SubmitWechatUserSystemInfo(ref CThostFtdcWechatUserSystemInfoField pUserSystemInfo)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_SubmitWechatUserSystemInfo(_handle, ref pUserSystemInfo);
     }
 
     /// <summary>
@@ -1383,6 +1434,54 @@ public sealed class CThostFtdcTraderApi
     public int ReqQryInvestorProdRULEMargin(ref CThostFtdcQryInvestorProdRULEMarginField pQryInvestorProdRULEMargin,int nRequestID)
     {
         return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(_handle, ref pQryInvestorProdRULEMargin,nRequestID);
+    }
+
+    /// <summary>
+    /// 投资者新型组合保证金开关查询
+    /// </summary>
+    public int ReqQryInvestorPortfSetting(ref CThostFtdcQryInvestorPortfSettingField pQryInvestorPortfSetting,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryInvestorPortfSetting(_handle, ref pQryInvestorPortfSetting,nRequestID);
+    }
+
+    /// <summary>
+    /// 投资者申报费阶梯收取记录查询
+    /// </summary>
+    public int ReqQryInvestorInfoCommRec(ref CThostFtdcQryInvestorInfoCommRecField pQryInvestorInfoCommRec,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryInvestorInfoCommRec(_handle, ref pQryInvestorInfoCommRec,nRequestID);
+    }
+
+    /// <summary>
+    /// 组合腿信息查询
+    /// </summary>
+    public int ReqQryCombLeg(ref CThostFtdcQryCombLegField pQryCombLeg,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryCombLeg(_handle, ref pQryCombLeg,nRequestID);
+    }
+
+    /// <summary>
+    /// 对冲设置请求
+    /// </summary>
+    public int ReqOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqOffsetSetting(_handle, ref pInputOffsetSetting,nRequestID);
+    }
+
+    /// <summary>
+    /// 对冲设置撤销请求
+    /// </summary>
+    public int ReqCancelOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqCancelOffsetSetting(_handle, ref pInputOffsetSetting,nRequestID);
+    }
+
+    /// <summary>
+    /// 投资者对冲设置查询
+    /// </summary>
+    public int ReqQryOffsetSetting(ref CThostFtdcQryOffsetSettingField pQryOffsetSetting,int nRequestID)
+    {
+        return CTPSharpPInvoke.CThostFtdcTraderApi_ReqQryOffsetSetting(_handle, ref pQryOffsetSetting,nRequestID);
     }
 
     public void Dispose()

@@ -620,6 +620,42 @@ internal struct CTPSharp_CThostFtdcTraderSpi
     internal delegate void DelOnRspQryInvestorProdRULEMargin(ref CThostFtdcInvestorProdRULEMarginField pInvestorProdRULEMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
     internal DelOnRspQryInvestorProdRULEMargin OnRspQryInvestorProdRULEMargin;
 
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryInvestorPortfSetting(ref CThostFtdcInvestorPortfSettingField pInvestorPortfSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryInvestorPortfSetting OnRspQryInvestorPortfSetting;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryInvestorInfoCommRec(ref CThostFtdcInvestorInfoCommRecField pInvestorInfoCommRec,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryInvestorInfoCommRec OnRspQryInvestorInfoCommRec;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryCombLeg(ref CThostFtdcCombLegField pCombLeg,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryCombLeg OnRspQryCombLeg;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspOffsetSetting OnRspOffsetSetting;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspCancelOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspCancelOffsetSetting OnRspCancelOffsetSetting;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRtnOffsetSetting(ref CThostFtdcOffsetSettingField pOffsetSetting);
+    internal DelOnRtnOffsetSetting OnRtnOffsetSetting;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnErrRtnOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,ref CThostFtdcRspInfoField pRspInfo);
+    internal DelOnErrRtnOffsetSetting OnErrRtnOffsetSetting;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnErrRtnCancelOffsetSetting(ref CThostFtdcCancelOffsetSettingField pCancelOffsetSetting,ref CThostFtdcRspInfoField pRspInfo);
+    internal DelOnErrRtnCancelOffsetSetting OnErrRtnCancelOffsetSetting;
+
+    [UnmanagedFunctionPointer(CallingConvention.StdCall, CharSet = CharSet.Ansi, SetLastError = true)]
+    internal delegate void DelOnRspQryOffsetSetting(ref CThostFtdcOffsetSettingField pOffsetSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast);
+    internal DelOnRspQryOffsetSetting OnRspQryOffsetSetting;
+
 }
 internal partial class CTPSharpPInvoke
 {
@@ -790,6 +826,15 @@ public class CThostFtdcTraderSpi: IDisposable
         _spi.OnRspQryRULEIntraParameter = this.OnRspQryRULEIntraParameter;
         _spi.OnRspQryRULEInterParameter = this.OnRspQryRULEInterParameter;
         _spi.OnRspQryInvestorProdRULEMargin = this.OnRspQryInvestorProdRULEMargin;
+        _spi.OnRspQryInvestorPortfSetting = this.OnRspQryInvestorPortfSetting;
+        _spi.OnRspQryInvestorInfoCommRec = this.OnRspQryInvestorInfoCommRec;
+        _spi.OnRspQryCombLeg = this.OnRspQryCombLeg;
+        _spi.OnRspOffsetSetting = this.OnRspOffsetSetting;
+        _spi.OnRspCancelOffsetSetting = this.OnRspCancelOffsetSetting;
+        _spi.OnRtnOffsetSetting = this.OnRtnOffsetSetting;
+        _spi.OnErrRtnOffsetSetting = this.OnErrRtnOffsetSetting;
+        _spi.OnErrRtnCancelOffsetSetting = this.OnErrRtnCancelOffsetSetting;
+        _spi.OnRspQryOffsetSetting = this.OnRspQryOffsetSetting;
         _handle = CTPSharpPInvoke.CThostFtdcTraderSpi_New(ref _spi);
     }
     /// <summary>
@@ -1563,6 +1608,51 @@ public class CThostFtdcTraderSpi: IDisposable
     /// 投资者产品RULE保证金查询响应
     /// </summary>
     public virtual void OnRspQryInvestorProdRULEMargin(ref CThostFtdcInvestorProdRULEMarginField pInvestorProdRULEMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 投资者新型组合保证金开关查询响应
+    /// </summary>
+    public virtual void OnRspQryInvestorPortfSetting(ref CThostFtdcInvestorPortfSettingField pInvestorPortfSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 投资者申报费阶梯收取记录查询响应
+    /// </summary>
+    public virtual void OnRspQryInvestorInfoCommRec(ref CThostFtdcInvestorInfoCommRecField pInvestorInfoCommRec,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 组合腿信息查询响应
+    /// </summary>
+    public virtual void OnRspQryCombLeg(ref CThostFtdcCombLegField pCombLeg,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 对冲设置请求响应
+    /// </summary>
+    public virtual void OnRspOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 对冲设置撤销请求响应
+    /// </summary>
+    public virtual void OnRspCancelOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
+
+    /// <summary>
+    /// 对冲设置通知
+    /// </summary>
+    public virtual void OnRtnOffsetSetting(ref CThostFtdcOffsetSettingField pOffsetSetting){}
+
+    /// <summary>
+    /// 对冲设置错误回报
+    /// </summary>
+    public virtual void OnErrRtnOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,ref CThostFtdcRspInfoField pRspInfo){}
+
+    /// <summary>
+    /// 对冲设置撤销错误回报
+    /// </summary>
+    public virtual void OnErrRtnCancelOffsetSetting(ref CThostFtdcCancelOffsetSettingField pCancelOffsetSetting,ref CThostFtdcRspInfoField pRspInfo){}
+
+    /// <summary>
+    /// 投资者对冲设置查询响应
+    /// </summary>
+    public virtual void OnRspQryOffsetSetting(ref CThostFtdcOffsetSettingField pOffsetSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast){}
 
     private void Close()
     {

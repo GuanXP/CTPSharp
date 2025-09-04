@@ -1,4 +1,4 @@
-//由 generator生成的文件，不要手工修改
+﻿//由 generator生成的文件，不要手工修改
 
 #include "ThostFtdcTraderApi.h"
 
@@ -182,6 +182,15 @@ struct CTPSharp_CThostFtdcTraderSpi
     void (CTPSHARP_STDCALL *OnRspQryRULEIntraParameter)(struct CThostFtdcRULEIntraParameterField* pRULEIntraParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
     void (CTPSHARP_STDCALL *OnRspQryRULEInterParameter)(struct CThostFtdcRULEInterParameterField* pRULEInterParameter,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
     void (CTPSHARP_STDCALL *OnRspQryInvestorProdRULEMargin)(struct CThostFtdcInvestorProdRULEMarginField* pInvestorProdRULEMargin,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorPortfSetting)(struct CThostFtdcInvestorPortfSettingField* pInvestorPortfSetting,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryInvestorInfoCommRec)(struct CThostFtdcInvestorInfoCommRecField* pInvestorInfoCommRec,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspQryCombLeg)(struct CThostFtdcCombLegField* pCombLeg,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspOffsetSetting)(struct CThostFtdcInputOffsetSettingField* pInputOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRspCancelOffsetSetting)(struct CThostFtdcInputOffsetSettingField* pInputOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
+    void (CTPSHARP_STDCALL *OnRtnOffsetSetting)(struct CThostFtdcOffsetSettingField* pOffsetSetting);
+    void (CTPSHARP_STDCALL *OnErrRtnOffsetSetting)(struct CThostFtdcInputOffsetSettingField* pInputOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnErrRtnCancelOffsetSetting)(struct CThostFtdcCancelOffsetSettingField* pCancelOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo);
+    void (CTPSHARP_STDCALL *OnRspQryOffsetSetting)(struct CThostFtdcOffsetSettingField* pOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast);
 };
 class CThostFtdcTraderSpi_Ex: public CThostFtdcTraderSpi
 {
@@ -1784,6 +1793,102 @@ public:
         _callbacks.OnRspQryInvestorProdRULEMargin(pInvestorProdRULEMargin,pRspInfo,nRequestID,bIsLast);
     }
 
+    virtual void OnRspQryInvestorPortfSetting(struct CThostFtdcInvestorPortfSettingField* pInvestorPortfSetting,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pInvestorPortfSetting 回调 C# 参数 不能为 NULL
+        CThostFtdcInvestorPortfSettingField zero0 = {0};
+        if (!pInvestorPortfSetting) pInvestorPortfSetting = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryInvestorPortfSetting(pInvestorPortfSetting,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryInvestorInfoCommRec(struct CThostFtdcInvestorInfoCommRecField* pInvestorInfoCommRec,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pInvestorInfoCommRec 回调 C# 参数 不能为 NULL
+        CThostFtdcInvestorInfoCommRecField zero0 = {0};
+        if (!pInvestorInfoCommRec) pInvestorInfoCommRec = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryInvestorInfoCommRec(pInvestorInfoCommRec,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspQryCombLeg(struct CThostFtdcCombLegField* pCombLeg,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pCombLeg 回调 C# 参数 不能为 NULL
+        CThostFtdcCombLegField zero0 = {0};
+        if (!pCombLeg) pCombLeg = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryCombLeg(pCombLeg,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspOffsetSetting(struct CThostFtdcInputOffsetSettingField* pInputOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pInputOffsetSetting 回调 C# 参数 不能为 NULL
+        CThostFtdcInputOffsetSettingField zero0 = {0};
+        if (!pInputOffsetSetting) pInputOffsetSetting = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspOffsetSetting(pInputOffsetSetting,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRspCancelOffsetSetting(struct CThostFtdcInputOffsetSettingField* pInputOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pInputOffsetSetting 回调 C# 参数 不能为 NULL
+        CThostFtdcInputOffsetSettingField zero0 = {0};
+        if (!pInputOffsetSetting) pInputOffsetSetting = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspCancelOffsetSetting(pInputOffsetSetting,pRspInfo,nRequestID,bIsLast);
+    }
+
+    virtual void OnRtnOffsetSetting(struct CThostFtdcOffsetSettingField* pOffsetSetting)
+    {
+        //pOffsetSetting 回调 C# 参数 不能为 NULL
+        CThostFtdcOffsetSettingField zero0 = {0};
+        if (!pOffsetSetting) pOffsetSetting = &zero0;
+        _callbacks.OnRtnOffsetSetting(pOffsetSetting);
+    }
+
+    virtual void OnErrRtnOffsetSetting(struct CThostFtdcInputOffsetSettingField* pInputOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo)
+    {
+        //pInputOffsetSetting 回调 C# 参数 不能为 NULL
+        CThostFtdcInputOffsetSettingField zero0 = {0};
+        if (!pInputOffsetSetting) pInputOffsetSetting = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnErrRtnOffsetSetting(pInputOffsetSetting,pRspInfo);
+    }
+
+    virtual void OnErrRtnCancelOffsetSetting(struct CThostFtdcCancelOffsetSettingField* pCancelOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo)
+    {
+        //pCancelOffsetSetting 回调 C# 参数 不能为 NULL
+        CThostFtdcCancelOffsetSettingField zero0 = {0};
+        if (!pCancelOffsetSetting) pCancelOffsetSetting = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnErrRtnCancelOffsetSetting(pCancelOffsetSetting,pRspInfo);
+    }
+
+    virtual void OnRspQryOffsetSetting(struct CThostFtdcOffsetSettingField* pOffsetSetting,struct CThostFtdcRspInfoField* pRspInfo,int nRequestID,bool bIsLast)
+    {
+        //pOffsetSetting 回调 C# 参数 不能为 NULL
+        CThostFtdcOffsetSettingField zero0 = {0};
+        if (!pOffsetSetting) pOffsetSetting = &zero0;
+        //pRspInfo 回调 C# 参数 不能为 NULL
+        CThostFtdcRspInfoField zero1 = {0};
+        if (!pRspInfo) pRspInfo = &zero1;
+        _callbacks.OnRspQryOffsetSetting(pOffsetSetting,pRspInfo,nRequestID,bIsLast);
+    }
+
 };
 extern "C"
 CTPSHARP_EXPORT void* CTPSHARP_STDCALL CThostFtdcTraderSpi_New(const struct CTPSharp_CThostFtdcTraderSpi* callbacks)
@@ -1824,6 +1929,11 @@ extern "C"
 CTPSHARP_EXPORT const char* CTPSHARP_STDCALL CThostFtdcTraderApi_GetTradingDay(void* api)
 {
     return static_cast<CThostFtdcTraderApi*>(api)->GetTradingDay();
+}
+extern "C"
+CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_GetFrontInfo(void* api, struct CThostFtdcFrontInfoField* pFrontInfo)
+{
+    static_cast<CThostFtdcTraderApi*>(api)->GetFrontInfo(pFrontInfo);
 }
 extern "C"
 CTPSHARP_EXPORT void CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterFront(void* api, char* pszFrontAddress)
@@ -1869,6 +1979,16 @@ extern "C"
 CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_SubmitUserSystemInfo(void* api, struct CThostFtdcUserSystemInfoField* pUserSystemInfo)
 {
     return static_cast<CThostFtdcTraderApi*>(api)->SubmitUserSystemInfo(pUserSystemInfo);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_RegisterWechatUserSystemInfo(void* api, struct CThostFtdcWechatUserSystemInfoField* pUserSystemInfo)
+{
+    return static_cast<CThostFtdcTraderApi*>(api)->RegisterWechatUserSystemInfo(pUserSystemInfo);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_SubmitWechatUserSystemInfo(void* api, struct CThostFtdcWechatUserSystemInfoField* pUserSystemInfo)
+{
+    return static_cast<CThostFtdcTraderApi*>(api)->SubmitWechatUserSystemInfo(pUserSystemInfo);
 }
 extern "C"
 CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqUserLogin(void* api, struct CThostFtdcReqUserLoginField* pReqUserLoginField,int nRequestID)
@@ -2419,5 +2539,35 @@ extern "C"
 CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(void* api, struct CThostFtdcQryInvestorProdRULEMarginField* pQryInvestorProdRULEMargin,int nRequestID)
 {
     return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorProdRULEMargin(pQryInvestorProdRULEMargin,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorPortfSetting(void* api, struct CThostFtdcQryInvestorPortfSettingField* pQryInvestorPortfSetting,int nRequestID)
+{
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorPortfSetting(pQryInvestorPortfSetting,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryInvestorInfoCommRec(void* api, struct CThostFtdcQryInvestorInfoCommRecField* pQryInvestorInfoCommRec,int nRequestID)
+{
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryInvestorInfoCommRec(pQryInvestorInfoCommRec,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryCombLeg(void* api, struct CThostFtdcQryCombLegField* pQryCombLeg,int nRequestID)
+{
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryCombLeg(pQryCombLeg,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqOffsetSetting(void* api, struct CThostFtdcInputOffsetSettingField* pInputOffsetSetting,int nRequestID)
+{
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqOffsetSetting(pInputOffsetSetting,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqCancelOffsetSetting(void* api, struct CThostFtdcInputOffsetSettingField* pInputOffsetSetting,int nRequestID)
+{
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqCancelOffsetSetting(pInputOffsetSetting,nRequestID);
+}
+extern "C"
+CTPSHARP_EXPORT int CTPSHARP_STDCALL CThostFtdcTraderApi_ReqQryOffsetSetting(void* api, struct CThostFtdcQryOffsetSettingField* pQryOffsetSetting,int nRequestID)
+{
+    return static_cast<CThostFtdcTraderApi*>(api)->ReqQryOffsetSetting(pQryOffsetSetting,nRequestID);
 }
 

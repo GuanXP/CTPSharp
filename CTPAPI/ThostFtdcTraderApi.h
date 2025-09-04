@@ -498,6 +498,33 @@ public:
 
 	///投资者产品RULE保证金查询响应
 	virtual void OnRspQryInvestorProdRULEMargin(CThostFtdcInvestorProdRULEMarginField *pInvestorProdRULEMargin, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+
+	///投资者新型组合保证金开关查询响应
+	virtual void OnRspQryInvestorPortfSetting(CThostFtdcInvestorPortfSettingField *pInvestorPortfSetting, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+
+	///投资者申报费阶梯收取记录查询响应
+	virtual void OnRspQryInvestorInfoCommRec(CThostFtdcInvestorInfoCommRecField *pInvestorInfoCommRec, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+
+	///组合腿信息查询响应
+	virtual void OnRspQryCombLeg(CThostFtdcCombLegField *pCombLeg, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+
+	///对冲设置请求响应
+	virtual void OnRspOffsetSetting(CThostFtdcInputOffsetSettingField *pInputOffsetSetting, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+
+	///对冲设置撤销请求响应
+	virtual void OnRspCancelOffsetSetting(CThostFtdcInputOffsetSettingField *pInputOffsetSetting, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
+
+	///对冲设置通知
+	virtual void OnRtnOffsetSetting(CThostFtdcOffsetSettingField *pOffsetSetting) {};
+
+	///对冲设置错误回报
+	virtual void OnErrRtnOffsetSetting(CThostFtdcInputOffsetSettingField *pInputOffsetSetting, CThostFtdcRspInfoField *pRspInfo) {};
+
+	///对冲设置撤销错误回报
+	virtual void OnErrRtnCancelOffsetSetting(CThostFtdcCancelOffsetSettingField *pCancelOffsetSetting, CThostFtdcRspInfoField *pRspInfo) {};
+
+	///投资者对冲设置查询响应
+	virtual void OnRspQryOffsetSetting(CThostFtdcOffsetSettingField *pOffsetSetting, CThostFtdcRspInfoField *pRspInfo, int nRequestID, bool bIsLast) {};
 };
 
 class TRADER_API_EXPORT CThostFtdcTraderApi
@@ -528,6 +555,12 @@ public:
 	///@retrun 获取到的交易日
 	///@remark 只有登录成功后,才能得到正确的交易日
 	virtual const char *GetTradingDay() = 0;
+	
+	///获取已连接的前置的信息
+	/// @param pFrontInfo：输入输出参数，用于存储获取到的前置信息，不能为空
+	/// @remark 连接成功后，可获取正确的前置地址信息
+	/// @remark 登录成功后，可获取正确的前置流控信息
+	virtual void GetFrontInfo(CThostFtdcFrontInfoField* pFrontInfo) =0;
 	
 	///注册前置机网络地址
 	///@param pszFrontAddress：前置机网络地址。
@@ -577,6 +610,10 @@ public:
 	///上报用户终端信息，用于中继服务器操作员登录模式
 	///操作员登录后，可以多次调用该接口上报客户信息
 	virtual int SubmitUserSystemInfo(CThostFtdcUserSystemInfoField *pUserSystemInfo) = 0;
+	///注册用户终端信息，用于中继服务器多连接模式.用于微信小程序等应用上报信息.
+	virtual int RegisterWechatUserSystemInfo(CThostFtdcWechatUserSystemInfoField *pUserSystemInfo) = 0;
+	///上报用户终端信息，用于中继服务器操作员登录模式.用于微信小程序等应用上报信息.
+	virtual int SubmitWechatUserSystemInfo(CThostFtdcWechatUserSystemInfoField *pUserSystemInfo) = 0;
 
 	///用户登录请求
 	virtual int ReqUserLogin(CThostFtdcReqUserLoginField *pReqUserLoginField, int nRequestID) = 0;
@@ -907,6 +944,24 @@ public:
 
 	///投资者产品RULE保证金查询
 	virtual int ReqQryInvestorProdRULEMargin(CThostFtdcQryInvestorProdRULEMarginField *pQryInvestorProdRULEMargin, int nRequestID) = 0;
+
+	///投资者新型组合保证金开关查询
+	virtual int ReqQryInvestorPortfSetting(CThostFtdcQryInvestorPortfSettingField *pQryInvestorPortfSetting, int nRequestID) = 0;
+
+	///投资者申报费阶梯收取记录查询
+	virtual int ReqQryInvestorInfoCommRec(CThostFtdcQryInvestorInfoCommRecField *pQryInvestorInfoCommRec, int nRequestID) = 0;
+
+	///组合腿信息查询
+	virtual int ReqQryCombLeg(CThostFtdcQryCombLegField *pQryCombLeg, int nRequestID) = 0;
+
+	///对冲设置请求
+	virtual int ReqOffsetSetting(CThostFtdcInputOffsetSettingField *pInputOffsetSetting, int nRequestID) = 0;
+
+	///对冲设置撤销请求
+	virtual int ReqCancelOffsetSetting(CThostFtdcInputOffsetSettingField *pInputOffsetSetting, int nRequestID) = 0;
+
+	///投资者对冲设置查询
+	virtual int ReqQryOffsetSetting(CThostFtdcQryOffsetSettingField *pQryOffsetSetting, int nRequestID) = 0;
 protected:
 	~CThostFtdcTraderApi(){};
 };

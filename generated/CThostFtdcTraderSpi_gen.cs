@@ -47,6 +47,9 @@ internal partial class TdSPI
     internal event Action<CThostFtdcOpenAccountField>? RtnOpenAccountByBank;
     internal event Action<CThostFtdcCancelAccountField>? RtnCancelAccountByBank;
     internal event Action<CThostFtdcChangeAccountField>? RtnChangeAccountByBank;
+    internal event Action<CThostFtdcOffsetSettingField>? RtnOffsetSetting;
+    internal event Action<ErrorReturn<CThostFtdcInputOffsetSettingField>>? ErrRtnOffsetSetting;
+    internal event Action<ErrorReturn<CThostFtdcCancelOffsetSettingField>>? ErrRtnCancelOffsetSetting;
     public sealed override void OnFrontConnected()
     {
         FrontConnected?.Invoke();
@@ -226,6 +229,18 @@ internal partial class TdSPI
     public sealed override void OnRtnChangeAccountByBank(ref CThostFtdcChangeAccountField pChangeAccount)
     {
         RtnChangeAccountByBank?.Invoke(pChangeAccount);
+    }
+    public sealed override void OnRtnOffsetSetting(ref CThostFtdcOffsetSettingField pOffsetSetting)
+    {
+        RtnOffsetSetting?.Invoke(pOffsetSetting);
+    }
+    public sealed override void OnErrRtnOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,ref CThostFtdcRspInfoField pRspInfo)
+    {
+        ErrRtnOffsetSetting?.Invoke(new ErrorReturn<CThostFtdcInputOffsetSettingField>(pInputOffsetSetting, pRspInfo));
+    }
+    public sealed override void OnErrRtnCancelOffsetSetting(ref CThostFtdcCancelOffsetSettingField pCancelOffsetSetting,ref CThostFtdcRspInfoField pRspInfo)
+    {
+        ErrRtnCancelOffsetSetting?.Invoke(new ErrorReturn<CThostFtdcCancelOffsetSettingField>(pCancelOffsetSetting, pRspInfo));
     }
     public sealed override void OnRspAuthenticate(ref CThostFtdcRspAuthenticateField pRspAuthenticateField,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
     {
@@ -658,5 +673,29 @@ internal partial class TdSPI
     public sealed override void OnRspQryInvestorProdRULEMargin(ref CThostFtdcInvestorProdRULEMarginField pInvestorProdRULEMargin,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
     {
         CompleteListPending(pInvestorProdRULEMargin,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryInvestorPortfSetting(ref CThostFtdcInvestorPortfSettingField pInvestorPortfSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pInvestorPortfSetting,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryInvestorInfoCommRec(ref CThostFtdcInvestorInfoCommRecField pInvestorInfoCommRec,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pInvestorInfoCommRec,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryCombLeg(ref CThostFtdcCombLegField pCombLeg,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pCombLeg,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pInputOffsetSetting,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspCancelOffsetSetting(ref CThostFtdcInputOffsetSettingField pInputOffsetSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pInputOffsetSetting,pRspInfo,nRequestID,bIsLast);
+    }
+    public sealed override void OnRspQryOffsetSetting(ref CThostFtdcOffsetSettingField pOffsetSetting,ref CThostFtdcRspInfoField pRspInfo,int nRequestID,bool bIsLast)
+    {
+        CompleteListPending(pOffsetSetting,pRspInfo,nRequestID,bIsLast);
     }
 }

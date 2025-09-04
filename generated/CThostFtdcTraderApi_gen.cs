@@ -183,6 +183,18 @@ public partial class TdAPI
     /// 银行发起变更银行账号通知
     /// </summary>
     public event Action<CThostFtdcChangeAccountField>? RtnChangeAccountByBank;
+    /// <summary>
+    /// 对冲设置通知
+    /// </summary>
+    public event Action<CThostFtdcOffsetSettingField>? RtnOffsetSetting;
+    /// <summary>
+    /// 对冲设置错误回报
+    /// </summary>
+    public event Action<ErrorReturn<CThostFtdcInputOffsetSettingField>>? ErrRtnOffsetSetting;
+    /// <summary>
+    /// 对冲设置撤销错误回报
+    /// </summary>
+    public event Action<ErrorReturn<CThostFtdcCancelOffsetSettingField>>? ErrRtnCancelOffsetSetting;
 
     private void SubscribeSPI()
     {
@@ -231,6 +243,9 @@ public partial class TdAPI
         _spi.RtnOpenAccountByBank += (_1) => RtnOpenAccountByBank?.Invoke(_1);
         _spi.RtnCancelAccountByBank += (_1) => RtnCancelAccountByBank?.Invoke(_1);
         _spi.RtnChangeAccountByBank += (_1) => RtnChangeAccountByBank?.Invoke(_1);
+        _spi.RtnOffsetSetting += (_1) => RtnOffsetSetting?.Invoke(_1);
+        _spi.ErrRtnOffsetSetting += (_1) => ErrRtnOffsetSetting?.Invoke(_1);
+        _spi.ErrRtnCancelOffsetSetting += (_1) => ErrRtnCancelOffsetSetting?.Invoke(_1);
     }
 
 
@@ -1563,6 +1578,78 @@ public partial class TdAPI
         var pending = new PendingRequest<List<CThostFtdcInvestorProdRULEMarginField>> (_requestId.Next());
         _spi.CachePendingRequest(pending);
         while (_api.ReqQryInvestorProdRULEMargin(ref pQryInvestorProdRULEMargin, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// 投资者新型组合保证金开关查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcInvestorPortfSettingField>>>
+    ReqQryInvestorPortfSettingAsync(CThostFtdcQryInvestorPortfSettingField pQryInvestorPortfSetting)
+    {
+        var pending = new PendingRequest<List<CThostFtdcInvestorPortfSettingField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryInvestorPortfSetting(ref pQryInvestorPortfSetting, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// 投资者申报费阶梯收取记录查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcInvestorInfoCommRecField>>>
+    ReqQryInvestorInfoCommRecAsync(CThostFtdcQryInvestorInfoCommRecField pQryInvestorInfoCommRec)
+    {
+        var pending = new PendingRequest<List<CThostFtdcInvestorInfoCommRecField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryInvestorInfoCommRec(ref pQryInvestorInfoCommRec, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// 组合腿信息查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcCombLegField>>>
+    ReqQryCombLegAsync(CThostFtdcQryCombLegField pQryCombLeg)
+    {
+        var pending = new PendingRequest<List<CThostFtdcCombLegField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryCombLeg(ref pQryCombLeg, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// 对冲设置请求
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcInputOffsetSettingField>>>
+    ReqOffsetSettingAsync(CThostFtdcInputOffsetSettingField pInputOffsetSetting)
+    {
+        var pending = new PendingRequest<List<CThostFtdcInputOffsetSettingField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqOffsetSetting(ref pInputOffsetSetting, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// 对冲设置撤销请求
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcInputOffsetSettingField>>>
+    ReqCancelOffsetSettingAsync(CThostFtdcInputOffsetSettingField pInputOffsetSetting)
+    {
+        var pending = new PendingRequest<List<CThostFtdcInputOffsetSettingField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqCancelOffsetSetting(ref pInputOffsetSetting, pending.RequestId) != 0) await Task.Delay(1000);
+        return await pending.Task.ConfigureAwait(false);
+    }
+
+    /// <summary>
+    /// 投资者对冲设置查询
+    /// </summary>
+    public async Task<CTPResponse<List<CThostFtdcOffsetSettingField>>>
+    ReqQryOffsetSettingAsync(CThostFtdcQryOffsetSettingField pQryOffsetSetting)
+    {
+        var pending = new PendingRequest<List<CThostFtdcOffsetSettingField>> (_requestId.Next());
+        _spi.CachePendingRequest(pending);
+        while (_api.ReqQryOffsetSetting(ref pQryOffsetSetting, pending.RequestId) != 0) await Task.Delay(1000);
         return await pending.Task.ConfigureAwait(false);
     }
 }

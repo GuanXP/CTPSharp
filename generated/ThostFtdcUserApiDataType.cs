@@ -286,6 +286,10 @@ public enum TThostFtdcFunctionCodeType: byte
     /// 删除未知单
     /// </summary>
     THOST_FTDC_FC_DeleteOrder = (byte)'F',
+    /// <summary>
+    /// 退出紧急状态
+    /// </summary>
+    THOST_FTDC_FC_ExitEmergency = (byte)'G',
 }
 /// <summary>
 /// 经纪公司功能代码类型
@@ -1049,9 +1053,21 @@ public enum TThostFtdcForceCloseReasonType: byte
     /// </summary>
     THOST_FTDC_FCC_PersonDeliv = (byte)'7',
     /// <summary>
-    /// 风控强平不验证资金
+    /// 本地强平资金不足忽略敞口
     /// </summary>
     THOST_FTDC_FCC_Notverifycapital = (byte)'8',
+    /// <summary>
+    /// 本地强平资金不足
+    /// </summary>
+    THOST_FTDC_FCC_LocalLackDeposit = (byte)'9',
+    /// <summary>
+    /// 本地强平违规持仓忽略敞口
+    /// </summary>
+    THOST_FTDC_FCC_LocalViolationNocheck = (byte)'a',
+    /// <summary>
+    /// 本地强平违规持仓
+    /// </summary>
+    THOST_FTDC_FCC_LocalViolation = (byte)'b',
 }
 /// <summary>
 /// 报单类型类型
@@ -1350,6 +1366,10 @@ public enum TThostFtdcInstrumentStatusType: byte
     /// 收盘
     /// </summary>
     THOST_FTDC_IS_Closed = (byte)'6',
+    /// <summary>
+    /// 交易业务处理
+    /// </summary>
+    THOST_FTDC_IS_TransactionProcessing = (byte)'7',
 }
 /// <summary>
 /// 品种进入交易状态原因类型
@@ -1740,6 +1760,22 @@ public enum TThostFtdcTradeParamIDType: byte
     /// 密码有效期
     /// </summary>
     THOST_FTDC_TPID_PasswordPeriod = (byte)'V',
+    /// <summary>
+    /// 历史密码重复限制次数
+    /// </summary>
+    THOST_FTDC_TPID_PwdHistoryCmp = (byte)'X',
+    /// <summary>
+    /// 转账是否验证预留银行账户
+    /// </summary>
+    THOST_FTDC_TPID_TranferChkProperty = (byte)'i',
+    /// <summary>
+    /// 非交易时间异常报单校验参数
+    /// </summary>
+    THOST_FTDC_TPID_TradeChkPhase = (byte)'j',
+    /// <summary>
+    /// 其他异常报单校验参数（价格和手数）
+    /// </summary>
+    THOST_FTDC_TPID_TradeChkPriceVol = (byte)'k',
 }
 /// <summary>
 /// 文件标识类型
@@ -2674,6 +2710,10 @@ public enum TThostFtdcUserEventTypeType: byte
     /// 其他
     /// </summary>
     THOST_FTDC_UET_Other = (byte)'9',
+    /// <summary>
+    /// 修改资金密码
+    /// </summary>
+    THOST_FTDC_UET_UpdateTradingAccountPassword = (byte)'a',
 }
 /// <summary>
 /// 平仓方式类型
@@ -7064,4 +7104,98 @@ public enum TThostFtdcProdChangeFlagType: byte
     /// 持仓量有变化
     /// </summary>
     THOST_FTDC_PCF_PositionChange = (byte)'2',
+}
+/// <summary>
+/// 历史密码来源类型
+/// </summary>
+public enum TThostFtdcPwdRcdSrcType: byte
+{
+    /// <summary>
+    /// 来源于Sync初始化数据
+    /// </summary>
+    THOST_FTDC_PRS_Init = (byte)'0',
+    /// <summary>
+    /// 来源于实时上场数据
+    /// </summary>
+    THOST_FTDC_PRS_Sync = (byte)'1',
+    /// <summary>
+    /// 来源于用户修改
+    /// </summary>
+    THOST_FTDC_PRS_UserUpd = (byte)'2',
+    /// <summary>
+    /// 来源于超户修改，很可能来自主席同步数据
+    /// </summary>
+    THOST_FTDC_PRS_SuperUserUpd = (byte)'3',
+    /// <summary>
+    /// 来源于次席同步的修改
+    /// </summary>
+    THOST_FTDC_PRS_SecUpd = (byte)'4',
+}
+/// <summary>
+/// 地址服务类型类型
+/// </summary>
+public enum TThostFtdcAddrSrvModeType: byte
+{
+    /// <summary>
+    /// 交易地址
+    /// </summary>
+    THOST_FTDC_ASM_Trade = (byte)'0',
+    /// <summary>
+    /// 行情地址
+    /// </summary>
+    THOST_FTDC_ASM_MarketData = (byte)'1',
+    /// <summary>
+    /// 其他
+    /// </summary>
+    THOST_FTDC_ASM_Other = (byte)'2',
+}
+/// <summary>
+/// 地址版本类型
+/// </summary>
+public enum TThostFtdcAddrVerType: byte
+{
+    /// <summary>
+    /// IPV4
+    /// </summary>
+    THOST_FTDC_ADV_V4 = (byte)'0',
+    /// <summary>
+    /// IPV6
+    /// </summary>
+    THOST_FTDC_ADV_V6 = (byte)'1',
+}
+/// <summary>
+/// TGATE会话查询状态类型
+/// </summary>
+public enum TThostFtdcTGSessionQryStatusType: byte
+{
+    /// <summary>
+    /// 查询状态空闲
+    /// </summary>
+    THOST_FTDC_TGQS_QryIdle = (byte)'1',
+    /// <summary>
+    /// 查询状态频繁
+    /// </summary>
+    THOST_FTDC_TGQS_QryBusy = (byte)'2',
+}
+/// <summary>
+/// 对冲类型类型
+/// </summary>
+public enum TThostFtdcOffsetTypeType: byte
+{
+    /// <summary>
+    /// 期权对冲
+    /// </summary>
+    THOST_FTDC_OT_OPT_OFFSET = (byte)'0',
+    /// <summary>
+    /// 期货对冲
+    /// </summary>
+    THOST_FTDC_OT_FUT_OFFSET = (byte)'1',
+    /// <summary>
+    /// 行权后期货对冲
+    /// </summary>
+    THOST_FTDC_OT_EXEC_OFFSET = (byte)'2',
+    /// <summary>
+    /// 履约后期货对冲
+    /// </summary>
+    THOST_FTDC_OT_PERFORM_OFFSET = (byte)'3',
 }

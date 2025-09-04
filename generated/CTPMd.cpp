@@ -1,4 +1,4 @@
-//由 generator生成的文件，不要手工修改
+﻿//由 generator生成的文件，不要手工修改
 
 #include "ThostFtdcMdApi.h"
 

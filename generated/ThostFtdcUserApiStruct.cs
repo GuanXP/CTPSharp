@@ -295,6 +295,14 @@ public struct CThostFtdcRspUserLoginField
         get{ return GBKConvert.Instance.GetString(_GFEXTime); }
         set{ GBKConvert.Instance.GetBytes(value, _GFEXTime); }
     }
+    /// <summary>
+    /// 当前登录中心号
+    /// </summary>
+    public int LoginDRIdentityID;
+    /// <summary>
+    /// 用户所属中心号
+    /// </summary>
+    public int UserDRIdentityID;
 }
 /// <summary>
 /// 用户登出请求
@@ -2307,6 +2315,10 @@ public struct CThostFtdcTradingAccountField
     /// 剩余换汇额度
     /// </summary>
     public double RemainSwap;
+    /// <summary>
+    /// 期权市值
+    /// </summary>
+    public double OptionValue;
 }
 /// <summary>
 /// 投资者持仓
@@ -2548,6 +2560,10 @@ public struct CThostFtdcInvestorPositionField
         get{ return GBKConvert.Instance.GetString(_InstrumentID); }
         set{ GBKConvert.Instance.GetBytes(value, _InstrumentID); }
     }
+    /// <summary>
+    /// 期权市值
+    /// </summary>
+    public double OptionValue;
 }
 /// <summary>
 /// 合约保证金率
@@ -4281,7 +4297,7 @@ public struct CThostFtdcInputOrderField
     /// </summary>
     public int RequestID;
     /// <summary>
-    /// 用户强评标志
+    /// 用户强平标志
     /// </summary>
     public int UserForceClose;
     /// <summary>
@@ -4378,6 +4394,20 @@ public struct CThostFtdcInputOrderField
         get{ return GBKConvert.Instance.GetString(_IPAddress); }
         set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
     }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 报单
@@ -4723,7 +4753,7 @@ public struct CThostFtdcOrderField
         set{ GBKConvert.Instance.GetBytes(value, _StatusMsg); }
     }
     /// <summary>
-    /// 用户强评标志
+    /// 用户强平标志
     /// </summary>
     public int UserForceClose;
     [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
@@ -4848,6 +4878,20 @@ public struct CThostFtdcOrderField
         get{ return GBKConvert.Instance.GetString(_IPAddress); }
         set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
     }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 交易所报单
@@ -5383,6 +5427,20 @@ public struct CThostFtdcInputOrderActionField
         get{ return GBKConvert.Instance.GetString(_IPAddress); }
         set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
     }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 报单操作
@@ -5641,6 +5699,20 @@ public struct CThostFtdcOrderActionField
         get{ return GBKConvert.Instance.GetString(_IPAddress); }
         set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
     }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 交易所报单操作
@@ -6634,6 +6706,10 @@ public struct CThostFtdcSyncDepositField
         get{ return GBKConvert.Instance.GetString(_TradingPassword); }
         set{ GBKConvert.Instance.GetBytes(value, _TradingPassword); }
     }
+    /// <summary>
+    /// 是否二级代理商的内转
+    /// </summary>
+    public int IsSecAgentTranfer;
 }
 /// <summary>
 /// 货币质押同步
@@ -7154,6 +7230,10 @@ public struct CThostFtdcSyncingTradingAccountField
     /// 剩余换汇额度
     /// </summary>
     public double RemainSwap;
+    /// <summary>
+    /// 期权市值
+    /// </summary>
+    public double OptionValue;
 }
 /// <summary>
 /// 正在同步中的投资者持仓
@@ -8696,6 +8776,7 @@ public struct CThostFtdcQryDepthMarketDataField
         get{ return GBKConvert.Instance.GetString(_InstrumentID); }
         set{ GBKConvert.Instance.GetBytes(value, _InstrumentID); }
     }
+    public TThostFtdcProductClassType ProductClass;
 }
 /// <summary>
 /// 查询经纪公司用户
@@ -12569,6 +12650,20 @@ public struct CThostFtdcInputQuoteField
         set{ GBKConvert.Instance.GetBytes(value, _ReplaceSysID); }
     }
     public TThostFtdcTimeConditionType TimeCondition;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 输入报价操作
@@ -12724,6 +12819,20 @@ public struct CThostFtdcInputQuoteActionField
         get{ return GBKConvert.Instance.GetString(_IPAddress); }
         set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
     }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 报价
@@ -13147,6 +13256,20 @@ public struct CThostFtdcQuoteField
         set{ GBKConvert.Instance.GetBytes(value, _ReplaceSysID); }
     }
     public TThostFtdcTimeConditionType TimeCondition;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 报价操作
@@ -13397,6 +13520,20 @@ public struct CThostFtdcQuoteActionField
         get{ return GBKConvert.Instance.GetString(_IPAddress); }
         set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
     }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 报价查询
@@ -20579,7 +20716,7 @@ public struct CThostFtdcParkedOrderField
     /// </summary>
     public int RequestID;
     /// <summary>
-    /// 用户强评标志
+    /// 用户强平标志
     /// </summary>
     public int UserForceClose;
     [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
@@ -21694,7 +21831,7 @@ public struct CThostFtdcErrOrderField
     /// </summary>
     public int RequestID;
     /// <summary>
-    /// 用户强评标志
+    /// 用户强平标志
     /// </summary>
     public int UserForceClose;
     /// <summary>
@@ -21805,6 +21942,20 @@ public struct CThostFtdcErrOrderField
         get{ return GBKConvert.Instance.GetString(_IPAddress); }
         set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
     }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 查询错误报单操作
@@ -22150,7 +22301,7 @@ public struct CThostFtdcErrorConditionalOrderField
         set{ GBKConvert.Instance.GetBytes(value, _StatusMsg); }
     }
     /// <summary>
-    /// 用户强评标志
+    /// 用户强平标志
     /// </summary>
     public int UserForceClose;
     [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
@@ -22589,6 +22740,20 @@ public struct CThostFtdcErrOrderActionField
         get{ return GBKConvert.Instance.GetString(_IPAddress); }
         set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
     }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _OrderMemo = new byte[13];
+    /// <summary>
+    /// 报单回显字段
+    /// </summary>
+    public string OrderMemo
+    {
+        get{ return GBKConvert.Instance.GetString(_OrderMemo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OrderMemo); }
+    }
+    /// <summary>
+    /// session上请求计数 api自动维护
+    /// </summary>
+    public int SessionReqSeq;
 }
 /// <summary>
 /// 查询交易所状态
@@ -33431,6 +33596,10 @@ public struct CThostFtdcQueryFreqField
     /// 查询频率
     /// </summary>
     public int QueryFreq;
+    /// <summary>
+    /// FTD频率
+    /// </summary>
+    public int FTDPkgFreq;
 }
 /// <summary>
 /// 禁止认证IP
@@ -33821,9 +33990,9 @@ public struct CThostFtdcCombPromotionParamField
 /// 国密用户登录请求
 /// </summary>
 [StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
-public struct CThostFtdcReqUserLoginSCField
+public struct CThostFtdcReqUserLoginSMField
 {
-    public CThostFtdcReqUserLoginSCField() {}
+    public CThostFtdcReqUserLoginSMField() {}
     [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
     public readonly byte[] _TradingDay = new byte[9];
     /// <summary>
@@ -33914,15 +34083,15 @@ public struct CThostFtdcReqUserLoginSCField
         get{ return GBKConvert.Instance.GetString(_OneTimePassword); }
         set{ GBKConvert.Instance.GetBytes(value, _OneTimePassword); }
     }
-    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
-    public readonly byte[] _ClientIPAddress = new byte[33];
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _reserve1 = new byte[16];
     /// <summary>
-    /// 终端IP地址
+    /// 保留的无效字段
     /// </summary>
-    public string ClientIPAddress
+    public string reserve1
     {
-        get{ return GBKConvert.Instance.GetString(_ClientIPAddress); }
-        set{ GBKConvert.Instance.GetBytes(value, _ClientIPAddress); }
+        get{ return GBKConvert.Instance.GetString(_reserve1); }
+        set{ GBKConvert.Instance.GetBytes(value, _reserve1); }
     }
     [MarshalAs(UnmanagedType.ByValArray, SizeConst=36)]
     public readonly byte[] _LoginRemark = new byte[36];
@@ -33938,6 +34107,26 @@ public struct CThostFtdcReqUserLoginSCField
     /// 终端IP端口
     /// </summary>
     public int ClientIPPort;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _ClientIPAddress = new byte[33];
+    /// <summary>
+    /// 终端IP地址
+    /// </summary>
+    public string ClientIPAddress
+    {
+        get{ return GBKConvert.Instance.GetString(_ClientIPAddress); }
+        set{ GBKConvert.Instance.GetBytes(value, _ClientIPAddress); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _BrokerName = new byte[81];
+    /// <summary>
+    /// 经纪公司名称
+    /// </summary>
+    public string BrokerName
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerName); }
+    }
     [MarshalAs(UnmanagedType.ByValArray, SizeConst=17)]
     public readonly byte[] _AuthCode = new byte[17];
     /// <summary>
@@ -33957,6 +34146,16 @@ public struct CThostFtdcReqUserLoginSCField
     {
         get{ return GBKConvert.Instance.GetString(_AppID); }
         set{ GBKConvert.Instance.GetBytes(value, _AppID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _PIN = new byte[41];
+    /// <summary>
+    /// PIN码
+    /// </summary>
+    public string PIN
+    {
+        get{ return GBKConvert.Instance.GetString(_PIN); }
+        set{ GBKConvert.Instance.GetBytes(value, _PIN); }
     }
 }
 /// <summary>
@@ -34850,6 +35049,10 @@ public struct CThostFtdcSyncDeltaTradingAccountField
     /// 剩余换汇额度
     /// </summary>
     public double RemainSwap;
+    /// <summary>
+    /// 期权市值
+    /// </summary>
+    public double OptionValue;
     /// <summary>
     /// 追平序号
     /// </summary>
@@ -36363,6 +36566,16 @@ public struct CThostFtdcInvestorPortfMarginRatioField
     /// 会员对投资者收取的保证金和交易所对投资者收取的保证金的比例
     /// </summary>
     public double MarginRatio;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _ProductGroupID = new byte[41];
+    /// <summary>
+    /// 产品群代码
+    /// </summary>
+    public string ProductGroupID
+    {
+        get{ return GBKConvert.Instance.GetString(_ProductGroupID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ProductGroupID); }
+    }
 }
 /// <summary>
 /// 组合保证金套餐查询
@@ -36470,6 +36683,16 @@ public struct CThostFtdcQryInvestorPortfMarginRatioField
     {
         get{ return GBKConvert.Instance.GetString(_ExchangeID); }
         set{ GBKConvert.Instance.GetBytes(value, _ExchangeID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _ProductGroupID = new byte[41];
+    /// <summary>
+    /// 产品群代码
+    /// </summary>
+    public string ProductGroupID
+    {
+        get{ return GBKConvert.Instance.GetString(_ProductGroupID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ProductGroupID); }
     }
 }
 /// <summary>
@@ -37956,11 +38179,11 @@ public struct CThostFtdcInvestorProdRCAMSMarginField
     /// </summary>
     public double MMSACloseFrozenMargin;
     /// <summary>
-    /// 平策略组合冻结保证金
+    /// 策略组合平仓/行权冻结保证金
     /// </summary>
     public double CloseCombFrozenMargin;
     /// <summary>
-    /// 平仓冻结保证金
+    /// 平仓/行权冻结保证金
     /// </summary>
     public double CloseFrozenMargin;
     /// <summary>
@@ -40046,4 +40269,3160 @@ public struct CThostFtdcSyncDeltaRULEInterParameterField
     /// 追平序号
     /// </summary>
     public int SyncDeltaSequenceNo;
+}
+/// <summary>
+/// 服务地址参数
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcIpAddrParamField
+{
+    public CThostFtdcIpAddrParamField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=129)]
+    public readonly byte[] _Address = new byte[129];
+    /// <summary>
+    /// 服务地址
+    /// </summary>
+    public string Address
+    {
+        get{ return GBKConvert.Instance.GetString(_Address); }
+        set{ GBKConvert.Instance.GetBytes(value, _Address); }
+    }
+    /// <summary>
+    /// 交易中心代码
+    /// </summary>
+    public int DRIdentityID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=65)]
+    public readonly byte[] _DRIdentityName = new byte[65];
+    /// <summary>
+    /// 交易中心名称
+    /// </summary>
+    public string DRIdentityName
+    {
+        get{ return GBKConvert.Instance.GetString(_DRIdentityName); }
+        set{ GBKConvert.Instance.GetBytes(value, _DRIdentityName); }
+    }
+    public TThostFtdcAddrSrvModeType AddrSrvMode;
+    public TThostFtdcAddrVerType AddrVer;
+    /// <summary>
+    /// 服务地址编号
+    /// </summary>
+    public int AddrNo;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=65)]
+    public readonly byte[] _AddrName = new byte[65];
+    /// <summary>
+    /// 服务地址名称
+    /// </summary>
+    public string AddrName
+    {
+        get{ return GBKConvert.Instance.GetString(_AddrName); }
+        set{ GBKConvert.Instance.GetBytes(value, _AddrName); }
+    }
+    /// <summary>
+    /// 是否是国密地址
+    /// </summary>
+    public int IsSM;
+    /// <summary>
+    /// 是否是内网地址
+    /// </summary>
+    public int IsLocalAddr;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=161)]
+    public readonly byte[] _Remark = new byte[161];
+    /// <summary>
+    /// 地址补充信息
+    /// </summary>
+    public string Remark
+    {
+        get{ return GBKConvert.Instance.GetString(_Remark); }
+        set{ GBKConvert.Instance.GetBytes(value, _Remark); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _Site = new byte[51];
+    /// <summary>
+    /// 站点
+    /// </summary>
+    public string Site
+    {
+        get{ return GBKConvert.Instance.GetString(_Site); }
+        set{ GBKConvert.Instance.GetBytes(value, _Site); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _NetOperator = new byte[9];
+    /// <summary>
+    /// 网络运营商
+    /// </summary>
+    public string NetOperator
+    {
+        get{ return GBKConvert.Instance.GetString(_NetOperator); }
+        set{ GBKConvert.Instance.GetBytes(value, _NetOperator); }
+    }
+}
+/// <summary>
+/// 服务地址参数查询
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcQryIpAddrParamField
+{
+    public CThostFtdcQryIpAddrParamField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+}
+/// <summary>
+/// 服务地址参数
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcTGIpAddrParamField
+{
+    public CThostFtdcTGIpAddrParamField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户代码
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=129)]
+    public readonly byte[] _Address = new byte[129];
+    /// <summary>
+    /// 服务地址
+    /// </summary>
+    public string Address
+    {
+        get{ return GBKConvert.Instance.GetString(_Address); }
+        set{ GBKConvert.Instance.GetBytes(value, _Address); }
+    }
+    /// <summary>
+    /// 交易中心代码
+    /// </summary>
+    public int DRIdentityID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=65)]
+    public readonly byte[] _DRIdentityName = new byte[65];
+    /// <summary>
+    /// 交易中心名称
+    /// </summary>
+    public string DRIdentityName
+    {
+        get{ return GBKConvert.Instance.GetString(_DRIdentityName); }
+        set{ GBKConvert.Instance.GetBytes(value, _DRIdentityName); }
+    }
+    public TThostFtdcAddrSrvModeType AddrSrvMode;
+    public TThostFtdcAddrVerType AddrVer;
+    /// <summary>
+    /// 服务地址编号
+    /// </summary>
+    public int AddrNo;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=65)]
+    public readonly byte[] _AddrName = new byte[65];
+    /// <summary>
+    /// 服务地址名称
+    /// </summary>
+    public string AddrName
+    {
+        get{ return GBKConvert.Instance.GetString(_AddrName); }
+        set{ GBKConvert.Instance.GetBytes(value, _AddrName); }
+    }
+    /// <summary>
+    /// 是否是国密地址
+    /// </summary>
+    public int IsSM;
+    /// <summary>
+    /// 是否是内网地址
+    /// </summary>
+    public int IsLocalAddr;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=161)]
+    public readonly byte[] _Remark = new byte[161];
+    /// <summary>
+    /// 地址补充信息
+    /// </summary>
+    public string Remark
+    {
+        get{ return GBKConvert.Instance.GetString(_Remark); }
+        set{ GBKConvert.Instance.GetBytes(value, _Remark); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _Site = new byte[51];
+    /// <summary>
+    /// 站点
+    /// </summary>
+    public string Site
+    {
+        get{ return GBKConvert.Instance.GetString(_Site); }
+        set{ GBKConvert.Instance.GetBytes(value, _Site); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _NetOperator = new byte[9];
+    /// <summary>
+    /// 网络运营商
+    /// </summary>
+    public string NetOperator
+    {
+        get{ return GBKConvert.Instance.GetString(_NetOperator); }
+        set{ GBKConvert.Instance.GetBytes(value, _NetOperator); }
+    }
+}
+/// <summary>
+/// 服务地址参数查询
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcQryTGIpAddrParamField
+{
+    public CThostFtdcQryTGIpAddrParamField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户代码
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _AppID = new byte[33];
+    /// <summary>
+    /// App代码
+    /// </summary>
+    public string AppID
+    {
+        get{ return GBKConvert.Instance.GetString(_AppID); }
+        set{ GBKConvert.Instance.GetBytes(value, _AppID); }
+    }
+}
+/// <summary>
+/// TGate会话查询状态
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcTGSessionQryStatusField
+{
+    public CThostFtdcTGSessionQryStatusField() {}
+    /// <summary>
+    /// 最近30s的查询频率
+    /// </summary>
+    public int LastQryFreq;
+    public TThostFtdcTGSessionQryStatusType QryStatus;
+}
+/// <summary>
+/// 内网地址配置
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcLocalAddrConfigField
+{
+    public CThostFtdcLocalAddrConfigField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=129)]
+    public readonly byte[] _PeerAddr = new byte[129];
+    /// <summary>
+    /// 对端地址
+    /// </summary>
+    public string PeerAddr
+    {
+        get{ return GBKConvert.Instance.GetString(_PeerAddr); }
+        set{ GBKConvert.Instance.GetBytes(value, _PeerAddr); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=129)]
+    public readonly byte[] _NetMask = new byte[129];
+    /// <summary>
+    /// 子网掩码
+    /// </summary>
+    public string NetMask
+    {
+        get{ return GBKConvert.Instance.GetString(_NetMask); }
+        set{ GBKConvert.Instance.GetBytes(value, _NetMask); }
+    }
+    /// <summary>
+    /// 交易中心代码
+    /// </summary>
+    public int DRIdentityID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=129)]
+    public readonly byte[] _LocalAddress = new byte[129];
+    /// <summary>
+    /// 内网服务地址
+    /// </summary>
+    public string LocalAddress
+    {
+        get{ return GBKConvert.Instance.GetString(_LocalAddress); }
+        set{ GBKConvert.Instance.GetBytes(value, _LocalAddress); }
+    }
+}
+/// <summary>
+/// 内网地址配置查询
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcQryLocalAddrConfigField
+{
+    public CThostFtdcQryLocalAddrConfigField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+}
+/// <summary>
+/// 次席查询银行资金帐户信息请求
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcReqQueryBankAccountBySecField
+{
+    public CThostFtdcReqQueryBankAccountBySecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=7)]
+    public readonly byte[] _TradeCode = new byte[7];
+    /// <summary>
+    /// 业务功能码
+    /// </summary>
+    public string TradeCode
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeCode); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeCode); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _BankID = new byte[4];
+    /// <summary>
+    /// 银行代码
+    /// </summary>
+    public string BankID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=5)]
+    public readonly byte[] _BankBranchID = new byte[5];
+    /// <summary>
+    /// 银行分支机构代码
+    /// </summary>
+    public string BankBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 期商代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=31)]
+    public readonly byte[] _BrokerBranchID = new byte[31];
+    /// <summary>
+    /// 期商分支机构代码
+    /// </summary>
+    public string BrokerBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeDate = new byte[9];
+    /// <summary>
+    /// 交易日期
+    /// </summary>
+    public string TradeDate
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeDate); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeDate); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeTime = new byte[9];
+    /// <summary>
+    /// 交易时间
+    /// </summary>
+    public string TradeTime
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeTime); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _BankSerial = new byte[13];
+    /// <summary>
+    /// 银行流水号
+    /// </summary>
+    public string BankSerial
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSerial); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSerial); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradingDay = new byte[9];
+    /// <summary>
+    /// 交易系统日期
+    /// </summary>
+    public string TradingDay
+    {
+        get{ return GBKConvert.Instance.GetString(_TradingDay); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradingDay); }
+    }
+    /// <summary>
+    /// 银期平台消息流水号
+    /// </summary>
+    public int PlateSerial;
+    public TThostFtdcLastFragmentType LastFragment;
+    /// <summary>
+    /// 会话号
+    /// </summary>
+    public int SessionID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _CustomerName = new byte[51];
+    /// <summary>
+    /// 客户姓名
+    /// </summary>
+    public string CustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_CustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _CustomerName); }
+    }
+    public TThostFtdcIdCardTypeType IdCardType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _IdentifiedCardNo = new byte[51];
+    /// <summary>
+    /// 证件号码
+    /// </summary>
+    public string IdentifiedCardNo
+    {
+        get{ return GBKConvert.Instance.GetString(_IdentifiedCardNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _IdentifiedCardNo); }
+    }
+    public TThostFtdcCustTypeType CustType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankAccount = new byte[41];
+    /// <summary>
+    /// 银行帐号
+    /// </summary>
+    public string BankAccount
+    {
+        get{ return GBKConvert.Instance.GetString(_BankAccount); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankAccount); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankPassWord = new byte[41];
+    /// <summary>
+    /// 银行密码
+    /// </summary>
+    public string BankPassWord
+    {
+        get{ return GBKConvert.Instance.GetString(_BankPassWord); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankPassWord); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _AccountID = new byte[13];
+    /// <summary>
+    /// 投资者帐号
+    /// </summary>
+    public string AccountID
+    {
+        get{ return GBKConvert.Instance.GetString(_AccountID); }
+        set{ GBKConvert.Instance.GetBytes(value, _AccountID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _Password = new byte[41];
+    /// <summary>
+    /// 期货密码
+    /// </summary>
+    public string Password
+    {
+        get{ return GBKConvert.Instance.GetString(_Password); }
+        set{ GBKConvert.Instance.GetBytes(value, _Password); }
+    }
+    /// <summary>
+    /// 期货公司流水号
+    /// </summary>
+    public int FutureSerial;
+    /// <summary>
+    /// 安装编号
+    /// </summary>
+    public int InstallID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户标识
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    public TThostFtdcYesNoIndicatorType VerifyCertNoFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _CurrencyID = new byte[4];
+    /// <summary>
+    /// 币种代码
+    /// </summary>
+    public string CurrencyID
+    {
+        get{ return GBKConvert.Instance.GetString(_CurrencyID); }
+        set{ GBKConvert.Instance.GetBytes(value, _CurrencyID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=36)]
+    public readonly byte[] _Digest = new byte[36];
+    /// <summary>
+    /// 摘要
+    /// </summary>
+    public string Digest
+    {
+        get{ return GBKConvert.Instance.GetString(_Digest); }
+        set{ GBKConvert.Instance.GetBytes(value, _Digest); }
+    }
+    public TThostFtdcBankAccTypeType BankAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=3)]
+    public readonly byte[] _DeviceID = new byte[3];
+    /// <summary>
+    /// 渠道标志
+    /// </summary>
+    public string DeviceID
+    {
+        get{ return GBKConvert.Instance.GetString(_DeviceID); }
+        set{ GBKConvert.Instance.GetBytes(value, _DeviceID); }
+    }
+    public TThostFtdcBankAccTypeType BankSecuAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _BrokerIDByBank = new byte[33];
+    /// <summary>
+    /// 期货公司银行编码
+    /// </summary>
+    public string BrokerIDByBank
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerIDByBank); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerIDByBank); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankSecuAcc = new byte[41];
+    /// <summary>
+    /// 期货单位帐号
+    /// </summary>
+    public string BankSecuAcc
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSecuAcc); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSecuAcc); }
+    }
+    public TThostFtdcPwdFlagType BankPwdFlag;
+    public TThostFtdcPwdFlagType SecuPwdFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=17)]
+    public readonly byte[] _OperNo = new byte[17];
+    /// <summary>
+    /// 交易柜员
+    /// </summary>
+    public string OperNo
+    {
+        get{ return GBKConvert.Instance.GetString(_OperNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OperNo); }
+    }
+    /// <summary>
+    /// 请求编号
+    /// </summary>
+    public int RequestID;
+    /// <summary>
+    /// 交易ID
+    /// </summary>
+    public int TID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=161)]
+    public readonly byte[] _LongCustomerName = new byte[161];
+    /// <summary>
+    /// 长客户姓名
+    /// </summary>
+    public string LongCustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_LongCustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _LongCustomerName); }
+    }
+    /// <summary>
+    /// 交易中心代码
+    /// </summary>
+    public int DRIdentityID;
+    /// <summary>
+    /// 次中心发起转账期货公司流水号
+    /// </summary>
+    public int SecFutureSerial;
+}
+/// <summary>
+/// 次席查询银行资金帐户信息回报
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcRspQueryBankAccountBySecField
+{
+    public CThostFtdcRspQueryBankAccountBySecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=7)]
+    public readonly byte[] _TradeCode = new byte[7];
+    /// <summary>
+    /// 业务功能码
+    /// </summary>
+    public string TradeCode
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeCode); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeCode); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _BankID = new byte[4];
+    /// <summary>
+    /// 银行代码
+    /// </summary>
+    public string BankID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=5)]
+    public readonly byte[] _BankBranchID = new byte[5];
+    /// <summary>
+    /// 银行分支机构代码
+    /// </summary>
+    public string BankBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 期商代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=31)]
+    public readonly byte[] _BrokerBranchID = new byte[31];
+    /// <summary>
+    /// 期商分支机构代码
+    /// </summary>
+    public string BrokerBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeDate = new byte[9];
+    /// <summary>
+    /// 交易日期
+    /// </summary>
+    public string TradeDate
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeDate); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeDate); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeTime = new byte[9];
+    /// <summary>
+    /// 交易时间
+    /// </summary>
+    public string TradeTime
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeTime); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _BankSerial = new byte[13];
+    /// <summary>
+    /// 银行流水号
+    /// </summary>
+    public string BankSerial
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSerial); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSerial); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradingDay = new byte[9];
+    /// <summary>
+    /// 交易系统日期
+    /// </summary>
+    public string TradingDay
+    {
+        get{ return GBKConvert.Instance.GetString(_TradingDay); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradingDay); }
+    }
+    /// <summary>
+    /// 银期平台消息流水号
+    /// </summary>
+    public int PlateSerial;
+    public TThostFtdcLastFragmentType LastFragment;
+    /// <summary>
+    /// 会话号
+    /// </summary>
+    public int SessionID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _CustomerName = new byte[51];
+    /// <summary>
+    /// 客户姓名
+    /// </summary>
+    public string CustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_CustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _CustomerName); }
+    }
+    public TThostFtdcIdCardTypeType IdCardType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _IdentifiedCardNo = new byte[51];
+    /// <summary>
+    /// 证件号码
+    /// </summary>
+    public string IdentifiedCardNo
+    {
+        get{ return GBKConvert.Instance.GetString(_IdentifiedCardNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _IdentifiedCardNo); }
+    }
+    public TThostFtdcCustTypeType CustType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankAccount = new byte[41];
+    /// <summary>
+    /// 银行帐号
+    /// </summary>
+    public string BankAccount
+    {
+        get{ return GBKConvert.Instance.GetString(_BankAccount); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankAccount); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankPassWord = new byte[41];
+    /// <summary>
+    /// 银行密码
+    /// </summary>
+    public string BankPassWord
+    {
+        get{ return GBKConvert.Instance.GetString(_BankPassWord); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankPassWord); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _AccountID = new byte[13];
+    /// <summary>
+    /// 投资者帐号
+    /// </summary>
+    public string AccountID
+    {
+        get{ return GBKConvert.Instance.GetString(_AccountID); }
+        set{ GBKConvert.Instance.GetBytes(value, _AccountID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _Password = new byte[41];
+    /// <summary>
+    /// 期货密码
+    /// </summary>
+    public string Password
+    {
+        get{ return GBKConvert.Instance.GetString(_Password); }
+        set{ GBKConvert.Instance.GetBytes(value, _Password); }
+    }
+    /// <summary>
+    /// 期货公司流水号
+    /// </summary>
+    public int FutureSerial;
+    /// <summary>
+    /// 安装编号
+    /// </summary>
+    public int InstallID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户标识
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    public TThostFtdcYesNoIndicatorType VerifyCertNoFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _CurrencyID = new byte[4];
+    /// <summary>
+    /// 币种代码
+    /// </summary>
+    public string CurrencyID
+    {
+        get{ return GBKConvert.Instance.GetString(_CurrencyID); }
+        set{ GBKConvert.Instance.GetBytes(value, _CurrencyID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=36)]
+    public readonly byte[] _Digest = new byte[36];
+    /// <summary>
+    /// 摘要
+    /// </summary>
+    public string Digest
+    {
+        get{ return GBKConvert.Instance.GetString(_Digest); }
+        set{ GBKConvert.Instance.GetBytes(value, _Digest); }
+    }
+    public TThostFtdcBankAccTypeType BankAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=3)]
+    public readonly byte[] _DeviceID = new byte[3];
+    /// <summary>
+    /// 渠道标志
+    /// </summary>
+    public string DeviceID
+    {
+        get{ return GBKConvert.Instance.GetString(_DeviceID); }
+        set{ GBKConvert.Instance.GetBytes(value, _DeviceID); }
+    }
+    public TThostFtdcBankAccTypeType BankSecuAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _BrokerIDByBank = new byte[33];
+    /// <summary>
+    /// 期货公司银行编码
+    /// </summary>
+    public string BrokerIDByBank
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerIDByBank); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerIDByBank); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankSecuAcc = new byte[41];
+    /// <summary>
+    /// 期货单位帐号
+    /// </summary>
+    public string BankSecuAcc
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSecuAcc); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSecuAcc); }
+    }
+    public TThostFtdcPwdFlagType BankPwdFlag;
+    public TThostFtdcPwdFlagType SecuPwdFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=17)]
+    public readonly byte[] _OperNo = new byte[17];
+    /// <summary>
+    /// 交易柜员
+    /// </summary>
+    public string OperNo
+    {
+        get{ return GBKConvert.Instance.GetString(_OperNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OperNo); }
+    }
+    /// <summary>
+    /// 请求编号
+    /// </summary>
+    public int RequestID;
+    /// <summary>
+    /// 交易ID
+    /// </summary>
+    public int TID;
+    /// <summary>
+    /// 银行可用金额
+    /// </summary>
+    public double BankUseAmount;
+    /// <summary>
+    /// 银行可取金额
+    /// </summary>
+    public double BankFetchAmount;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=161)]
+    public readonly byte[] _LongCustomerName = new byte[161];
+    /// <summary>
+    /// 长客户姓名
+    /// </summary>
+    public string LongCustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_LongCustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _LongCustomerName); }
+    }
+    /// <summary>
+    /// 交易中心代码
+    /// </summary>
+    public int DRIdentityID;
+    /// <summary>
+    /// 次中心发起转账期货公司流水号
+    /// </summary>
+    public int SecFutureSerial;
+}
+/// <summary>
+/// 次中心发起的转帐交易
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcReqTransferBySecField
+{
+    public CThostFtdcReqTransferBySecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=7)]
+    public readonly byte[] _TradeCode = new byte[7];
+    /// <summary>
+    /// 业务功能码
+    /// </summary>
+    public string TradeCode
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeCode); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeCode); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _BankID = new byte[4];
+    /// <summary>
+    /// 银行代码
+    /// </summary>
+    public string BankID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=5)]
+    public readonly byte[] _BankBranchID = new byte[5];
+    /// <summary>
+    /// 银行分支机构代码
+    /// </summary>
+    public string BankBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 期商代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=31)]
+    public readonly byte[] _BrokerBranchID = new byte[31];
+    /// <summary>
+    /// 期商分支机构代码
+    /// </summary>
+    public string BrokerBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeDate = new byte[9];
+    /// <summary>
+    /// 交易日期
+    /// </summary>
+    public string TradeDate
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeDate); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeDate); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeTime = new byte[9];
+    /// <summary>
+    /// 交易时间
+    /// </summary>
+    public string TradeTime
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeTime); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _BankSerial = new byte[13];
+    /// <summary>
+    /// 银行流水号
+    /// </summary>
+    public string BankSerial
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSerial); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSerial); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradingDay = new byte[9];
+    /// <summary>
+    /// 交易系统日期
+    /// </summary>
+    public string TradingDay
+    {
+        get{ return GBKConvert.Instance.GetString(_TradingDay); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradingDay); }
+    }
+    /// <summary>
+    /// 银期平台消息流水号
+    /// </summary>
+    public int PlateSerial;
+    public TThostFtdcLastFragmentType LastFragment;
+    /// <summary>
+    /// 会话号
+    /// </summary>
+    public int SessionID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _CustomerName = new byte[51];
+    /// <summary>
+    /// 客户姓名
+    /// </summary>
+    public string CustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_CustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _CustomerName); }
+    }
+    public TThostFtdcIdCardTypeType IdCardType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _IdentifiedCardNo = new byte[51];
+    /// <summary>
+    /// 证件号码
+    /// </summary>
+    public string IdentifiedCardNo
+    {
+        get{ return GBKConvert.Instance.GetString(_IdentifiedCardNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _IdentifiedCardNo); }
+    }
+    public TThostFtdcCustTypeType CustType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankAccount = new byte[41];
+    /// <summary>
+    /// 银行帐号
+    /// </summary>
+    public string BankAccount
+    {
+        get{ return GBKConvert.Instance.GetString(_BankAccount); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankAccount); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankPassWord = new byte[41];
+    /// <summary>
+    /// 银行密码
+    /// </summary>
+    public string BankPassWord
+    {
+        get{ return GBKConvert.Instance.GetString(_BankPassWord); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankPassWord); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _AccountID = new byte[13];
+    /// <summary>
+    /// 投资者帐号
+    /// </summary>
+    public string AccountID
+    {
+        get{ return GBKConvert.Instance.GetString(_AccountID); }
+        set{ GBKConvert.Instance.GetBytes(value, _AccountID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _Password = new byte[41];
+    /// <summary>
+    /// 期货密码
+    /// </summary>
+    public string Password
+    {
+        get{ return GBKConvert.Instance.GetString(_Password); }
+        set{ GBKConvert.Instance.GetBytes(value, _Password); }
+    }
+    /// <summary>
+    /// 安装编号
+    /// </summary>
+    public int InstallID;
+    /// <summary>
+    /// 期货公司流水号
+    /// </summary>
+    public int FutureSerial;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户标识
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    public TThostFtdcYesNoIndicatorType VerifyCertNoFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _CurrencyID = new byte[4];
+    /// <summary>
+    /// 币种代码
+    /// </summary>
+    public string CurrencyID
+    {
+        get{ return GBKConvert.Instance.GetString(_CurrencyID); }
+        set{ GBKConvert.Instance.GetBytes(value, _CurrencyID); }
+    }
+    /// <summary>
+    /// 转帐金额
+    /// </summary>
+    public double TradeAmount;
+    /// <summary>
+    /// 期货可取金额
+    /// </summary>
+    public double FutureFetchAmount;
+    public TThostFtdcFeePayFlagType FeePayFlag;
+    /// <summary>
+    /// 应收客户费用
+    /// </summary>
+    public double CustFee;
+    /// <summary>
+    /// 应收期货公司费用
+    /// </summary>
+    public double BrokerFee;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=129)]
+    public readonly byte[] _Message = new byte[129];
+    /// <summary>
+    /// 发送方给接收方的消息
+    /// </summary>
+    public string Message
+    {
+        get{ return GBKConvert.Instance.GetString(_Message); }
+        set{ GBKConvert.Instance.GetBytes(value, _Message); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=36)]
+    public readonly byte[] _Digest = new byte[36];
+    /// <summary>
+    /// 摘要
+    /// </summary>
+    public string Digest
+    {
+        get{ return GBKConvert.Instance.GetString(_Digest); }
+        set{ GBKConvert.Instance.GetBytes(value, _Digest); }
+    }
+    public TThostFtdcBankAccTypeType BankAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=3)]
+    public readonly byte[] _DeviceID = new byte[3];
+    /// <summary>
+    /// 渠道标志
+    /// </summary>
+    public string DeviceID
+    {
+        get{ return GBKConvert.Instance.GetString(_DeviceID); }
+        set{ GBKConvert.Instance.GetBytes(value, _DeviceID); }
+    }
+    public TThostFtdcBankAccTypeType BankSecuAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _BrokerIDByBank = new byte[33];
+    /// <summary>
+    /// 期货公司银行编码
+    /// </summary>
+    public string BrokerIDByBank
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerIDByBank); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerIDByBank); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankSecuAcc = new byte[41];
+    /// <summary>
+    /// 期货单位帐号
+    /// </summary>
+    public string BankSecuAcc
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSecuAcc); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSecuAcc); }
+    }
+    public TThostFtdcPwdFlagType BankPwdFlag;
+    public TThostFtdcPwdFlagType SecuPwdFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=17)]
+    public readonly byte[] _OperNo = new byte[17];
+    /// <summary>
+    /// 交易柜员
+    /// </summary>
+    public string OperNo
+    {
+        get{ return GBKConvert.Instance.GetString(_OperNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OperNo); }
+    }
+    /// <summary>
+    /// 请求编号
+    /// </summary>
+    public int RequestID;
+    /// <summary>
+    /// 交易ID
+    /// </summary>
+    public int TID;
+    public TThostFtdcTransferStatusType TransferStatus;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=161)]
+    public readonly byte[] _LongCustomerName = new byte[161];
+    /// <summary>
+    /// 长客户姓名
+    /// </summary>
+    public string LongCustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_LongCustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _LongCustomerName); }
+    }
+    /// <summary>
+    /// 交易中心代码
+    /// </summary>
+    public int DRIdentityID;
+    /// <summary>
+    /// 次中心发起转账期货公司流水号
+    /// </summary>
+    public int SecFutureSerial;
+}
+/// <summary>
+/// 次中心发起的转帐交易回报
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcRspTransferBySecField
+{
+    public CThostFtdcRspTransferBySecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=7)]
+    public readonly byte[] _TradeCode = new byte[7];
+    /// <summary>
+    /// 业务功能码
+    /// </summary>
+    public string TradeCode
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeCode); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeCode); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _BankID = new byte[4];
+    /// <summary>
+    /// 银行代码
+    /// </summary>
+    public string BankID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=5)]
+    public readonly byte[] _BankBranchID = new byte[5];
+    /// <summary>
+    /// 银行分支机构代码
+    /// </summary>
+    public string BankBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 期商代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=31)]
+    public readonly byte[] _BrokerBranchID = new byte[31];
+    /// <summary>
+    /// 期商分支机构代码
+    /// </summary>
+    public string BrokerBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeDate = new byte[9];
+    /// <summary>
+    /// 交易日期
+    /// </summary>
+    public string TradeDate
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeDate); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeDate); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeTime = new byte[9];
+    /// <summary>
+    /// 交易时间
+    /// </summary>
+    public string TradeTime
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeTime); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _BankSerial = new byte[13];
+    /// <summary>
+    /// 银行流水号
+    /// </summary>
+    public string BankSerial
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSerial); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSerial); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradingDay = new byte[9];
+    /// <summary>
+    /// 交易系统日期
+    /// </summary>
+    public string TradingDay
+    {
+        get{ return GBKConvert.Instance.GetString(_TradingDay); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradingDay); }
+    }
+    /// <summary>
+    /// 银期平台消息流水号
+    /// </summary>
+    public int PlateSerial;
+    public TThostFtdcLastFragmentType LastFragment;
+    /// <summary>
+    /// 会话号
+    /// </summary>
+    public int SessionID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _CustomerName = new byte[51];
+    /// <summary>
+    /// 客户姓名
+    /// </summary>
+    public string CustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_CustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _CustomerName); }
+    }
+    public TThostFtdcIdCardTypeType IdCardType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _IdentifiedCardNo = new byte[51];
+    /// <summary>
+    /// 证件号码
+    /// </summary>
+    public string IdentifiedCardNo
+    {
+        get{ return GBKConvert.Instance.GetString(_IdentifiedCardNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _IdentifiedCardNo); }
+    }
+    public TThostFtdcCustTypeType CustType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankAccount = new byte[41];
+    /// <summary>
+    /// 银行帐号
+    /// </summary>
+    public string BankAccount
+    {
+        get{ return GBKConvert.Instance.GetString(_BankAccount); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankAccount); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankPassWord = new byte[41];
+    /// <summary>
+    /// 银行密码
+    /// </summary>
+    public string BankPassWord
+    {
+        get{ return GBKConvert.Instance.GetString(_BankPassWord); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankPassWord); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _AccountID = new byte[13];
+    /// <summary>
+    /// 投资者帐号
+    /// </summary>
+    public string AccountID
+    {
+        get{ return GBKConvert.Instance.GetString(_AccountID); }
+        set{ GBKConvert.Instance.GetBytes(value, _AccountID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _Password = new byte[41];
+    /// <summary>
+    /// 期货密码
+    /// </summary>
+    public string Password
+    {
+        get{ return GBKConvert.Instance.GetString(_Password); }
+        set{ GBKConvert.Instance.GetBytes(value, _Password); }
+    }
+    /// <summary>
+    /// 安装编号
+    /// </summary>
+    public int InstallID;
+    /// <summary>
+    /// 期货公司流水号
+    /// </summary>
+    public int FutureSerial;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户标识
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    public TThostFtdcYesNoIndicatorType VerifyCertNoFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _CurrencyID = new byte[4];
+    /// <summary>
+    /// 币种代码
+    /// </summary>
+    public string CurrencyID
+    {
+        get{ return GBKConvert.Instance.GetString(_CurrencyID); }
+        set{ GBKConvert.Instance.GetBytes(value, _CurrencyID); }
+    }
+    /// <summary>
+    /// 转帐金额
+    /// </summary>
+    public double TradeAmount;
+    /// <summary>
+    /// 期货可取金额
+    /// </summary>
+    public double FutureFetchAmount;
+    public TThostFtdcFeePayFlagType FeePayFlag;
+    /// <summary>
+    /// 应收客户费用
+    /// </summary>
+    public double CustFee;
+    /// <summary>
+    /// 应收期货公司费用
+    /// </summary>
+    public double BrokerFee;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=129)]
+    public readonly byte[] _Message = new byte[129];
+    /// <summary>
+    /// 发送方给接收方的消息
+    /// </summary>
+    public string Message
+    {
+        get{ return GBKConvert.Instance.GetString(_Message); }
+        set{ GBKConvert.Instance.GetBytes(value, _Message); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=36)]
+    public readonly byte[] _Digest = new byte[36];
+    /// <summary>
+    /// 摘要
+    /// </summary>
+    public string Digest
+    {
+        get{ return GBKConvert.Instance.GetString(_Digest); }
+        set{ GBKConvert.Instance.GetBytes(value, _Digest); }
+    }
+    public TThostFtdcBankAccTypeType BankAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=3)]
+    public readonly byte[] _DeviceID = new byte[3];
+    /// <summary>
+    /// 渠道标志
+    /// </summary>
+    public string DeviceID
+    {
+        get{ return GBKConvert.Instance.GetString(_DeviceID); }
+        set{ GBKConvert.Instance.GetBytes(value, _DeviceID); }
+    }
+    public TThostFtdcBankAccTypeType BankSecuAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _BrokerIDByBank = new byte[33];
+    /// <summary>
+    /// 期货公司银行编码
+    /// </summary>
+    public string BrokerIDByBank
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerIDByBank); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerIDByBank); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankSecuAcc = new byte[41];
+    /// <summary>
+    /// 期货单位帐号
+    /// </summary>
+    public string BankSecuAcc
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSecuAcc); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSecuAcc); }
+    }
+    public TThostFtdcPwdFlagType BankPwdFlag;
+    public TThostFtdcPwdFlagType SecuPwdFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=17)]
+    public readonly byte[] _OperNo = new byte[17];
+    /// <summary>
+    /// 交易柜员
+    /// </summary>
+    public string OperNo
+    {
+        get{ return GBKConvert.Instance.GetString(_OperNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OperNo); }
+    }
+    /// <summary>
+    /// 请求编号
+    /// </summary>
+    public int RequestID;
+    /// <summary>
+    /// 交易ID
+    /// </summary>
+    public int TID;
+    public TThostFtdcTransferStatusType TransferStatus;
+    /// <summary>
+    /// 错误代码
+    /// </summary>
+    public int ErrorID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _ErrorMsg = new byte[81];
+    /// <summary>
+    /// 错误信息
+    /// </summary>
+    public string ErrorMsg
+    {
+        get{ return GBKConvert.Instance.GetString(_ErrorMsg); }
+        set{ GBKConvert.Instance.GetBytes(value, _ErrorMsg); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=161)]
+    public readonly byte[] _LongCustomerName = new byte[161];
+    /// <summary>
+    /// 长客户姓名
+    /// </summary>
+    public string LongCustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_LongCustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _LongCustomerName); }
+    }
+    /// <summary>
+    /// 交易中心代码
+    /// </summary>
+    public int DRIdentityID;
+    /// <summary>
+    /// 次中心发起转账期货公司流水号
+    /// </summary>
+    public int SecFutureSerial;
+}
+/// <summary>
+/// 查询银行资金帐户信息通知 要发往次席
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcNotifyQueryFutureAccountBySecField
+{
+    public CThostFtdcNotifyQueryFutureAccountBySecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=7)]
+    public readonly byte[] _TradeCode = new byte[7];
+    /// <summary>
+    /// 业务功能码
+    /// </summary>
+    public string TradeCode
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeCode); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeCode); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _BankID = new byte[4];
+    /// <summary>
+    /// 银行代码
+    /// </summary>
+    public string BankID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=5)]
+    public readonly byte[] _BankBranchID = new byte[5];
+    /// <summary>
+    /// 银行分支机构代码
+    /// </summary>
+    public string BankBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BankBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 期商代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=31)]
+    public readonly byte[] _BrokerBranchID = new byte[31];
+    /// <summary>
+    /// 期商分支机构代码
+    /// </summary>
+    public string BrokerBranchID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerBranchID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerBranchID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeDate = new byte[9];
+    /// <summary>
+    /// 交易日期
+    /// </summary>
+    public string TradeDate
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeDate); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeDate); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradeTime = new byte[9];
+    /// <summary>
+    /// 交易时间
+    /// </summary>
+    public string TradeTime
+    {
+        get{ return GBKConvert.Instance.GetString(_TradeTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradeTime); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _BankSerial = new byte[13];
+    /// <summary>
+    /// 银行流水号
+    /// </summary>
+    public string BankSerial
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSerial); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSerial); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradingDay = new byte[9];
+    /// <summary>
+    /// 交易系统日期
+    /// </summary>
+    public string TradingDay
+    {
+        get{ return GBKConvert.Instance.GetString(_TradingDay); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradingDay); }
+    }
+    /// <summary>
+    /// 银期平台消息流水号
+    /// </summary>
+    public int PlateSerial;
+    public TThostFtdcLastFragmentType LastFragment;
+    /// <summary>
+    /// 会话号
+    /// </summary>
+    public int SessionID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _CustomerName = new byte[51];
+    /// <summary>
+    /// 客户姓名
+    /// </summary>
+    public string CustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_CustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _CustomerName); }
+    }
+    public TThostFtdcIdCardTypeType IdCardType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=51)]
+    public readonly byte[] _IdentifiedCardNo = new byte[51];
+    /// <summary>
+    /// 证件号码
+    /// </summary>
+    public string IdentifiedCardNo
+    {
+        get{ return GBKConvert.Instance.GetString(_IdentifiedCardNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _IdentifiedCardNo); }
+    }
+    public TThostFtdcCustTypeType CustType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankAccount = new byte[41];
+    /// <summary>
+    /// 银行帐号
+    /// </summary>
+    public string BankAccount
+    {
+        get{ return GBKConvert.Instance.GetString(_BankAccount); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankAccount); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankPassWord = new byte[41];
+    /// <summary>
+    /// 银行密码
+    /// </summary>
+    public string BankPassWord
+    {
+        get{ return GBKConvert.Instance.GetString(_BankPassWord); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankPassWord); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _AccountID = new byte[13];
+    /// <summary>
+    /// 投资者帐号
+    /// </summary>
+    public string AccountID
+    {
+        get{ return GBKConvert.Instance.GetString(_AccountID); }
+        set{ GBKConvert.Instance.GetBytes(value, _AccountID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _Password = new byte[41];
+    /// <summary>
+    /// 期货密码
+    /// </summary>
+    public string Password
+    {
+        get{ return GBKConvert.Instance.GetString(_Password); }
+        set{ GBKConvert.Instance.GetBytes(value, _Password); }
+    }
+    /// <summary>
+    /// 期货公司流水号
+    /// </summary>
+    public int FutureSerial;
+    /// <summary>
+    /// 安装编号
+    /// </summary>
+    public int InstallID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户标识
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    public TThostFtdcYesNoIndicatorType VerifyCertNoFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _CurrencyID = new byte[4];
+    /// <summary>
+    /// 币种代码
+    /// </summary>
+    public string CurrencyID
+    {
+        get{ return GBKConvert.Instance.GetString(_CurrencyID); }
+        set{ GBKConvert.Instance.GetBytes(value, _CurrencyID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=36)]
+    public readonly byte[] _Digest = new byte[36];
+    /// <summary>
+    /// 摘要
+    /// </summary>
+    public string Digest
+    {
+        get{ return GBKConvert.Instance.GetString(_Digest); }
+        set{ GBKConvert.Instance.GetBytes(value, _Digest); }
+    }
+    public TThostFtdcBankAccTypeType BankAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=3)]
+    public readonly byte[] _DeviceID = new byte[3];
+    /// <summary>
+    /// 渠道标志
+    /// </summary>
+    public string DeviceID
+    {
+        get{ return GBKConvert.Instance.GetString(_DeviceID); }
+        set{ GBKConvert.Instance.GetBytes(value, _DeviceID); }
+    }
+    public TThostFtdcBankAccTypeType BankSecuAccType;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _BrokerIDByBank = new byte[33];
+    /// <summary>
+    /// 期货公司银行编码
+    /// </summary>
+    public string BrokerIDByBank
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerIDByBank); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerIDByBank); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _BankSecuAcc = new byte[41];
+    /// <summary>
+    /// 期货单位帐号
+    /// </summary>
+    public string BankSecuAcc
+    {
+        get{ return GBKConvert.Instance.GetString(_BankSecuAcc); }
+        set{ GBKConvert.Instance.GetBytes(value, _BankSecuAcc); }
+    }
+    public TThostFtdcPwdFlagType BankPwdFlag;
+    public TThostFtdcPwdFlagType SecuPwdFlag;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=17)]
+    public readonly byte[] _OperNo = new byte[17];
+    /// <summary>
+    /// 交易柜员
+    /// </summary>
+    public string OperNo
+    {
+        get{ return GBKConvert.Instance.GetString(_OperNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _OperNo); }
+    }
+    /// <summary>
+    /// 请求编号
+    /// </summary>
+    public int RequestID;
+    /// <summary>
+    /// 交易ID
+    /// </summary>
+    public int TID;
+    /// <summary>
+    /// 银行可用金额
+    /// </summary>
+    public double BankUseAmount;
+    /// <summary>
+    /// 银行可取金额
+    /// </summary>
+    public double BankFetchAmount;
+    /// <summary>
+    /// 错误代码
+    /// </summary>
+    public int ErrorID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _ErrorMsg = new byte[81];
+    /// <summary>
+    /// 错误信息
+    /// </summary>
+    public string ErrorMsg
+    {
+        get{ return GBKConvert.Instance.GetString(_ErrorMsg); }
+        set{ GBKConvert.Instance.GetBytes(value, _ErrorMsg); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=161)]
+    public readonly byte[] _LongCustomerName = new byte[161];
+    /// <summary>
+    /// 长客户姓名
+    /// </summary>
+    public string LongCustomerName
+    {
+        get{ return GBKConvert.Instance.GetString(_LongCustomerName); }
+        set{ GBKConvert.Instance.GetBytes(value, _LongCustomerName); }
+    }
+    /// <summary>
+    /// 交易中心代码
+    /// </summary>
+    public int DRIdentityID;
+    /// <summary>
+    /// 次中心发起转账期货公司流水号
+    /// </summary>
+    public int SecFutureSerial;
+}
+/// <summary>
+/// 退出紧急状态参数
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcExitEmergencyField
+{
+    public CThostFtdcExitEmergencyField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+}
+/// <summary>
+/// 新组保保证金系数投资者模板对应关系
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcInvestorPortfMarginModelField
+{
+    public CThostFtdcInvestorPortfMarginModelField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者代码
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _MarginModelID = new byte[13];
+    /// <summary>
+    /// 保证金系数模板
+    /// </summary>
+    public string MarginModelID
+    {
+        get{ return GBKConvert.Instance.GetString(_MarginModelID); }
+        set{ GBKConvert.Instance.GetBytes(value, _MarginModelID); }
+    }
+}
+/// <summary>
+/// 投资者新组保设置
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcInvestorPortfSettingField
+{
+    public CThostFtdcInvestorPortfSettingField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ExchangeID = new byte[9];
+    /// <summary>
+    /// 交易所代码
+    /// </summary>
+    public string ExchangeID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者编号
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    public TThostFtdcHedgeFlagType HedgeFlag;
+    /// <summary>
+    /// 是否开启新组保
+    /// </summary>
+    public int UsePortf;
+}
+/// <summary>
+/// 投资者新组保设置查询
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcQryInvestorPortfSettingField
+{
+    public CThostFtdcQryInvestorPortfSettingField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ExchangeID = new byte[9];
+    /// <summary>
+    /// 交易所代码
+    /// </summary>
+    public string ExchangeID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者编号
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+}
+/// <summary>
+/// 来自次席的用户口令变更
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcUserPasswordUpdateFromSecField
+{
+    public CThostFtdcUserPasswordUpdateFromSecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户代码
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _OldPassword = new byte[41];
+    /// <summary>
+    /// 原来的口令
+    /// </summary>
+    public string OldPassword
+    {
+        get{ return GBKConvert.Instance.GetString(_OldPassword); }
+        set{ GBKConvert.Instance.GetBytes(value, _OldPassword); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _NewPassword = new byte[41];
+    /// <summary>
+    /// 新的口令
+    /// </summary>
+    public string NewPassword
+    {
+        get{ return GBKConvert.Instance.GetString(_NewPassword); }
+        set{ GBKConvert.Instance.GetBytes(value, _NewPassword); }
+    }
+    /// <summary>
+    /// 次席的交易中心代码
+    /// </summary>
+    public int FromSec;
+}
+/// <summary>
+/// 来自次席的结算结果确认
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcSettlementInfoConfirmFromSecField
+{
+    public CThostFtdcSettlementInfoConfirmFromSecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者代码
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ConfirmDate = new byte[9];
+    /// <summary>
+    /// 确认日期
+    /// </summary>
+    public string ConfirmDate
+    {
+        get{ return GBKConvert.Instance.GetString(_ConfirmDate); }
+        set{ GBKConvert.Instance.GetBytes(value, _ConfirmDate); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ConfirmTime = new byte[9];
+    /// <summary>
+    /// 确认时间
+    /// </summary>
+    public string ConfirmTime
+    {
+        get{ return GBKConvert.Instance.GetString(_ConfirmTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _ConfirmTime); }
+    }
+    /// <summary>
+    /// 次席的交易中心代码
+    /// </summary>
+    public int FromSec;
+}
+/// <summary>
+/// 来自次席的资金账户口令变更
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcTradingAccountPasswordUpdateFromSecField
+{
+    public CThostFtdcTradingAccountPasswordUpdateFromSecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _AccountID = new byte[13];
+    /// <summary>
+    /// 投资者帐号
+    /// </summary>
+    public string AccountID
+    {
+        get{ return GBKConvert.Instance.GetString(_AccountID); }
+        set{ GBKConvert.Instance.GetBytes(value, _AccountID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _OldPassword = new byte[41];
+    /// <summary>
+    /// 原来的口令
+    /// </summary>
+    public string OldPassword
+    {
+        get{ return GBKConvert.Instance.GetString(_OldPassword); }
+        set{ GBKConvert.Instance.GetBytes(value, _OldPassword); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _NewPassword = new byte[41];
+    /// <summary>
+    /// 新的口令
+    /// </summary>
+    public string NewPassword
+    {
+        get{ return GBKConvert.Instance.GetString(_NewPassword); }
+        set{ GBKConvert.Instance.GetBytes(value, _NewPassword); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=4)]
+    public readonly byte[] _CurrencyID = new byte[4];
+    /// <summary>
+    /// 币种代码
+    /// </summary>
+    public string CurrencyID
+    {
+        get{ return GBKConvert.Instance.GetString(_CurrencyID); }
+        set{ GBKConvert.Instance.GetBytes(value, _CurrencyID); }
+    }
+    /// <summary>
+    /// 次席的交易中心代码
+    /// </summary>
+    public int FromSec;
+}
+/// <summary>
+/// 风控禁止的合约交易权限
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcRiskForbiddenRightField
+{
+    public CThostFtdcRiskForbiddenRightField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者编号
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _InstrumentID = new byte[81];
+    /// <summary>
+    /// 合约/产品代码
+    /// </summary>
+    public string InstrumentID
+    {
+        get{ return GBKConvert.Instance.GetString(_InstrumentID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InstrumentID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户代码
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+}
+/// <summary>
+/// 投资者申报费阶梯收取记录
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcInvestorInfoCommRecField
+{
+    public CThostFtdcInvestorInfoCommRecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ExchangeID = new byte[9];
+    /// <summary>
+    /// 交易所代码
+    /// </summary>
+    public string ExchangeID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者代码
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _InstrumentID = new byte[81];
+    /// <summary>
+    /// 商品代码
+    /// </summary>
+    public string InstrumentID
+    {
+        get{ return GBKConvert.Instance.GetString(_InstrumentID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InstrumentID); }
+    }
+    /// <summary>
+    /// 报单总笔数
+    /// </summary>
+    public int OrderCount;
+    /// <summary>
+    /// 撤单总笔数
+    /// </summary>
+    public int OrderActionCount;
+    /// <summary>
+    /// 询价总次数
+    /// </summary>
+    public int ForQuoteCnt;
+    /// <summary>
+    /// 申报费
+    /// </summary>
+    public double InfoComm;
+    /// <summary>
+    /// 是否期权系列
+    /// </summary>
+    public int IsOptSeries;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _ProductID = new byte[41];
+    /// <summary>
+    /// 品种代码
+    /// </summary>
+    public string ProductID
+    {
+        get{ return GBKConvert.Instance.GetString(_ProductID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ProductID); }
+    }
+    /// <summary>
+    /// 信息量总量
+    /// </summary>
+    public int InfoCnt;
+}
+/// <summary>
+/// 投资者申报费阶梯收取记录查询
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcQryInvestorInfoCommRecField
+{
+    public CThostFtdcQryInvestorInfoCommRecField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者代码
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _InstrumentID = new byte[81];
+    /// <summary>
+    /// 商品代码
+    /// </summary>
+    public string InstrumentID
+    {
+        get{ return GBKConvert.Instance.GetString(_InstrumentID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InstrumentID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+}
+/// <summary>
+/// 组合腿信息
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcCombLegField
+{
+    public CThostFtdcCombLegField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _CombInstrumentID = new byte[81];
+    /// <summary>
+    /// 组合合约代码
+    /// </summary>
+    public string CombInstrumentID
+    {
+        get{ return GBKConvert.Instance.GetString(_CombInstrumentID); }
+        set{ GBKConvert.Instance.GetBytes(value, _CombInstrumentID); }
+    }
+    /// <summary>
+    /// 单腿编号
+    /// </summary>
+    public int LegID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _LegInstrumentID = new byte[81];
+    /// <summary>
+    /// 单腿合约代码
+    /// </summary>
+    public string LegInstrumentID
+    {
+        get{ return GBKConvert.Instance.GetString(_LegInstrumentID); }
+        set{ GBKConvert.Instance.GetBytes(value, _LegInstrumentID); }
+    }
+    public TThostFtdcDirectionType Direction;
+    /// <summary>
+    /// 单腿乘数
+    /// </summary>
+    public int LegMultiple;
+    /// <summary>
+    /// 派生层数
+    /// </summary>
+    public int ImplyLevel;
+}
+/// <summary>
+/// 组合腿信息查询
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcQryCombLegField
+{
+    public CThostFtdcQryCombLegField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _LegInstrumentID = new byte[81];
+    /// <summary>
+    /// 单腿合约代码
+    /// </summary>
+    public string LegInstrumentID
+    {
+        get{ return GBKConvert.Instance.GetString(_LegInstrumentID); }
+        set{ GBKConvert.Instance.GetBytes(value, _LegInstrumentID); }
+    }
+}
+/// <summary>
+/// 输入的对冲设置
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcInputOffsetSettingField
+{
+    public CThostFtdcInputOffsetSettingField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者代码
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _InstrumentID = new byte[81];
+    /// <summary>
+    /// 合约代码
+    /// </summary>
+    public string InstrumentID
+    {
+        get{ return GBKConvert.Instance.GetString(_InstrumentID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InstrumentID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _UnderlyingInstrID = new byte[81];
+    /// <summary>
+    /// 标的期货合约代码
+    /// </summary>
+    public string UnderlyingInstrID
+    {
+        get{ return GBKConvert.Instance.GetString(_UnderlyingInstrID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UnderlyingInstrID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _ProductID = new byte[41];
+    /// <summary>
+    /// 产品代码
+    /// </summary>
+    public string ProductID
+    {
+        get{ return GBKConvert.Instance.GetString(_ProductID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ProductID); }
+    }
+    public TThostFtdcOffsetTypeType OffsetType;
+    /// <summary>
+    /// 申请对冲的合约数量
+    /// </summary>
+    public int Volume;
+    /// <summary>
+    /// 是否对冲
+    /// </summary>
+    public int IsOffset;
+    /// <summary>
+    /// 请求编号
+    /// </summary>
+    public int RequestID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户代码
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ExchangeID = new byte[9];
+    /// <summary>
+    /// 交易所代码
+    /// </summary>
+    public string ExchangeID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _IPAddress = new byte[33];
+    /// <summary>
+    /// IP地址
+    /// </summary>
+    public string IPAddress
+    {
+        get{ return GBKConvert.Instance.GetString(_IPAddress); }
+        set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=21)]
+    public readonly byte[] _MacAddress = new byte[21];
+    /// <summary>
+    /// Mac地址
+    /// </summary>
+    public string MacAddress
+    {
+        get{ return GBKConvert.Instance.GetString(_MacAddress); }
+        set{ GBKConvert.Instance.GetBytes(value, _MacAddress); }
+    }
+}
+/// <summary>
+/// 对冲设置
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcOffsetSettingField
+{
+    public CThostFtdcOffsetSettingField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者代码
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _InstrumentID = new byte[81];
+    /// <summary>
+    /// 合约代码
+    /// </summary>
+    public string InstrumentID
+    {
+        get{ return GBKConvert.Instance.GetString(_InstrumentID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InstrumentID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _UnderlyingInstrID = new byte[81];
+    /// <summary>
+    /// 标的期货合约代码
+    /// </summary>
+    public string UnderlyingInstrID
+    {
+        get{ return GBKConvert.Instance.GetString(_UnderlyingInstrID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UnderlyingInstrID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _ProductID = new byte[41];
+    /// <summary>
+    /// 产品代码
+    /// </summary>
+    public string ProductID
+    {
+        get{ return GBKConvert.Instance.GetString(_ProductID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ProductID); }
+    }
+    public TThostFtdcOffsetTypeType OffsetType;
+    /// <summary>
+    /// 申请对冲的合约数量
+    /// </summary>
+    public int Volume;
+    /// <summary>
+    /// 是否对冲
+    /// </summary>
+    public int IsOffset;
+    /// <summary>
+    /// 请求编号
+    /// </summary>
+    public int RequestID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户代码
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ExchangeID = new byte[9];
+    /// <summary>
+    /// 交易所代码
+    /// </summary>
+    public string ExchangeID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _IPAddress = new byte[33];
+    /// <summary>
+    /// IP地址
+    /// </summary>
+    public string IPAddress
+    {
+        get{ return GBKConvert.Instance.GetString(_IPAddress); }
+        set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=21)]
+    public readonly byte[] _MacAddress = new byte[21];
+    /// <summary>
+    /// Mac地址
+    /// </summary>
+    public string MacAddress
+    {
+        get{ return GBKConvert.Instance.GetString(_MacAddress); }
+        set{ GBKConvert.Instance.GetBytes(value, _MacAddress); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _ExchangeInstID = new byte[81];
+    /// <summary>
+    /// 交易所合约代码
+    /// </summary>
+    public string ExchangeInstID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeInstID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeInstID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _ExchangeSerialNo = new byte[81];
+    /// <summary>
+    /// 交易所期权系列号
+    /// </summary>
+    public string ExchangeSerialNo
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeSerialNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeSerialNo); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _ExchangeProductID = new byte[41];
+    /// <summary>
+    /// 交易所产品代码
+    /// </summary>
+    public string ExchangeProductID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeProductID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeProductID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _ParticipantID = new byte[11];
+    /// <summary>
+    /// 会员代码
+    /// </summary>
+    public string ParticipantID
+    {
+        get{ return GBKConvert.Instance.GetString(_ParticipantID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ParticipantID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _ClientID = new byte[11];
+    /// <summary>
+    /// 客户代码
+    /// </summary>
+    public string ClientID
+    {
+        get{ return GBKConvert.Instance.GetString(_ClientID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ClientID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=21)]
+    public readonly byte[] _TraderID = new byte[21];
+    /// <summary>
+    /// 交易所交易员代码
+    /// </summary>
+    public string TraderID
+    {
+        get{ return GBKConvert.Instance.GetString(_TraderID); }
+        set{ GBKConvert.Instance.GetBytes(value, _TraderID); }
+    }
+    /// <summary>
+    /// 安装编号
+    /// </summary>
+    public int InstallID;
+    public TThostFtdcOrderSubmitStatusType OrderSubmitStatus;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _TradingDay = new byte[9];
+    /// <summary>
+    /// 交易日
+    /// </summary>
+    public string TradingDay
+    {
+        get{ return GBKConvert.Instance.GetString(_TradingDay); }
+        set{ GBKConvert.Instance.GetBytes(value, _TradingDay); }
+    }
+    /// <summary>
+    /// 结算编号
+    /// </summary>
+    public int SettlementID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _InsertDate = new byte[9];
+    /// <summary>
+    /// 报单日期
+    /// </summary>
+    public string InsertDate
+    {
+        get{ return GBKConvert.Instance.GetString(_InsertDate); }
+        set{ GBKConvert.Instance.GetBytes(value, _InsertDate); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _InsertTime = new byte[9];
+    /// <summary>
+    /// 插入时间
+    /// </summary>
+    public string InsertTime
+    {
+        get{ return GBKConvert.Instance.GetString(_InsertTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _InsertTime); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _CancelTime = new byte[9];
+    /// <summary>
+    /// 撤销时间
+    /// </summary>
+    public string CancelTime
+    {
+        get{ return GBKConvert.Instance.GetString(_CancelTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _CancelTime); }
+    }
+    public TThostFtdcExecResultType ExecResult;
+    /// <summary>
+    /// 序号
+    /// </summary>
+    public int SequenceNo;
+    /// <summary>
+    /// 前置编号
+    /// </summary>
+    public int FrontID;
+    /// <summary>
+    /// 会话编号
+    /// </summary>
+    public int SessionID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _StatusMsg = new byte[81];
+    /// <summary>
+    /// 状态信息
+    /// </summary>
+    public string StatusMsg
+    {
+        get{ return GBKConvert.Instance.GetString(_StatusMsg); }
+        set{ GBKConvert.Instance.GetBytes(value, _StatusMsg); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _ActiveUserID = new byte[16];
+    /// <summary>
+    /// 操作用户代码
+    /// </summary>
+    public string ActiveUserID
+    {
+        get{ return GBKConvert.Instance.GetString(_ActiveUserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ActiveUserID); }
+    }
+    /// <summary>
+    /// 经纪公司报单编号
+    /// </summary>
+    public int BrokerOffsetSettingSeq;
+}
+/// <summary>
+/// 撤销对冲设置
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcCancelOffsetSettingField
+{
+    public CThostFtdcCancelOffsetSettingField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者代码
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _InstrumentID = new byte[81];
+    /// <summary>
+    /// 合约代码
+    /// </summary>
+    public string InstrumentID
+    {
+        get{ return GBKConvert.Instance.GetString(_InstrumentID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InstrumentID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _UnderlyingInstrID = new byte[81];
+    /// <summary>
+    /// 标的期货合约代码
+    /// </summary>
+    public string UnderlyingInstrID
+    {
+        get{ return GBKConvert.Instance.GetString(_UnderlyingInstrID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UnderlyingInstrID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _ProductID = new byte[41];
+    /// <summary>
+    /// 产品代码
+    /// </summary>
+    public string ProductID
+    {
+        get{ return GBKConvert.Instance.GetString(_ProductID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ProductID); }
+    }
+    public TThostFtdcOffsetTypeType OffsetType;
+    /// <summary>
+    /// 申请对冲的合约数量
+    /// </summary>
+    public int Volume;
+    /// <summary>
+    /// 是否对冲
+    /// </summary>
+    public int IsOffset;
+    /// <summary>
+    /// 请求编号
+    /// </summary>
+    public int RequestID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户代码
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ExchangeID = new byte[9];
+    /// <summary>
+    /// 交易所代码
+    /// </summary>
+    public string ExchangeID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _IPAddress = new byte[33];
+    /// <summary>
+    /// IP地址
+    /// </summary>
+    public string IPAddress
+    {
+        get{ return GBKConvert.Instance.GetString(_IPAddress); }
+        set{ GBKConvert.Instance.GetBytes(value, _IPAddress); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=21)]
+    public readonly byte[] _MacAddress = new byte[21];
+    /// <summary>
+    /// Mac地址
+    /// </summary>
+    public string MacAddress
+    {
+        get{ return GBKConvert.Instance.GetString(_MacAddress); }
+        set{ GBKConvert.Instance.GetBytes(value, _MacAddress); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _ExchangeInstID = new byte[81];
+    /// <summary>
+    /// 交易所合约代码
+    /// </summary>
+    public string ExchangeInstID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeInstID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeInstID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _ExchangeSerialNo = new byte[81];
+    /// <summary>
+    /// 交易所期权系列号
+    /// </summary>
+    public string ExchangeSerialNo
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeSerialNo); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeSerialNo); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _ExchangeProductID = new byte[41];
+    /// <summary>
+    /// 交易所产品代码
+    /// </summary>
+    public string ExchangeProductID
+    {
+        get{ return GBKConvert.Instance.GetString(_ExchangeProductID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ExchangeProductID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=21)]
+    public readonly byte[] _TraderID = new byte[21];
+    /// <summary>
+    /// 交易所交易员代码
+    /// </summary>
+    public string TraderID
+    {
+        get{ return GBKConvert.Instance.GetString(_TraderID); }
+        set{ GBKConvert.Instance.GetBytes(value, _TraderID); }
+    }
+    /// <summary>
+    /// 安装编号
+    /// </summary>
+    public int InstallID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _ParticipantID = new byte[11];
+    /// <summary>
+    /// 会员代码
+    /// </summary>
+    public string ParticipantID
+    {
+        get{ return GBKConvert.Instance.GetString(_ParticipantID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ParticipantID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _ClientID = new byte[11];
+    /// <summary>
+    /// 客户代码
+    /// </summary>
+    public string ClientID
+    {
+        get{ return GBKConvert.Instance.GetString(_ClientID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ClientID); }
+    }
+    public TThostFtdcOrderActionStatusType OrderActionStatus;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=81)]
+    public readonly byte[] _StatusMsg = new byte[81];
+    /// <summary>
+    /// 状态信息
+    /// </summary>
+    public string StatusMsg
+    {
+        get{ return GBKConvert.Instance.GetString(_StatusMsg); }
+        set{ GBKConvert.Instance.GetBytes(value, _StatusMsg); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _ActionLocalID = new byte[13];
+    /// <summary>
+    /// 操作本地编号
+    /// </summary>
+    public string ActionLocalID
+    {
+        get{ return GBKConvert.Instance.GetString(_ActionLocalID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ActionLocalID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ActionDate = new byte[9];
+    /// <summary>
+    /// 操作日期
+    /// </summary>
+    public string ActionDate
+    {
+        get{ return GBKConvert.Instance.GetString(_ActionDate); }
+        set{ GBKConvert.Instance.GetBytes(value, _ActionDate); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ActionTime = new byte[9];
+    /// <summary>
+    /// 操作时间
+    /// </summary>
+    public string ActionTime
+    {
+        get{ return GBKConvert.Instance.GetString(_ActionTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _ActionTime); }
+    }
+}
+/// <summary>
+/// 查询对冲设置
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcQryOffsetSettingField
+{
+    public CThostFtdcQryOffsetSettingField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=13)]
+    public readonly byte[] _InvestorID = new byte[13];
+    /// <summary>
+    /// 投资者代码
+    /// </summary>
+    public string InvestorID
+    {
+        get{ return GBKConvert.Instance.GetString(_InvestorID); }
+        set{ GBKConvert.Instance.GetBytes(value, _InvestorID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=41)]
+    public readonly byte[] _ProductID = new byte[41];
+    /// <summary>
+    /// 产品代码
+    /// </summary>
+    public string ProductID
+    {
+        get{ return GBKConvert.Instance.GetString(_ProductID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ProductID); }
+    }
+    public TThostFtdcOffsetTypeType OffsetType;
+}
+/// <summary>
+/// 服务地址和AppID的关系
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcAddrAppIDRelationField
+{
+    public CThostFtdcAddrAppIDRelationField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=129)]
+    public readonly byte[] _Address = new byte[129];
+    /// <summary>
+    /// 服务地址
+    /// </summary>
+    public string Address
+    {
+        get{ return GBKConvert.Instance.GetString(_Address); }
+        set{ GBKConvert.Instance.GetBytes(value, _Address); }
+    }
+    /// <summary>
+    /// 交易中心代码
+    /// </summary>
+    public int DRIdentityID;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _AppID = new byte[33];
+    /// <summary>
+    /// App代码
+    /// </summary>
+    public string AppID
+    {
+        get{ return GBKConvert.Instance.GetString(_AppID); }
+        set{ GBKConvert.Instance.GetBytes(value, _AppID); }
+    }
+}
+/// <summary>
+/// 服务地址和AppID的关系查询
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcQryAddrAppIDRelationField
+{
+    public CThostFtdcQryAddrAppIDRelationField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+}
+/// <summary>
+/// 微信小程序等用户系统信息
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcWechatUserSystemInfoField
+{
+    public CThostFtdcWechatUserSystemInfoField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=11)]
+    public readonly byte[] _BrokerID = new byte[11];
+    /// <summary>
+    /// 经纪公司代码
+    /// </summary>
+    public string BrokerID
+    {
+        get{ return GBKConvert.Instance.GetString(_BrokerID); }
+        set{ GBKConvert.Instance.GetBytes(value, _BrokerID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=16)]
+    public readonly byte[] _UserID = new byte[16];
+    /// <summary>
+    /// 用户代码
+    /// </summary>
+    public string UserID
+    {
+        get{ return GBKConvert.Instance.GetString(_UserID); }
+        set{ GBKConvert.Instance.GetBytes(value, _UserID); }
+    }
+    /// <summary>
+    /// 微信小程序等用户端系统内部信息长度
+    /// </summary>
+    public int WechatCltSysInfoLen;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=273)]
+    public readonly byte[] _WechatCltSysInfo = new byte[273];
+    /// <summary>
+    /// 微信小程序等用户端系统内部信息
+    /// </summary>
+    public string WechatCltSysInfo
+    {
+        get{ return GBKConvert.Instance.GetString(_WechatCltSysInfo); }
+        set{ GBKConvert.Instance.GetBytes(value, _WechatCltSysInfo); }
+    }
+    /// <summary>
+    /// 终端IP端口
+    /// </summary>
+    public int ClientIPPort;
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=9)]
+    public readonly byte[] _ClientLoginTime = new byte[9];
+    /// <summary>
+    /// 登录成功时间
+    /// </summary>
+    public string ClientLoginTime
+    {
+        get{ return GBKConvert.Instance.GetString(_ClientLoginTime); }
+        set{ GBKConvert.Instance.GetBytes(value, _ClientLoginTime); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _ClientAppID = new byte[33];
+    /// <summary>
+    /// App代码
+    /// </summary>
+    public string ClientAppID
+    {
+        get{ return GBKConvert.Instance.GetString(_ClientAppID); }
+        set{ GBKConvert.Instance.GetBytes(value, _ClientAppID); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=33)]
+    public readonly byte[] _ClientPublicIP = new byte[33];
+    /// <summary>
+    /// 用户公网IP
+    /// </summary>
+    public string ClientPublicIP
+    {
+        get{ return GBKConvert.Instance.GetString(_ClientPublicIP); }
+        set{ GBKConvert.Instance.GetBytes(value, _ClientPublicIP); }
+    }
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=151)]
+    public readonly byte[] _ClientLoginRemark = new byte[151];
+    /// <summary>
+    /// 客户登录备注2
+    /// </summary>
+    public string ClientLoginRemark
+    {
+        get{ return GBKConvert.Instance.GetString(_ClientLoginRemark); }
+        set{ GBKConvert.Instance.GetBytes(value, _ClientLoginRemark); }
+    }
+}
+/// <summary>
+/// 前置信息
+/// </summary>
+[StructLayout(LayoutKind.Sequential, CharSet = CharSet.Ansi)]
+public struct CThostFtdcFrontInfoField
+{
+    public CThostFtdcFrontInfoField() {}
+    [MarshalAs(UnmanagedType.ByValArray, SizeConst=101)]
+    public readonly byte[] _FrontAddr = new byte[101];
+    /// <summary>
+    /// 前置地址
+    /// </summary>
+    public string FrontAddr
+    {
+        get{ return GBKConvert.Instance.GetString(_FrontAddr); }
+        set{ GBKConvert.Instance.GetBytes(value, _FrontAddr); }
+    }
+    /// <summary>
+    /// 查询流控
+    /// </summary>
+    public int QryFreq;
+    /// <summary>
+    /// FTD流控
+    /// </summary>
+    public int FTDPkgFreq;
 }
