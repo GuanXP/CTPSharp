@@ -60,6 +60,7 @@ pub const THOST_FTDC_FC_ParkedOrderInsert: u8 = 67u8;
 pub const THOST_FTDC_FC_ParkedOrderAction: u8 = 68u8;
 pub const THOST_FTDC_FC_SyncOTP: u8 = 69u8;
 pub const THOST_FTDC_FC_DeleteOrder: u8 = 70u8;
+pub const THOST_FTDC_FC_ExitEmergency: u8 = 71u8;
 pub const THOST_FTDC_BFC_ForceUserLogout: u8 = 49u8;
 pub const THOST_FTDC_BFC_UserPasswordUpdate: u8 = 50u8;
 pub const THOST_FTDC_BFC_SyncBrokerData: u8 = 51u8;
@@ -220,6 +221,9 @@ pub const THOST_FTDC_FCC_Violation: u8 = 53u8;
 pub const THOST_FTDC_FCC_Other: u8 = 54u8;
 pub const THOST_FTDC_FCC_PersonDeliv: u8 = 55u8;
 pub const THOST_FTDC_FCC_Notverifycapital: u8 = 56u8;
+pub const THOST_FTDC_FCC_LocalLackDeposit: u8 = 57u8;
+pub const THOST_FTDC_FCC_LocalViolationNocheck: u8 = 97u8;
+pub const THOST_FTDC_FCC_LocalViolation: u8 = 98u8;
 pub const THOST_FTDC_ORDT_Normal: u8 = 48u8;
 pub const THOST_FTDC_ORDT_DeriveFromQuote: u8 = 49u8;
 pub const THOST_FTDC_ORDT_DeriveFromCombination: u8 = 50u8;
@@ -280,6 +284,7 @@ pub const THOST_FTDC_IS_AuctionOrdering: u8 = 51u8;
 pub const THOST_FTDC_IS_AuctionBalance: u8 = 52u8;
 pub const THOST_FTDC_IS_AuctionMatch: u8 = 53u8;
 pub const THOST_FTDC_IS_Closed: u8 = 54u8;
+pub const THOST_FTDC_IS_TransactionProcessing: u8 = 55u8;
 pub const THOST_FTDC_IER_Automatic: u8 = 49u8;
 pub const THOST_FTDC_IER_Manual: u8 = 50u8;
 pub const THOST_FTDC_IER_Fuse: u8 = 51u8;
@@ -361,6 +366,10 @@ pub const THOST_FTDC_TPID_BalanceMorgage: u8 = 97u8;
 pub const THOST_FTDC_TPID_MinPwdLen: u8 = 79u8;
 pub const THOST_FTDC_TPID_LoginFailMaxNumForIP: u8 = 85u8;
 pub const THOST_FTDC_TPID_PasswordPeriod: u8 = 86u8;
+pub const THOST_FTDC_TPID_PwdHistoryCmp: u8 = 88u8;
+pub const THOST_FTDC_TPID_TranferChkProperty: u8 = 105u8;
+pub const THOST_FTDC_TPID_TradeChkPhase: u8 = 106u8;
+pub const THOST_FTDC_TPID_TradeChkPriceVol: u8 = 107u8;
 pub const THOST_FTDC_FI_SettlementFund: u8 = 70u8;
 pub const THOST_FTDC_FI_Trade: u8 = 84u8;
 pub const THOST_FTDC_FI_InvestorPosition: u8 = 80u8;
@@ -527,6 +536,7 @@ pub const THOST_FTDC_UET_Authenticate: u8 = 54u8;
 pub const THOST_FTDC_UET_SubmitSysInfo: u8 = 55u8;
 pub const THOST_FTDC_UET_Transfer: u8 = 56u8;
 pub const THOST_FTDC_UET_Other: u8 = 57u8;
+pub const THOST_FTDC_UET_UpdateTradingAccountPassword: u8 = 97u8;
 pub const THOST_FTDC_ICS_Close: u8 = 48u8;
 pub const THOST_FTDC_ICS_CloseToday: u8 = 49u8;
 pub const THOST_FTDC_SM_Non: u8 = 48u8;
@@ -1294,6 +1304,22 @@ pub const THOST_FTDC_EIC_NonComb: u8 = 51u8;
 pub const THOST_FTDC_PCF_None: u8 = 48u8;
 pub const THOST_FTDC_PCF_OnlyFrozen: u8 = 49u8;
 pub const THOST_FTDC_PCF_PositionChange: u8 = 50u8;
+pub const THOST_FTDC_PRS_Init: u8 = 48u8;
+pub const THOST_FTDC_PRS_Sync: u8 = 49u8;
+pub const THOST_FTDC_PRS_UserUpd: u8 = 50u8;
+pub const THOST_FTDC_PRS_SuperUserUpd: u8 = 51u8;
+pub const THOST_FTDC_PRS_SecUpd: u8 = 52u8;
+pub const THOST_FTDC_ASM_Trade: u8 = 48u8;
+pub const THOST_FTDC_ASM_MarketData: u8 = 49u8;
+pub const THOST_FTDC_ASM_Other: u8 = 50u8;
+pub const THOST_FTDC_ADV_V4: u8 = 48u8;
+pub const THOST_FTDC_ADV_V6: u8 = 49u8;
+pub const THOST_FTDC_TGQS_QryIdle: u8 = 49u8;
+pub const THOST_FTDC_TGQS_QryBusy: u8 = 50u8;
+pub const THOST_FTDC_OT_OPT_OFFSET: u8 = 48u8;
+pub const THOST_FTDC_OT_FUT_OFFSET: u8 = 49u8;
+pub const THOST_FTDC_OT_EXEC_OFFSET: u8 = 50u8;
+pub const THOST_FTDC_OT_PERFORM_OFFSET: u8 = 51u8;
 pub const THOST_TE_RESUME_TYPE_THOST_TERT_RESTART: THOST_TE_RESUME_TYPE = 0;
 pub const THOST_TE_RESUME_TYPE_THOST_TERT_RESUME: THOST_TE_RESUME_TYPE = 1;
 pub const THOST_TE_RESUME_TYPE_THOST_TERT_QUICK: THOST_TE_RESUME_TYPE = 2;
@@ -2524,6 +2550,8 @@ pub type TThostFtdcDateTimeType = [::std::os::raw::c_char; 17usize];
 pub type TThostFtdcWeakPasswordSourceType = ::std::os::raw::c_char;
 #[doc = "\nTFtdcRandomStringType是一个随机串类型\n"]
 pub type TThostFtdcRandomStringType = [::std::os::raw::c_char; 17usize];
+#[doc = "\nTFtdcOrderMemoType是一个报单回显字段类型\n"]
+pub type TThostFtdcOrderMemoType = [::std::os::raw::c_char; 13usize];
 pub type TThostFtdcOptSelfCloseFlagType = ::std::os::raw::c_char;
 pub type TThostFtdcBizTypeType = ::std::os::raw::c_char;
 pub type TThostFtdcAppTypeType = ::std::os::raw::c_char;
@@ -2631,6 +2659,21 @@ pub type TThostFtdcCommodityGroupIDType = ::std::os::raw::c_int;
 #[doc = "\nTFtdcStdPositionType是一个标准持仓类型类型\n"]
 pub type TThostFtdcStdPositionType = f64;
 pub type TThostFtdcProdChangeFlagType = ::std::os::raw::c_char;
+pub type TThostFtdcPwdRcdSrcType = ::std::os::raw::c_char;
+pub type TThostFtdcAddrSrvModeType = ::std::os::raw::c_char;
+pub type TThostFtdcAddrVerType = ::std::os::raw::c_char;
+#[doc = "\nTFtdcAddrRemarkType是一个地址备注类型\n"]
+pub type TThostFtdcAddrRemarkType = [::std::os::raw::c_char; 161usize];
+#[doc = "\nTFtdcAddrNameType是一个地址名称类型\n"]
+pub type TThostFtdcAddrNameType = [::std::os::raw::c_char; 65usize];
+#[doc = "\nTFtdcIpAddrType是一个服务地址IP类型\n"]
+pub type TThostFtdcIpAddrType = [::std::os::raw::c_char; 129usize];
+pub type TThostFtdcTGSessionQryStatusType = ::std::os::raw::c_char;
+pub type TThostFtdcOffsetTypeType = ::std::os::raw::c_char;
+#[doc = "\nTFtdcSiteType是一个站点类型\n"]
+pub type TThostFtdcSiteType = [::std::os::raw::c_char; 51usize];
+#[doc = "\nTFtdcNetOperatorType是一个网络运营商类型\n"]
+pub type TThostFtdcNetOperatorType = [::std::os::raw::c_char; 9usize];
 #[doc = "信息分发"]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -2705,6 +2748,10 @@ pub struct CThostFtdcRspUserLoginField {
     pub SysVersion: TThostFtdcSysVersionType,
     #[doc = "广期所时间"]
     pub GFEXTime: TThostFtdcTimeType,
+    #[doc = "当前登录中心号"]
+    pub LoginDRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "用户所属中心号"]
+    pub UserDRIdentityID: TThostFtdcDRIdentityIDType,
 }
 #[doc = "用户登出请求"]
 #[repr(C)]
@@ -3365,6 +3412,8 @@ pub struct CThostFtdcTradingAccountField {
     pub FrozenSwap: TThostFtdcMoneyType,
     #[doc = "剩余换汇额度"]
     pub RemainSwap: TThostFtdcMoneyType,
+    #[doc = "期权市值"]
+    pub OptionValue: TThostFtdcMoneyType,
 }
 #[doc = "投资者持仓"]
 #[repr(C)]
@@ -3470,6 +3519,8 @@ pub struct CThostFtdcInvestorPositionField {
     pub TasPositionCost: TThostFtdcMoneyType,
     #[doc = "合约代码"]
     pub InstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "期权市值"]
+    pub OptionValue: TThostFtdcMoneyType,
 }
 #[doc = "合约保证金率"]
 #[repr(C)]
@@ -4039,7 +4090,7 @@ pub struct CThostFtdcInputOrderField {
     pub BusinessUnit: TThostFtdcBusinessUnitType,
     #[doc = "请求编号"]
     pub RequestID: TThostFtdcRequestIDType,
-    #[doc = "用户强评标志"]
+    #[doc = "用户强平标志"]
     pub UserForceClose: TThostFtdcBoolType,
     #[doc = "互换单标志"]
     pub IsSwapOrder: TThostFtdcBoolType,
@@ -4061,6 +4112,10 @@ pub struct CThostFtdcInputOrderField {
     pub InstrumentID: TThostFtdcInstrumentIDType,
     #[doc = "IP地址"]
     pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "报单"]
 #[repr(C)]
@@ -4168,7 +4223,7 @@ pub struct CThostFtdcOrderField {
     pub UserProductInfo: TThostFtdcProductInfoType,
     #[doc = "状态信息"]
     pub StatusMsg: TThostFtdcErrorMsgType,
-    #[doc = "用户强评标志"]
+    #[doc = "用户强平标志"]
     pub UserForceClose: TThostFtdcBoolType,
     #[doc = "操作用户代码"]
     pub ActiveUserID: TThostFtdcUserIDType,
@@ -4198,6 +4253,10 @@ pub struct CThostFtdcOrderField {
     pub ExchangeInstID: TThostFtdcExchangeInstIDType,
     #[doc = "IP地址"]
     pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "交易所报单"]
 #[repr(C)]
@@ -4359,6 +4418,10 @@ pub struct CThostFtdcInputOrderActionField {
     pub InstrumentID: TThostFtdcInstrumentIDType,
     #[doc = "IP地址"]
     pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "报单操作"]
 #[repr(C)]
@@ -4426,6 +4489,10 @@ pub struct CThostFtdcOrderActionField {
     pub InstrumentID: TThostFtdcInstrumentIDType,
     #[doc = "IP地址"]
     pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "交易所报单操作"]
 #[repr(C)]
@@ -4710,6 +4777,8 @@ pub struct CThostFtdcSyncDepositField {
     pub IsFromSopt: TThostFtdcBoolType,
     #[doc = "资金密码"]
     pub TradingPassword: TThostFtdcPasswordType,
+    #[doc = "是否二级代理商的内转"]
+    pub IsSecAgentTranfer: TThostFtdcBoolType,
 }
 #[doc = "货币质押同步"]
 #[repr(C)]
@@ -4898,6 +4967,8 @@ pub struct CThostFtdcSyncingTradingAccountField {
     pub FrozenSwap: TThostFtdcMoneyType,
     #[doc = "剩余换汇额度"]
     pub RemainSwap: TThostFtdcMoneyType,
+    #[doc = "期权市值"]
+    pub OptionValue: TThostFtdcMoneyType,
 }
 #[doc = "正在同步中的投资者持仓"]
 #[repr(C)]
@@ -5388,6 +5459,8 @@ pub struct CThostFtdcQryDepthMarketDataField {
     pub ExchangeID: TThostFtdcExchangeIDType,
     #[doc = "合约代码"]
     pub InstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "产品类型"]
+    pub ProductClass: TThostFtdcProductClassType,
 }
 #[doc = "查询经纪公司用户"]
 #[repr(C)]
@@ -6483,6 +6556,10 @@ pub struct CThostFtdcInputQuoteField {
     pub ReplaceSysID: TThostFtdcOrderSysIDType,
     #[doc = "有效期类型"]
     pub TimeCondition: TThostFtdcTimeConditionType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "输入报价操作"]
 #[repr(C)]
@@ -6524,6 +6601,10 @@ pub struct CThostFtdcInputQuoteActionField {
     pub InstrumentID: TThostFtdcInstrumentIDType,
     #[doc = "IP地址"]
     pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "报价"]
 #[repr(C)]
@@ -6639,6 +6720,10 @@ pub struct CThostFtdcQuoteField {
     pub ReplaceSysID: TThostFtdcOrderSysIDType,
     #[doc = "有效期类型"]
     pub TimeCondition: TThostFtdcTimeConditionType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "报价操作"]
 #[repr(C)]
@@ -6702,6 +6787,10 @@ pub struct CThostFtdcQuoteActionField {
     pub InstrumentID: TThostFtdcInstrumentIDType,
     #[doc = "IP地址"]
     pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "报价查询"]
 #[repr(C)]
@@ -8846,7 +8935,7 @@ pub struct CThostFtdcParkedOrderField {
     pub BusinessUnit: TThostFtdcBusinessUnitType,
     #[doc = "请求编号"]
     pub RequestID: TThostFtdcRequestIDType,
-    #[doc = "用户强评标志"]
+    #[doc = "用户强平标志"]
     pub UserForceClose: TThostFtdcBoolType,
     #[doc = "交易所代码"]
     pub ExchangeID: TThostFtdcExchangeIDType,
@@ -9171,7 +9260,7 @@ pub struct CThostFtdcErrOrderField {
     pub BusinessUnit: TThostFtdcBusinessUnitType,
     #[doc = "请求编号"]
     pub RequestID: TThostFtdcRequestIDType,
-    #[doc = "用户强评标志"]
+    #[doc = "用户强平标志"]
     pub UserForceClose: TThostFtdcBoolType,
     #[doc = "错误代码"]
     pub ErrorID: TThostFtdcErrorIDType,
@@ -9197,6 +9286,10 @@ pub struct CThostFtdcErrOrderField {
     pub InstrumentID: TThostFtdcInstrumentIDType,
     #[doc = "IP地址"]
     pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "查询错误报单操作"]
 #[repr(C)]
@@ -9304,7 +9397,7 @@ pub struct CThostFtdcErrorConditionalOrderField {
     pub UserProductInfo: TThostFtdcProductInfoType,
     #[doc = "状态信息"]
     pub StatusMsg: TThostFtdcErrorMsgType,
-    #[doc = "用户强评标志"]
+    #[doc = "用户强平标志"]
     pub UserForceClose: TThostFtdcBoolType,
     #[doc = "操作用户代码"]
     pub ActiveUserID: TThostFtdcUserIDType,
@@ -9418,6 +9511,10 @@ pub struct CThostFtdcErrOrderActionField {
     pub InstrumentID: TThostFtdcInstrumentIDType,
     #[doc = "IP地址"]
     pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "报单回显字段"]
+    pub OrderMemo: TThostFtdcOrderMemoType,
+    #[doc = "session上请求计数 api自动维护"]
+    pub SessionReqSeq: TThostFtdcSequenceNo12Type,
 }
 #[doc = "查询交易所状态"]
 #[repr(C)]
@@ -12590,6 +12687,8 @@ pub struct CThostFtdcDepartmentUserField {
 pub struct CThostFtdcQueryFreqField {
     #[doc = "查询频率"]
     pub QueryFreq: TThostFtdcQueryFreqType,
+    #[doc = "FTD频率"]
+    pub FTDPkgFreq: TThostFtdcQueryFreqType,
 }
 #[doc = "禁止认证IP"]
 #[repr(C)]
@@ -12713,7 +12812,7 @@ pub struct CThostFtdcCombPromotionParamField {
 #[doc = "国密用户登录请求"]
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
-pub struct CThostFtdcReqUserLoginSCField {
+pub struct CThostFtdcReqUserLoginSMField {
     #[doc = "交易日"]
     pub TradingDay: TThostFtdcDateType,
     #[doc = "经纪公司代码"]
@@ -12732,16 +12831,22 @@ pub struct CThostFtdcReqUserLoginSCField {
     pub MacAddress: TThostFtdcMacAddressType,
     #[doc = "动态密码"]
     pub OneTimePassword: TThostFtdcPasswordType,
-    #[doc = "终端IP地址"]
-    pub ClientIPAddress: TThostFtdcIPAddressType,
+    #[doc = "保留的无效字段"]
+    pub reserve1: TThostFtdcOldIPAddressType,
     #[doc = "登录备注"]
     pub LoginRemark: TThostFtdcLoginRemarkType,
     #[doc = "终端IP端口"]
     pub ClientIPPort: TThostFtdcIPPortType,
+    #[doc = "终端IP地址"]
+    pub ClientIPAddress: TThostFtdcIPAddressType,
+    #[doc = "经纪公司名称"]
+    pub BrokerName: TThostFtdcBrokerNameType,
     #[doc = "认证码"]
     pub AuthCode: TThostFtdcAuthCodeType,
     #[doc = "App代码"]
     pub AppID: TThostFtdcAppIDType,
+    #[doc = "PIN码"]
+    pub PIN: TThostFtdcPasswordType,
 }
 #[doc = "投资者风险结算持仓查询"]
 #[repr(C)]
@@ -13113,6 +13218,8 @@ pub struct CThostFtdcSyncDeltaTradingAccountField {
     pub FrozenSwap: TThostFtdcMoneyType,
     #[doc = "剩余换汇额度"]
     pub RemainSwap: TThostFtdcMoneyType,
+    #[doc = "期权市值"]
+    pub OptionValue: TThostFtdcMoneyType,
     #[doc = "追平序号"]
     pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
 }
@@ -13710,6 +13817,8 @@ pub struct CThostFtdcInvestorPortfMarginRatioField {
     pub ExchangeID: TThostFtdcExchangeIDType,
     #[doc = "会员对投资者收取的保证金和交易所对投资者收取的保证金的比例"]
     pub MarginRatio: TThostFtdcRatioType,
+    #[doc = "产品群代码"]
+    pub ProductGroupID: TThostFtdcProductIDType,
 }
 #[doc = "组合保证金套餐查询"]
 #[repr(C)]
@@ -13743,6 +13852,8 @@ pub struct CThostFtdcQryInvestorPortfMarginRatioField {
     pub InvestorID: TThostFtdcInvestorIDType,
     #[doc = "交易所代码"]
     pub ExchangeID: TThostFtdcExchangeIDType,
+    #[doc = "产品群代码"]
+    pub ProductGroupID: TThostFtdcProductIDType,
 }
 #[doc = "投资者产品SPBM明细"]
 #[repr(C)]
@@ -14249,9 +14360,9 @@ pub struct CThostFtdcInvestorProdRCAMSMarginField {
     pub OptionRoyalty: TThostFtdcMoneyType,
     #[doc = "大边组合平仓冻结保证金"]
     pub MMSACloseFrozenMargin: TThostFtdcMoneyType,
-    #[doc = "平策略组合冻结保证金"]
+    #[doc = "策略组合平仓/行权冻结保证金"]
     pub CloseCombFrozenMargin: TThostFtdcMoneyType,
-    #[doc = "平仓冻结保证金"]
+    #[doc = "平仓/行权冻结保证金"]
     pub CloseFrozenMargin: TThostFtdcMoneyType,
     #[doc = "大边组合开仓冻结保证金"]
     pub MMSAOpenFrozenMargin: TThostFtdcMoneyType,
@@ -14993,6 +15104,968 @@ pub struct CThostFtdcSyncDeltaRULEInterParameterField {
     pub ActionDirection: TThostFtdcActionDirectionType,
     #[doc = "追平序号"]
     pub SyncDeltaSequenceNo: TThostFtdcSequenceNoType,
+}
+#[doc = "服务地址参数"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcIpAddrParamField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "服务地址"]
+    pub Address: TThostFtdcIpAddrType,
+    #[doc = "交易中心代码"]
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "交易中心名称"]
+    pub DRIdentityName: TThostFtdcDRIdentityNameType,
+    #[doc = "交易地址OR行情地址"]
+    pub AddrSrvMode: TThostFtdcAddrSrvModeType,
+    #[doc = "地址版本"]
+    pub AddrVer: TThostFtdcAddrVerType,
+    #[doc = "服务地址编号"]
+    pub AddrNo: TThostFtdcCommonIntType,
+    #[doc = "服务地址名称"]
+    pub AddrName: TThostFtdcAddrNameType,
+    #[doc = "是否是国密地址"]
+    pub IsSM: TThostFtdcBoolType,
+    #[doc = "是否是内网地址"]
+    pub IsLocalAddr: TThostFtdcBoolType,
+    #[doc = "地址补充信息"]
+    pub Remark: TThostFtdcAddrRemarkType,
+    #[doc = "站点"]
+    pub Site: TThostFtdcSiteType,
+    #[doc = "网络运营商"]
+    pub NetOperator: TThostFtdcNetOperatorType,
+}
+#[doc = "服务地址参数查询"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryIpAddrParamField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+#[doc = "服务地址参数"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcTGIpAddrParamField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "用户代码"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "服务地址"]
+    pub Address: TThostFtdcIpAddrType,
+    #[doc = "交易中心代码"]
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "交易中心名称"]
+    pub DRIdentityName: TThostFtdcDRIdentityNameType,
+    #[doc = "交易地址OR行情地址"]
+    pub AddrSrvMode: TThostFtdcAddrSrvModeType,
+    #[doc = "地址版本"]
+    pub AddrVer: TThostFtdcAddrVerType,
+    #[doc = "服务地址编号"]
+    pub AddrNo: TThostFtdcCommonIntType,
+    #[doc = "服务地址名称"]
+    pub AddrName: TThostFtdcAddrNameType,
+    #[doc = "是否是国密地址"]
+    pub IsSM: TThostFtdcBoolType,
+    #[doc = "是否是内网地址"]
+    pub IsLocalAddr: TThostFtdcBoolType,
+    #[doc = "地址补充信息"]
+    pub Remark: TThostFtdcAddrRemarkType,
+    #[doc = "站点"]
+    pub Site: TThostFtdcSiteType,
+    #[doc = "网络运营商"]
+    pub NetOperator: TThostFtdcNetOperatorType,
+}
+#[doc = "服务地址参数查询"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryTGIpAddrParamField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "用户代码"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "App代码"]
+    pub AppID: TThostFtdcAppIDType,
+}
+#[doc = "TGate会话查询状态"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcTGSessionQryStatusField {
+    #[doc = "最近30s的查询频率"]
+    pub LastQryFreq: TThostFtdcCommonIntType,
+    #[doc = "查询状态"]
+    pub QryStatus: TThostFtdcTGSessionQryStatusType,
+}
+#[doc = "内网地址配置"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcLocalAddrConfigField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "对端地址"]
+    pub PeerAddr: TThostFtdcIpAddrType,
+    #[doc = "子网掩码"]
+    pub NetMask: TThostFtdcIpAddrType,
+    #[doc = "交易中心代码"]
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "内网服务地址"]
+    pub LocalAddress: TThostFtdcIpAddrType,
+}
+#[doc = "内网地址配置查询"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryLocalAddrConfigField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+#[doc = "次席查询银行资金帐户信息请求"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcReqQueryBankAccountBySecField {
+    #[doc = "业务功能码"]
+    pub TradeCode: TThostFtdcTradeCodeType,
+    #[doc = "银行代码"]
+    pub BankID: TThostFtdcBankIDType,
+    #[doc = "银行分支机构代码"]
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    #[doc = "期商代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "期商分支机构代码"]
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    #[doc = "交易日期"]
+    pub TradeDate: TThostFtdcTradeDateType,
+    #[doc = "交易时间"]
+    pub TradeTime: TThostFtdcTradeTimeType,
+    #[doc = "银行流水号"]
+    pub BankSerial: TThostFtdcBankSerialType,
+    #[doc = "交易系统日期"]
+    pub TradingDay: TThostFtdcTradeDateType,
+    #[doc = "银期平台消息流水号"]
+    pub PlateSerial: TThostFtdcSerialType,
+    #[doc = "最后分片标志"]
+    pub LastFragment: TThostFtdcLastFragmentType,
+    #[doc = "会话号"]
+    pub SessionID: TThostFtdcSessionIDType,
+    #[doc = "客户姓名"]
+    pub CustomerName: TThostFtdcIndividualNameType,
+    #[doc = "证件类型"]
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    #[doc = "证件号码"]
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    #[doc = "客户类型"]
+    pub CustType: TThostFtdcCustTypeType,
+    #[doc = "银行帐号"]
+    pub BankAccount: TThostFtdcBankAccountType,
+    #[doc = "银行密码"]
+    pub BankPassWord: TThostFtdcPasswordType,
+    #[doc = "投资者帐号"]
+    pub AccountID: TThostFtdcAccountIDType,
+    #[doc = "期货密码"]
+    pub Password: TThostFtdcPasswordType,
+    #[doc = "期货公司流水号"]
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    #[doc = "安装编号"]
+    pub InstallID: TThostFtdcInstallIDType,
+    #[doc = "用户标识"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "验证客户证件号码标志"]
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    #[doc = "币种代码"]
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    #[doc = "摘要"]
+    pub Digest: TThostFtdcDigestType,
+    #[doc = "银行帐号类型"]
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    #[doc = "渠道标志"]
+    pub DeviceID: TThostFtdcDeviceIDType,
+    #[doc = "期货单位帐号类型"]
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    #[doc = "期货公司银行编码"]
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    #[doc = "期货单位帐号"]
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    #[doc = "银行密码标志"]
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "期货资金密码核对标志"]
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "交易柜员"]
+    pub OperNo: TThostFtdcOperNoType,
+    #[doc = "请求编号"]
+    pub RequestID: TThostFtdcRequestIDType,
+    #[doc = "交易ID"]
+    pub TID: TThostFtdcTIDType,
+    #[doc = "长客户姓名"]
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    #[doc = "交易中心代码"]
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "次中心发起转账期货公司流水号"]
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+#[doc = "次席查询银行资金帐户信息回报"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRspQueryBankAccountBySecField {
+    #[doc = "业务功能码"]
+    pub TradeCode: TThostFtdcTradeCodeType,
+    #[doc = "银行代码"]
+    pub BankID: TThostFtdcBankIDType,
+    #[doc = "银行分支机构代码"]
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    #[doc = "期商代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "期商分支机构代码"]
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    #[doc = "交易日期"]
+    pub TradeDate: TThostFtdcTradeDateType,
+    #[doc = "交易时间"]
+    pub TradeTime: TThostFtdcTradeTimeType,
+    #[doc = "银行流水号"]
+    pub BankSerial: TThostFtdcBankSerialType,
+    #[doc = "交易系统日期"]
+    pub TradingDay: TThostFtdcTradeDateType,
+    #[doc = "银期平台消息流水号"]
+    pub PlateSerial: TThostFtdcSerialType,
+    #[doc = "最后分片标志"]
+    pub LastFragment: TThostFtdcLastFragmentType,
+    #[doc = "会话号"]
+    pub SessionID: TThostFtdcSessionIDType,
+    #[doc = "客户姓名"]
+    pub CustomerName: TThostFtdcIndividualNameType,
+    #[doc = "证件类型"]
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    #[doc = "证件号码"]
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    #[doc = "客户类型"]
+    pub CustType: TThostFtdcCustTypeType,
+    #[doc = "银行帐号"]
+    pub BankAccount: TThostFtdcBankAccountType,
+    #[doc = "银行密码"]
+    pub BankPassWord: TThostFtdcPasswordType,
+    #[doc = "投资者帐号"]
+    pub AccountID: TThostFtdcAccountIDType,
+    #[doc = "期货密码"]
+    pub Password: TThostFtdcPasswordType,
+    #[doc = "期货公司流水号"]
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    #[doc = "安装编号"]
+    pub InstallID: TThostFtdcInstallIDType,
+    #[doc = "用户标识"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "验证客户证件号码标志"]
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    #[doc = "币种代码"]
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    #[doc = "摘要"]
+    pub Digest: TThostFtdcDigestType,
+    #[doc = "银行帐号类型"]
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    #[doc = "渠道标志"]
+    pub DeviceID: TThostFtdcDeviceIDType,
+    #[doc = "期货单位帐号类型"]
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    #[doc = "期货公司银行编码"]
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    #[doc = "期货单位帐号"]
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    #[doc = "银行密码标志"]
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "期货资金密码核对标志"]
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "交易柜员"]
+    pub OperNo: TThostFtdcOperNoType,
+    #[doc = "请求编号"]
+    pub RequestID: TThostFtdcRequestIDType,
+    #[doc = "交易ID"]
+    pub TID: TThostFtdcTIDType,
+    #[doc = "银行可用金额"]
+    pub BankUseAmount: TThostFtdcTradeAmountType,
+    #[doc = "银行可取金额"]
+    pub BankFetchAmount: TThostFtdcTradeAmountType,
+    #[doc = "长客户姓名"]
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    #[doc = "交易中心代码"]
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "次中心发起转账期货公司流水号"]
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+#[doc = "次中心发起的转帐交易"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcReqTransferBySecField {
+    #[doc = "业务功能码"]
+    pub TradeCode: TThostFtdcTradeCodeType,
+    #[doc = "银行代码"]
+    pub BankID: TThostFtdcBankIDType,
+    #[doc = "银行分支机构代码"]
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    #[doc = "期商代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "期商分支机构代码"]
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    #[doc = "交易日期"]
+    pub TradeDate: TThostFtdcTradeDateType,
+    #[doc = "交易时间"]
+    pub TradeTime: TThostFtdcTradeTimeType,
+    #[doc = "银行流水号"]
+    pub BankSerial: TThostFtdcBankSerialType,
+    #[doc = "交易系统日期"]
+    pub TradingDay: TThostFtdcTradeDateType,
+    #[doc = "银期平台消息流水号"]
+    pub PlateSerial: TThostFtdcSerialType,
+    #[doc = "最后分片标志"]
+    pub LastFragment: TThostFtdcLastFragmentType,
+    #[doc = "会话号"]
+    pub SessionID: TThostFtdcSessionIDType,
+    #[doc = "客户姓名"]
+    pub CustomerName: TThostFtdcIndividualNameType,
+    #[doc = "证件类型"]
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    #[doc = "证件号码"]
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    #[doc = "客户类型"]
+    pub CustType: TThostFtdcCustTypeType,
+    #[doc = "银行帐号"]
+    pub BankAccount: TThostFtdcBankAccountType,
+    #[doc = "银行密码"]
+    pub BankPassWord: TThostFtdcPasswordType,
+    #[doc = "投资者帐号"]
+    pub AccountID: TThostFtdcAccountIDType,
+    #[doc = "期货密码"]
+    pub Password: TThostFtdcPasswordType,
+    #[doc = "安装编号"]
+    pub InstallID: TThostFtdcInstallIDType,
+    #[doc = "期货公司流水号"]
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    #[doc = "用户标识"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "验证客户证件号码标志"]
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    #[doc = "币种代码"]
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    #[doc = "转帐金额"]
+    pub TradeAmount: TThostFtdcTradeAmountType,
+    #[doc = "期货可取金额"]
+    pub FutureFetchAmount: TThostFtdcTradeAmountType,
+    #[doc = "费用支付标志"]
+    pub FeePayFlag: TThostFtdcFeePayFlagType,
+    #[doc = "应收客户费用"]
+    pub CustFee: TThostFtdcCustFeeType,
+    #[doc = "应收期货公司费用"]
+    pub BrokerFee: TThostFtdcFutureFeeType,
+    #[doc = "发送方给接收方的消息"]
+    pub Message: TThostFtdcAddInfoType,
+    #[doc = "摘要"]
+    pub Digest: TThostFtdcDigestType,
+    #[doc = "银行帐号类型"]
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    #[doc = "渠道标志"]
+    pub DeviceID: TThostFtdcDeviceIDType,
+    #[doc = "期货单位帐号类型"]
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    #[doc = "期货公司银行编码"]
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    #[doc = "期货单位帐号"]
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    #[doc = "银行密码标志"]
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "期货资金密码核对标志"]
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "交易柜员"]
+    pub OperNo: TThostFtdcOperNoType,
+    #[doc = "请求编号"]
+    pub RequestID: TThostFtdcRequestIDType,
+    #[doc = "交易ID"]
+    pub TID: TThostFtdcTIDType,
+    #[doc = "转账交易状态"]
+    pub TransferStatus: TThostFtdcTransferStatusType,
+    #[doc = "长客户姓名"]
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    #[doc = "交易中心代码"]
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "次中心发起转账期货公司流水号"]
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+#[doc = "次中心发起的转帐交易回报"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRspTransferBySecField {
+    #[doc = "业务功能码"]
+    pub TradeCode: TThostFtdcTradeCodeType,
+    #[doc = "银行代码"]
+    pub BankID: TThostFtdcBankIDType,
+    #[doc = "银行分支机构代码"]
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    #[doc = "期商代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "期商分支机构代码"]
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    #[doc = "交易日期"]
+    pub TradeDate: TThostFtdcTradeDateType,
+    #[doc = "交易时间"]
+    pub TradeTime: TThostFtdcTradeTimeType,
+    #[doc = "银行流水号"]
+    pub BankSerial: TThostFtdcBankSerialType,
+    #[doc = "交易系统日期"]
+    pub TradingDay: TThostFtdcTradeDateType,
+    #[doc = "银期平台消息流水号"]
+    pub PlateSerial: TThostFtdcSerialType,
+    #[doc = "最后分片标志"]
+    pub LastFragment: TThostFtdcLastFragmentType,
+    #[doc = "会话号"]
+    pub SessionID: TThostFtdcSessionIDType,
+    #[doc = "客户姓名"]
+    pub CustomerName: TThostFtdcIndividualNameType,
+    #[doc = "证件类型"]
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    #[doc = "证件号码"]
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    #[doc = "客户类型"]
+    pub CustType: TThostFtdcCustTypeType,
+    #[doc = "银行帐号"]
+    pub BankAccount: TThostFtdcBankAccountType,
+    #[doc = "银行密码"]
+    pub BankPassWord: TThostFtdcPasswordType,
+    #[doc = "投资者帐号"]
+    pub AccountID: TThostFtdcAccountIDType,
+    #[doc = "期货密码"]
+    pub Password: TThostFtdcPasswordType,
+    #[doc = "安装编号"]
+    pub InstallID: TThostFtdcInstallIDType,
+    #[doc = "期货公司流水号"]
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    #[doc = "用户标识"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "验证客户证件号码标志"]
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    #[doc = "币种代码"]
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    #[doc = "转帐金额"]
+    pub TradeAmount: TThostFtdcTradeAmountType,
+    #[doc = "期货可取金额"]
+    pub FutureFetchAmount: TThostFtdcTradeAmountType,
+    #[doc = "费用支付标志"]
+    pub FeePayFlag: TThostFtdcFeePayFlagType,
+    #[doc = "应收客户费用"]
+    pub CustFee: TThostFtdcCustFeeType,
+    #[doc = "应收期货公司费用"]
+    pub BrokerFee: TThostFtdcFutureFeeType,
+    #[doc = "发送方给接收方的消息"]
+    pub Message: TThostFtdcAddInfoType,
+    #[doc = "摘要"]
+    pub Digest: TThostFtdcDigestType,
+    #[doc = "银行帐号类型"]
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    #[doc = "渠道标志"]
+    pub DeviceID: TThostFtdcDeviceIDType,
+    #[doc = "期货单位帐号类型"]
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    #[doc = "期货公司银行编码"]
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    #[doc = "期货单位帐号"]
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    #[doc = "银行密码标志"]
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "期货资金密码核对标志"]
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "交易柜员"]
+    pub OperNo: TThostFtdcOperNoType,
+    #[doc = "请求编号"]
+    pub RequestID: TThostFtdcRequestIDType,
+    #[doc = "交易ID"]
+    pub TID: TThostFtdcTIDType,
+    #[doc = "转账交易状态"]
+    pub TransferStatus: TThostFtdcTransferStatusType,
+    #[doc = "错误代码"]
+    pub ErrorID: TThostFtdcErrorIDType,
+    #[doc = "错误信息"]
+    pub ErrorMsg: TThostFtdcErrorMsgType,
+    #[doc = "长客户姓名"]
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    #[doc = "交易中心代码"]
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "次中心发起转账期货公司流水号"]
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+#[doc = "查询银行资金帐户信息通知 要发往次席"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcNotifyQueryFutureAccountBySecField {
+    #[doc = "业务功能码"]
+    pub TradeCode: TThostFtdcTradeCodeType,
+    #[doc = "银行代码"]
+    pub BankID: TThostFtdcBankIDType,
+    #[doc = "银行分支机构代码"]
+    pub BankBranchID: TThostFtdcBankBrchIDType,
+    #[doc = "期商代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "期商分支机构代码"]
+    pub BrokerBranchID: TThostFtdcFutureBranchIDType,
+    #[doc = "交易日期"]
+    pub TradeDate: TThostFtdcTradeDateType,
+    #[doc = "交易时间"]
+    pub TradeTime: TThostFtdcTradeTimeType,
+    #[doc = "银行流水号"]
+    pub BankSerial: TThostFtdcBankSerialType,
+    #[doc = "交易系统日期"]
+    pub TradingDay: TThostFtdcTradeDateType,
+    #[doc = "银期平台消息流水号"]
+    pub PlateSerial: TThostFtdcSerialType,
+    #[doc = "最后分片标志"]
+    pub LastFragment: TThostFtdcLastFragmentType,
+    #[doc = "会话号"]
+    pub SessionID: TThostFtdcSessionIDType,
+    #[doc = "客户姓名"]
+    pub CustomerName: TThostFtdcIndividualNameType,
+    #[doc = "证件类型"]
+    pub IdCardType: TThostFtdcIdCardTypeType,
+    #[doc = "证件号码"]
+    pub IdentifiedCardNo: TThostFtdcIdentifiedCardNoType,
+    #[doc = "客户类型"]
+    pub CustType: TThostFtdcCustTypeType,
+    #[doc = "银行帐号"]
+    pub BankAccount: TThostFtdcBankAccountType,
+    #[doc = "银行密码"]
+    pub BankPassWord: TThostFtdcPasswordType,
+    #[doc = "投资者帐号"]
+    pub AccountID: TThostFtdcAccountIDType,
+    #[doc = "期货密码"]
+    pub Password: TThostFtdcPasswordType,
+    #[doc = "期货公司流水号"]
+    pub FutureSerial: TThostFtdcFutureSerialType,
+    #[doc = "安装编号"]
+    pub InstallID: TThostFtdcInstallIDType,
+    #[doc = "用户标识"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "验证客户证件号码标志"]
+    pub VerifyCertNoFlag: TThostFtdcYesNoIndicatorType,
+    #[doc = "币种代码"]
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    #[doc = "摘要"]
+    pub Digest: TThostFtdcDigestType,
+    #[doc = "银行帐号类型"]
+    pub BankAccType: TThostFtdcBankAccTypeType,
+    #[doc = "渠道标志"]
+    pub DeviceID: TThostFtdcDeviceIDType,
+    #[doc = "期货单位帐号类型"]
+    pub BankSecuAccType: TThostFtdcBankAccTypeType,
+    #[doc = "期货公司银行编码"]
+    pub BrokerIDByBank: TThostFtdcBankCodingForFutureType,
+    #[doc = "期货单位帐号"]
+    pub BankSecuAcc: TThostFtdcBankAccountType,
+    #[doc = "银行密码标志"]
+    pub BankPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "期货资金密码核对标志"]
+    pub SecuPwdFlag: TThostFtdcPwdFlagType,
+    #[doc = "交易柜员"]
+    pub OperNo: TThostFtdcOperNoType,
+    #[doc = "请求编号"]
+    pub RequestID: TThostFtdcRequestIDType,
+    #[doc = "交易ID"]
+    pub TID: TThostFtdcTIDType,
+    #[doc = "银行可用金额"]
+    pub BankUseAmount: TThostFtdcTradeAmountType,
+    #[doc = "银行可取金额"]
+    pub BankFetchAmount: TThostFtdcTradeAmountType,
+    #[doc = "错误代码"]
+    pub ErrorID: TThostFtdcErrorIDType,
+    #[doc = "错误信息"]
+    pub ErrorMsg: TThostFtdcErrorMsgType,
+    #[doc = "长客户姓名"]
+    pub LongCustomerName: TThostFtdcLongIndividualNameType,
+    #[doc = "交易中心代码"]
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "次中心发起转账期货公司流水号"]
+    pub SecFutureSerial: TThostFtdcFutureSerialType,
+}
+#[doc = "退出紧急状态参数"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcExitEmergencyField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+#[doc = "新组保保证金系数投资者模板对应关系"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorPortfMarginModelField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者代码"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "保证金系数模板"]
+    pub MarginModelID: TThostFtdcInvestorIDType,
+}
+#[doc = "投资者新组保设置"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorPortfSettingField {
+    #[doc = "交易所代码"]
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者编号"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "投机套保标志"]
+    pub HedgeFlag: TThostFtdcHedgeFlagType,
+    #[doc = "是否开启新组保"]
+    pub UsePortf: TThostFtdcBoolType,
+}
+#[doc = "投资者新组保设置查询"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryInvestorPortfSettingField {
+    #[doc = "交易所代码"]
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者编号"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+}
+#[doc = "来自次席的用户口令变更"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcUserPasswordUpdateFromSecField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "用户代码"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "原来的口令"]
+    pub OldPassword: TThostFtdcPasswordType,
+    #[doc = "新的口令"]
+    pub NewPassword: TThostFtdcPasswordType,
+    #[doc = "次席的交易中心代码"]
+    pub FromSec: TThostFtdcDRIdentityIDType,
+}
+#[doc = "来自次席的结算结果确认"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcSettlementInfoConfirmFromSecField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者代码"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "确认日期"]
+    pub ConfirmDate: TThostFtdcDateType,
+    #[doc = "确认时间"]
+    pub ConfirmTime: TThostFtdcTimeType,
+    #[doc = "次席的交易中心代码"]
+    pub FromSec: TThostFtdcDRIdentityIDType,
+}
+#[doc = "来自次席的资金账户口令变更"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcTradingAccountPasswordUpdateFromSecField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者帐号"]
+    pub AccountID: TThostFtdcAccountIDType,
+    #[doc = "原来的口令"]
+    pub OldPassword: TThostFtdcPasswordType,
+    #[doc = "新的口令"]
+    pub NewPassword: TThostFtdcPasswordType,
+    #[doc = "币种代码"]
+    pub CurrencyID: TThostFtdcCurrencyIDType,
+    #[doc = "次席的交易中心代码"]
+    pub FromSec: TThostFtdcDRIdentityIDType,
+}
+#[doc = "风控禁止的合约交易权限"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcRiskForbiddenRightField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者编号"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "合约/产品代码"]
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "用户代码"]
+    pub UserID: TThostFtdcUserIDType,
+}
+#[doc = "投资者申报费阶梯收取记录"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInvestorInfoCommRecField {
+    #[doc = "交易所代码"]
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者代码"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "商品代码"]
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "报单总笔数"]
+    pub OrderCount: TThostFtdcVolumeType,
+    #[doc = "撤单总笔数"]
+    pub OrderActionCount: TThostFtdcVolumeType,
+    #[doc = "询价总次数"]
+    pub ForQuoteCnt: TThostFtdcVolumeType,
+    #[doc = "申报费"]
+    pub InfoComm: TThostFtdcMoneyType,
+    #[doc = "是否期权系列"]
+    pub IsOptSeries: TThostFtdcBoolType,
+    #[doc = "品种代码"]
+    pub ProductID: TThostFtdcProductIDType,
+    #[doc = "信息量总量"]
+    pub InfoCnt: TThostFtdcVolumeType,
+}
+#[doc = "投资者申报费阶梯收取记录查询"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryInvestorInfoCommRecField {
+    #[doc = "投资者代码"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "商品代码"]
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+#[doc = "组合腿信息"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcCombLegField {
+    #[doc = "组合合约代码"]
+    pub CombInstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "单腿编号"]
+    pub LegID: TThostFtdcLegIDType,
+    #[doc = "单腿合约代码"]
+    pub LegInstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "买卖方向"]
+    pub Direction: TThostFtdcDirectionType,
+    #[doc = "单腿乘数"]
+    pub LegMultiple: TThostFtdcLegMultipleType,
+    #[doc = "派生层数"]
+    pub ImplyLevel: TThostFtdcImplyLevelType,
+}
+#[doc = "组合腿信息查询"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryCombLegField {
+    #[doc = "单腿合约代码"]
+    pub LegInstrumentID: TThostFtdcInstrumentIDType,
+}
+#[doc = "输入的对冲设置"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcInputOffsetSettingField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者代码"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "合约代码"]
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "标的期货合约代码"]
+    pub UnderlyingInstrID: TThostFtdcInstrumentIDType,
+    #[doc = "产品代码"]
+    pub ProductID: TThostFtdcProductIDType,
+    #[doc = "对冲类型"]
+    pub OffsetType: TThostFtdcOffsetTypeType,
+    #[doc = "申请对冲的合约数量"]
+    pub Volume: TThostFtdcVolumeType,
+    #[doc = "是否对冲"]
+    pub IsOffset: TThostFtdcBoolType,
+    #[doc = "请求编号"]
+    pub RequestID: TThostFtdcRequestIDType,
+    #[doc = "用户代码"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "交易所代码"]
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    #[doc = "IP地址"]
+    pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "Mac地址"]
+    pub MacAddress: TThostFtdcMacAddressType,
+}
+#[doc = "对冲设置"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcOffsetSettingField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者代码"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "合约代码"]
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "标的期货合约代码"]
+    pub UnderlyingInstrID: TThostFtdcInstrumentIDType,
+    #[doc = "产品代码"]
+    pub ProductID: TThostFtdcProductIDType,
+    #[doc = "对冲类型"]
+    pub OffsetType: TThostFtdcOffsetTypeType,
+    #[doc = "申请对冲的合约数量"]
+    pub Volume: TThostFtdcVolumeType,
+    #[doc = "是否对冲"]
+    pub IsOffset: TThostFtdcBoolType,
+    #[doc = "请求编号"]
+    pub RequestID: TThostFtdcRequestIDType,
+    #[doc = "用户代码"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "交易所代码"]
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    #[doc = "IP地址"]
+    pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "Mac地址"]
+    pub MacAddress: TThostFtdcMacAddressType,
+    #[doc = "交易所合约代码"]
+    pub ExchangeInstID: TThostFtdcExchangeInstIDType,
+    #[doc = "交易所期权系列号"]
+    pub ExchangeSerialNo: TThostFtdcExchangeInstIDType,
+    #[doc = "交易所产品代码"]
+    pub ExchangeProductID: TThostFtdcProductIDType,
+    #[doc = "会员代码"]
+    pub ParticipantID: TThostFtdcParticipantIDType,
+    #[doc = "客户代码"]
+    pub ClientID: TThostFtdcClientIDType,
+    #[doc = "交易所交易员代码"]
+    pub TraderID: TThostFtdcTraderIDType,
+    #[doc = "安装编号"]
+    pub InstallID: TThostFtdcInstallIDType,
+    #[doc = "对冲提交状态"]
+    pub OrderSubmitStatus: TThostFtdcOrderSubmitStatusType,
+    #[doc = "交易日"]
+    pub TradingDay: TThostFtdcDateType,
+    #[doc = "结算编号"]
+    pub SettlementID: TThostFtdcSettlementIDType,
+    #[doc = "报单日期"]
+    pub InsertDate: TThostFtdcDateType,
+    #[doc = "插入时间"]
+    pub InsertTime: TThostFtdcTimeType,
+    #[doc = "撤销时间"]
+    pub CancelTime: TThostFtdcTimeType,
+    #[doc = "对冲设置结果"]
+    pub ExecResult: TThostFtdcExecResultType,
+    #[doc = "序号"]
+    pub SequenceNo: TThostFtdcSequenceNoType,
+    #[doc = "前置编号"]
+    pub FrontID: TThostFtdcFrontIDType,
+    #[doc = "会话编号"]
+    pub SessionID: TThostFtdcSessionIDType,
+    #[doc = "状态信息"]
+    pub StatusMsg: TThostFtdcErrorMsgType,
+    #[doc = "操作用户代码"]
+    pub ActiveUserID: TThostFtdcUserIDType,
+    #[doc = "经纪公司报单编号"]
+    pub BrokerOffsetSettingSeq: TThostFtdcSequenceNoType,
+}
+#[doc = "撤销对冲设置"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcCancelOffsetSettingField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者代码"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "合约代码"]
+    pub InstrumentID: TThostFtdcInstrumentIDType,
+    #[doc = "标的期货合约代码"]
+    pub UnderlyingInstrID: TThostFtdcInstrumentIDType,
+    #[doc = "产品代码"]
+    pub ProductID: TThostFtdcProductIDType,
+    #[doc = "对冲类型"]
+    pub OffsetType: TThostFtdcOffsetTypeType,
+    #[doc = "申请对冲的合约数量"]
+    pub Volume: TThostFtdcVolumeType,
+    #[doc = "是否对冲"]
+    pub IsOffset: TThostFtdcBoolType,
+    #[doc = "请求编号"]
+    pub RequestID: TThostFtdcRequestIDType,
+    #[doc = "用户代码"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "交易所代码"]
+    pub ExchangeID: TThostFtdcExchangeIDType,
+    #[doc = "IP地址"]
+    pub IPAddress: TThostFtdcIPAddressType,
+    #[doc = "Mac地址"]
+    pub MacAddress: TThostFtdcMacAddressType,
+    #[doc = "交易所合约代码"]
+    pub ExchangeInstID: TThostFtdcExchangeInstIDType,
+    #[doc = "交易所期权系列号"]
+    pub ExchangeSerialNo: TThostFtdcExchangeInstIDType,
+    #[doc = "交易所产品代码"]
+    pub ExchangeProductID: TThostFtdcProductIDType,
+    #[doc = "交易所交易员代码"]
+    pub TraderID: TThostFtdcTraderIDType,
+    #[doc = "安装编号"]
+    pub InstallID: TThostFtdcInstallIDType,
+    #[doc = "会员代码"]
+    pub ParticipantID: TThostFtdcParticipantIDType,
+    #[doc = "客户代码"]
+    pub ClientID: TThostFtdcClientIDType,
+    #[doc = "报单操作状态"]
+    pub OrderActionStatus: TThostFtdcOrderActionStatusType,
+    #[doc = "状态信息"]
+    pub StatusMsg: TThostFtdcErrorMsgType,
+    #[doc = "操作本地编号"]
+    pub ActionLocalID: TThostFtdcOrderLocalIDType,
+    #[doc = "操作日期"]
+    pub ActionDate: TThostFtdcDateType,
+    #[doc = "操作时间"]
+    pub ActionTime: TThostFtdcTimeType,
+}
+#[doc = "查询对冲设置"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryOffsetSettingField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "投资者代码"]
+    pub InvestorID: TThostFtdcInvestorIDType,
+    #[doc = "产品代码"]
+    pub ProductID: TThostFtdcProductIDType,
+    #[doc = "对冲类型"]
+    pub OffsetType: TThostFtdcOffsetTypeType,
+}
+#[doc = "服务地址和AppID的关系"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcAddrAppIDRelationField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "服务地址"]
+    pub Address: TThostFtdcIpAddrType,
+    #[doc = "交易中心代码"]
+    pub DRIdentityID: TThostFtdcDRIdentityIDType,
+    #[doc = "App代码"]
+    pub AppID: TThostFtdcAppIDType,
+}
+#[doc = "服务地址和AppID的关系查询"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcQryAddrAppIDRelationField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+}
+#[doc = "微信小程序等用户系统信息"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcWechatUserSystemInfoField {
+    #[doc = "经纪公司代码"]
+    pub BrokerID: TThostFtdcBrokerIDType,
+    #[doc = "用户代码"]
+    pub UserID: TThostFtdcUserIDType,
+    #[doc = "微信小程序等用户端系统内部信息长度"]
+    pub WechatCltSysInfoLen: TThostFtdcSystemInfoLenType,
+    #[doc = "微信小程序等用户端系统内部信息"]
+    pub WechatCltSysInfo: TThostFtdcClientSystemInfoType,
+    #[doc = "终端IP端口"]
+    pub ClientIPPort: TThostFtdcIPPortType,
+    #[doc = "登录成功时间"]
+    pub ClientLoginTime: TThostFtdcTimeType,
+    #[doc = "App代码"]
+    pub ClientAppID: TThostFtdcAppIDType,
+    #[doc = "用户公网IP"]
+    pub ClientPublicIP: TThostFtdcIPAddressType,
+    #[doc = "客户登录备注2"]
+    pub ClientLoginRemark: TThostFtdcClientLoginRemarkType,
+}
+#[doc = "前置信息"]
+#[repr(C)]
+#[derive(Debug, Copy, Clone)]
+pub struct CThostFtdcFrontInfoField {
+    #[doc = "前置地址"]
+    pub FrontAddr: TThostFtdcAddressType,
+    #[doc = "查询流控"]
+    pub QryFreq: TThostFtdcQueryFreqType,
+    #[doc = "FTD流控"]
+    pub FTDPkgFreq: TThostFtdcQueryFreqType,
 }
 pub type bool_ = ::std::os::raw::c_uchar;
 #[repr(C)]
@@ -16029,6 +17102,69 @@ pub struct CTPSharp_CThostFtdcTraderSpi {
             bIsLast: bool_,
         ),
     >,
+    pub OnRspQryInvestorPortfSetting: ::std::option::Option<
+        unsafe extern "C" fn(
+            pInvestorPortfSetting: *mut CThostFtdcInvestorPortfSettingField,
+            pRspInfo: *mut CThostFtdcRspInfoField,
+            nRequestID: ::std::os::raw::c_int,
+            bIsLast: bool_,
+        ),
+    >,
+    pub OnRspQryInvestorInfoCommRec: ::std::option::Option<
+        unsafe extern "C" fn(
+            pInvestorInfoCommRec: *mut CThostFtdcInvestorInfoCommRecField,
+            pRspInfo: *mut CThostFtdcRspInfoField,
+            nRequestID: ::std::os::raw::c_int,
+            bIsLast: bool_,
+        ),
+    >,
+    pub OnRspQryCombLeg: ::std::option::Option<
+        unsafe extern "C" fn(
+            pCombLeg: *mut CThostFtdcCombLegField,
+            pRspInfo: *mut CThostFtdcRspInfoField,
+            nRequestID: ::std::os::raw::c_int,
+            bIsLast: bool_,
+        ),
+    >,
+    pub OnRspOffsetSetting: ::std::option::Option<
+        unsafe extern "C" fn(
+            pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+            pRspInfo: *mut CThostFtdcRspInfoField,
+            nRequestID: ::std::os::raw::c_int,
+            bIsLast: bool_,
+        ),
+    >,
+    pub OnRspCancelOffsetSetting: ::std::option::Option<
+        unsafe extern "C" fn(
+            pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+            pRspInfo: *mut CThostFtdcRspInfoField,
+            nRequestID: ::std::os::raw::c_int,
+            bIsLast: bool_,
+        ),
+    >,
+    pub OnRtnOffsetSetting: ::std::option::Option<
+        unsafe extern "C" fn(pOffsetSetting: *mut CThostFtdcOffsetSettingField),
+    >,
+    pub OnErrRtnOffsetSetting: ::std::option::Option<
+        unsafe extern "C" fn(
+            pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+            pRspInfo: *mut CThostFtdcRspInfoField,
+        ),
+    >,
+    pub OnErrRtnCancelOffsetSetting: ::std::option::Option<
+        unsafe extern "C" fn(
+            pCancelOffsetSetting: *mut CThostFtdcCancelOffsetSettingField,
+            pRspInfo: *mut CThostFtdcRspInfoField,
+        ),
+    >,
+    pub OnRspQryOffsetSetting: ::std::option::Option<
+        unsafe extern "C" fn(
+            pOffsetSetting: *mut CThostFtdcOffsetSettingField,
+            pRspInfo: *mut CThostFtdcRspInfoField,
+            nRequestID: ::std::os::raw::c_int,
+            bIsLast: bool_,
+        ),
+    >,
 }
 #[repr(C)]
 #[derive(Debug, Copy, Clone)]
@@ -16108,7 +17244,7 @@ pub struct CTPSharp_CThostFtdcMdSpi {
         ::std::option::Option<unsafe extern "C" fn(pForQuoteRsp: *mut CThostFtdcForQuoteRspField)>,
 }
 extern crate libloading;
-pub struct CTPInvoke { __library : :: libloading :: Library , pub CThostFtdcTraderSpi_New : Result < unsafe extern "C" fn (callbacks : * const CTPSharp_CThostFtdcTraderSpi) -> * mut :: std :: os :: raw :: c_void , :: libloading :: Error > , pub CThostFtdcTraderSpi_Delete : Result < unsafe extern "C" fn (spi : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcTraderApi_Create : Result < unsafe extern "C" fn (pszFlowPath : * const :: std :: os :: raw :: c_char) -> * mut :: std :: os :: raw :: c_void , :: libloading :: Error > , pub CThostFtdcTraderApi_GetApiVersion : Result < unsafe extern "C" fn () -> * const :: std :: os :: raw :: c_char , :: libloading :: Error > , pub CThostFtdcTraderApi_Release : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcTraderApi_Init : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcTraderApi_Join : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_GetTradingDay : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) -> * const :: std :: os :: raw :: c_char , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterFront : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pszFrontAddress : * mut :: std :: os :: raw :: c_char) , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterNameServer : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pszNsAddress : * mut :: std :: os :: raw :: c_char) , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterFensUserInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pFensUserInfo : * mut CThostFtdcFensUserInfoField) , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterSpi : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pSpi : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcTraderApi_SubscribePrivateTopic : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , nResumeType : THOST_TE_RESUME_TYPE) , :: libloading :: Error > , pub CThostFtdcTraderApi_SubscribePublicTopic : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , nResumeType : THOST_TE_RESUME_TYPE) , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqAuthenticate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqAuthenticateField : * mut CThostFtdcReqAuthenticateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterUserSystemInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserSystemInfo : * mut CThostFtdcUserSystemInfoField) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_SubmitUserSystemInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserSystemInfo : * mut CThostFtdcUserSystemInfoField) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLogin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginField : * mut CThostFtdcReqUserLoginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLogout : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserLogout : * mut CThostFtdcUserLogoutField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserPasswordUpdate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserPasswordUpdate : * mut CThostFtdcUserPasswordUpdateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pTradingAccountPasswordUpdate : * mut CThostFtdcTradingAccountPasswordUpdateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserAuthMethod : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserAuthMethod : * mut CThostFtdcReqUserAuthMethodField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqGenUserCaptcha : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqGenUserCaptcha : * mut CThostFtdcReqGenUserCaptchaField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqGenUserText : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqGenUserText : * mut CThostFtdcReqGenUserTextField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLoginWithCaptcha : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginWithCaptcha : * mut CThostFtdcReqUserLoginWithCaptchaField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLoginWithText : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginWithText : * mut CThostFtdcReqUserLoginWithTextField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLoginWithOTP : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginWithOTP : * mut CThostFtdcReqUserLoginWithOTPField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqOrderInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOrder : * mut CThostFtdcInputOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqParkedOrderInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pParkedOrder : * mut CThostFtdcParkedOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqParkedOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pParkedOrderAction : * mut CThostFtdcParkedOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOrderAction : * mut CThostFtdcInputOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryMaxOrderVolume : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryMaxOrderVolume : * mut CThostFtdcQryMaxOrderVolumeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqSettlementInfoConfirm : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pSettlementInfoConfirm : * mut CThostFtdcSettlementInfoConfirmField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqRemoveParkedOrder : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pRemoveParkedOrder : * mut CThostFtdcRemoveParkedOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqRemoveParkedOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pRemoveParkedOrderAction : * mut CThostFtdcRemoveParkedOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqExecOrderInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputExecOrder : * mut CThostFtdcInputExecOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqExecOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputExecOrderAction : * mut CThostFtdcInputExecOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqForQuoteInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputForQuote : * mut CThostFtdcInputForQuoteField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQuoteInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputQuote : * mut CThostFtdcInputQuoteField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQuoteAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputQuoteAction : * mut CThostFtdcInputQuoteActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqBatchOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputBatchOrderAction : * mut CThostFtdcInputBatchOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqOptionSelfCloseInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOptionSelfClose : * mut CThostFtdcInputOptionSelfCloseField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqOptionSelfCloseAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOptionSelfCloseAction : * mut CThostFtdcInputOptionSelfCloseActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqCombActionInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputCombAction : * mut CThostFtdcInputCombActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryOrder : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryOrder : * mut CThostFtdcQryOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTrade : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTrade : * mut CThostFtdcQryTradeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorPosition : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorPosition : * mut CThostFtdcQryInvestorPositionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTradingAccount : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTradingAccount : * mut CThostFtdcQryTradingAccountField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestor : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestor : * mut CThostFtdcQryInvestorField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTradingCode : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTradingCode : * mut CThostFtdcQryTradingCodeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInstrumentMarginRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInstrumentMarginRate : * mut CThostFtdcQryInstrumentMarginRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInstrumentCommissionRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInstrumentCommissionRate : * mut CThostFtdcQryInstrumentCommissionRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExchange : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExchange : * mut CThostFtdcQryExchangeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryProduct : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryProduct : * mut CThostFtdcQryProductField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInstrument : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInstrument : * mut CThostFtdcQryInstrumentField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryDepthMarketData : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryDepthMarketData : * mut CThostFtdcQryDepthMarketDataField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTraderOffer : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTraderOffer : * mut CThostFtdcQryTraderOfferField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySettlementInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySettlementInfo : * mut CThostFtdcQrySettlementInfoField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTransferBank : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTransferBank : * mut CThostFtdcQryTransferBankField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorPositionDetail : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorPositionDetail : * mut CThostFtdcQryInvestorPositionDetailField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryNotice : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryNotice : * mut CThostFtdcQryNoticeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySettlementInfoConfirm : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySettlementInfoConfirm : * mut CThostFtdcQrySettlementInfoConfirmField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorPositionCombineDetail : * mut CThostFtdcQryInvestorPositionCombineDetailField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryCFMMCTradingAccountKey : * mut CThostFtdcQryCFMMCTradingAccountKeyField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryEWarrantOffset : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryEWarrantOffset : * mut CThostFtdcQryEWarrantOffsetField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorProductGroupMargin : * mut CThostFtdcQryInvestorProductGroupMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExchangeMarginRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExchangeMarginRate : * mut CThostFtdcQryExchangeMarginRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExchangeMarginRateAdjust : * mut CThostFtdcQryExchangeMarginRateAdjustField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExchangeRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExchangeRate : * mut CThostFtdcQryExchangeRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySecAgentACIDMap : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySecAgentACIDMap : * mut CThostFtdcQrySecAgentACIDMapField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryProductExchRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryProductExchRate : * mut CThostFtdcQryProductExchRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryProductGroup : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryProductGroup : * mut CThostFtdcQryProductGroupField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryMMInstrumentCommissionRate : * mut CThostFtdcQryMMInstrumentCommissionRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryMMOptionInstrCommRate : * mut CThostFtdcQryMMOptionInstrCommRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInstrumentOrderCommRate : * mut CThostFtdcQryInstrumentOrderCommRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySecAgentTradingAccount : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTradingAccount : * mut CThostFtdcQryTradingAccountField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySecAgentCheckMode : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySecAgentCheckMode : * mut CThostFtdcQrySecAgentCheckModeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySecAgentTradeInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySecAgentTradeInfo : * mut CThostFtdcQrySecAgentTradeInfoField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryOptionInstrTradeCost : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryOptionInstrTradeCost : * mut CThostFtdcQryOptionInstrTradeCostField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryOptionInstrCommRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryOptionInstrCommRate : * mut CThostFtdcQryOptionInstrCommRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExecOrder : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExecOrder : * mut CThostFtdcQryExecOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryForQuote : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryForQuote : * mut CThostFtdcQryForQuoteField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryQuote : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryQuote : * mut CThostFtdcQryQuoteField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryOptionSelfClose : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryOptionSelfClose : * mut CThostFtdcQryOptionSelfCloseField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestUnit : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestUnit : * mut CThostFtdcQryInvestUnitField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryCombInstrumentGuard : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryCombInstrumentGuard : * mut CThostFtdcQryCombInstrumentGuardField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryCombAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryCombAction : * mut CThostFtdcQryCombActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTransferSerial : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTransferSerial : * mut CThostFtdcQryTransferSerialField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryAccountregister : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryAccountregister : * mut CThostFtdcQryAccountregisterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryContractBank : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryContractBank : * mut CThostFtdcQryContractBankField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryParkedOrder : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryParkedOrder : * mut CThostFtdcQryParkedOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryParkedOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryParkedOrderAction : * mut CThostFtdcQryParkedOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTradingNotice : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTradingNotice : * mut CThostFtdcQryTradingNoticeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryBrokerTradingParams : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryBrokerTradingParams : * mut CThostFtdcQryBrokerTradingParamsField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryBrokerTradingAlgos : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryBrokerTradingAlgos : * mut CThostFtdcQryBrokerTradingAlgosField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQueryCFMMCTradingAccountToken : * mut CThostFtdcQueryCFMMCTradingAccountTokenField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqFromBankToFutureByFuture : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqTransfer : * mut CThostFtdcReqTransferField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqFromFutureToBankByFuture : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqTransfer : * mut CThostFtdcReqTransferField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqQueryAccount : * mut CThostFtdcReqQueryAccountField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryClassifiedInstrument : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryClassifiedInstrument : * mut CThostFtdcQryClassifiedInstrumentField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryCombPromotionParam : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryCombPromotionParam : * mut CThostFtdcQryCombPromotionParamField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRiskSettleInvstPosition : * mut CThostFtdcQryRiskSettleInvstPositionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRiskSettleProductStatus : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRiskSettleProductStatus : * mut CThostFtdcQryRiskSettleProductStatusField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMFutureParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMFutureParameter : * mut CThostFtdcQrySPBMFutureParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMOptionParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMOptionParameter : * mut CThostFtdcQrySPBMOptionParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMIntraParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMIntraParameter : * mut CThostFtdcQrySPBMIntraParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMInterParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMInterParameter : * mut CThostFtdcQrySPBMInterParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMPortfDefinition : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMPortfDefinition : * mut CThostFtdcQrySPBMPortfDefinitionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMInvestorPortfDef : * mut CThostFtdcQrySPBMInvestorPortfDefField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorPortfMarginRatio : * mut CThostFtdcQryInvestorPortfMarginRatioField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorProdSPBMDetail : * mut CThostFtdcQryInvestorProdSPBMDetailField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorCommoditySPMMMargin : * mut CThostFtdcQryInvestorCommoditySPMMMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorCommodityGroupSPMMMargin : * mut CThostFtdcQryInvestorCommodityGroupSPMMMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPMMInstParam : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPMMInstParam : * mut CThostFtdcQrySPMMInstParamField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPMMProductParam : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPMMProductParam : * mut CThostFtdcQrySPMMProductParamField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMAddOnInterParameter : * mut CThostFtdcQrySPBMAddOnInterParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSCombProductInfo : * mut CThostFtdcQryRCAMSCombProductInfoField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSInstrParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSInstrParameter : * mut CThostFtdcQryRCAMSInstrParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSIntraParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSIntraParameter : * mut CThostFtdcQryRCAMSIntraParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSInterParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSInterParameter : * mut CThostFtdcQryRCAMSInterParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSShortOptAdjustParam : * mut CThostFtdcQryRCAMSShortOptAdjustParamField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSInvestorCombPosition : * mut CThostFtdcQryRCAMSInvestorCombPositionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorProdRCAMSMargin : * mut CThostFtdcQryInvestorProdRCAMSMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRULEInstrParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRULEInstrParameter : * mut CThostFtdcQryRULEInstrParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRULEIntraParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRULEIntraParameter : * mut CThostFtdcQryRULEIntraParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRULEInterParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRULEInterParameter : * mut CThostFtdcQryRULEInterParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorProdRULEMargin : * mut CThostFtdcQryInvestorProdRULEMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdSpi_New : Result < unsafe extern "C" fn (callbacks : * const CTPSharp_CThostFtdcMdSpi) -> * mut :: std :: os :: raw :: c_void , :: libloading :: Error > , pub CThostFtdcMdSpi_Delete : Result < unsafe extern "C" fn (spi : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcMdApi_Create : Result < unsafe extern "C" fn (pszFlowPath : * const :: std :: os :: raw :: c_char , bIsUsingUdp : bool_ , bIsMulticast : bool_) -> * mut :: std :: os :: raw :: c_void , :: libloading :: Error > , pub CThostFtdcMdApi_GetApiVersion : Result < unsafe extern "C" fn () -> * const :: std :: os :: raw :: c_char , :: libloading :: Error > , pub CThostFtdcMdApi_Release : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcMdApi_Init : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcMdApi_Join : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_GetTradingDay : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) -> * const :: std :: os :: raw :: c_char , :: libloading :: Error > , pub CThostFtdcMdApi_RegisterFront : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pszFrontAddress : * mut :: std :: os :: raw :: c_char) , :: libloading :: Error > , pub CThostFtdcMdApi_RegisterNameServer : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pszNsAddress : * mut :: std :: os :: raw :: c_char) , :: libloading :: Error > , pub CThostFtdcMdApi_RegisterFensUserInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pFensUserInfo : * mut CThostFtdcFensUserInfoField) , :: libloading :: Error > , pub CThostFtdcMdApi_RegisterSpi : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pSpi : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcMdApi_SubscribeMarketData : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , ppInstrumentID : * mut * mut :: std :: os :: raw :: c_char , nCount : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_UnSubscribeMarketData : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , ppInstrumentID : * mut * mut :: std :: os :: raw :: c_char , nCount : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_SubscribeForQuoteRsp : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , ppInstrumentID : * mut * mut :: std :: os :: raw :: c_char , nCount : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_UnSubscribeForQuoteRsp : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , ppInstrumentID : * mut * mut :: std :: os :: raw :: c_char , nCount : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_ReqUserLogin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginField : * mut CThostFtdcReqUserLoginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_ReqUserLogout : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserLogout : * mut CThostFtdcUserLogoutField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_ReqQryMulticastInstrument : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryMulticastInstrument : * mut CThostFtdcQryMulticastInstrumentField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , }
+pub struct CTPInvoke { __library : :: libloading :: Library , pub CThostFtdcTraderSpi_New : Result < unsafe extern "C" fn (callbacks : * const CTPSharp_CThostFtdcTraderSpi) -> * mut :: std :: os :: raw :: c_void , :: libloading :: Error > , pub CThostFtdcTraderSpi_Delete : Result < unsafe extern "C" fn (spi : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcTraderApi_Create : Result < unsafe extern "C" fn (pszFlowPath : * const :: std :: os :: raw :: c_char) -> * mut :: std :: os :: raw :: c_void , :: libloading :: Error > , pub CThostFtdcTraderApi_GetApiVersion : Result < unsafe extern "C" fn () -> * const :: std :: os :: raw :: c_char , :: libloading :: Error > , pub CThostFtdcTraderApi_Release : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcTraderApi_Init : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcTraderApi_Join : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_GetTradingDay : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) -> * const :: std :: os :: raw :: c_char , :: libloading :: Error > , pub CThostFtdcTraderApi_GetFrontInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pFrontInfo : * mut CThostFtdcFrontInfoField) , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterFront : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pszFrontAddress : * mut :: std :: os :: raw :: c_char) , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterNameServer : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pszNsAddress : * mut :: std :: os :: raw :: c_char) , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterFensUserInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pFensUserInfo : * mut CThostFtdcFensUserInfoField) , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterSpi : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pSpi : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcTraderApi_SubscribePrivateTopic : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , nResumeType : THOST_TE_RESUME_TYPE) , :: libloading :: Error > , pub CThostFtdcTraderApi_SubscribePublicTopic : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , nResumeType : THOST_TE_RESUME_TYPE) , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqAuthenticate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqAuthenticateField : * mut CThostFtdcReqAuthenticateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterUserSystemInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserSystemInfo : * mut CThostFtdcUserSystemInfoField) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_SubmitUserSystemInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserSystemInfo : * mut CThostFtdcUserSystemInfoField) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_RegisterWechatUserSystemInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserSystemInfo : * mut CThostFtdcWechatUserSystemInfoField) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_SubmitWechatUserSystemInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserSystemInfo : * mut CThostFtdcWechatUserSystemInfoField) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLogin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginField : * mut CThostFtdcReqUserLoginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLogout : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserLogout : * mut CThostFtdcUserLogoutField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserPasswordUpdate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserPasswordUpdate : * mut CThostFtdcUserPasswordUpdateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pTradingAccountPasswordUpdate : * mut CThostFtdcTradingAccountPasswordUpdateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserAuthMethod : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserAuthMethod : * mut CThostFtdcReqUserAuthMethodField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqGenUserCaptcha : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqGenUserCaptcha : * mut CThostFtdcReqGenUserCaptchaField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqGenUserText : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqGenUserText : * mut CThostFtdcReqGenUserTextField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLoginWithCaptcha : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginWithCaptcha : * mut CThostFtdcReqUserLoginWithCaptchaField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLoginWithText : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginWithText : * mut CThostFtdcReqUserLoginWithTextField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqUserLoginWithOTP : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginWithOTP : * mut CThostFtdcReqUserLoginWithOTPField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqOrderInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOrder : * mut CThostFtdcInputOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqParkedOrderInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pParkedOrder : * mut CThostFtdcParkedOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqParkedOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pParkedOrderAction : * mut CThostFtdcParkedOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOrderAction : * mut CThostFtdcInputOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryMaxOrderVolume : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryMaxOrderVolume : * mut CThostFtdcQryMaxOrderVolumeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqSettlementInfoConfirm : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pSettlementInfoConfirm : * mut CThostFtdcSettlementInfoConfirmField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqRemoveParkedOrder : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pRemoveParkedOrder : * mut CThostFtdcRemoveParkedOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqRemoveParkedOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pRemoveParkedOrderAction : * mut CThostFtdcRemoveParkedOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqExecOrderInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputExecOrder : * mut CThostFtdcInputExecOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqExecOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputExecOrderAction : * mut CThostFtdcInputExecOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqForQuoteInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputForQuote : * mut CThostFtdcInputForQuoteField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQuoteInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputQuote : * mut CThostFtdcInputQuoteField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQuoteAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputQuoteAction : * mut CThostFtdcInputQuoteActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqBatchOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputBatchOrderAction : * mut CThostFtdcInputBatchOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqOptionSelfCloseInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOptionSelfClose : * mut CThostFtdcInputOptionSelfCloseField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqOptionSelfCloseAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOptionSelfCloseAction : * mut CThostFtdcInputOptionSelfCloseActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqCombActionInsert : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputCombAction : * mut CThostFtdcInputCombActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryOrder : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryOrder : * mut CThostFtdcQryOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTrade : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTrade : * mut CThostFtdcQryTradeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorPosition : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorPosition : * mut CThostFtdcQryInvestorPositionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTradingAccount : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTradingAccount : * mut CThostFtdcQryTradingAccountField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestor : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestor : * mut CThostFtdcQryInvestorField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTradingCode : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTradingCode : * mut CThostFtdcQryTradingCodeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInstrumentMarginRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInstrumentMarginRate : * mut CThostFtdcQryInstrumentMarginRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInstrumentCommissionRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInstrumentCommissionRate : * mut CThostFtdcQryInstrumentCommissionRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExchange : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExchange : * mut CThostFtdcQryExchangeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryProduct : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryProduct : * mut CThostFtdcQryProductField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInstrument : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInstrument : * mut CThostFtdcQryInstrumentField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryDepthMarketData : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryDepthMarketData : * mut CThostFtdcQryDepthMarketDataField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTraderOffer : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTraderOffer : * mut CThostFtdcQryTraderOfferField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySettlementInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySettlementInfo : * mut CThostFtdcQrySettlementInfoField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTransferBank : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTransferBank : * mut CThostFtdcQryTransferBankField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorPositionDetail : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorPositionDetail : * mut CThostFtdcQryInvestorPositionDetailField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryNotice : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryNotice : * mut CThostFtdcQryNoticeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySettlementInfoConfirm : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySettlementInfoConfirm : * mut CThostFtdcQrySettlementInfoConfirmField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorPositionCombineDetail : * mut CThostFtdcQryInvestorPositionCombineDetailField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryCFMMCTradingAccountKey : * mut CThostFtdcQryCFMMCTradingAccountKeyField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryEWarrantOffset : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryEWarrantOffset : * mut CThostFtdcQryEWarrantOffsetField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorProductGroupMargin : * mut CThostFtdcQryInvestorProductGroupMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExchangeMarginRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExchangeMarginRate : * mut CThostFtdcQryExchangeMarginRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExchangeMarginRateAdjust : * mut CThostFtdcQryExchangeMarginRateAdjustField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExchangeRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExchangeRate : * mut CThostFtdcQryExchangeRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySecAgentACIDMap : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySecAgentACIDMap : * mut CThostFtdcQrySecAgentACIDMapField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryProductExchRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryProductExchRate : * mut CThostFtdcQryProductExchRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryProductGroup : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryProductGroup : * mut CThostFtdcQryProductGroupField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryMMInstrumentCommissionRate : * mut CThostFtdcQryMMInstrumentCommissionRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryMMOptionInstrCommRate : * mut CThostFtdcQryMMOptionInstrCommRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInstrumentOrderCommRate : * mut CThostFtdcQryInstrumentOrderCommRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySecAgentTradingAccount : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTradingAccount : * mut CThostFtdcQryTradingAccountField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySecAgentCheckMode : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySecAgentCheckMode : * mut CThostFtdcQrySecAgentCheckModeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySecAgentTradeInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySecAgentTradeInfo : * mut CThostFtdcQrySecAgentTradeInfoField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryOptionInstrTradeCost : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryOptionInstrTradeCost : * mut CThostFtdcQryOptionInstrTradeCostField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryOptionInstrCommRate : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryOptionInstrCommRate : * mut CThostFtdcQryOptionInstrCommRateField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryExecOrder : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryExecOrder : * mut CThostFtdcQryExecOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryForQuote : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryForQuote : * mut CThostFtdcQryForQuoteField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryQuote : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryQuote : * mut CThostFtdcQryQuoteField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryOptionSelfClose : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryOptionSelfClose : * mut CThostFtdcQryOptionSelfCloseField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestUnit : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestUnit : * mut CThostFtdcQryInvestUnitField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryCombInstrumentGuard : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryCombInstrumentGuard : * mut CThostFtdcQryCombInstrumentGuardField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryCombAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryCombAction : * mut CThostFtdcQryCombActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTransferSerial : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTransferSerial : * mut CThostFtdcQryTransferSerialField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryAccountregister : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryAccountregister : * mut CThostFtdcQryAccountregisterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryContractBank : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryContractBank : * mut CThostFtdcQryContractBankField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryParkedOrder : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryParkedOrder : * mut CThostFtdcQryParkedOrderField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryParkedOrderAction : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryParkedOrderAction : * mut CThostFtdcQryParkedOrderActionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryTradingNotice : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryTradingNotice : * mut CThostFtdcQryTradingNoticeField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryBrokerTradingParams : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryBrokerTradingParams : * mut CThostFtdcQryBrokerTradingParamsField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryBrokerTradingAlgos : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryBrokerTradingAlgos : * mut CThostFtdcQryBrokerTradingAlgosField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQueryCFMMCTradingAccountToken : * mut CThostFtdcQueryCFMMCTradingAccountTokenField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqFromBankToFutureByFuture : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqTransfer : * mut CThostFtdcReqTransferField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqFromFutureToBankByFuture : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqTransfer : * mut CThostFtdcReqTransferField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqQueryAccount : * mut CThostFtdcReqQueryAccountField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryClassifiedInstrument : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryClassifiedInstrument : * mut CThostFtdcQryClassifiedInstrumentField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryCombPromotionParam : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryCombPromotionParam : * mut CThostFtdcQryCombPromotionParamField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRiskSettleInvstPosition : * mut CThostFtdcQryRiskSettleInvstPositionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRiskSettleProductStatus : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRiskSettleProductStatus : * mut CThostFtdcQryRiskSettleProductStatusField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMFutureParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMFutureParameter : * mut CThostFtdcQrySPBMFutureParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMOptionParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMOptionParameter : * mut CThostFtdcQrySPBMOptionParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMIntraParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMIntraParameter : * mut CThostFtdcQrySPBMIntraParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMInterParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMInterParameter : * mut CThostFtdcQrySPBMInterParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMPortfDefinition : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMPortfDefinition : * mut CThostFtdcQrySPBMPortfDefinitionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMInvestorPortfDef : * mut CThostFtdcQrySPBMInvestorPortfDefField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorPortfMarginRatio : * mut CThostFtdcQryInvestorPortfMarginRatioField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorProdSPBMDetail : * mut CThostFtdcQryInvestorProdSPBMDetailField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorCommoditySPMMMargin : * mut CThostFtdcQryInvestorCommoditySPMMMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorCommodityGroupSPMMMargin : * mut CThostFtdcQryInvestorCommodityGroupSPMMMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPMMInstParam : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPMMInstParam : * mut CThostFtdcQrySPMMInstParamField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPMMProductParam : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPMMProductParam : * mut CThostFtdcQrySPMMProductParamField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQrySPBMAddOnInterParameter : * mut CThostFtdcQrySPBMAddOnInterParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSCombProductInfo : * mut CThostFtdcQryRCAMSCombProductInfoField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSInstrParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSInstrParameter : * mut CThostFtdcQryRCAMSInstrParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSIntraParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSIntraParameter : * mut CThostFtdcQryRCAMSIntraParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSInterParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSInterParameter : * mut CThostFtdcQryRCAMSInterParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSShortOptAdjustParam : * mut CThostFtdcQryRCAMSShortOptAdjustParamField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRCAMSInvestorCombPosition : * mut CThostFtdcQryRCAMSInvestorCombPositionField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorProdRCAMSMargin : * mut CThostFtdcQryInvestorProdRCAMSMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRULEInstrParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRULEInstrParameter : * mut CThostFtdcQryRULEInstrParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRULEIntraParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRULEIntraParameter : * mut CThostFtdcQryRULEIntraParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryRULEInterParameter : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryRULEInterParameter : * mut CThostFtdcQryRULEInterParameterField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorProdRULEMargin : * mut CThostFtdcQryInvestorProdRULEMarginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorPortfSetting : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorPortfSetting : * mut CThostFtdcQryInvestorPortfSettingField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryInvestorInfoCommRec : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryInvestorInfoCommRec : * mut CThostFtdcQryInvestorInfoCommRecField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryCombLeg : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryCombLeg : * mut CThostFtdcQryCombLegField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqOffsetSetting : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOffsetSetting : * mut CThostFtdcInputOffsetSettingField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqCancelOffsetSetting : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pInputOffsetSetting : * mut CThostFtdcInputOffsetSettingField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcTraderApi_ReqQryOffsetSetting : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryOffsetSetting : * mut CThostFtdcQryOffsetSettingField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdSpi_New : Result < unsafe extern "C" fn (callbacks : * const CTPSharp_CThostFtdcMdSpi) -> * mut :: std :: os :: raw :: c_void , :: libloading :: Error > , pub CThostFtdcMdSpi_Delete : Result < unsafe extern "C" fn (spi : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcMdApi_Create : Result < unsafe extern "C" fn (pszFlowPath : * const :: std :: os :: raw :: c_char , bIsUsingUdp : bool_ , bIsMulticast : bool_) -> * mut :: std :: os :: raw :: c_void , :: libloading :: Error > , pub CThostFtdcMdApi_GetApiVersion : Result < unsafe extern "C" fn () -> * const :: std :: os :: raw :: c_char , :: libloading :: Error > , pub CThostFtdcMdApi_Release : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcMdApi_Init : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcMdApi_Join : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_GetTradingDay : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void) -> * const :: std :: os :: raw :: c_char , :: libloading :: Error > , pub CThostFtdcMdApi_RegisterFront : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pszFrontAddress : * mut :: std :: os :: raw :: c_char) , :: libloading :: Error > , pub CThostFtdcMdApi_RegisterNameServer : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pszNsAddress : * mut :: std :: os :: raw :: c_char) , :: libloading :: Error > , pub CThostFtdcMdApi_RegisterFensUserInfo : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pFensUserInfo : * mut CThostFtdcFensUserInfoField) , :: libloading :: Error > , pub CThostFtdcMdApi_RegisterSpi : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pSpi : * mut :: std :: os :: raw :: c_void) , :: libloading :: Error > , pub CThostFtdcMdApi_SubscribeMarketData : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , ppInstrumentID : * mut * mut :: std :: os :: raw :: c_char , nCount : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_UnSubscribeMarketData : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , ppInstrumentID : * mut * mut :: std :: os :: raw :: c_char , nCount : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_SubscribeForQuoteRsp : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , ppInstrumentID : * mut * mut :: std :: os :: raw :: c_char , nCount : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_UnSubscribeForQuoteRsp : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , ppInstrumentID : * mut * mut :: std :: os :: raw :: c_char , nCount : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_ReqUserLogin : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pReqUserLoginField : * mut CThostFtdcReqUserLoginField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_ReqUserLogout : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pUserLogout : * mut CThostFtdcUserLogoutField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , pub CThostFtdcMdApi_ReqQryMulticastInstrument : Result < unsafe extern "C" fn (api : * mut :: std :: os :: raw :: c_void , pQryMulticastInstrument : * mut CThostFtdcQryMulticastInstrumentField , nRequestID : :: std :: os :: raw :: c_int) -> :: std :: os :: raw :: c_int , :: libloading :: Error > , }
 impl CTPInvoke {
     pub unsafe fn new<P>(path: P) -> Result<Self, ::libloading::Error>
     where
@@ -16140,6 +17276,9 @@ impl CTPInvoke {
         let CThostFtdcTraderApi_GetTradingDay = __library
             .get(b"CThostFtdcTraderApi_GetTradingDay\0")
             .map(|sym| *sym);
+        let CThostFtdcTraderApi_GetFrontInfo = __library
+            .get(b"CThostFtdcTraderApi_GetFrontInfo\0")
+            .map(|sym| *sym);
         let CThostFtdcTraderApi_RegisterFront = __library
             .get(b"CThostFtdcTraderApi_RegisterFront\0")
             .map(|sym| *sym);
@@ -16166,6 +17305,12 @@ impl CTPInvoke {
             .map(|sym| *sym);
         let CThostFtdcTraderApi_SubmitUserSystemInfo = __library
             .get(b"CThostFtdcTraderApi_SubmitUserSystemInfo\0")
+            .map(|sym| *sym);
+        let CThostFtdcTraderApi_RegisterWechatUserSystemInfo = __library
+            .get(b"CThostFtdcTraderApi_RegisterWechatUserSystemInfo\0")
+            .map(|sym| *sym);
+        let CThostFtdcTraderApi_SubmitWechatUserSystemInfo = __library
+            .get(b"CThostFtdcTraderApi_SubmitWechatUserSystemInfo\0")
             .map(|sym| *sym);
         let CThostFtdcTraderApi_ReqUserLogin = __library
             .get(b"CThostFtdcTraderApi_ReqUserLogin\0")
@@ -16497,6 +17642,24 @@ impl CTPInvoke {
         let CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin = __library
             .get(b"CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin\0")
             .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorPortfSetting = __library
+            .get(b"CThostFtdcTraderApi_ReqQryInvestorPortfSetting\0")
+            .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorInfoCommRec = __library
+            .get(b"CThostFtdcTraderApi_ReqQryInvestorInfoCommRec\0")
+            .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryCombLeg = __library
+            .get(b"CThostFtdcTraderApi_ReqQryCombLeg\0")
+            .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqOffsetSetting = __library
+            .get(b"CThostFtdcTraderApi_ReqOffsetSetting\0")
+            .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqCancelOffsetSetting = __library
+            .get(b"CThostFtdcTraderApi_ReqCancelOffsetSetting\0")
+            .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryOffsetSetting = __library
+            .get(b"CThostFtdcTraderApi_ReqQryOffsetSetting\0")
+            .map(|sym| *sym);
         let CThostFtdcMdSpi_New = __library.get(b"CThostFtdcMdSpi_New\0").map(|sym| *sym);
         let CThostFtdcMdSpi_Delete = __library.get(b"CThostFtdcMdSpi_Delete\0").map(|sym| *sym);
         let CThostFtdcMdApi_Create = __library.get(b"CThostFtdcMdApi_Create\0").map(|sym| *sym);
@@ -16552,6 +17715,7 @@ impl CTPInvoke {
             CThostFtdcTraderApi_Init,
             CThostFtdcTraderApi_Join,
             CThostFtdcTraderApi_GetTradingDay,
+            CThostFtdcTraderApi_GetFrontInfo,
             CThostFtdcTraderApi_RegisterFront,
             CThostFtdcTraderApi_RegisterNameServer,
             CThostFtdcTraderApi_RegisterFensUserInfo,
@@ -16561,6 +17725,8 @@ impl CTPInvoke {
             CThostFtdcTraderApi_ReqAuthenticate,
             CThostFtdcTraderApi_RegisterUserSystemInfo,
             CThostFtdcTraderApi_SubmitUserSystemInfo,
+            CThostFtdcTraderApi_RegisterWechatUserSystemInfo,
+            CThostFtdcTraderApi_SubmitWechatUserSystemInfo,
             CThostFtdcTraderApi_ReqUserLogin,
             CThostFtdcTraderApi_ReqUserLogout,
             CThostFtdcTraderApi_ReqUserPasswordUpdate,
@@ -16671,6 +17837,12 @@ impl CTPInvoke {
             CThostFtdcTraderApi_ReqQryRULEIntraParameter,
             CThostFtdcTraderApi_ReqQryRULEInterParameter,
             CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin,
+            CThostFtdcTraderApi_ReqQryInvestorPortfSetting,
+            CThostFtdcTraderApi_ReqQryInvestorInfoCommRec,
+            CThostFtdcTraderApi_ReqQryCombLeg,
+            CThostFtdcTraderApi_ReqOffsetSetting,
+            CThostFtdcTraderApi_ReqCancelOffsetSetting,
+            CThostFtdcTraderApi_ReqQryOffsetSetting,
             CThostFtdcMdSpi_New,
             CThostFtdcMdSpi_Delete,
             CThostFtdcMdApi_Create,
@@ -16751,6 +17923,16 @@ impl CTPInvoke {
             .CThostFtdcTraderApi_GetTradingDay
             .as_ref()
             .expect("Expected function, got error."))(api)
+    }
+    pub unsafe fn CThostFtdcTraderApi_GetFrontInfo(
+        &self,
+        api: *mut ::std::os::raw::c_void,
+        pFrontInfo: *mut CThostFtdcFrontInfoField,
+    ) {
+        (self
+            .CThostFtdcTraderApi_GetFrontInfo
+            .as_ref()
+            .expect("Expected function, got error."))(api, pFrontInfo)
     }
     pub unsafe fn CThostFtdcTraderApi_RegisterFront(
         &self,
@@ -16840,6 +18022,26 @@ impl CTPInvoke {
     ) -> ::std::os::raw::c_int {
         (self
             .CThostFtdcTraderApi_SubmitUserSystemInfo
+            .as_ref()
+            .expect("Expected function, got error."))(api, pUserSystemInfo)
+    }
+    pub unsafe fn CThostFtdcTraderApi_RegisterWechatUserSystemInfo(
+        &self,
+        api: *mut ::std::os::raw::c_void,
+        pUserSystemInfo: *mut CThostFtdcWechatUserSystemInfoField,
+    ) -> ::std::os::raw::c_int {
+        (self
+            .CThostFtdcTraderApi_RegisterWechatUserSystemInfo
+            .as_ref()
+            .expect("Expected function, got error."))(api, pUserSystemInfo)
+    }
+    pub unsafe fn CThostFtdcTraderApi_SubmitWechatUserSystemInfo(
+        &self,
+        api: *mut ::std::os::raw::c_void,
+        pUserSystemInfo: *mut CThostFtdcWechatUserSystemInfoField,
+    ) -> ::std::os::raw::c_int {
+        (self
+            .CThostFtdcTraderApi_SubmitWechatUserSystemInfo
             .as_ref()
             .expect("Expected function, got error."))(api, pUserSystemInfo)
     }
@@ -18168,6 +19370,76 @@ impl CTPInvoke {
             .expect("Expected function, got error."))(
             api, pQryInvestorProdRULEMargin, nRequestID
         )
+    }
+    pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorPortfSetting(
+        &self,
+        api: *mut ::std::os::raw::c_void,
+        pQryInvestorPortfSetting: *mut CThostFtdcQryInvestorPortfSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        (self
+            .CThostFtdcTraderApi_ReqQryInvestorPortfSetting
+            .as_ref()
+            .expect("Expected function, got error."))(
+            api, pQryInvestorPortfSetting, nRequestID
+        )
+    }
+    pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorInfoCommRec(
+        &self,
+        api: *mut ::std::os::raw::c_void,
+        pQryInvestorInfoCommRec: *mut CThostFtdcQryInvestorInfoCommRecField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        (self
+            .CThostFtdcTraderApi_ReqQryInvestorInfoCommRec
+            .as_ref()
+            .expect("Expected function, got error."))(
+            api, pQryInvestorInfoCommRec, nRequestID
+        )
+    }
+    pub unsafe fn CThostFtdcTraderApi_ReqQryCombLeg(
+        &self,
+        api: *mut ::std::os::raw::c_void,
+        pQryCombLeg: *mut CThostFtdcQryCombLegField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        (self
+            .CThostFtdcTraderApi_ReqQryCombLeg
+            .as_ref()
+            .expect("Expected function, got error."))(api, pQryCombLeg, nRequestID)
+    }
+    pub unsafe fn CThostFtdcTraderApi_ReqOffsetSetting(
+        &self,
+        api: *mut ::std::os::raw::c_void,
+        pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        (self
+            .CThostFtdcTraderApi_ReqOffsetSetting
+            .as_ref()
+            .expect("Expected function, got error."))(api, pInputOffsetSetting, nRequestID)
+    }
+    pub unsafe fn CThostFtdcTraderApi_ReqCancelOffsetSetting(
+        &self,
+        api: *mut ::std::os::raw::c_void,
+        pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        (self
+            .CThostFtdcTraderApi_ReqCancelOffsetSetting
+            .as_ref()
+            .expect("Expected function, got error."))(api, pInputOffsetSetting, nRequestID)
+    }
+    pub unsafe fn CThostFtdcTraderApi_ReqQryOffsetSetting(
+        &self,
+        api: *mut ::std::os::raw::c_void,
+        pQryOffsetSetting: *mut CThostFtdcQryOffsetSettingField,
+        nRequestID: ::std::os::raw::c_int,
+    ) -> ::std::os::raw::c_int {
+        (self
+            .CThostFtdcTraderApi_ReqQryOffsetSetting
+            .as_ref()
+            .expect("Expected function, got error."))(api, pQryOffsetSetting, nRequestID)
     }
     pub unsafe fn CThostFtdcMdSpi_New(
         &self,

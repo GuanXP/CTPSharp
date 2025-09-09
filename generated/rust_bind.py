@@ -36,7 +36,7 @@ rust_file = os.path.join(baseDir, "ctp.rs")
 
 def transform(input: str, file_out: TextIOWrapper):
     callback_lines: list[str] = []
-    with open(os.path.join(baseDir, input)) as file_in:
+    with open(os.path.join(baseDir, input), encoding='utf-8-sig') as file_in:
         for line in file_in:
             if line.startswith("struct"):
                 callback_lines.append(line)
