@@ -62,6 +62,7 @@ def generate_header():
 
 def generate_rust():
     result = subprocess.run(["bindgen", 
+                             "--wrap-unsafe-ops",
                              "--no-layout-tests",
                              "--dynamic-loading", "CTPInvoke",
                              f"{header_file}", 

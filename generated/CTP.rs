@@ -17251,460 +17251,397 @@ impl CTPInvoke {
         P: AsRef<::std::ffi::OsStr>,
     {
         let library = ::libloading::Library::new(path)?;
-        Self::from_library(library)
+        unsafe { Self::from_library(library) }
     }
     pub unsafe fn from_library<L>(library: L) -> Result<Self, ::libloading::Error>
     where
         L: Into<::libloading::Library>,
     {
         let __library = library.into();
-        let CThostFtdcTraderSpi_New = __library.get(b"CThostFtdcTraderSpi_New\0").map(|sym| *sym);
-        let CThostFtdcTraderSpi_Delete = __library
-            .get(b"CThostFtdcTraderSpi_Delete\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_Create = __library
-            .get(b"CThostFtdcTraderApi_Create\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_GetApiVersion = __library
-            .get(b"CThostFtdcTraderApi_GetApiVersion\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_Release = __library
-            .get(b"CThostFtdcTraderApi_Release\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_Init = __library.get(b"CThostFtdcTraderApi_Init\0").map(|sym| *sym);
-        let CThostFtdcTraderApi_Join = __library.get(b"CThostFtdcTraderApi_Join\0").map(|sym| *sym);
-        let CThostFtdcTraderApi_GetTradingDay = __library
-            .get(b"CThostFtdcTraderApi_GetTradingDay\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_GetFrontInfo = __library
-            .get(b"CThostFtdcTraderApi_GetFrontInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_RegisterFront = __library
-            .get(b"CThostFtdcTraderApi_RegisterFront\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_RegisterNameServer = __library
-            .get(b"CThostFtdcTraderApi_RegisterNameServer\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_RegisterFensUserInfo = __library
-            .get(b"CThostFtdcTraderApi_RegisterFensUserInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_RegisterSpi = __library
-            .get(b"CThostFtdcTraderApi_RegisterSpi\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_SubscribePrivateTopic = __library
-            .get(b"CThostFtdcTraderApi_SubscribePrivateTopic\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_SubscribePublicTopic = __library
-            .get(b"CThostFtdcTraderApi_SubscribePublicTopic\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqAuthenticate = __library
-            .get(b"CThostFtdcTraderApi_ReqAuthenticate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_RegisterUserSystemInfo = __library
-            .get(b"CThostFtdcTraderApi_RegisterUserSystemInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_SubmitUserSystemInfo = __library
-            .get(b"CThostFtdcTraderApi_SubmitUserSystemInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_RegisterWechatUserSystemInfo = __library
-            .get(b"CThostFtdcTraderApi_RegisterWechatUserSystemInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_SubmitWechatUserSystemInfo = __library
-            .get(b"CThostFtdcTraderApi_SubmitWechatUserSystemInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqUserLogin = __library
-            .get(b"CThostFtdcTraderApi_ReqUserLogin\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqUserLogout = __library
-            .get(b"CThostFtdcTraderApi_ReqUserLogout\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqUserPasswordUpdate = __library
-            .get(b"CThostFtdcTraderApi_ReqUserPasswordUpdate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate = __library
-            .get(b"CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqUserAuthMethod = __library
-            .get(b"CThostFtdcTraderApi_ReqUserAuthMethod\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqGenUserCaptcha = __library
-            .get(b"CThostFtdcTraderApi_ReqGenUserCaptcha\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqGenUserText = __library
-            .get(b"CThostFtdcTraderApi_ReqGenUserText\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqUserLoginWithCaptcha = __library
-            .get(b"CThostFtdcTraderApi_ReqUserLoginWithCaptcha\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqUserLoginWithText = __library
-            .get(b"CThostFtdcTraderApi_ReqUserLoginWithText\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqUserLoginWithOTP = __library
-            .get(b"CThostFtdcTraderApi_ReqUserLoginWithOTP\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqOrderInsert = __library
-            .get(b"CThostFtdcTraderApi_ReqOrderInsert\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqParkedOrderInsert = __library
-            .get(b"CThostFtdcTraderApi_ReqParkedOrderInsert\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqParkedOrderAction = __library
-            .get(b"CThostFtdcTraderApi_ReqParkedOrderAction\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqOrderAction = __library
-            .get(b"CThostFtdcTraderApi_ReqOrderAction\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryMaxOrderVolume = __library
-            .get(b"CThostFtdcTraderApi_ReqQryMaxOrderVolume\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqSettlementInfoConfirm = __library
-            .get(b"CThostFtdcTraderApi_ReqSettlementInfoConfirm\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqRemoveParkedOrder = __library
-            .get(b"CThostFtdcTraderApi_ReqRemoveParkedOrder\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqRemoveParkedOrderAction = __library
-            .get(b"CThostFtdcTraderApi_ReqRemoveParkedOrderAction\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqExecOrderInsert = __library
-            .get(b"CThostFtdcTraderApi_ReqExecOrderInsert\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqExecOrderAction = __library
-            .get(b"CThostFtdcTraderApi_ReqExecOrderAction\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqForQuoteInsert = __library
-            .get(b"CThostFtdcTraderApi_ReqForQuoteInsert\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQuoteInsert = __library
-            .get(b"CThostFtdcTraderApi_ReqQuoteInsert\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQuoteAction = __library
-            .get(b"CThostFtdcTraderApi_ReqQuoteAction\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqBatchOrderAction = __library
-            .get(b"CThostFtdcTraderApi_ReqBatchOrderAction\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqOptionSelfCloseInsert = __library
-            .get(b"CThostFtdcTraderApi_ReqOptionSelfCloseInsert\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqOptionSelfCloseAction = __library
-            .get(b"CThostFtdcTraderApi_ReqOptionSelfCloseAction\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqCombActionInsert = __library
-            .get(b"CThostFtdcTraderApi_ReqCombActionInsert\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryOrder = __library
-            .get(b"CThostFtdcTraderApi_ReqQryOrder\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryTrade = __library
-            .get(b"CThostFtdcTraderApi_ReqQryTrade\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorPosition = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorPosition\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryTradingAccount = __library
-            .get(b"CThostFtdcTraderApi_ReqQryTradingAccount\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestor = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestor\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryTradingCode = __library
-            .get(b"CThostFtdcTraderApi_ReqQryTradingCode\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInstrumentMarginRate = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInstrumentMarginRate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInstrumentCommissionRate = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInstrumentCommissionRate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryExchange = __library
-            .get(b"CThostFtdcTraderApi_ReqQryExchange\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryProduct = __library
-            .get(b"CThostFtdcTraderApi_ReqQryProduct\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInstrument = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInstrument\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryDepthMarketData = __library
-            .get(b"CThostFtdcTraderApi_ReqQryDepthMarketData\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryTraderOffer = __library
-            .get(b"CThostFtdcTraderApi_ReqQryTraderOffer\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySettlementInfo = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySettlementInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryTransferBank = __library
-            .get(b"CThostFtdcTraderApi_ReqQryTransferBank\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorPositionDetail = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorPositionDetail\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryNotice = __library
-            .get(b"CThostFtdcTraderApi_ReqQryNotice\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySettlementInfoConfirm = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySettlementInfoConfirm\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey = __library
-            .get(b"CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryEWarrantOffset = __library
-            .get(b"CThostFtdcTraderApi_ReqQryEWarrantOffset\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryExchangeMarginRate = __library
-            .get(b"CThostFtdcTraderApi_ReqQryExchangeMarginRate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust = __library
-            .get(b"CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryExchangeRate = __library
-            .get(b"CThostFtdcTraderApi_ReqQryExchangeRate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySecAgentACIDMap = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySecAgentACIDMap\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryProductExchRate = __library
-            .get(b"CThostFtdcTraderApi_ReqQryProductExchRate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryProductGroup = __library
-            .get(b"CThostFtdcTraderApi_ReqQryProductGroup\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate = __library
-            .get(b"CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate = __library
-            .get(b"CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySecAgentTradingAccount = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySecAgentTradingAccount\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySecAgentCheckMode = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySecAgentCheckMode\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySecAgentTradeInfo = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySecAgentTradeInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryOptionInstrTradeCost = __library
-            .get(b"CThostFtdcTraderApi_ReqQryOptionInstrTradeCost\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryOptionInstrCommRate = __library
-            .get(b"CThostFtdcTraderApi_ReqQryOptionInstrCommRate\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryExecOrder = __library
-            .get(b"CThostFtdcTraderApi_ReqQryExecOrder\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryForQuote = __library
-            .get(b"CThostFtdcTraderApi_ReqQryForQuote\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryQuote = __library
-            .get(b"CThostFtdcTraderApi_ReqQryQuote\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryOptionSelfClose = __library
-            .get(b"CThostFtdcTraderApi_ReqQryOptionSelfClose\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestUnit = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestUnit\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryCombInstrumentGuard = __library
-            .get(b"CThostFtdcTraderApi_ReqQryCombInstrumentGuard\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryCombAction = __library
-            .get(b"CThostFtdcTraderApi_ReqQryCombAction\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryTransferSerial = __library
-            .get(b"CThostFtdcTraderApi_ReqQryTransferSerial\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryAccountregister = __library
-            .get(b"CThostFtdcTraderApi_ReqQryAccountregister\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryContractBank = __library
-            .get(b"CThostFtdcTraderApi_ReqQryContractBank\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryParkedOrder = __library
-            .get(b"CThostFtdcTraderApi_ReqQryParkedOrder\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryParkedOrderAction = __library
-            .get(b"CThostFtdcTraderApi_ReqQryParkedOrderAction\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryTradingNotice = __library
-            .get(b"CThostFtdcTraderApi_ReqQryTradingNotice\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryBrokerTradingParams = __library
-            .get(b"CThostFtdcTraderApi_ReqQryBrokerTradingParams\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryBrokerTradingAlgos = __library
-            .get(b"CThostFtdcTraderApi_ReqQryBrokerTradingAlgos\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken = __library
-            .get(b"CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqFromBankToFutureByFuture = __library
-            .get(b"CThostFtdcTraderApi_ReqFromBankToFutureByFuture\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqFromFutureToBankByFuture = __library
-            .get(b"CThostFtdcTraderApi_ReqFromFutureToBankByFuture\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture = __library
-            .get(b"CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryClassifiedInstrument = __library
-            .get(b"CThostFtdcTraderApi_ReqQryClassifiedInstrument\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryCombPromotionParam = __library
-            .get(b"CThostFtdcTraderApi_ReqQryCombPromotionParam\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRiskSettleProductStatus = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRiskSettleProductStatus\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySPBMFutureParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySPBMFutureParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySPBMOptionParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySPBMOptionParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySPBMIntraParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySPBMIntraParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySPBMInterParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySPBMInterParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySPBMPortfDefinition = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySPBMPortfDefinition\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySPMMInstParam = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySPMMInstParam\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySPMMProductParam = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySPMMProductParam\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRCAMSInstrParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRCAMSInstrParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRCAMSIntraParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRCAMSIntraParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRCAMSInterParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRCAMSInterParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRULEInstrParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRULEInstrParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRULEIntraParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRULEIntraParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryRULEInterParameter = __library
-            .get(b"CThostFtdcTraderApi_ReqQryRULEInterParameter\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorPortfSetting = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorPortfSetting\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryInvestorInfoCommRec = __library
-            .get(b"CThostFtdcTraderApi_ReqQryInvestorInfoCommRec\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryCombLeg = __library
-            .get(b"CThostFtdcTraderApi_ReqQryCombLeg\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqOffsetSetting = __library
-            .get(b"CThostFtdcTraderApi_ReqOffsetSetting\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqCancelOffsetSetting = __library
-            .get(b"CThostFtdcTraderApi_ReqCancelOffsetSetting\0")
-            .map(|sym| *sym);
-        let CThostFtdcTraderApi_ReqQryOffsetSetting = __library
-            .get(b"CThostFtdcTraderApi_ReqQryOffsetSetting\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdSpi_New = __library.get(b"CThostFtdcMdSpi_New\0").map(|sym| *sym);
-        let CThostFtdcMdSpi_Delete = __library.get(b"CThostFtdcMdSpi_Delete\0").map(|sym| *sym);
-        let CThostFtdcMdApi_Create = __library.get(b"CThostFtdcMdApi_Create\0").map(|sym| *sym);
-        let CThostFtdcMdApi_GetApiVersion = __library
-            .get(b"CThostFtdcMdApi_GetApiVersion\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_Release = __library.get(b"CThostFtdcMdApi_Release\0").map(|sym| *sym);
-        let CThostFtdcMdApi_Init = __library.get(b"CThostFtdcMdApi_Init\0").map(|sym| *sym);
-        let CThostFtdcMdApi_Join = __library.get(b"CThostFtdcMdApi_Join\0").map(|sym| *sym);
-        let CThostFtdcMdApi_GetTradingDay = __library
-            .get(b"CThostFtdcMdApi_GetTradingDay\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_RegisterFront = __library
-            .get(b"CThostFtdcMdApi_RegisterFront\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_RegisterNameServer = __library
-            .get(b"CThostFtdcMdApi_RegisterNameServer\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_RegisterFensUserInfo = __library
-            .get(b"CThostFtdcMdApi_RegisterFensUserInfo\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_RegisterSpi = __library
-            .get(b"CThostFtdcMdApi_RegisterSpi\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_SubscribeMarketData = __library
-            .get(b"CThostFtdcMdApi_SubscribeMarketData\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_UnSubscribeMarketData = __library
-            .get(b"CThostFtdcMdApi_UnSubscribeMarketData\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_SubscribeForQuoteRsp = __library
-            .get(b"CThostFtdcMdApi_SubscribeForQuoteRsp\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_UnSubscribeForQuoteRsp = __library
-            .get(b"CThostFtdcMdApi_UnSubscribeForQuoteRsp\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_ReqUserLogin = __library
-            .get(b"CThostFtdcMdApi_ReqUserLogin\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_ReqUserLogout = __library
-            .get(b"CThostFtdcMdApi_ReqUserLogout\0")
-            .map(|sym| *sym);
-        let CThostFtdcMdApi_ReqQryMulticastInstrument = __library
-            .get(b"CThostFtdcMdApi_ReqQryMulticastInstrument\0")
-            .map(|sym| *sym);
+        let CThostFtdcTraderSpi_New =
+            unsafe { __library.get(b"CThostFtdcTraderSpi_New\0") }.map(|sym| *sym);
+        let CThostFtdcTraderSpi_Delete =
+            unsafe { __library.get(b"CThostFtdcTraderSpi_Delete\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_Create =
+            unsafe { __library.get(b"CThostFtdcTraderApi_Create\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_GetApiVersion =
+            unsafe { __library.get(b"CThostFtdcTraderApi_GetApiVersion\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_Release =
+            unsafe { __library.get(b"CThostFtdcTraderApi_Release\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_Init =
+            unsafe { __library.get(b"CThostFtdcTraderApi_Init\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_Join =
+            unsafe { __library.get(b"CThostFtdcTraderApi_Join\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_GetTradingDay =
+            unsafe { __library.get(b"CThostFtdcTraderApi_GetTradingDay\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_GetFrontInfo =
+            unsafe { __library.get(b"CThostFtdcTraderApi_GetFrontInfo\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_RegisterFront =
+            unsafe { __library.get(b"CThostFtdcTraderApi_RegisterFront\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_RegisterNameServer =
+            unsafe { __library.get(b"CThostFtdcTraderApi_RegisterNameServer\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_RegisterFensUserInfo =
+            unsafe { __library.get(b"CThostFtdcTraderApi_RegisterFensUserInfo\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_RegisterSpi =
+            unsafe { __library.get(b"CThostFtdcTraderApi_RegisterSpi\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_SubscribePrivateTopic =
+            unsafe { __library.get(b"CThostFtdcTraderApi_SubscribePrivateTopic\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_SubscribePublicTopic =
+            unsafe { __library.get(b"CThostFtdcTraderApi_SubscribePublicTopic\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqAuthenticate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqAuthenticate\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_RegisterUserSystemInfo =
+            unsafe { __library.get(b"CThostFtdcTraderApi_RegisterUserSystemInfo\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_SubmitUserSystemInfo =
+            unsafe { __library.get(b"CThostFtdcTraderApi_SubmitUserSystemInfo\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_RegisterWechatUserSystemInfo =
+            unsafe { __library.get(b"CThostFtdcTraderApi_RegisterWechatUserSystemInfo\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_SubmitWechatUserSystemInfo =
+            unsafe { __library.get(b"CThostFtdcTraderApi_SubmitWechatUserSystemInfo\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqUserLogin =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqUserLogin\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqUserLogout =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqUserLogout\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqUserPasswordUpdate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqUserPasswordUpdate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqUserAuthMethod =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqUserAuthMethod\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqGenUserCaptcha =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqGenUserCaptcha\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqGenUserText =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqGenUserText\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqUserLoginWithCaptcha =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqUserLoginWithCaptcha\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqUserLoginWithText =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqUserLoginWithText\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqUserLoginWithOTP =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqUserLoginWithOTP\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqOrderInsert =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqOrderInsert\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqParkedOrderInsert =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqParkedOrderInsert\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqParkedOrderAction =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqParkedOrderAction\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqOrderAction =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqOrderAction\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryMaxOrderVolume =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryMaxOrderVolume\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqSettlementInfoConfirm =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqSettlementInfoConfirm\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqRemoveParkedOrder =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqRemoveParkedOrder\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqRemoveParkedOrderAction =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqRemoveParkedOrderAction\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqExecOrderInsert =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqExecOrderInsert\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqExecOrderAction =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqExecOrderAction\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqForQuoteInsert =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqForQuoteInsert\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQuoteInsert =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQuoteInsert\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQuoteAction =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQuoteAction\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqBatchOrderAction =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqBatchOrderAction\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqOptionSelfCloseInsert =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqOptionSelfCloseInsert\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqOptionSelfCloseAction =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqOptionSelfCloseAction\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqCombActionInsert =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqCombActionInsert\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryOrder =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryOrder\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryTrade =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryTrade\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorPosition =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorPosition\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryTradingAccount =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryTradingAccount\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestor =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestor\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryTradingCode =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryTradingCode\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInstrumentMarginRate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInstrumentMarginRate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInstrumentCommissionRate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInstrumentCommissionRate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryExchange =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryExchange\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryProduct =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryProduct\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInstrument =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInstrument\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryDepthMarketData =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryDepthMarketData\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryTraderOffer =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryTraderOffer\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySettlementInfo =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySettlementInfo\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryTransferBank =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryTransferBank\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorPositionDetail =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorPositionDetail\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryNotice =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryNotice\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySettlementInfoConfirm =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySettlementInfoConfirm\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryEWarrantOffset =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryEWarrantOffset\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryExchangeMarginRate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryExchangeMarginRate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryExchangeRate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryExchangeRate\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySecAgentACIDMap =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySecAgentACIDMap\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryProductExchRate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryProductExchRate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryProductGroup =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryProductGroup\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySecAgentTradingAccount =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySecAgentTradingAccount\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySecAgentCheckMode =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySecAgentCheckMode\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySecAgentTradeInfo =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySecAgentTradeInfo\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryOptionInstrTradeCost =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryOptionInstrTradeCost\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryOptionInstrCommRate =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryOptionInstrCommRate\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryExecOrder =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryExecOrder\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryForQuote =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryForQuote\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryQuote =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryQuote\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryOptionSelfClose =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryOptionSelfClose\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestUnit =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestUnit\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryCombInstrumentGuard =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryCombInstrumentGuard\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryCombAction =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryCombAction\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryTransferSerial =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryTransferSerial\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryAccountregister =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryAccountregister\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryContractBank =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryContractBank\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryParkedOrder =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryParkedOrder\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryParkedOrderAction =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryParkedOrderAction\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryTradingNotice =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryTradingNotice\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryBrokerTradingParams =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryBrokerTradingParams\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryBrokerTradingAlgos =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryBrokerTradingAlgos\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqFromBankToFutureByFuture =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqFromBankToFutureByFuture\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqFromFutureToBankByFuture =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqFromFutureToBankByFuture\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryClassifiedInstrument =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryClassifiedInstrument\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryCombPromotionParam =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryCombPromotionParam\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRiskSettleProductStatus =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRiskSettleProductStatus\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySPBMFutureParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySPBMFutureParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySPBMOptionParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySPBMOptionParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySPBMIntraParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySPBMIntraParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySPBMInterParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySPBMInterParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySPBMPortfDefinition =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySPBMPortfDefinition\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin = unsafe {
+            __library.get(b"CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin\0")
+        }
+        .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySPMMInstParam =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySPMMInstParam\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySPMMProductParam =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySPMMProductParam\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRCAMSInstrParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRCAMSInstrParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRCAMSIntraParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRCAMSIntraParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRCAMSInterParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRCAMSInterParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRULEInstrParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRULEInstrParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRULEIntraParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRULEIntraParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryRULEInterParameter =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryRULEInterParameter\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorPortfSetting =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorPortfSetting\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryInvestorInfoCommRec =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryInvestorInfoCommRec\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryCombLeg =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryCombLeg\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqOffsetSetting =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqOffsetSetting\0") }.map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqCancelOffsetSetting =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqCancelOffsetSetting\0") }
+                .map(|sym| *sym);
+        let CThostFtdcTraderApi_ReqQryOffsetSetting =
+            unsafe { __library.get(b"CThostFtdcTraderApi_ReqQryOffsetSetting\0") }.map(|sym| *sym);
+        let CThostFtdcMdSpi_New =
+            unsafe { __library.get(b"CThostFtdcMdSpi_New\0") }.map(|sym| *sym);
+        let CThostFtdcMdSpi_Delete =
+            unsafe { __library.get(b"CThostFtdcMdSpi_Delete\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_Create =
+            unsafe { __library.get(b"CThostFtdcMdApi_Create\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_GetApiVersion =
+            unsafe { __library.get(b"CThostFtdcMdApi_GetApiVersion\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_Release =
+            unsafe { __library.get(b"CThostFtdcMdApi_Release\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_Init =
+            unsafe { __library.get(b"CThostFtdcMdApi_Init\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_Join =
+            unsafe { __library.get(b"CThostFtdcMdApi_Join\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_GetTradingDay =
+            unsafe { __library.get(b"CThostFtdcMdApi_GetTradingDay\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_RegisterFront =
+            unsafe { __library.get(b"CThostFtdcMdApi_RegisterFront\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_RegisterNameServer =
+            unsafe { __library.get(b"CThostFtdcMdApi_RegisterNameServer\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_RegisterFensUserInfo =
+            unsafe { __library.get(b"CThostFtdcMdApi_RegisterFensUserInfo\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_RegisterSpi =
+            unsafe { __library.get(b"CThostFtdcMdApi_RegisterSpi\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_SubscribeMarketData =
+            unsafe { __library.get(b"CThostFtdcMdApi_SubscribeMarketData\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_UnSubscribeMarketData =
+            unsafe { __library.get(b"CThostFtdcMdApi_UnSubscribeMarketData\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_SubscribeForQuoteRsp =
+            unsafe { __library.get(b"CThostFtdcMdApi_SubscribeForQuoteRsp\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_UnSubscribeForQuoteRsp =
+            unsafe { __library.get(b"CThostFtdcMdApi_UnSubscribeForQuoteRsp\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_ReqUserLogin =
+            unsafe { __library.get(b"CThostFtdcMdApi_ReqUserLogin\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_ReqUserLogout =
+            unsafe { __library.get(b"CThostFtdcMdApi_ReqUserLogout\0") }.map(|sym| *sym);
+        let CThostFtdcMdApi_ReqQryMulticastInstrument =
+            unsafe { __library.get(b"CThostFtdcMdApi_ReqQryMulticastInstrument\0") }
+                .map(|sym| *sym);
         Ok(CTPInvoke {
             __library,
             CThostFtdcTraderSpi_New,
@@ -17868,131 +17805,161 @@ impl CTPInvoke {
         &self,
         callbacks: *const CTPSharp_CThostFtdcTraderSpi,
     ) -> *mut ::std::os::raw::c_void {
-        (self
-            .CThostFtdcTraderSpi_New
-            .as_ref()
-            .expect("Expected function, got error."))(callbacks)
+        unsafe {
+            (self
+                .CThostFtdcTraderSpi_New
+                .as_ref()
+                .expect("Expected function, got error."))(callbacks)
+        }
     }
     pub unsafe fn CThostFtdcTraderSpi_Delete(&self, spi: *mut ::std::os::raw::c_void) {
-        (self
-            .CThostFtdcTraderSpi_Delete
-            .as_ref()
-            .expect("Expected function, got error."))(spi)
+        unsafe {
+            (self
+                .CThostFtdcTraderSpi_Delete
+                .as_ref()
+                .expect("Expected function, got error."))(spi)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_Create(
         &self,
         pszFlowPath: *const ::std::os::raw::c_char,
     ) -> *mut ::std::os::raw::c_void {
-        (self
-            .CThostFtdcTraderApi_Create
-            .as_ref()
-            .expect("Expected function, got error."))(pszFlowPath)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_Create
+                .as_ref()
+                .expect("Expected function, got error."))(pszFlowPath)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_GetApiVersion(&self) -> *const ::std::os::raw::c_char {
-        (self
-            .CThostFtdcTraderApi_GetApiVersion
-            .as_ref()
-            .expect("Expected function, got error."))()
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_GetApiVersion
+                .as_ref()
+                .expect("Expected function, got error."))()
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_Release(&self, api: *mut ::std::os::raw::c_void) {
-        (self
-            .CThostFtdcTraderApi_Release
-            .as_ref()
-            .expect("Expected function, got error."))(api)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_Release
+                .as_ref()
+                .expect("Expected function, got error."))(api)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_Init(&self, api: *mut ::std::os::raw::c_void) {
-        (self
-            .CThostFtdcTraderApi_Init
-            .as_ref()
-            .expect("Expected function, got error."))(api)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_Init
+                .as_ref()
+                .expect("Expected function, got error."))(api)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_Join(
         &self,
         api: *mut ::std::os::raw::c_void,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_Join
-            .as_ref()
-            .expect("Expected function, got error."))(api)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_Join
+                .as_ref()
+                .expect("Expected function, got error."))(api)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_GetTradingDay(
         &self,
         api: *mut ::std::os::raw::c_void,
     ) -> *const ::std::os::raw::c_char {
-        (self
-            .CThostFtdcTraderApi_GetTradingDay
-            .as_ref()
-            .expect("Expected function, got error."))(api)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_GetTradingDay
+                .as_ref()
+                .expect("Expected function, got error."))(api)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_GetFrontInfo(
         &self,
         api: *mut ::std::os::raw::c_void,
         pFrontInfo: *mut CThostFtdcFrontInfoField,
     ) {
-        (self
-            .CThostFtdcTraderApi_GetFrontInfo
-            .as_ref()
-            .expect("Expected function, got error."))(api, pFrontInfo)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_GetFrontInfo
+                .as_ref()
+                .expect("Expected function, got error."))(api, pFrontInfo)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_RegisterFront(
         &self,
         api: *mut ::std::os::raw::c_void,
         pszFrontAddress: *mut ::std::os::raw::c_char,
     ) {
-        (self
-            .CThostFtdcTraderApi_RegisterFront
-            .as_ref()
-            .expect("Expected function, got error."))(api, pszFrontAddress)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_RegisterFront
+                .as_ref()
+                .expect("Expected function, got error."))(api, pszFrontAddress)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_RegisterNameServer(
         &self,
         api: *mut ::std::os::raw::c_void,
         pszNsAddress: *mut ::std::os::raw::c_char,
     ) {
-        (self
-            .CThostFtdcTraderApi_RegisterNameServer
-            .as_ref()
-            .expect("Expected function, got error."))(api, pszNsAddress)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_RegisterNameServer
+                .as_ref()
+                .expect("Expected function, got error."))(api, pszNsAddress)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_RegisterFensUserInfo(
         &self,
         api: *mut ::std::os::raw::c_void,
         pFensUserInfo: *mut CThostFtdcFensUserInfoField,
     ) {
-        (self
-            .CThostFtdcTraderApi_RegisterFensUserInfo
-            .as_ref()
-            .expect("Expected function, got error."))(api, pFensUserInfo)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_RegisterFensUserInfo
+                .as_ref()
+                .expect("Expected function, got error."))(api, pFensUserInfo)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_RegisterSpi(
         &self,
         api: *mut ::std::os::raw::c_void,
         pSpi: *mut ::std::os::raw::c_void,
     ) {
-        (self
-            .CThostFtdcTraderApi_RegisterSpi
-            .as_ref()
-            .expect("Expected function, got error."))(api, pSpi)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_RegisterSpi
+                .as_ref()
+                .expect("Expected function, got error."))(api, pSpi)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_SubscribePrivateTopic(
         &self,
         api: *mut ::std::os::raw::c_void,
         nResumeType: THOST_TE_RESUME_TYPE,
     ) {
-        (self
-            .CThostFtdcTraderApi_SubscribePrivateTopic
-            .as_ref()
-            .expect("Expected function, got error."))(api, nResumeType)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_SubscribePrivateTopic
+                .as_ref()
+                .expect("Expected function, got error."))(api, nResumeType)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_SubscribePublicTopic(
         &self,
         api: *mut ::std::os::raw::c_void,
         nResumeType: THOST_TE_RESUME_TYPE,
     ) {
-        (self
-            .CThostFtdcTraderApi_SubscribePublicTopic
-            .as_ref()
-            .expect("Expected function, got error."))(api, nResumeType)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_SubscribePublicTopic
+                .as_ref()
+                .expect("Expected function, got error."))(api, nResumeType)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqAuthenticate(
         &self,
@@ -18000,50 +17967,62 @@ impl CTPInvoke {
         pReqAuthenticateField: *mut CThostFtdcReqAuthenticateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqAuthenticate
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqAuthenticateField, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqAuthenticate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqAuthenticateField, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_RegisterUserSystemInfo(
         &self,
         api: *mut ::std::os::raw::c_void,
         pUserSystemInfo: *mut CThostFtdcUserSystemInfoField,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_RegisterUserSystemInfo
-            .as_ref()
-            .expect("Expected function, got error."))(api, pUserSystemInfo)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_RegisterUserSystemInfo
+                .as_ref()
+                .expect("Expected function, got error."))(api, pUserSystemInfo)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_SubmitUserSystemInfo(
         &self,
         api: *mut ::std::os::raw::c_void,
         pUserSystemInfo: *mut CThostFtdcUserSystemInfoField,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_SubmitUserSystemInfo
-            .as_ref()
-            .expect("Expected function, got error."))(api, pUserSystemInfo)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_SubmitUserSystemInfo
+                .as_ref()
+                .expect("Expected function, got error."))(api, pUserSystemInfo)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_RegisterWechatUserSystemInfo(
         &self,
         api: *mut ::std::os::raw::c_void,
         pUserSystemInfo: *mut CThostFtdcWechatUserSystemInfoField,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_RegisterWechatUserSystemInfo
-            .as_ref()
-            .expect("Expected function, got error."))(api, pUserSystemInfo)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_RegisterWechatUserSystemInfo
+                .as_ref()
+                .expect("Expected function, got error."))(api, pUserSystemInfo)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_SubmitWechatUserSystemInfo(
         &self,
         api: *mut ::std::os::raw::c_void,
         pUserSystemInfo: *mut CThostFtdcWechatUserSystemInfoField,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_SubmitWechatUserSystemInfo
-            .as_ref()
-            .expect("Expected function, got error."))(api, pUserSystemInfo)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_SubmitWechatUserSystemInfo
+                .as_ref()
+                .expect("Expected function, got error."))(api, pUserSystemInfo)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqUserLogin(
         &self,
@@ -18051,10 +18030,14 @@ impl CTPInvoke {
         pReqUserLoginField: *mut CThostFtdcReqUserLoginField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqUserLogin
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqUserLoginField, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqUserLogin
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqUserLoginField, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqUserLogout(
         &self,
@@ -18062,10 +18045,12 @@ impl CTPInvoke {
         pUserLogout: *mut CThostFtdcUserLogoutField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqUserLogout
-            .as_ref()
-            .expect("Expected function, got error."))(api, pUserLogout, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqUserLogout
+                .as_ref()
+                .expect("Expected function, got error."))(api, pUserLogout, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqUserPasswordUpdate(
         &self,
@@ -18073,10 +18058,14 @@ impl CTPInvoke {
         pUserPasswordUpdate: *mut CThostFtdcUserPasswordUpdateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqUserPasswordUpdate
-            .as_ref()
-            .expect("Expected function, got error."))(api, pUserPasswordUpdate, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqUserPasswordUpdate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pUserPasswordUpdate, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate(
         &self,
@@ -18084,14 +18073,16 @@ impl CTPInvoke {
         pTradingAccountPasswordUpdate: *mut CThostFtdcTradingAccountPasswordUpdateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api,
-            pTradingAccountPasswordUpdate,
-            nRequestID,
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqTradingAccountPasswordUpdate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pTradingAccountPasswordUpdate,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqUserAuthMethod(
         &self,
@@ -18099,10 +18090,14 @@ impl CTPInvoke {
         pReqUserAuthMethod: *mut CThostFtdcReqUserAuthMethodField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqUserAuthMethod
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqUserAuthMethod, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqUserAuthMethod
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqUserAuthMethod, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqGenUserCaptcha(
         &self,
@@ -18110,10 +18105,14 @@ impl CTPInvoke {
         pReqGenUserCaptcha: *mut CThostFtdcReqGenUserCaptchaField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqGenUserCaptcha
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqGenUserCaptcha, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqGenUserCaptcha
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqGenUserCaptcha, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqGenUserText(
         &self,
@@ -18121,10 +18120,14 @@ impl CTPInvoke {
         pReqGenUserText: *mut CThostFtdcReqGenUserTextField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqGenUserText
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqGenUserText, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqGenUserText
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqGenUserText, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqUserLoginWithCaptcha(
         &self,
@@ -18132,12 +18135,14 @@ impl CTPInvoke {
         pReqUserLoginWithCaptcha: *mut CThostFtdcReqUserLoginWithCaptchaField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqUserLoginWithCaptcha
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pReqUserLoginWithCaptcha, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqUserLoginWithCaptcha
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqUserLoginWithCaptcha, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqUserLoginWithText(
         &self,
@@ -18145,10 +18150,14 @@ impl CTPInvoke {
         pReqUserLoginWithText: *mut CThostFtdcReqUserLoginWithTextField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqUserLoginWithText
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqUserLoginWithText, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqUserLoginWithText
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqUserLoginWithText, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqUserLoginWithOTP(
         &self,
@@ -18156,10 +18165,14 @@ impl CTPInvoke {
         pReqUserLoginWithOTP: *mut CThostFtdcReqUserLoginWithOTPField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqUserLoginWithOTP
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqUserLoginWithOTP, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqUserLoginWithOTP
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqUserLoginWithOTP, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqOrderInsert(
         &self,
@@ -18167,10 +18180,12 @@ impl CTPInvoke {
         pInputOrder: *mut CThostFtdcInputOrderField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqOrderInsert
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputOrder, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqOrderInsert
+                .as_ref()
+                .expect("Expected function, got error."))(api, pInputOrder, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqParkedOrderInsert(
         &self,
@@ -18178,10 +18193,12 @@ impl CTPInvoke {
         pParkedOrder: *mut CThostFtdcParkedOrderField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqParkedOrderInsert
-            .as_ref()
-            .expect("Expected function, got error."))(api, pParkedOrder, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqParkedOrderInsert
+                .as_ref()
+                .expect("Expected function, got error."))(api, pParkedOrder, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqParkedOrderAction(
         &self,
@@ -18189,10 +18206,14 @@ impl CTPInvoke {
         pParkedOrderAction: *mut CThostFtdcParkedOrderActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqParkedOrderAction
-            .as_ref()
-            .expect("Expected function, got error."))(api, pParkedOrderAction, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqParkedOrderAction
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pParkedOrderAction, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqOrderAction(
         &self,
@@ -18200,10 +18221,14 @@ impl CTPInvoke {
         pInputOrderAction: *mut CThostFtdcInputOrderActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqOrderAction
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputOrderAction, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqOrderAction
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputOrderAction, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryMaxOrderVolume(
         &self,
@@ -18211,10 +18236,14 @@ impl CTPInvoke {
         pQryMaxOrderVolume: *mut CThostFtdcQryMaxOrderVolumeField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryMaxOrderVolume
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryMaxOrderVolume, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryMaxOrderVolume
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryMaxOrderVolume, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqSettlementInfoConfirm(
         &self,
@@ -18222,12 +18251,14 @@ impl CTPInvoke {
         pSettlementInfoConfirm: *mut CThostFtdcSettlementInfoConfirmField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqSettlementInfoConfirm
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pSettlementInfoConfirm, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqSettlementInfoConfirm
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pSettlementInfoConfirm, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqRemoveParkedOrder(
         &self,
@@ -18235,10 +18266,14 @@ impl CTPInvoke {
         pRemoveParkedOrder: *mut CThostFtdcRemoveParkedOrderField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqRemoveParkedOrder
-            .as_ref()
-            .expect("Expected function, got error."))(api, pRemoveParkedOrder, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqRemoveParkedOrder
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pRemoveParkedOrder, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqRemoveParkedOrderAction(
         &self,
@@ -18246,12 +18281,14 @@ impl CTPInvoke {
         pRemoveParkedOrderAction: *mut CThostFtdcRemoveParkedOrderActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqRemoveParkedOrderAction
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pRemoveParkedOrderAction, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqRemoveParkedOrderAction
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pRemoveParkedOrderAction, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqExecOrderInsert(
         &self,
@@ -18259,10 +18296,14 @@ impl CTPInvoke {
         pInputExecOrder: *mut CThostFtdcInputExecOrderField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqExecOrderInsert
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputExecOrder, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqExecOrderInsert
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputExecOrder, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqExecOrderAction(
         &self,
@@ -18270,10 +18311,14 @@ impl CTPInvoke {
         pInputExecOrderAction: *mut CThostFtdcInputExecOrderActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqExecOrderAction
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputExecOrderAction, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqExecOrderAction
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputExecOrderAction, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqForQuoteInsert(
         &self,
@@ -18281,10 +18326,14 @@ impl CTPInvoke {
         pInputForQuote: *mut CThostFtdcInputForQuoteField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqForQuoteInsert
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputForQuote, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqForQuoteInsert
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputForQuote, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQuoteInsert(
         &self,
@@ -18292,10 +18341,12 @@ impl CTPInvoke {
         pInputQuote: *mut CThostFtdcInputQuoteField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQuoteInsert
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputQuote, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQuoteInsert
+                .as_ref()
+                .expect("Expected function, got error."))(api, pInputQuote, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQuoteAction(
         &self,
@@ -18303,10 +18354,14 @@ impl CTPInvoke {
         pInputQuoteAction: *mut CThostFtdcInputQuoteActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQuoteAction
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputQuoteAction, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQuoteAction
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputQuoteAction, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqBatchOrderAction(
         &self,
@@ -18314,12 +18369,14 @@ impl CTPInvoke {
         pInputBatchOrderAction: *mut CThostFtdcInputBatchOrderActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqBatchOrderAction
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pInputBatchOrderAction, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqBatchOrderAction
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputBatchOrderAction, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqOptionSelfCloseInsert(
         &self,
@@ -18327,10 +18384,14 @@ impl CTPInvoke {
         pInputOptionSelfClose: *mut CThostFtdcInputOptionSelfCloseField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqOptionSelfCloseInsert
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputOptionSelfClose, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqOptionSelfCloseInsert
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputOptionSelfClose, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqOptionSelfCloseAction(
         &self,
@@ -18338,12 +18399,16 @@ impl CTPInvoke {
         pInputOptionSelfCloseAction: *mut CThostFtdcInputOptionSelfCloseActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqOptionSelfCloseAction
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pInputOptionSelfCloseAction, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqOptionSelfCloseAction
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pInputOptionSelfCloseAction,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqCombActionInsert(
         &self,
@@ -18351,10 +18416,14 @@ impl CTPInvoke {
         pInputCombAction: *mut CThostFtdcInputCombActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqCombActionInsert
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputCombAction, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqCombActionInsert
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputCombAction, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryOrder(
         &self,
@@ -18362,10 +18431,12 @@ impl CTPInvoke {
         pQryOrder: *mut CThostFtdcQryOrderField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryOrder
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryOrder, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryOrder
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryOrder, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryTrade(
         &self,
@@ -18373,10 +18444,12 @@ impl CTPInvoke {
         pQryTrade: *mut CThostFtdcQryTradeField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryTrade
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryTrade, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryTrade
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryTrade, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorPosition(
         &self,
@@ -18384,10 +18457,14 @@ impl CTPInvoke {
         pQryInvestorPosition: *mut CThostFtdcQryInvestorPositionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorPosition
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryInvestorPosition, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorPosition
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryInvestorPosition, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryTradingAccount(
         &self,
@@ -18395,10 +18472,14 @@ impl CTPInvoke {
         pQryTradingAccount: *mut CThostFtdcQryTradingAccountField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryTradingAccount
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryTradingAccount, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryTradingAccount
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryTradingAccount, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestor(
         &self,
@@ -18406,10 +18487,12 @@ impl CTPInvoke {
         pQryInvestor: *mut CThostFtdcQryInvestorField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestor
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryInvestor, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestor
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryInvestor, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryTradingCode(
         &self,
@@ -18417,10 +18500,14 @@ impl CTPInvoke {
         pQryTradingCode: *mut CThostFtdcQryTradingCodeField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryTradingCode
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryTradingCode, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryTradingCode
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryTradingCode, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInstrumentMarginRate(
         &self,
@@ -18428,12 +18515,14 @@ impl CTPInvoke {
         pQryInstrumentMarginRate: *mut CThostFtdcQryInstrumentMarginRateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInstrumentMarginRate
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInstrumentMarginRate, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInstrumentMarginRate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryInstrumentMarginRate, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInstrumentCommissionRate(
         &self,
@@ -18441,12 +18530,16 @@ impl CTPInvoke {
         pQryInstrumentCommissionRate: *mut CThostFtdcQryInstrumentCommissionRateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInstrumentCommissionRate
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInstrumentCommissionRate, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInstrumentCommissionRate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInstrumentCommissionRate,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryExchange(
         &self,
@@ -18454,10 +18547,12 @@ impl CTPInvoke {
         pQryExchange: *mut CThostFtdcQryExchangeField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryExchange
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryExchange, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryExchange
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryExchange, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryProduct(
         &self,
@@ -18465,10 +18560,12 @@ impl CTPInvoke {
         pQryProduct: *mut CThostFtdcQryProductField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryProduct
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryProduct, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryProduct
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryProduct, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInstrument(
         &self,
@@ -18476,10 +18573,14 @@ impl CTPInvoke {
         pQryInstrument: *mut CThostFtdcQryInstrumentField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInstrument
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryInstrument, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInstrument
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryInstrument, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryDepthMarketData(
         &self,
@@ -18487,10 +18588,14 @@ impl CTPInvoke {
         pQryDepthMarketData: *mut CThostFtdcQryDepthMarketDataField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryDepthMarketData
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryDepthMarketData, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryDepthMarketData
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryDepthMarketData, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryTraderOffer(
         &self,
@@ -18498,10 +18603,14 @@ impl CTPInvoke {
         pQryTraderOffer: *mut CThostFtdcQryTraderOfferField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryTraderOffer
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryTraderOffer, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryTraderOffer
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryTraderOffer, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySettlementInfo(
         &self,
@@ -18509,10 +18618,14 @@ impl CTPInvoke {
         pQrySettlementInfo: *mut CThostFtdcQrySettlementInfoField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySettlementInfo
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQrySettlementInfo, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySettlementInfo
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySettlementInfo, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryTransferBank(
         &self,
@@ -18520,10 +18633,14 @@ impl CTPInvoke {
         pQryTransferBank: *mut CThostFtdcQryTransferBankField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryTransferBank
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryTransferBank, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryTransferBank
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryTransferBank, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorPositionDetail(
         &self,
@@ -18531,12 +18648,16 @@ impl CTPInvoke {
         pQryInvestorPositionDetail: *mut CThostFtdcQryInvestorPositionDetailField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorPositionDetail
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInvestorPositionDetail, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorPositionDetail
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInvestorPositionDetail,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryNotice(
         &self,
@@ -18544,10 +18665,12 @@ impl CTPInvoke {
         pQryNotice: *mut CThostFtdcQryNoticeField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryNotice
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryNotice, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryNotice
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryNotice, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySettlementInfoConfirm(
         &self,
@@ -18555,12 +18678,16 @@ impl CTPInvoke {
         pQrySettlementInfoConfirm: *mut CThostFtdcQrySettlementInfoConfirmField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySettlementInfoConfirm
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQrySettlementInfoConfirm, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySettlementInfoConfirm
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQrySettlementInfoConfirm,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail(
         &self,
@@ -18568,14 +18695,16 @@ impl CTPInvoke {
         pQryInvestorPositionCombineDetail: *mut CThostFtdcQryInvestorPositionCombineDetailField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api,
-            pQryInvestorPositionCombineDetail,
-            nRequestID,
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorPositionCombineDetail
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInvestorPositionCombineDetail,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey(
         &self,
@@ -18583,12 +18712,16 @@ impl CTPInvoke {
         pQryCFMMCTradingAccountKey: *mut CThostFtdcQryCFMMCTradingAccountKeyField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryCFMMCTradingAccountKey, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryCFMMCTradingAccountKey
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryCFMMCTradingAccountKey,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryEWarrantOffset(
         &self,
@@ -18596,10 +18729,14 @@ impl CTPInvoke {
         pQryEWarrantOffset: *mut CThostFtdcQryEWarrantOffsetField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryEWarrantOffset
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryEWarrantOffset, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryEWarrantOffset
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryEWarrantOffset, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin(
         &self,
@@ -18607,14 +18744,16 @@ impl CTPInvoke {
         pQryInvestorProductGroupMargin: *mut CThostFtdcQryInvestorProductGroupMarginField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api,
-            pQryInvestorProductGroupMargin,
-            nRequestID,
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorProductGroupMargin
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInvestorProductGroupMargin,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryExchangeMarginRate(
         &self,
@@ -18622,12 +18761,14 @@ impl CTPInvoke {
         pQryExchangeMarginRate: *mut CThostFtdcQryExchangeMarginRateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryExchangeMarginRate
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryExchangeMarginRate, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryExchangeMarginRate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryExchangeMarginRate, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust(
         &self,
@@ -18635,12 +18776,16 @@ impl CTPInvoke {
         pQryExchangeMarginRateAdjust: *mut CThostFtdcQryExchangeMarginRateAdjustField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryExchangeMarginRateAdjust, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryExchangeMarginRateAdjust
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryExchangeMarginRateAdjust,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryExchangeRate(
         &self,
@@ -18648,10 +18793,14 @@ impl CTPInvoke {
         pQryExchangeRate: *mut CThostFtdcQryExchangeRateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryExchangeRate
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryExchangeRate, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryExchangeRate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryExchangeRate, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySecAgentACIDMap(
         &self,
@@ -18659,10 +18808,14 @@ impl CTPInvoke {
         pQrySecAgentACIDMap: *mut CThostFtdcQrySecAgentACIDMapField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySecAgentACIDMap
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQrySecAgentACIDMap, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySecAgentACIDMap
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySecAgentACIDMap, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryProductExchRate(
         &self,
@@ -18670,10 +18823,14 @@ impl CTPInvoke {
         pQryProductExchRate: *mut CThostFtdcQryProductExchRateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryProductExchRate
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryProductExchRate, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryProductExchRate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryProductExchRate, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryProductGroup(
         &self,
@@ -18681,10 +18838,14 @@ impl CTPInvoke {
         pQryProductGroup: *mut CThostFtdcQryProductGroupField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryProductGroup
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryProductGroup, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryProductGroup
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryProductGroup, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate(
         &self,
@@ -18692,14 +18853,16 @@ impl CTPInvoke {
         pQryMMInstrumentCommissionRate: *mut CThostFtdcQryMMInstrumentCommissionRateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api,
-            pQryMMInstrumentCommissionRate,
-            nRequestID,
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryMMInstrumentCommissionRate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryMMInstrumentCommissionRate,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate(
         &self,
@@ -18707,12 +18870,16 @@ impl CTPInvoke {
         pQryMMOptionInstrCommRate: *mut CThostFtdcQryMMOptionInstrCommRateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryMMOptionInstrCommRate, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryMMOptionInstrCommRate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryMMOptionInstrCommRate,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate(
         &self,
@@ -18720,12 +18887,16 @@ impl CTPInvoke {
         pQryInstrumentOrderCommRate: *mut CThostFtdcQryInstrumentOrderCommRateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInstrumentOrderCommRate, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInstrumentOrderCommRate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInstrumentOrderCommRate,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySecAgentTradingAccount(
         &self,
@@ -18733,10 +18904,14 @@ impl CTPInvoke {
         pQryTradingAccount: *mut CThostFtdcQryTradingAccountField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySecAgentTradingAccount
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryTradingAccount, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySecAgentTradingAccount
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryTradingAccount, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySecAgentCheckMode(
         &self,
@@ -18744,10 +18919,14 @@ impl CTPInvoke {
         pQrySecAgentCheckMode: *mut CThostFtdcQrySecAgentCheckModeField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySecAgentCheckMode
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQrySecAgentCheckMode, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySecAgentCheckMode
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySecAgentCheckMode, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySecAgentTradeInfo(
         &self,
@@ -18755,10 +18934,14 @@ impl CTPInvoke {
         pQrySecAgentTradeInfo: *mut CThostFtdcQrySecAgentTradeInfoField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySecAgentTradeInfo
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQrySecAgentTradeInfo, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySecAgentTradeInfo
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySecAgentTradeInfo, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryOptionInstrTradeCost(
         &self,
@@ -18766,12 +18949,14 @@ impl CTPInvoke {
         pQryOptionInstrTradeCost: *mut CThostFtdcQryOptionInstrTradeCostField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryOptionInstrTradeCost
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryOptionInstrTradeCost, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryOptionInstrTradeCost
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryOptionInstrTradeCost, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryOptionInstrCommRate(
         &self,
@@ -18779,12 +18964,14 @@ impl CTPInvoke {
         pQryOptionInstrCommRate: *mut CThostFtdcQryOptionInstrCommRateField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryOptionInstrCommRate
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryOptionInstrCommRate, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryOptionInstrCommRate
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryOptionInstrCommRate, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryExecOrder(
         &self,
@@ -18792,10 +18979,12 @@ impl CTPInvoke {
         pQryExecOrder: *mut CThostFtdcQryExecOrderField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryExecOrder
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryExecOrder, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryExecOrder
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryExecOrder, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryForQuote(
         &self,
@@ -18803,10 +18992,12 @@ impl CTPInvoke {
         pQryForQuote: *mut CThostFtdcQryForQuoteField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryForQuote
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryForQuote, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryForQuote
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryForQuote, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryQuote(
         &self,
@@ -18814,10 +19005,12 @@ impl CTPInvoke {
         pQryQuote: *mut CThostFtdcQryQuoteField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryQuote
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryQuote, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryQuote
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryQuote, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryOptionSelfClose(
         &self,
@@ -18825,10 +19018,14 @@ impl CTPInvoke {
         pQryOptionSelfClose: *mut CThostFtdcQryOptionSelfCloseField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryOptionSelfClose
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryOptionSelfClose, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryOptionSelfClose
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryOptionSelfClose, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestUnit(
         &self,
@@ -18836,10 +19033,14 @@ impl CTPInvoke {
         pQryInvestUnit: *mut CThostFtdcQryInvestUnitField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestUnit
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryInvestUnit, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestUnit
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryInvestUnit, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryCombInstrumentGuard(
         &self,
@@ -18847,12 +19048,14 @@ impl CTPInvoke {
         pQryCombInstrumentGuard: *mut CThostFtdcQryCombInstrumentGuardField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryCombInstrumentGuard
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryCombInstrumentGuard, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryCombInstrumentGuard
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryCombInstrumentGuard, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryCombAction(
         &self,
@@ -18860,10 +19063,14 @@ impl CTPInvoke {
         pQryCombAction: *mut CThostFtdcQryCombActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryCombAction
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryCombAction, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryCombAction
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryCombAction, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryTransferSerial(
         &self,
@@ -18871,10 +19078,14 @@ impl CTPInvoke {
         pQryTransferSerial: *mut CThostFtdcQryTransferSerialField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryTransferSerial
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryTransferSerial, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryTransferSerial
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryTransferSerial, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryAccountregister(
         &self,
@@ -18882,10 +19093,14 @@ impl CTPInvoke {
         pQryAccountregister: *mut CThostFtdcQryAccountregisterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryAccountregister
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryAccountregister, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryAccountregister
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryAccountregister, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryContractBank(
         &self,
@@ -18893,10 +19108,14 @@ impl CTPInvoke {
         pQryContractBank: *mut CThostFtdcQryContractBankField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryContractBank
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryContractBank, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryContractBank
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryContractBank, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryParkedOrder(
         &self,
@@ -18904,10 +19123,14 @@ impl CTPInvoke {
         pQryParkedOrder: *mut CThostFtdcQryParkedOrderField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryParkedOrder
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryParkedOrder, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryParkedOrder
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryParkedOrder, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryParkedOrderAction(
         &self,
@@ -18915,10 +19138,14 @@ impl CTPInvoke {
         pQryParkedOrderAction: *mut CThostFtdcQryParkedOrderActionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryParkedOrderAction
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryParkedOrderAction, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryParkedOrderAction
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryParkedOrderAction, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryTradingNotice(
         &self,
@@ -18926,10 +19153,14 @@ impl CTPInvoke {
         pQryTradingNotice: *mut CThostFtdcQryTradingNoticeField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryTradingNotice
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryTradingNotice, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryTradingNotice
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryTradingNotice, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryBrokerTradingParams(
         &self,
@@ -18937,12 +19168,14 @@ impl CTPInvoke {
         pQryBrokerTradingParams: *mut CThostFtdcQryBrokerTradingParamsField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryBrokerTradingParams
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryBrokerTradingParams, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryBrokerTradingParams
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryBrokerTradingParams, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryBrokerTradingAlgos(
         &self,
@@ -18950,12 +19183,14 @@ impl CTPInvoke {
         pQryBrokerTradingAlgos: *mut CThostFtdcQryBrokerTradingAlgosField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryBrokerTradingAlgos
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryBrokerTradingAlgos, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryBrokerTradingAlgos
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryBrokerTradingAlgos, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken(
         &self,
@@ -18963,14 +19198,16 @@ impl CTPInvoke {
         pQueryCFMMCTradingAccountToken: *mut CThostFtdcQueryCFMMCTradingAccountTokenField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api,
-            pQueryCFMMCTradingAccountToken,
-            nRequestID,
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQueryCFMMCTradingAccountToken
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQueryCFMMCTradingAccountToken,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqFromBankToFutureByFuture(
         &self,
@@ -18978,10 +19215,12 @@ impl CTPInvoke {
         pReqTransfer: *mut CThostFtdcReqTransferField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqFromBankToFutureByFuture
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqTransfer, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqFromBankToFutureByFuture
+                .as_ref()
+                .expect("Expected function, got error."))(api, pReqTransfer, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqFromFutureToBankByFuture(
         &self,
@@ -18989,10 +19228,12 @@ impl CTPInvoke {
         pReqTransfer: *mut CThostFtdcReqTransferField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqFromFutureToBankByFuture
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqTransfer, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqFromFutureToBankByFuture
+                .as_ref()
+                .expect("Expected function, got error."))(api, pReqTransfer, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture(
         &self,
@@ -19000,10 +19241,14 @@ impl CTPInvoke {
         pReqQueryAccount: *mut CThostFtdcReqQueryAccountField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqQueryAccount, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQueryBankAccountMoneyByFuture
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqQueryAccount, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryClassifiedInstrument(
         &self,
@@ -19011,12 +19256,14 @@ impl CTPInvoke {
         pQryClassifiedInstrument: *mut CThostFtdcQryClassifiedInstrumentField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryClassifiedInstrument
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryClassifiedInstrument, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryClassifiedInstrument
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryClassifiedInstrument, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryCombPromotionParam(
         &self,
@@ -19024,12 +19271,14 @@ impl CTPInvoke {
         pQryCombPromotionParam: *mut CThostFtdcQryCombPromotionParamField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryCombPromotionParam
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryCombPromotionParam, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryCombPromotionParam
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryCombPromotionParam, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition(
         &self,
@@ -19037,12 +19286,16 @@ impl CTPInvoke {
         pQryRiskSettleInvstPosition: *mut CThostFtdcQryRiskSettleInvstPositionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRiskSettleInvstPosition, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRiskSettleInvstPosition
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryRiskSettleInvstPosition,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRiskSettleProductStatus(
         &self,
@@ -19050,12 +19303,16 @@ impl CTPInvoke {
         pQryRiskSettleProductStatus: *mut CThostFtdcQryRiskSettleProductStatusField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRiskSettleProductStatus
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRiskSettleProductStatus, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRiskSettleProductStatus
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryRiskSettleProductStatus,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySPBMFutureParameter(
         &self,
@@ -19063,12 +19320,14 @@ impl CTPInvoke {
         pQrySPBMFutureParameter: *mut CThostFtdcQrySPBMFutureParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySPBMFutureParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQrySPBMFutureParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySPBMFutureParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySPBMFutureParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySPBMOptionParameter(
         &self,
@@ -19076,12 +19335,14 @@ impl CTPInvoke {
         pQrySPBMOptionParameter: *mut CThostFtdcQrySPBMOptionParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySPBMOptionParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQrySPBMOptionParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySPBMOptionParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySPBMOptionParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySPBMIntraParameter(
         &self,
@@ -19089,12 +19350,14 @@ impl CTPInvoke {
         pQrySPBMIntraParameter: *mut CThostFtdcQrySPBMIntraParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySPBMIntraParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQrySPBMIntraParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySPBMIntraParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySPBMIntraParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySPBMInterParameter(
         &self,
@@ -19102,12 +19365,14 @@ impl CTPInvoke {
         pQrySPBMInterParameter: *mut CThostFtdcQrySPBMInterParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySPBMInterParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQrySPBMInterParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySPBMInterParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySPBMInterParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySPBMPortfDefinition(
         &self,
@@ -19115,12 +19380,14 @@ impl CTPInvoke {
         pQrySPBMPortfDefinition: *mut CThostFtdcQrySPBMPortfDefinitionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySPBMPortfDefinition
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQrySPBMPortfDefinition, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySPBMPortfDefinition
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySPBMPortfDefinition, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef(
         &self,
@@ -19128,12 +19395,14 @@ impl CTPInvoke {
         pQrySPBMInvestorPortfDef: *mut CThostFtdcQrySPBMInvestorPortfDefField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQrySPBMInvestorPortfDef, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySPBMInvestorPortfDef
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySPBMInvestorPortfDef, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio(
         &self,
@@ -19141,12 +19410,16 @@ impl CTPInvoke {
         pQryInvestorPortfMarginRatio: *mut CThostFtdcQryInvestorPortfMarginRatioField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInvestorPortfMarginRatio, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorPortfMarginRatio
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInvestorPortfMarginRatio,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail(
         &self,
@@ -19154,12 +19427,16 @@ impl CTPInvoke {
         pQryInvestorProdSPBMDetail: *mut CThostFtdcQryInvestorProdSPBMDetailField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInvestorProdSPBMDetail, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorProdSPBMDetail
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInvestorProdSPBMDetail,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin(
         &self,
@@ -19167,14 +19444,16 @@ impl CTPInvoke {
         pQryInvestorCommoditySPMMMargin: *mut CThostFtdcQryInvestorCommoditySPMMMarginField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api,
-            pQryInvestorCommoditySPMMMargin,
-            nRequestID,
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorCommoditySPMMMargin
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInvestorCommoditySPMMMargin,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin(
         &self,
@@ -19182,14 +19461,16 @@ impl CTPInvoke {
         pQryInvestorCommodityGroupSPMMMargin : * mut CThostFtdcQryInvestorCommodityGroupSPMMMarginField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api,
-            pQryInvestorCommodityGroupSPMMMargin,
-            nRequestID,
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorCommodityGroupSPMMMargin
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInvestorCommodityGroupSPMMMargin,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySPMMInstParam(
         &self,
@@ -19197,10 +19478,14 @@ impl CTPInvoke {
         pQrySPMMInstParam: *mut CThostFtdcQrySPMMInstParamField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySPMMInstParam
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQrySPMMInstParam, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySPMMInstParam
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySPMMInstParam, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySPMMProductParam(
         &self,
@@ -19208,10 +19493,14 @@ impl CTPInvoke {
         pQrySPMMProductParam: *mut CThostFtdcQrySPMMProductParamField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySPMMProductParam
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQrySPMMProductParam, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySPMMProductParam
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQrySPMMProductParam, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter(
         &self,
@@ -19219,12 +19508,16 @@ impl CTPInvoke {
         pQrySPBMAddOnInterParameter: *mut CThostFtdcQrySPBMAddOnInterParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQrySPBMAddOnInterParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQrySPBMAddOnInterParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQrySPBMAddOnInterParameter,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo(
         &self,
@@ -19232,12 +19525,14 @@ impl CTPInvoke {
         pQryRCAMSCombProductInfo: *mut CThostFtdcQryRCAMSCombProductInfoField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRCAMSCombProductInfo, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRCAMSCombProductInfo
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryRCAMSCombProductInfo, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRCAMSInstrParameter(
         &self,
@@ -19245,12 +19540,14 @@ impl CTPInvoke {
         pQryRCAMSInstrParameter: *mut CThostFtdcQryRCAMSInstrParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRCAMSInstrParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRCAMSInstrParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRCAMSInstrParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryRCAMSInstrParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRCAMSIntraParameter(
         &self,
@@ -19258,12 +19555,14 @@ impl CTPInvoke {
         pQryRCAMSIntraParameter: *mut CThostFtdcQryRCAMSIntraParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRCAMSIntraParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRCAMSIntraParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRCAMSIntraParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryRCAMSIntraParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRCAMSInterParameter(
         &self,
@@ -19271,12 +19570,14 @@ impl CTPInvoke {
         pQryRCAMSInterParameter: *mut CThostFtdcQryRCAMSInterParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRCAMSInterParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRCAMSInterParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRCAMSInterParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryRCAMSInterParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam(
         &self,
@@ -19284,12 +19585,16 @@ impl CTPInvoke {
         pQryRCAMSShortOptAdjustParam: *mut CThostFtdcQryRCAMSShortOptAdjustParamField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRCAMSShortOptAdjustParam, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRCAMSShortOptAdjustParam
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryRCAMSShortOptAdjustParam,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition(
         &self,
@@ -19297,14 +19602,16 @@ impl CTPInvoke {
         pQryRCAMSInvestorCombPosition: *mut CThostFtdcQryRCAMSInvestorCombPositionField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api,
-            pQryRCAMSInvestorCombPosition,
-            nRequestID,
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRCAMSInvestorCombPosition
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryRCAMSInvestorCombPosition,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin(
         &self,
@@ -19312,12 +19619,16 @@ impl CTPInvoke {
         pQryInvestorProdRCAMSMargin: *mut CThostFtdcQryInvestorProdRCAMSMarginField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInvestorProdRCAMSMargin, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorProdRCAMSMargin
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInvestorProdRCAMSMargin,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRULEInstrParameter(
         &self,
@@ -19325,12 +19636,14 @@ impl CTPInvoke {
         pQryRULEInstrParameter: *mut CThostFtdcQryRULEInstrParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRULEInstrParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRULEInstrParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRULEInstrParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryRULEInstrParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRULEIntraParameter(
         &self,
@@ -19338,12 +19651,14 @@ impl CTPInvoke {
         pQryRULEIntraParameter: *mut CThostFtdcQryRULEIntraParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRULEIntraParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRULEIntraParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRULEIntraParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryRULEIntraParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryRULEInterParameter(
         &self,
@@ -19351,12 +19666,14 @@ impl CTPInvoke {
         pQryRULEInterParameter: *mut CThostFtdcQryRULEInterParameterField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryRULEInterParameter
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryRULEInterParameter, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryRULEInterParameter
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryRULEInterParameter, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin(
         &self,
@@ -19364,12 +19681,16 @@ impl CTPInvoke {
         pQryInvestorProdRULEMargin: *mut CThostFtdcQryInvestorProdRULEMarginField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInvestorProdRULEMargin, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorProdRULEMargin
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api,
+                pQryInvestorProdRULEMargin,
+                nRequestID,
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorPortfSetting(
         &self,
@@ -19377,12 +19698,14 @@ impl CTPInvoke {
         pQryInvestorPortfSetting: *mut CThostFtdcQryInvestorPortfSettingField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorPortfSetting
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInvestorPortfSetting, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorPortfSetting
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryInvestorPortfSetting, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryInvestorInfoCommRec(
         &self,
@@ -19390,12 +19713,14 @@ impl CTPInvoke {
         pQryInvestorInfoCommRec: *mut CThostFtdcQryInvestorInfoCommRecField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryInvestorInfoCommRec
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryInvestorInfoCommRec, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryInvestorInfoCommRec
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryInvestorInfoCommRec, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryCombLeg(
         &self,
@@ -19403,10 +19728,12 @@ impl CTPInvoke {
         pQryCombLeg: *mut CThostFtdcQryCombLegField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryCombLeg
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryCombLeg, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryCombLeg
+                .as_ref()
+                .expect("Expected function, got error."))(api, pQryCombLeg, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqOffsetSetting(
         &self,
@@ -19414,10 +19741,14 @@ impl CTPInvoke {
         pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqOffsetSetting
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputOffsetSetting, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqOffsetSetting
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputOffsetSetting, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqCancelOffsetSetting(
         &self,
@@ -19425,10 +19756,14 @@ impl CTPInvoke {
         pInputOffsetSetting: *mut CThostFtdcInputOffsetSettingField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqCancelOffsetSetting
-            .as_ref()
-            .expect("Expected function, got error."))(api, pInputOffsetSetting, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqCancelOffsetSetting
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pInputOffsetSetting, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcTraderApi_ReqQryOffsetSetting(
         &self,
@@ -19436,25 +19771,33 @@ impl CTPInvoke {
         pQryOffsetSetting: *mut CThostFtdcQryOffsetSettingField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcTraderApi_ReqQryOffsetSetting
-            .as_ref()
-            .expect("Expected function, got error."))(api, pQryOffsetSetting, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcTraderApi_ReqQryOffsetSetting
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryOffsetSetting, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcMdSpi_New(
         &self,
         callbacks: *const CTPSharp_CThostFtdcMdSpi,
     ) -> *mut ::std::os::raw::c_void {
-        (self
-            .CThostFtdcMdSpi_New
-            .as_ref()
-            .expect("Expected function, got error."))(callbacks)
+        unsafe {
+            (self
+                .CThostFtdcMdSpi_New
+                .as_ref()
+                .expect("Expected function, got error."))(callbacks)
+        }
     }
     pub unsafe fn CThostFtdcMdSpi_Delete(&self, spi: *mut ::std::os::raw::c_void) {
-        (self
-            .CThostFtdcMdSpi_Delete
-            .as_ref()
-            .expect("Expected function, got error."))(spi)
+        unsafe {
+            (self
+                .CThostFtdcMdSpi_Delete
+                .as_ref()
+                .expect("Expected function, got error."))(spi)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_Create(
         &self,
@@ -19462,86 +19805,108 @@ impl CTPInvoke {
         bIsUsingUdp: bool_,
         bIsMulticast: bool_,
     ) -> *mut ::std::os::raw::c_void {
-        (self
-            .CThostFtdcMdApi_Create
-            .as_ref()
-            .expect("Expected function, got error."))(pszFlowPath, bIsUsingUdp, bIsMulticast)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_Create
+                .as_ref()
+                .expect("Expected function, got error."))(
+                pszFlowPath, bIsUsingUdp, bIsMulticast
+            )
+        }
     }
     pub unsafe fn CThostFtdcMdApi_GetApiVersion(&self) -> *const ::std::os::raw::c_char {
-        (self
-            .CThostFtdcMdApi_GetApiVersion
-            .as_ref()
-            .expect("Expected function, got error."))()
+        unsafe {
+            (self
+                .CThostFtdcMdApi_GetApiVersion
+                .as_ref()
+                .expect("Expected function, got error."))()
+        }
     }
     pub unsafe fn CThostFtdcMdApi_Release(&self, api: *mut ::std::os::raw::c_void) {
-        (self
-            .CThostFtdcMdApi_Release
-            .as_ref()
-            .expect("Expected function, got error."))(api)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_Release
+                .as_ref()
+                .expect("Expected function, got error."))(api)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_Init(&self, api: *mut ::std::os::raw::c_void) {
-        (self
-            .CThostFtdcMdApi_Init
-            .as_ref()
-            .expect("Expected function, got error."))(api)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_Init
+                .as_ref()
+                .expect("Expected function, got error."))(api)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_Join(
         &self,
         api: *mut ::std::os::raw::c_void,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcMdApi_Join
-            .as_ref()
-            .expect("Expected function, got error."))(api)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_Join
+                .as_ref()
+                .expect("Expected function, got error."))(api)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_GetTradingDay(
         &self,
         api: *mut ::std::os::raw::c_void,
     ) -> *const ::std::os::raw::c_char {
-        (self
-            .CThostFtdcMdApi_GetTradingDay
-            .as_ref()
-            .expect("Expected function, got error."))(api)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_GetTradingDay
+                .as_ref()
+                .expect("Expected function, got error."))(api)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_RegisterFront(
         &self,
         api: *mut ::std::os::raw::c_void,
         pszFrontAddress: *mut ::std::os::raw::c_char,
     ) {
-        (self
-            .CThostFtdcMdApi_RegisterFront
-            .as_ref()
-            .expect("Expected function, got error."))(api, pszFrontAddress)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_RegisterFront
+                .as_ref()
+                .expect("Expected function, got error."))(api, pszFrontAddress)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_RegisterNameServer(
         &self,
         api: *mut ::std::os::raw::c_void,
         pszNsAddress: *mut ::std::os::raw::c_char,
     ) {
-        (self
-            .CThostFtdcMdApi_RegisterNameServer
-            .as_ref()
-            .expect("Expected function, got error."))(api, pszNsAddress)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_RegisterNameServer
+                .as_ref()
+                .expect("Expected function, got error."))(api, pszNsAddress)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_RegisterFensUserInfo(
         &self,
         api: *mut ::std::os::raw::c_void,
         pFensUserInfo: *mut CThostFtdcFensUserInfoField,
     ) {
-        (self
-            .CThostFtdcMdApi_RegisterFensUserInfo
-            .as_ref()
-            .expect("Expected function, got error."))(api, pFensUserInfo)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_RegisterFensUserInfo
+                .as_ref()
+                .expect("Expected function, got error."))(api, pFensUserInfo)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_RegisterSpi(
         &self,
         api: *mut ::std::os::raw::c_void,
         pSpi: *mut ::std::os::raw::c_void,
     ) {
-        (self
-            .CThostFtdcMdApi_RegisterSpi
-            .as_ref()
-            .expect("Expected function, got error."))(api, pSpi)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_RegisterSpi
+                .as_ref()
+                .expect("Expected function, got error."))(api, pSpi)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_SubscribeMarketData(
         &self,
@@ -19549,10 +19914,12 @@ impl CTPInvoke {
         ppInstrumentID: *mut *mut ::std::os::raw::c_char,
         nCount: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcMdApi_SubscribeMarketData
-            .as_ref()
-            .expect("Expected function, got error."))(api, ppInstrumentID, nCount)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_SubscribeMarketData
+                .as_ref()
+                .expect("Expected function, got error."))(api, ppInstrumentID, nCount)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_UnSubscribeMarketData(
         &self,
@@ -19560,10 +19927,12 @@ impl CTPInvoke {
         ppInstrumentID: *mut *mut ::std::os::raw::c_char,
         nCount: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcMdApi_UnSubscribeMarketData
-            .as_ref()
-            .expect("Expected function, got error."))(api, ppInstrumentID, nCount)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_UnSubscribeMarketData
+                .as_ref()
+                .expect("Expected function, got error."))(api, ppInstrumentID, nCount)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_SubscribeForQuoteRsp(
         &self,
@@ -19571,10 +19940,12 @@ impl CTPInvoke {
         ppInstrumentID: *mut *mut ::std::os::raw::c_char,
         nCount: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcMdApi_SubscribeForQuoteRsp
-            .as_ref()
-            .expect("Expected function, got error."))(api, ppInstrumentID, nCount)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_SubscribeForQuoteRsp
+                .as_ref()
+                .expect("Expected function, got error."))(api, ppInstrumentID, nCount)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_UnSubscribeForQuoteRsp(
         &self,
@@ -19582,10 +19953,12 @@ impl CTPInvoke {
         ppInstrumentID: *mut *mut ::std::os::raw::c_char,
         nCount: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcMdApi_UnSubscribeForQuoteRsp
-            .as_ref()
-            .expect("Expected function, got error."))(api, ppInstrumentID, nCount)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_UnSubscribeForQuoteRsp
+                .as_ref()
+                .expect("Expected function, got error."))(api, ppInstrumentID, nCount)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_ReqUserLogin(
         &self,
@@ -19593,10 +19966,14 @@ impl CTPInvoke {
         pReqUserLoginField: *mut CThostFtdcReqUserLoginField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcMdApi_ReqUserLogin
-            .as_ref()
-            .expect("Expected function, got error."))(api, pReqUserLoginField, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_ReqUserLogin
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pReqUserLoginField, nRequestID
+            )
+        }
     }
     pub unsafe fn CThostFtdcMdApi_ReqUserLogout(
         &self,
@@ -19604,10 +19981,12 @@ impl CTPInvoke {
         pUserLogout: *mut CThostFtdcUserLogoutField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcMdApi_ReqUserLogout
-            .as_ref()
-            .expect("Expected function, got error."))(api, pUserLogout, nRequestID)
+        unsafe {
+            (self
+                .CThostFtdcMdApi_ReqUserLogout
+                .as_ref()
+                .expect("Expected function, got error."))(api, pUserLogout, nRequestID)
+        }
     }
     pub unsafe fn CThostFtdcMdApi_ReqQryMulticastInstrument(
         &self,
@@ -19615,11 +19994,13 @@ impl CTPInvoke {
         pQryMulticastInstrument: *mut CThostFtdcQryMulticastInstrumentField,
         nRequestID: ::std::os::raw::c_int,
     ) -> ::std::os::raw::c_int {
-        (self
-            .CThostFtdcMdApi_ReqQryMulticastInstrument
-            .as_ref()
-            .expect("Expected function, got error."))(
-            api, pQryMulticastInstrument, nRequestID
-        )
+        unsafe {
+            (self
+                .CThostFtdcMdApi_ReqQryMulticastInstrument
+                .as_ref()
+                .expect("Expected function, got error."))(
+                api, pQryMulticastInstrument, nRequestID
+            )
+        }
     }
 }
