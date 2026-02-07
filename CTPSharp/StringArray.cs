@@ -19,12 +19,14 @@ internal class StringArray : IDisposable
         var ptrSize = Marshal.SizeOf(typeof(IntPtr));
         _ppStr = Marshal.AllocHGlobal(ptrSize * Count);
         var ptr = _ppStr;
-        for (int i = 0; i < Count; i++, ptr += ptrSize)
+        for (int i = 0; i < Count; ++i, ptr += ptrSize)
         {
             var gbkBytes = GBKConvert.Instance.GetBytes(strings[i]);
-            _strPtrs[i] = Marshal.AllocHGlobal(gbkBytes.Length);
+            var strBuff = Marshal.AllocHGlobal(gbkBytes.Length + 1);
+            _strPtrs[i] = strBuff;
+            Marshal.WriteIntPtr(ptr, strBuff);
             Marshal.Copy(gbkBytes, 0, _strPtrs[i], gbkBytes.Length);
-            Marshal.WriteIntPtr(ptr, _strPtrs[i]);
+            Marshal.WriteByte(_strPtrs[i] + gbkBytes.Length, 0); // null-terminate the string
         }
     }
 

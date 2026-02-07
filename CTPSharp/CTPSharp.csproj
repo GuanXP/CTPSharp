@@ -1,7 +1,7 @@
 <Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net8.0</TargetFramework>
+    <TargetFramework>net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <RootNamespace>XP.CTPSharp</RootNamespace>
@@ -9,22 +9,9 @@
     <BaseOutputPath>bin</BaseOutputPath>
   </PropertyGroup>
 
-  <ItemGroup>
-    <ProjectReference Include="..\CTPInvoke\CTPInvoke.vcxproj">
-      <Private>True</Private>
-      <CopyLocalSatelliteAssemblies>True</CopyLocalSatelliteAssemblies>
-      <ReferenceOutputAssembly>True</ReferenceOutputAssembly>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </ProjectReference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <PackageReference Include="System.Text.Encoding.CodePages" Version="7.0.0" />
-  </ItemGroup>
-
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)Publish\Win64.NET8\$(ConfigurationName)\&quot;" />
-	<Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)Publish\Linux64.NET8\$(ConfigurationName)\&quot;" />
+    <Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)Publish\Win64.NET10\$(ConfigurationName)\&quot;" />
+	<Exec Command="copy &quot;$(TargetPath)&quot; &quot;$(SolutionDir)Publish\Linux64.NET10\$(ConfigurationName)\&quot;" />
   </Target>
 
 </Project>
