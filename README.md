@@ -1,3 +1,5 @@
+# 此项目自2026/02/07后不再在github上维护，后续版本请访问 https://gitee.com/guanxp/ctpsharp
+
 # CTPSharp
 期货CTP接口API的C#绑定，基于代码生成的Window/Linux X64版本。
 当前CTP版本为6.7.10
@@ -129,3 +131,4 @@ class Config
 }
 ```
 详细可参考Example项目代码
+
